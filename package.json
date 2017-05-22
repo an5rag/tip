@@ -1,0 +1,43 @@
+{
+  "name": "the-irrelevant-project",
+  "version": "1.0.0",
+  "description": "Web App for the Irrelevant Project.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/an5rag/tip.git"
+  },
+  "author": "Anurag Choudhary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/an5rag/tip/issues"
+  },
+  "homepage": "https://github.com/an5rag/tip#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.28.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.3",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-router-dom": "^4.1.1",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.0",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "foundation-sites": "^6.3.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "build:watch": "cross-env NODE_ENV=development webpack -d --watch"
+  }
+}
