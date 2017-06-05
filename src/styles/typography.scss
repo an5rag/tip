@@ -1,0 +1,70 @@
+// Fonts
+// ==========================================================================
+
+$title-font: 'Work Sans', sans-serif;
+$heading-font: '';
+$primary-font: 'Source Sans Pro', sans-serif;
+
+// Text
+// ==========================================================================
+
+$extra-small-font-size: 1em;
+$extra-small-font-line-height: 1.2em;
+$small-font-size: 1.2em;
+$small-font-line-height: 1.4em;
+$medium-font-size: 20px;
+$medium-font-line-height: 28px;
+$large-font-size: 25px;
+$large-font-line-height: 32px;
+$extra-large-font-size: 33px;
+$extra-large-font-line-height: 38px;
+
+
+%light-font {
+  font-weight: 300;
+}
+
+%regular-font {
+  font-weight: 400;
+}
+
+%semi-bold-font {
+  font-weight: 500;
+}
+
+%bold-font {
+  font-weight: 700;
+}
+
+%extra-small-font {
+  font-size: $extra-small-font-size;
+  line-height: $extra-small-font-line-height;
+}
+
+%small-font {
+  font-size: $small-font-size;
+  line-height: $small-font-line-height;
+}
+
+%medium-font {
+  font-size: $medium-font-size;
+  line-height: $medium-font-line-height;
+}
+
+%large-font {
+  font-size: $large-font-size;
+  line-height: $large-font-line-height;
+}
+
+%extra-large-font {
+  font-size: $extra-large-font-size;
+  line-height: $extra-large-font-line-height;
+}
+
+%slow-transition {
+  transition: all ease 0.3s;
+}
+
+%fast-transition {
+  transition: all ease 0.2s;
+}

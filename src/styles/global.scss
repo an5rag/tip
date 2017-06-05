@@ -1,3 +1,11 @@
+
+/* FRAMEWORK - Structure and layout files.
+========================================================================== */
+@import 'node_modules/normalize.css/normalize';
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-flex-grid;
+
+
 // /* BASE - Base Variable file along with starting point Mixins and Placeholders.
 // ========================================================================== */
 
@@ -18,17 +26,16 @@
 // /* PAGES- Page
 // ========================================================================== */
 
-// @import 'base.scss';
+@import 'base.scss';
 // @import 'pages/login.scss';
 // @import 'pages/create.scss';
 // @import 'pages/dashboard.scss';
 
-/* FRAMEWORK - Structure and layout files.
-========================================================================== */
-@import 'node_modules/foundation-sites/scss/foundation';
-@include foundation-flex-grid;
 
-html {
-    padding: 50px;
-    background-color: yellow;
-}
+/* FONTS
+========================================================================== */
+//@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,600');

@@ -1,10 +1,10 @@
 import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './app';
 
 const rootElement = document.getElementById('root');
-const render = Component =>
+const render = (Component) =>
   ReactDOM.render(
     <AppContainer>
       <Component />
@@ -16,7 +16,7 @@ render(App);
 // check if HMR is enabled
 if (module.hot) {
     // accept update of dependency
-    module.hot.accept('./App', () => {
+    module.hot.accept('./app', () => {
         render(App);
     });
 }

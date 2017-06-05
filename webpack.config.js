@@ -1,14 +1,9 @@
 'use strict';
-var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
+var webpack = require('webpack');
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === "development"
-});
-
+var isDevelopmentMode = process.env.NODE_ENV === "development";
 var BUILD_DIR = path.resolve(__dirname, 'build/');
 var APP_DIR = path.resolve(__dirname, 'src/');
 
@@ -32,7 +27,7 @@ var config = {
       APP_DIR + '/scripts/index.jsx'
       // js files
     ],
-     vendor: ["react", "react-dom", "react-hot-loader", "lodash"]
+     vendor: ["react", "react-dom", "react-hot-loader"]
   },
 
   output: {
@@ -42,7 +37,7 @@ var config = {
     // necessary for HMR to know where to load the hot update chunks
   },
 
-  devtool: 'inline-source-map',
+  devtool: isDevelopmentMode ? 'inline-source-map' : 'nosources-source-map',
   // enable source maps
 
 
@@ -105,8 +100,15 @@ var config = {
 
     new ExtractTextPlugin({
         filename: "bundle.css",
-        disable: process.env.NODE_ENV === "development"
+        disable: isDevelopmentMode
+    }),
+
+    new webpack.DefinePlugin({
+      "process.env": { 
+        NODE_ENV: isDevelopmentMode ? JSON.stringify("development") : JSON.stringify("production") 
+      }
     })
+    // This will produce output bundles that has all instances of process.env.NODE_ENV replaced with the conditional string literal
   ],
 
   devServer: {
@@ -124,7 +126,8 @@ var config = {
     extensions:[".js", ".json", ".jsx"],
     alias:{
       styles: path.resolve(APP_DIR, 'styles'),
-      components: path.resolve(APP_DIR, 'scripts/components')
+      components: path.resolve(APP_DIR, 'scripts/components'), 
+      containers: path.resolve(APP_DIR, 'scripts/containers')
     }
   }
 };
