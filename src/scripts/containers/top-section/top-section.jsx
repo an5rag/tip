@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Link, NavLink } from 'react-router-dom';
+import { Switch, Route, Link, NavLink } from 'react-router-dom';
 import { Title } from 'components/title/title';
 import { Home } from 'containers/home/home';
 import { Stories } from 'containers/stories/stories';
@@ -43,7 +43,6 @@ const NavElement = (props) => (
 )
 
 export const TopSection = () => (
-  <BrowserRouter>
     <div>
         <div className="row">
             <Link to="/">
@@ -51,11 +50,10 @@ export const TopSection = () => (
             </Link>
         </div>
         <div className="row" style={styles.navBarStyles}>
-           <NavElement link="/stories" name="Stories"/>
-           <NavElement link="/talk" name="Talk"/>
-           <NavElement link="/blog" name="Blog"/>              
+            <NavElement link="/stories" name="Stories"/>
+            <NavElement link="/talk" name="Talk"/>
+            <NavElement link="/blog" name="Blog"/>              
         </div>
         <Routes/>
-        </div>
-  </BrowserRouter>
+    </div>
 );
