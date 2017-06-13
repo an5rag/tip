@@ -1,0 +1,3 @@
+.tip-heading {
+  @include font($heading-font, $heading-font-size, $primary-color, $heading-line-height);
+}

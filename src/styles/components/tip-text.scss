@@ -1,0 +1,3 @@
+.tip-text {
+  @include font($text-font, $text-font-size, $primary-color, $text-line-height);
+}

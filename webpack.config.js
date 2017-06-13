@@ -126,7 +126,7 @@ var config = {
     extensions:[".js", ".json", ".jsx"],
     alias:{
       styles: path.resolve(APP_DIR, 'styles'),
-      components: path.resolve(APP_DIR, 'scripts/components'), 
+      bb: path.resolve(APP_DIR, 'scripts/building-blocks'), 
       containers: path.resolve(APP_DIR, 'scripts/containers')
     }
   }

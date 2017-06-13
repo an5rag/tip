@@ -9,24 +9,22 @@
 // /* BASE - Base Variable file along with starting point Mixins and Placeholders.
 // ========================================================================== */
 
-// @import 'base/_variables.scss';
-// @import 'base/_mixins.scss';
+@import 'base/variables.scss';
+@import 'base/mixins.scss';
+@import 'base/base.scss';
+// @import 'base/utility.scss';
 // @import 'base/_placeholders.scss';
 
 // /* MODULES - Re-usable site elements.
 // ========================================================================== */
-// @import 'components/table.scss';
-// @import 'components/navbar.scss';
-// @import 'components/searchBox.scss';
-// @import 'components/loginBox.scss';
-// @import 'components/selectList.scss';
-// @import 'components/formTable.scss';
+@import 'components/tip-title.scss';
+@import 'components/tip-nav-link.scss';
+@import 'components/tip-heading.scss';
+@import 'components/tip-text.scss';
 
 
 // /* PAGES- Page
 // ========================================================================== */
-
-@import 'base.scss';
 // @import 'pages/login.scss';
 // @import 'pages/create.scss';
 // @import 'pages/dashboard.scss';
@@ -34,8 +32,4 @@
 
 /* FONTS
 ========================================================================== */
-//@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400');
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
-@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Karla|Source+Sans+Pro:300,400,600|PT+Mono');
