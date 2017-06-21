@@ -20,12 +20,15 @@
 @import 'components/tip-title.scss';
 @import 'components/tip-nav-link.scss';
 @import 'components/tip-heading.scss';
+@import 'components/tip-subheading.scss';
 @import 'components/tip-text.scss';
+@import 'components/tip-tiny-text.scss';
+@import 'components/tip-meta-text.scss';
 
 
-// /* PAGES- Page
+// /* CONTAINERS - Components built using modules
 // ========================================================================== */
-// @import 'pages/login.scss';
+@import 'containers/tip-header.scss';
 // @import 'pages/create.scss';
 // @import 'pages/dashboard.scss';
 

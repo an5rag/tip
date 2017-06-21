@@ -1,3 +1,11 @@
 .tip-heading {
-  @include font($heading-font, $heading-font-size, $primary-color, $heading-line-height);
+    margin-bottom: $heading-margin-bottom;
+    .tip-heading-text {
+        @include font($heading-font, $xx-large-font-size, $primary-color, $xx-large-font-line-height);        
+    }
+    .tip-meta-text {
+        @include font($text-font, $x-small-font-size, $primary-color, $x-small-font-line-height);
+        color: grey;
+        letter-spacing: 1px;
+    }
 }

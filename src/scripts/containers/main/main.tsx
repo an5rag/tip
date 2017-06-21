@@ -1,10 +1,10 @@
-import React from "react";
+import * as React from 'react';
 import { BrowserRouter, Switch, Route, Link, NavLink } from "react-router-dom";
-import { TopSection } from "containers/top-section/top-section";
-import { Home } from 'containers/home/home';
-import { Stories } from 'containers/stories/stories';
-import { Talk } from 'containers/talk/talk';
-import { Blog } from 'containers/blog/blog'
+import { Header } from "./header/header";
+import { Home } from '../home/home';
+import { Stories } from '../stories/stories';
+import { Talk } from '../talk/talk';
+import { Blog } from '../blog/blog'
 
 const Routes = () =>
   <div>
@@ -16,7 +16,7 @@ const Routes = () =>
 
 export const Main = () => (
   <div>
-    <TopSection />
+    <Header/>
     <Routes />
   </div>
 );

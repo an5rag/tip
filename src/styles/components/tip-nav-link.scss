@@ -1,12 +1,12 @@
 .tip-nav-link {
-    @include font($nav-link-font, $nav-link-font-size, $nav-link-color, $nav-link-line-height);
+    @include font($nav-link-font, $medium-font-size, $nav-link-color, $medium-font-line-height);
     a {
         padding: 2px;
     }
     &:hover {
         color: $nav-link-color-hover;
         a {
-            border-bottom: 0.5px solid $primary-color;
+            border-bottom: 1px solid $primary-color;
         }
     }
     .tip-nav-link-active {

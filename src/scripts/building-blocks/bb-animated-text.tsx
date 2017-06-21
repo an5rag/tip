@@ -1,8 +1,123 @@
-import React from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
 
-export class BbAnimatedText extends React.Component {
-  constructor(props) {
+interface IProps {
+  /**
+   * 
+   * array of strings to animate
+   * 
+   * @type {string[]}@memberof IProps
+   */
+  strings: string[];
+
+  /**
+   * 
+   * Initial position of string to start animating from
+   * 
+   * @type {number}@memberof IProps
+   */
+  offset?: number;
+
+  /**
+   * 
+   * Number of random characters to show per character
+   * 
+   * @type {number}@memberof IProps
+   */
+  iterations?: number;
+
+  /**
+   * 
+   * Timeout between each random character
+   * 
+   * @type {number}@memberof IProps
+   */
+  characterTimeout?: number;
+
+  /**
+   * 
+   * Timeout between each string
+   * 
+   * @type {number}@memberof IProps
+   */
+  stringTimeout?: number;
+
+  /**
+   * Random characters to pick from
+   * 
+   * @type {string[]}@memberof IProps
+   */
+  characters?: string[];
+
+  /**
+   * 
+   * Infinitely go through the string array (Default: false)
+   * 
+   * @type {boolean}@memberof IProps
+   */
+  infinite?: boolean;
+
+  uppercase?: boolean;
+}
+
+interface IState {
+  currentStringIndex: number;
+  currentCharacterIndex: number;
+  currentIterationIndex: number;
+  currentRandomCharacter: string;
+}
+
+export class BbAnimatedText extends React.Component<IProps, IState> {
+  public static defaultProps: IProps = {
+    strings: [],
+    offset: 0,
+    iterations: 10,
+    characterTimeout: 10,
+    stringTimeout: 1000,
+    characters: [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "t",
+      "u",
+      "v",
+      "x",
+      "y",
+      "x",
+      "#",
+      "%",
+      "&",
+      "-",
+      "+",
+      "_",
+      "?",
+      "/",
+      "\\",
+      "="
+    ],
+    infinite: false,
+    uppercase: false
+  };
+
+  private characterTimer: number;
+  private stringTimer: number;
+
+  constructor(props: IProps) {
     super(props);
     this.state = {
       currentStringIndex: 0,
@@ -10,9 +125,6 @@ export class BbAnimatedText extends React.Component {
       currentIterationIndex: 0,
       currentRandomCharacter: this.getRandomCharacter()
     };
-    something = {
-      blah: sdfsfd
-    }
   }
 
   getRandomCharacter() {
@@ -38,7 +150,7 @@ export class BbAnimatedText extends React.Component {
     clearInterval(this.characterTimer);
   }
 
-  setNextString(prevState, props) {
+  setNextString(prevState: IState, props: IProps) {
     let characterIndex = props.offset,
       stringIndex = prevState.currentStringIndex + 1;
 
@@ -50,7 +162,7 @@ export class BbAnimatedText extends React.Component {
       } else {
         // (animation is over) reset indices and and clear timer
         stringIndex = prevState.currentStringIndex;
-        characterIndex = prevState.characterIndex;
+        characterIndex = prevState.currentCharacterIndex;
         this.clearTimers();
       }
     }
@@ -61,7 +173,7 @@ export class BbAnimatedText extends React.Component {
     };
   }
 
-  setNextCharacter(prevState, props) {
+  setNextCharacter(prevState: IState, props: IProps) {
     let characterIndex = prevState.currentCharacterIndex,
       stringIndex = prevState.currentStringIndex,
       iterationIndex = prevState.currentIterationIndex + 1,
@@ -95,11 +207,8 @@ export class BbAnimatedText extends React.Component {
   }
 
   render() {
-    const partialString =
-      this.props.strings[this.state.currentStringIndex].substring(
-        0,
-        this.state.currentCharacterIndex
-      ) + this.state.currentRandomCharacter;
+    let partialString = this.props.strings[this.state.currentStringIndex].substring(0, this.state.currentCharacterIndex) + this.state.currentRandomCharacter;
+    partialString = this.props.uppercase ? partialString.toUpperCase() : partialString;
     return (
       <span>
         {partialString}
@@ -107,71 +216,3 @@ export class BbAnimatedText extends React.Component {
     );
   }
 }
-
-BbAnimatedText.propTypes = {
-  // array of strings to animate
-  strings: PropTypes.arrayOf(PropTypes.string).isRequired,
-
-  // Initial position of string to start animating from
-  offset: PropTypes.number,
-
-  // Number of random characters to show per character
-  iterations: PropTypes.number,
-
-  // Timeout between each random character
-  characterTimeout: PropTypes.number,
-
-  // Timeout between each string
-  stringTimeout: PropTypes.number,
-
-  // Random characters to pick from
-  characters: PropTypes.arrayOf(PropTypes.string),
-
-  // Infinitely go through the string array (Default: false)
-  infinite: PropTypes.bool
-};
-
-BbAnimatedText.defaultProps = {
-  offset: 0,
-  iterations: 5,
-  characterTimeout: 30,
-  stringTimeout: 1000,
-  characters: [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "x",
-    "y",
-    "x",
-    "#",
-    "%",
-    "&",
-    "-",
-    "+",
-    "_",
-    "?",
-    "/",
-    "\\",
-    "="
-  ],
-  infinite: true
-};

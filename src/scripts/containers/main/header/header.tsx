@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { Switch, Route, Link, NavLink } from 'react-router-dom';
 import { Title } from './components/title';
 
 
-const NavElement = (props) => (
+const NavElement = (props: any) => (
      <div className="shrink columns tip-nav-link">
                 <NavLink 
                     to={props.link}
@@ -14,8 +14,8 @@ const NavElement = (props) => (
     </div>
 )
 
-export const TopSection = () => (
-    <div style={{marginBottom: "20px"}}>
+export const Header = () => (
+    <div className="tip-header">
         <div className="row">
             <Link to="/">
                 <Title/>

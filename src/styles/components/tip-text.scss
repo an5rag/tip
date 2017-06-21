@@ -1,3 +1,4 @@
 .tip-text {
-  @include font($text-font, $text-font-size, $primary-color, $text-line-height);
+  @include font($text-font, $small-font-size, $primary-color, $small-font-line-height);
+  // font-weight: 300;
 }

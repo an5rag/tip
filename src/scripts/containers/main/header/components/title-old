@@ -1,9 +1,9 @@
-import React from "react";
-import { BbAnimatedText } from "bb/bb-animated-text";
+import * as React from "react";
+import { BbAnimatedText } from "../../../../building-blocks/bb-animated-text";
 
 export const Title = () => {
   const title = "the irrelevant project";
-  const breakTitle = function(title) {
+  const breakTitle = function(title: string) {
     const chars = title.split("");
     return chars.map((element, index) => <span key={index}>{element}</span>);
   };
@@ -59,11 +59,11 @@ export const Title = () => {
   const titleBackground = (
     <div className="title-background-text">
       {titleBackgroundTextMatrix.map(row => {
-        let column = row.map(column => (
+        let column = row.map(column =>
           <div className="title-background-text-row-element">
             <BbAnimatedText strings={column} />
           </div>
-        ));
+        );
         column = column.concat(
           <div className="title-background-text-row-element">
             <BbAnimatedText strings={["should not", "may not", "must not"]} />
@@ -88,8 +88,5 @@ export const Title = () => {
     </div>
   );
 
-  return (
-    <div className="tip-title">
-    </div>
-  );
+  return <div className="tip-title" />;
 };

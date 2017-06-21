@@ -10,7 +10,7 @@ $nav-link-color: $secondary-color;
 $nav-link-color-hover: $primary-color;
 
 
-// /* FONTS
+// /* TEXT
 // ========================================================================== */
 // font family
 $title-font: 'Karla', sans-serif;
@@ -18,27 +18,35 @@ $nav-link-font: 'Karla', sans-serif;
 $text-font: 'Source Sans Pro', sans-serif;
 $heading-font: 'Karla', sans-serif;
 
-// font size
+// ========= font size ==========
+
+// base
 $base-font-size: 16px;
 $mobile-base-font-size: 14px;
 
-$title-font-size: 1.75em;
-$nav-link-font-size: 1.2em;
-$heading-font-size: 1.75em;
-$text-font-size: 1.13em;
+$x-small-font-size: 0.875em;
+$x-small-font-line-height: 1.5em;
 
-// font-weight
-$title-font-weight: 700;
+$small-font-size: 1.1em;
+$small-font-line-height: 1.6em;
 
-// line height
-$title-line-height: 2.0;
-$nav-link-line-height: 1.6;
-$heading-line-height: 1.6;
-$text-line-height: 1.6;
+$medium-font-size: 1.2em;
+$medium-font-line-height: 1.6em;
+
+$large-font-size: 1.6em;
+$large-font-line-height: 1.6em;
+
+$x-large-font-size: 1.75em;
+$x-large-font-line-height: 1.6em;
+
+$xx-large-font-size: 2.25em;
+$xx-large-font-line-height: 1.3em;
 
 
-// /* MARGINS
+// /* GUTTERS
 // ========================================================================== */
-
+$page-padding: 2rem;
+$section-margin-bottom: 3rem;
+$heading-margin-bottom: 2rem;
 
 

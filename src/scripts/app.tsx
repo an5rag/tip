@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { BrowserRouter} from 'react-router-dom';
-import { Main } from 'containers/main/main';
+import { Main } from './containers/main/main';
 
 const App = () => (
-  <BrowserRouter basename="/tip" >
+  <BrowserRouter>
     <Main/>
   </BrowserRouter>
 );
