@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { BrowserRouter} from 'react-router-dom';
+import { BrowserRouter, HashRouter} from 'react-router-dom';
 import { Main } from './containers/main/main';
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Main/>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 // TODO: Add redux stuff
