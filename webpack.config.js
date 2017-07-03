@@ -1,5 +1,6 @@
 "use strict";
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var path = require("path");
 var webpack = require("webpack");
 
@@ -7,26 +8,32 @@ var isDevelopmentMode = process.env.NODE_ENV === "development";
 var BUILD_DIR = path.resolve(__dirname, "build/");
 var APP_DIR = path.resolve(__dirname, "src/");
 
-var config = {
-  entry: {
-    app: [
-      isDevelopmentMode ? "react-hot-loader/patch" : "",
+var appEntry = [
+  APP_DIR + "/styles/global.scss",
+  // scss files
+  APP_DIR + "/scripts/index.jsx"
+  // js files
+];
+
+if (isDevelopmentMode) {
+  appEntry.unshift(
+     "react-hot-loader/patch",
       // activate HMR for React
 
       "webpack-dev-server/client?http://localhost:3000",
       // bundle the client for webpack-dev-server
       // and connect to the provided endpoint
 
-      "webpack/hot/only-dev-server",
+      "webpack/hot/only-dev-server"
       // bundle the client for hot reloading
       // only- means to only hot reload for successful updates
+  );
+}
 
-      APP_DIR + "/styles/global.scss",
-      // scss files
 
-      APP_DIR + "/scripts/index.jsx"
-      // js files
-    ],
+var config = {
+  entry: {
+    app: appEntry,
     vendor: ["react", "react-dom", "react-hot-loader"]
   },
 
@@ -44,7 +51,7 @@ var config = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
+        loader: ['react-hot-loader/webpack', "awesome-typescript-loader"],
         include: APP_DIR,
         exclude: /node_modules/
       },
@@ -94,6 +101,9 @@ var config = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(['build'], { verbose: true }),
+    // clean build directory
+
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
 
