@@ -1,5 +1,8 @@
 .tip-section {
   .tip-subsection {
     margin-bottom: $section-margin-bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
