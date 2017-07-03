@@ -1,0 +1,21 @@
+// VARIABLES
+$story-box-margin: 1em;
+$story-box-bg-color: black;
+$story-box-height: 300px;
+$story-box-width: 300px;
+.tip-stories {
+    .tip-story-grid {
+        /* top | right | bottom | left */
+        margin: $story-box-margin 0 0 $story-box-margin;
+
+        .tip-story-box {
+            background-color: $story-box-bg-color;
+            /* top | right | bottom | left */
+            margin: 0 $story-box-margin $story-box-margin 0;
+            height: $story-box-height;
+            width: $story-box-width;
+
+            .tip-story-box-caption {}
+        }
+    }
+}
