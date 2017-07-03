@@ -7,6 +7,9 @@ $story-box-width: 300px;
     .tip-story-grid {
         /* top | right | bottom | left */
         margin: $story-box-margin 0 0 $story-box-margin;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
         .tip-story-box {
             background-color: $story-box-bg-color;

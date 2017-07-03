@@ -6,6 +6,6 @@
     .tip-meta-text {
         @include font($text-font, $x-small-font-size, $primary-color, $x-small-font-line-height);
         color: grey;
-        letter-spacing: 1px;
+        letter-spacing: 1;
     }
 }

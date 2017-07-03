@@ -11,9 +11,11 @@ export const Stories = () => {
     )
   })
   return (
-    <div className="row tip-stories">
-      <div className="tip-story-grid">
-        {storyGrid}
+    <div className="row row-center">
+      <div className="small-12 medium-10 columns tip-stories">
+        <div className="tip-story-grid">
+          {storyGrid}
+        </div>
       </div>
     </div>
   );

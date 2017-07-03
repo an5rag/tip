@@ -1,0 +1,3 @@
+.tip-massive-heading {
+  @include font($heading-font, $xxx-large-font-size, $primary-color, $xxx-large-font-line-height, $heavy-font-weight);
+}

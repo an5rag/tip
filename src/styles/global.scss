@@ -18,20 +18,27 @@
 // /* MODULES - Re-usable site elements.
 // ========================================================================== */
 @import 'components/tip-title.scss';
+@import 'components/tip-massive-heading.scss';
 @import 'components/tip-nav-link.scss';
 @import 'components/tip-heading.scss';
 @import 'components/tip-subheading.scss';
 @import 'components/tip-text.scss';
 @import 'components/tip-tiny-text.scss';
-@import 'components/tip-meta-text.scss';
 
 
 // /* CONTAINERS - Components built using modules
 // ========================================================================== */
 @import 'containers/tip-header.scss';
-@import 'containers/tip-stories.scss';
-// @import 'pages/create.scss';
-// @import 'pages/dashboard.scss';
+@import 'containers/tip-body.scss';
+@import 'containers/tip-footer.scss';
+@import 'containers/tip-section.scss';
+
+
+// /* PAGES - Scenes built using containers
+// ========================================================================== */
+// Pages
+@import 'pages/tip-stories.scss';
+@import 'pages/tip-home.scss';
 
 
 /* FONTS

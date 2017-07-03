@@ -5,7 +5,8 @@
     }
     &:hover {
         color: $nav-link-color-hover;
-        a {
+        a:not(.tip-nav-link-active) {
+            // apply bottom border if not active
             border-bottom: 1px solid $primary-color;
         }
     }

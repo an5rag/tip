@@ -16,12 +16,12 @@ const NavElement = (props: any) => (
 
 export const Header = () => (
     <div className="tip-header">
-        <div className="row">
+        <div className="row row-center">
             <Link to="/">
                 <Title/>
             </Link>
         </div>
-        <div className="row">
+        <div className="row row-center">
             <NavElement link="/stories" name="Stories"/>
             <NavElement link="/talk" name="Talk"/>
             <NavElement link="/blog" name="Blog"/>              

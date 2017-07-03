@@ -1,0 +1,7 @@
+$footer-min-height: 30vh; 
+
+.tip-footer {
+  min-height: $footer-min-height;
+  background-color: $secondary-color;
+  margin-top: $footer-margin-top;
+}

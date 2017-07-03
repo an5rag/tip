@@ -3,10 +3,10 @@
 
 $primary-color: #000000;
 $primary-contrast-color: white;
-$secondary-color: grey;
+$secondary-color: #55c3c3;
 $background-color: #fefefe;
 
-$nav-link-color: $secondary-color;
+$nav-link-color: teal;
 $nav-link-color-hover: $primary-color;
 
 
@@ -42,10 +42,20 @@ $x-large-font-line-height: 1.6em;
 $xx-large-font-size: 2.25em;
 $xx-large-font-line-height: 1.3em;
 
+$xxx-large-font-size: 5em;
+$xxx-large-font-line-height: 1.1em;
+
+// ======== font weight ===========
+$normal-font-weight: 400;
+$light-font-weight: 300;
+$heavy-font-weight: 700;
+
 
 // /* GUTTERS
 // ========================================================================== */
-$page-padding: 2rem;
+$header-margin-top: 2rem;
+$footer-margin-top: 2rem;
+$body-gutter: 2rem;
 $section-margin-bottom: 3rem;
 $heading-margin-bottom: 2rem;
 
