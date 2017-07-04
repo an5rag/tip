@@ -5,4 +5,7 @@
     flex-direction: column;
     justify-content: center;
   }
+  .tip-subsection-heading {
+    @include font($heading-font, $x-large-font-size, $primary-color, $x-large-font-line-height, $heavy-font-weight); 
+  }
 }

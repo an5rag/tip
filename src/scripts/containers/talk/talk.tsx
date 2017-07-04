@@ -7,7 +7,7 @@ export const Talk = () =>
         <div className="row row-center tip-section">
           <div className="small-12 columns tip-subsection shrink">
             <div className="tip-massive-heading">
-              Talk is cheap.
+              Talk.
             </div>
           </div>
         </div>

@@ -3,6 +3,10 @@ $story-box-margin: 1em;
 $story-box-bg-color: black;
 $story-box-height: 300px;
 $story-box-width: 300px;
+$story-box-height-expanded: 600px;
+$story-box-width-expanded: 600px;
+
+
 .tip-stories {
     .tip-story-grid {
         /* top | right | bottom | left */
@@ -17,7 +21,11 @@ $story-box-width: 300px;
             margin: 0 $story-box-margin $story-box-margin 0;
             height: $story-box-height;
             width: $story-box-width;
-
+            transition: all 1s;
+            &.tip-story-box-expanded {
+                height: $story-box-height-expanded;
+                width: $story-box-width-expanded;
+            }
             .tip-story-box-caption {}
         }
     }
