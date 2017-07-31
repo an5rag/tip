@@ -3,21 +3,21 @@
    ========================================================================== */
 
 // Font faces
-$primary-heading-font: 'Karla',sans-serif;
-$secondary-heading-font: 'Source Sans Pro',sans-serif;
-
-$primary-text-font: 'Source Sans Pro',sans-serif;
-$secondary-text-font: 'Source Sans Pro',sans-serif;
-
+$primary-heading-font: 'Karla',
+sans-serif;
+$secondary-heading-font: 'Source Sans Pro',
+sans-serif;
+$primary-text-font: 'Source Sans Pro',
+sans-serif;
+$secondary-text-font: 'Source Sans Pro',
+sans-serif;
 // Font weights
 $normal-font-weight: 400;
 $light-font-weight: 300;
 $heavy-font-weight: 700;
-
 // Font sizes
 $base-font-size: 16px;
 $mobile-base-font-size: 14px;
-
 // letter spacing
 $normal-letter-spacing: 0.3;
 $narrow-letter-spacing: 0.1;
@@ -98,8 +98,7 @@ p {
     padding: 0;
 }
 
-
 .tip-text-block {
-  padding-top: 1em;
-  padding-bottom: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
