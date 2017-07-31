@@ -1,0 +1,23 @@
+.tip-blog-heading {
+    margin-bottom: $heading-margin-bottom;
+    .tip-blog-heading-text {
+        @extend %heading-large;
+        font-family: $primary-heading-font;
+    }
+    .tip-blog-subheading {
+        @extend %heading-x-small;
+        font-family: $secondary-heading-font;
+        color: $secondary-color;
+        letter-spacing: 1;
+    }
+}
+
+.tip-blog-text {
+    @extend %text-large;
+    font-family: $primary-text-font;
+    letter-spacing: $normal-letter-spacing;
+    color: $primary-color;
+    p {
+        @extend .tip-text-block;
+    }
+}

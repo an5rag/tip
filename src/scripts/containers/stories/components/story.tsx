@@ -1,7 +1,7 @@
 import * as React from "react";
 
-interface IProps {
-  title?: string;
+export interface IStoryProps {
+  title: string;
   id?: string;
   image?: any;
   synopsis?: string;
@@ -19,12 +19,12 @@ interface IState {
   isExpanded: boolean;
 }
 
-export class Story extends React.Component<IProps, IState> {
-  public static defaultProps: IProps = {
+export class Story extends React.Component<IStoryProps, IState> {
+  public static defaultProps: IStoryProps = {
     title: "Story Title",
     id: "",
     image: "",
-    synopsis:"Story synopsis",
+    synopsis: "Story synopsis",
     author: {
       name: "Author Name",
       id: ""
@@ -35,7 +35,7 @@ export class Story extends React.Component<IProps, IState> {
     }
   };
 
-  constructor(props: IProps) {
+  constructor(props: IStoryProps) {
     super(props);
     this.state = {
       isExpanded: false
@@ -55,9 +55,12 @@ export class Story extends React.Component<IProps, IState> {
   }
 
   render() {
-    const storyBoxClasses = `tip-story-box ${this.state.isExpanded? "tip-story-box-expanded" : ""}`;
+    const storyBoxClasses = `tip-story-box ${this.state.isExpanded ? "tip-story-box-expanded" : ""}`;
     return (
-      <div  className={storyBoxClasses}/>
+
+      <div className={storyBoxClasses} >
+        <div className="story-title" style={{color: "white"}}>{this.props.title}</div>
+        </div>
     );
   }
 }

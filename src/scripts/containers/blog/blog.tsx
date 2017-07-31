@@ -3,17 +3,17 @@ import { BbAnimatedText } from "../../building-blocks/bb-animated-text";
 export const Blog = () => (
   <div className="row row-center">
     <div className="small-12 medium-10 large-8 columns">
-      <div className="tip-heading" style={{ width: "100%", paddingBottom: "20px", borderBottom: "0.5px solid black" }}>
-        <div className="tip-heading-text">
+      <div className="tip-blog-heading" style={{ width: "100%", paddingBottom: "20px", borderBottom: "0.5px solid black" }}>
+        <div className="tip-blog-heading-text">
           de Finibus Bonorum et Malorum!
       </div>
 
-        <div className="tip-meta-text">
+        <div className="tip-blog-subheading">
           LLAMA KING |<BbAnimatedText strings={[" 03/29/17", " MARCH 29 2017"]} />
         </div>
       </div>
 
-      <div className="tip-text">
+      <div className="tip-blog-text">
         <p>My first journalism job out of college was working at Popular Mechanics magazine. I wrote about things like robots and airplanes and nuclear power. One night I met up with a friend for dinner, and she invited two male co-workers from the ad agency she worked at. I told them I worked at Popular Mechanics. One of the men seemed very confused. He seemed to think my job was strange. I asked him why, and I'll never forget his response: "Why would a cute blonde be interested in technology?"
       </p><p>
           He went on to say that I might as well be working at Playboy, that a woman's desire to read about tech stuff was comparable to looking at male-targeted pornography. I tried to explain that roughly half the staff at Popular Mechanics were women. My friend chimed in that she used to work on cars when she was a teenager (actual mechanics). It was dinner, so I was trapped actually defending the notion that women are human beings with varied interests. Maybe this guy had just never met a woman before.

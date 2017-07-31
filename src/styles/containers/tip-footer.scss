@@ -1,7 +1,18 @@
-$footer-min-height: 30vh; 
-
+$footer-min-height: 30vh;
 .tip-footer {
-  min-height: $footer-min-height;
-  background-color: $secondary-color;
-  margin-top: $footer-margin-top;
+    min-height: $footer-min-height;
+    background-color: $secondary-background-color;
+    margin-top: $footer-margin-top;
+    .tip-footer-section {
+        .tip-footer-section-title {
+            @extend %text-small;
+            font-family: $primary-text-font;
+            color: $secondary-contrast-color;
+        }
+        .tip-footer-section-subtitle {
+            @extend %text-small;
+            font-family: $primary-text-font;
+            color: $primary-contrast-color;
+        }
+    }
 }

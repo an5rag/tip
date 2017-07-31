@@ -4,8 +4,8 @@ import {BbAnimatedText} from "../../building-blocks/bb-animated-text";
 export const Home = () => <div>
   <div className="row row-center">
     <div className="small-12 medium-10 columns tip-home">
-      <div className="row tip-section">
-        <div className="small-12 columns tip-subsection">
+      <div className="row tip-home-section">
+        <div className="small-12 columns tip-home-subsection">
           <img
             style={{
             width: "100%",
@@ -14,14 +14,14 @@ export const Home = () => <div>
             src="http://technorhetoric.net/20.2/reviews/almjeld-et-al/media/images/feministreview.png"/>
         </div>
 
-        <div className="row tip-section">
-          <div className="small-12 large-6 columns tip-subsection">
-            <div className="tip-massive-heading">
+        <div className="row tip-home-section">
+          <div className="small-12 large-6 columns tip-home-subsection">
+            <div className="tip-home-massive-heading">
               We're breaking gender stereotypes in the everyday classroom.
             </div>
           </div>
-          <div className="small-12 large-6 columns tip-subsection">
-            <div className="tip-text">
+          <div className="small-12 large-6 columns tip-home-subsection">
+            <p>
               Stereotypical beliefs about gender, which rigidly characterize differences
               between sexes and appropriate gender roles, are pervasive in most societies.
               These deep-seated beliefs reflect the society’s expectations that individuals
@@ -30,16 +30,16 @@ export const Home = () => <div>
               abound. They can be expressed in parents choosing rigidly-gendered toys for
               their children or steering them (subtly or blatantly) toward certain educational
               and occupational choices that are deemed to be suitable for their gender.
-            </div>
+            </p>
           </div>
         </div>
 
-        <div className="row tip-section">
-          <div className="small-12 large-6 columns tip-subsection">
-            <div className="tip-subsection-heading">
+        <div className="row tip-home-section">
+          <div className="small-12 large-6 columns tip-home-subsection">
+            <div className="tip-home-subsection-heading">
               Why is this a real problem?
             </div>
-            <div className="tip-text">
+            <p>
               Through the inter-generational transmission of preferences and beliefs, families
               have the earliest, most direct impact on the development of children’s cognitive
               and social development. The channels of such transmission could be outright
@@ -50,9 +50,9 @@ export const Home = () => <div>
               and sharing), and examples for the latter would be a family where household
               chores are females’ responsibility and males have more say in important
               decisions.
-            </div>
+            </p>
           </div>
-          <div className="small-12 large-6 columns tip-subsection">
+          <div className="small-12 large-6 columns tip-home-subsection">
             <img
               style={{
               width: "100%",
@@ -62,8 +62,8 @@ export const Home = () => <div>
           </div>
         </div>
 
-        <div className="row tip-section row-wrap-reverse">
-          <div className="small-12 large-6 columns tip-subsection">
+        <div className="row tip-home-section row-wrap-reverse">
+          <div className="small-12 large-6 columns tip-home-subsection">
             <img
               style={{
               width: "100%",
@@ -71,11 +71,11 @@ export const Home = () => <div>
             }}
               src="http://1.darkroom.stylist.co.uk/980/0631dc4d2a1386d0514f81b330ec61de:e44d18f472fcbb44095d9e17ce1a1ffd/simpsons-sex-ed.png"/>
           </div>
-          <div className="small-12 large-6 columns tip-subsection">
-            <div className="tip-subsection-heading">
+          <div className="small-12 large-6 columns tip-home-subsection">
+            <div className="tip-home-subsection-heading">
               How are we solving it?
             </div>
-            <div className="tip-text">
+            <p>
               Use stories to retell the narrative. Stories are illustrated and set in the
               Indian setting ( so you won’t find a robert or a nora in the stories). Stories
               have characters who are brown skinned, hairy, wear gender neutral clothing, make
@@ -85,7 +85,7 @@ export const Home = () => <div>
               characters take the child through a journey of understanding gender and in the
               same vein, developing their emotional literacy. We cover topics like
               commonalities, uniqueness, acceptance, emotional literacy.
-            </div>
+            </p>
           </div>
         </div>
 

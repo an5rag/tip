@@ -1,4 +1,27 @@
 .tip-header {
-  margin-top: $header-margin-top;
-  margin-bottom: $header-margin-top;  
+    margin-top: $header-margin-top;
+    margin-bottom: $header-margin-top;
+    .tip-title {
+        @extend %heading-regular;
+        font-family: $primary-heading-font;
+    }
+    .tip-nav-link {
+        @extend %text-large;
+        font-family: $primary-heading-font;
+        color: $nav-link-color;
+        a {
+            padding: 2px;
+        }
+        &:hover {
+            color: $nav-link-color-hover;
+            a:not(.tip-nav-link-active) {
+                // apply bottom border if not active
+                border-bottom: 1px solid $nav-link-color-hover;
+            }
+        }
+        .tip-nav-link-active {
+            background-color: $secondary-background-color;
+            color: $primary-contrast-color;
+        }
+    }
 }

@@ -1,3 +1,26 @@
-.tip-home {
-  
+.tip-home-section {
+    p {
+        @extend %text-regular;
+        font-family: $primary-text-font;
+        letter-spacing: $normal-letter-spacing;
+        color: $primary-color;
+    }
+    .tip-home-massive-heading {
+        @extend %heading-x-large;
+        font-family: $primary-heading-font;
+        color: $primary-color;
+        font-weight: $heavy-font-weight;
+    }
+    .tip-home-subsection {
+        margin-bottom: $section-margin-bottom;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .tip-home-subsection-heading {
+        @extend %heading-regular;
+        font-family: $primary-heading-font;
+        color: $primary-color;
+        font-weight: $heavy-font-weight;
+    }
 }

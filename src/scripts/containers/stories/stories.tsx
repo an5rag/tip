@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Story } from './components/story';
+import { Story, IStoryProps } from './components/story';
 export const Stories = () => {
   // document.body.style.backgroundColor = "green";
-  const mockStories = [
-    {}, {}, {}, {}, {}, {}, {}, {}, {}
+  const mockStories: IStoryProps[] = [
+    {title:"First story"}, {title:"Second story"}
   ]
 
   const storyGrid = mockStories.map((story, index) => {
     return (
-      <Story key={index}/>
+      <Story key={index} title={story.title}/>
     )
   })
   return (

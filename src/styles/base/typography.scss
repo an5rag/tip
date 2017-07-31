@@ -1,70 +1,105 @@
-// Fonts
-// ==========================================================================
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
 
-$title-font: 'Work Sans', sans-serif;
-$heading-font: '';
-$primary-font: 'Source Sans Pro', sans-serif;
+// Font faces
+$primary-heading-font: 'Karla',sans-serif;
+$secondary-heading-font: 'Source Sans Pro',sans-serif;
 
-// Text
-// ==========================================================================
+$primary-text-font: 'Source Sans Pro',sans-serif;
+$secondary-text-font: 'Source Sans Pro',sans-serif;
 
-$extra-small-font-size: 1em;
-$extra-small-font-line-height: 1.2em;
-$small-font-size: 1.2em;
-$small-font-line-height: 1.4em;
-$medium-font-size: 20px;
-$medium-font-line-height: 28px;
-$large-font-size: 25px;
-$large-font-line-height: 32px;
-$extra-large-font-size: 33px;
-$extra-large-font-line-height: 38px;
+// Font weights
+$normal-font-weight: 400;
+$light-font-weight: 300;
+$heavy-font-weight: 700;
+
+// Font sizes
+$base-font-size: 16px;
+$mobile-base-font-size: 14px;
+
+// letter spacing
+$normal-letter-spacing: 0.3;
+$narrow-letter-spacing: 0.1;
+$wide-letter-spacing: 0.5;
+
+/* ==========================================================================
+   PLACEHOLDERS
+   ========================================================================== */
 
 
-%light-font {
-  font-weight: 300;
+/* Text
+   ========================================================================== */
+
+%text-small {
+    font-size: 0.875em;
+    line-height: 1.5em;
 }
 
-%regular-font {
-  font-weight: 400;
+%text-regular {
+    font-size: 1.1em;
+    line-height: 1.6em;
 }
 
-%semi-bold-font {
-  font-weight: 500;
+%text-large {
+    font-size: 1.2em;
+    line-height: 1.6em;
 }
 
-%bold-font {
-  font-weight: 700;
+%text-x-large {
+    font-size: 1.6em;
+    line-height: 1.6em;
 }
 
-%extra-small-font {
-  font-size: $extra-small-font-size;
-  line-height: $extra-small-font-line-height;
+
+/* Heading
+   ========================================================================== */
+
+%heading-x-small {
+    font-size: 0.875em;
+    line-height: 1.5em;
 }
 
-%small-font {
-  font-size: $small-font-size;
-  line-height: $small-font-line-height;
+%heading-small {
+    // not used yet
+    font-size: 1.2em;
+    line-height: 1.6em;
 }
 
-%medium-font {
-  font-size: $medium-font-size;
-  line-height: $medium-font-line-height;
+%heading-regular {
+    font-size: 1.75em;
+    line-height: 1.6em;
 }
 
-%large-font {
-  font-size: $large-font-size;
-  line-height: $large-font-line-height;
+%heading-large {
+    font-size: 2.25em;
+    line-height: 1.3em;
 }
 
-%extra-large-font {
-  font-size: $extra-large-font-size;
-  line-height: $extra-large-font-line-height;
+%heading-x-large {
+    font-size: 4em;
+    line-height: 1.1em;
 }
 
-%slow-transition {
-  transition: all ease 0.3s;
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
+// normalizing
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
 }
 
-%fast-transition {
-  transition: all ease 0.2s;
+
+.tip-text-block {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
