@@ -1,26 +1,43 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$section-min-height: 25rem;
+$section-margin-bottom: 3rem;
+$subsection-heading-margin-bottom: 0.5rem;
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
 .tip-home-section {
-    p {
-        @extend %text-regular;
-        font-family: $primary-text-font;
-        letter-spacing: $normal-letter-spacing;
-        color: $primary-color;
-    }
-    .tip-home-massive-heading {
-        @extend %heading-x-large;
-        font-family: $primary-heading-font;
-        color: $primary-color;
-        font-weight: $heavy-font-weight;
+    img {
+        width: 100%;
+        height: auto;
     }
     .tip-home-subsection {
         margin-bottom: $section-margin-bottom;
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-    .tip-home-subsection-heading {
-        @extend %heading-regular;
-        font-family: $primary-heading-font;
-        color: $primary-color;
-        font-weight: $heavy-font-weight;
+        padding: 0 20px 0 20px;
+        .tip-home-subsection-heading {
+            @extend %heading-regular;
+            margin-bottom: $subsection-heading-margin-bottom;
+            font-family: $primary-heading-font;
+            color: $primary-color;
+            font-weight: $normal-font-weight;
+        }
+        p {
+            @extend %text-large;
+            font-family: $primary-text-font;
+            color: #373737;
+        }
+        .tip-home-massive-heading {
+            @extend %heading-x-large;
+            font-family: $primary-heading-font;
+            color: $primary-color;
+            font-weight: $heavy-font-weight;
+        }
     }
 }
