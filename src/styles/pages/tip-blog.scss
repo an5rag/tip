@@ -1,23 +1,32 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$heading-margin-bottom: 2rem;
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
 .tip-blog-heading {
     margin-bottom: $heading-margin-bottom;
     .tip-blog-heading-text {
         @extend %heading-large;
-        font-family: $primary-heading-font;
+        font-family: $secondary-heading-font;
     }
     .tip-blog-subheading {
         @extend %heading-x-small;
         font-family: $secondary-heading-font;
         color: $secondary-color;
-        letter-spacing: 1;
+        letter-spacing: $wide-letter-spacing;
     }
 }
 
 .tip-blog-text {
-    @extend %text-large;
-    font-family: $primary-text-font;
-    letter-spacing: $normal-letter-spacing;
-    color: $primary-color;
+    @extend .tip-text-block;
     p {
-        @extend .tip-text-block;
+        @extend %text-regular;
+        font-family: $primary-text-font;
+        color: #373737;
     }
 }
