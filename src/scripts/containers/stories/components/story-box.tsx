@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface IStoryProps {
-  title: string;
+  title?: string;
   id?: string;
   image?: any;
   synopsis?: string;
@@ -23,7 +23,7 @@ export class Story extends React.Component<IStoryProps, IState> {
   public static defaultProps: IStoryProps = {
     title: "Story Title",
     id: "",
-    image: "",
+    image: "http://rishikajain.com/wp-content/uploads/2016/10/Lessons-from-this-picture.jpg",
     synopsis: "Story synopsis",
     author: {
       name: "Author Name",
@@ -55,12 +55,23 @@ export class Story extends React.Component<IStoryProps, IState> {
   }
 
   render() {
-    const storyBoxClasses = `tip-story-box ${this.state.isExpanded ? "tip-story-box-expanded" : ""}`;
+    const storyBoxClasses = `tip-story-box`;
     return (
-
       <div className={storyBoxClasses} >
-        <div className="story-title" style={{color: "white"}}>{this.props.title}</div>
+        <img src={this.props.image}/>
+        <div className="tip-story-box-caption">
+          <div className="story-title">
+            {this.props.title}
+          </div>
+          <div className="story-subtitle">
+            {this.props.author.name}
+          </div>
+                    <div className="story-tags">
+            FEMINISM | SEXISM | IDEALISM
+          </div>
         </div>
+      </div>
+
     );
   }
 }

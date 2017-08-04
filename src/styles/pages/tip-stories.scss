@@ -1,11 +1,18 @@
-// VARIABLES
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
 $story-box-margin: 1em;
 $story-box-bg-color: black;
-$story-box-height: 300px;
-$story-box-width: 300px;
-$story-box-height-expanded: 600px;
-$story-box-width-expanded: 600px;
+$story-box-caption-color: white;
+$story-box-height: 250px;
+$story-box-width: 250px;
+$story-box-mobile-height: 175px;
+$story-box-mobile-width: 175px;
 
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
 
 .tip-stories {
     .tip-story-grid {
@@ -14,19 +21,69 @@ $story-box-width-expanded: 600px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-
         .tip-story-box {
             background-color: $story-box-bg-color;
             /* top | right | bottom | left */
             margin: 0 $story-box-margin $story-box-margin 0;
             height: $story-box-height;
             width: $story-box-width;
-            transition: all 1s;
-            &.tip-story-box-expanded {
-                height: $story-box-height-expanded;
-                width: $story-box-width-expanded;
+            @media only screen and (max-width: 480px) {
+                height: $story-box-mobile-height;
+                width: $story-box-mobile-width;
             }
-            .tip-story-box-caption {}
+            position: relative;
+            overflow: hidden;
+            
+            filter:grayscale(0%);
+            transition:all 0.3s;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+                transition: object-position 0.3s;
+            }
+            &:hover {
+                
+                filter: grayscale(90%);
+                .tip-story-box-caption {
+                    transform: translate(0, 0);
+                }
+                img {
+                    object-position: 0 0;
+                }
+            }
+            .tip-story-box-caption {
+                background: linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.8),transparent);
+                padding: 10px;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                color: $story-box-caption-color;
+                transform: translate(0, 30px);
+                transition: transform 0.3s;
+                .story-title {
+                    @extend %text-x-large;
+                    font-weight: $normal-font-weight;
+                    font-family: $primary-heading-font;
+                }
+                .story-subtitle {
+                    // to allign with the title
+                    padding-left: 3px;
+                    font-family: $secondary-heading-font;
+                    @extend %text-small;
+                    font-weight: $light-font-weight;
+                }
+                .story-tags {
+                    // to allign with the title
+                    padding-left: 3px;
+                    margin-top: 20px;
+                    font-family: $secondary-heading-font;
+                    @extend %text-x-small;
+                    font-weight: $light-font-weight;
+                    letter-spacing: $wide-letter-spacing;
+                }
+            }
         }
     }
 }
