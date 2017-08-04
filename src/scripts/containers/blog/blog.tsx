@@ -2,7 +2,7 @@ import * as React from 'react';
 import { BbAnimatedText } from "../../building-blocks/bb-animated-text";
 export const Blog = () => (
   <div className="row row-center">
-    <div className="small-12 medium-10 large-8 columns">
+    <div className="small-10 medium-10 large-8 columns">
       <div className="tip-blog-heading">
         <div className="tip-blog-heading-text">
           de Finibus Bonorum et Malorum!
