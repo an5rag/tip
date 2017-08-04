@@ -2,16 +2,14 @@
 // ========================================================================== */
 
 $primary-color: #000000;
-$primary-contrast-color: #ffffff;
+$primary-contrast-color: #dddddd;
 $primary-background-color: #fefefe;
 
-$secondary-color: #808080;
+$secondary-color: #888888;
 $secondary-contrast-color: #757575;
 $secondary-background-color: #1b1b1b;
 
+$tertiary-color: lightGreen;
 
-$nav-link-color: #808080;
-$nav-link-color-hover: $primary-color;
-
-$regular-link-color: lightGreen;
+$regular-link-color: $tertiary-color;
 $regular-link-color-hover: $primary-color;

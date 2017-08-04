@@ -1,6 +1,17 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$nav-link-color: #808080;
+$nav-link-color-hover: $primary-color;
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
 .tip-header {
-    margin-top: $header-margin-top;
-    margin-bottom: $header-margin-top;
+    margin-top: $header-margin;
+    margin-bottom: $header-margin;
     .tip-title {
         @extend %heading-regular;
         font-family: $primary-heading-font;
@@ -10,7 +21,7 @@
         font-family: $primary-heading-font;
         color: $nav-link-color;
         a {
-            padding: 2px;
+            padding: 3 8 3 8;
         }
         &:hover {
             color: $nav-link-color-hover;

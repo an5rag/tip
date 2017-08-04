@@ -1,45 +1,45 @@
+/* ==========================================================================
+   FRAMEWORK - Structure and layout files.
+   ========================================================================== */
 
-/* FRAMEWORK - Structure and layout files.
-========================================================================== */
 @import 'node_modules/normalize.css/normalize';
 @import 'node_modules/foundation-sites/scss/foundation';
 @include foundation-flex-grid;
 
-
-// /* BASE - Base Variable file along with starting point Mixins and Placeholders.
-// ========================================================================== */
+/* ==========================================================================
+   BASE - Base Variable file along with starting point Mixins and Placeholders.
+   ========================================================================== */
 
 @import 'base/colors.scss';
 @import 'base/typography.scss';
 @import 'base/gutters.scss';
 @import 'base/base.scss';
-// @import 'base/utility.scss';
+@import 'base/utility.scss';
 
-// /* MODULES - Re-usable site elements.
-// ========================================================================== */
+/* ==========================================================================
+   MODULES - Re-usable site elements.
+   ========================================================================== */
 
 @import 'components/links.scss';
 
+/* ==========================================================================
+   CONTAINERS - Components built using modules
+   ========================================================================== */
 
-
-
-// /* CONTAINERS - Components built using modules
-// ========================================================================== */
 @import 'containers/tip-header.scss';
 @import 'containers/tip-body.scss';
 @import 'containers/tip-footer.scss';
-@import 'containers/tip-section.scss';
 
+/* ==========================================================================
+   PAGES - Scenes built using containers
+   ========================================================================== */
 
-// /* PAGES - Scenes built using containers
-// ========================================================================== */
-// Pages
 @import 'pages/tip-stories.scss';
 @import 'pages/tip-home.scss';
 @import 'pages/tip-blog.scss';
 
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
 
-
-/* FONTS
-========================================================================== */
 @import url('https://fonts.googleapis.com/css?family=Karla|Source+Sans+Pro:300,400,600|PT+Mono');

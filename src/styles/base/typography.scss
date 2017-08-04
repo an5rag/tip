@@ -30,15 +30,18 @@ $wide-letter-spacing: 0.5;
 
 /* Text
    ========================================================================== */
-
+%text-x-small {
+    font-size: 0.625em;
+    line-height: 1.5em;
+}
 %text-small {
     font-size: 0.875em;
     line-height: 1.5em;
 }
 
 %text-regular {
-    font-size: 1.1em;
-    line-height: 1.6em;
+    font-size: 1.2em;
+    line-height: 1.8em;
 }
 
 %text-large {
@@ -47,7 +50,7 @@ $wide-letter-spacing: 0.5;
 }
 
 %text-x-large {
-    font-size: 1.6em;
+    font-size: 1.4em;
     line-height: 1.6em;
 }
 
@@ -86,19 +89,6 @@ $wide-letter-spacing: 0.5;
    SELECTORS
    ========================================================================== */
 
-// normalizing
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin: 0;
-    padding: 0;
-}
-
 .tip-text-block {
-    padding-top: 1em;
     padding-bottom: 1em;
 }

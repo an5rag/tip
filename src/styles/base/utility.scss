@@ -1,4 +1,17 @@
 // bottom gradient background
+
+.row-center {
+    justify-content: center;
+}
+
+.row-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.text-center {
+    text-align: center;
+}
+
 .bg-image-container {
     width: 100vw;
     position: absolute;
@@ -47,7 +60,7 @@
     @keyframes anim-text-flow-keys {
         @for $i from 0 through $animationSteps {
             #{percentage($i * (1 / $animationSteps))} {
-                color: hsla($i*(360/$animationSteps), 60, 60, 1);
+                color: hsla($i*(360/$animationSteps), 60, 60, 0.5);
             }
         }
     }

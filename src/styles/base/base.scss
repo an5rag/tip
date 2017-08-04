@@ -12,6 +12,18 @@ body {
     background-color: $primary-background-color;
 }
 
+// normalizing
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
 a {
     color: inherit;
     text-decoration: inherit;
@@ -21,16 +33,4 @@ a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
-
-.row-center {
-    justify-content: center;
-}
-
-.row-wrap-reverse {
-    flex-wrap: wrap-reverse;
-}
-
-.text-center {
-    text-align: center;
 }
