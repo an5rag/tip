@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export interface IStoryProps {
+export interface IStoryBoxProps {
   title?: string;
   id?: string;
   image?: any;
@@ -16,11 +16,10 @@ export interface IStoryProps {
 }
 
 interface IState {
-  isExpanded: boolean;
 }
 
-export class Story extends React.Component<IStoryProps, IState> {
-  public static defaultProps: IStoryProps = {
+export class StoryBox extends React.Component<IStoryBoxProps, IState> {
+  public static defaultProps: IStoryBoxProps = {
     title: "Story Title",
     id: "",
     image: "http://rishikajain.com/wp-content/uploads/2016/10/Lessons-from-this-picture.jpg",
@@ -35,10 +34,9 @@ export class Story extends React.Component<IStoryProps, IState> {
     }
   };
 
-  constructor(props: IStoryProps) {
+  constructor(props: IStoryBoxProps) {
     super(props);
     this.state = {
-      isExpanded: false
     };
   }
 

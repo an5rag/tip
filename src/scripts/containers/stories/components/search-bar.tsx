@@ -2,6 +2,10 @@ import * as React from "react";
 
 export interface ISearchBarProps {
   title?: string;
+  history?: {
+    label: string;
+    url: string;
+  }[]
 }
 
 interface IState {
@@ -28,10 +32,8 @@ export class SearchBar extends React.Component<ISearchBarProps, IState> {
   render() {
     return (
       <div className="tip-search-bar" >
-        <div className="tip-search-bar-item">Search by title: ___________</div>
-        <div className="tip-search-bar-item">Latest v</div>        
+        <div className="tip-search-bar-item">All Stories</div>       
       </div>
-
     );
   }
 }
