@@ -9,15 +9,24 @@ import { Blog } from '../blog/blog'
 
 const Body = () =>
   <div className="tip-body">
-    <Route exact path="/" component={Home} />
-    <Route path="/stories" component={Stories} />
-    <Route path="/talk" component={Talk} />
-    <Route path="/blog" component={Blog} />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/stories" component={Stories} />
+      <Route path="/talk" component={Talk} />
+      <Route path="/blog" component={Blog} />
+      <Route render={() => {
+        return (
+          <div>
+            404: Page Not found.
+          </div>
+        )
+      }} />
+    </Switch>
   </div>;
 
 export const Main = () => (
   <div>
-    <Header/>
+    <Header />
     <Body />
     <Footer />
   </div>
