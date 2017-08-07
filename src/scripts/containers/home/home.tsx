@@ -1,5 +1,6 @@
 import * as React from "react";
 import { BbAnimatedText } from "../../building-blocks/bb-animated-text";
+import { TipLink } from "../../building-blocks/tip-link";
 
 export const Home = () => <div>
   <div className="row row-center">
@@ -11,7 +12,6 @@ export const Home = () => <div>
         </div>
       </div>
       <div className="row tip-home-section">
-
         <div className="small-12 large-6 columns tip-home-subsection">
           <div className="tip-home-massive-heading">
             {/* <BbAnimatedText strings={["We're breaking gender stereotypes in the everyday classroom.", "We tell children stories."] } infinite={true} iterations={10} characterTimeout={5} /> */}
@@ -19,6 +19,22 @@ export const Home = () => <div>
             </div>
         </div>
         <div className="small-12 large-6 columns tip-home-subsection">
+          <p>
+            Three alumni of the Young India Fellowship and everyday feminists, <TipLink label="Meghna" link="https://www.facebook.com/meghna.chaudhury" />, <TipLink label="Aliysha" link="https://www.facebook.com" />, and <TipLink label="Sudhamshu" link="https://www.facebook.com/sudhamshu.mitra" /> started the Irrelevant Project with the simple,
+            challenging vision of breaking gender stereotypes in the everyday classroom.
+            </p>
+          <p>
+            <br />Having faced the oppression and the limitations of the patriarchal society, the three feminists aim to change the narrative for the coming generation through story-telling and gender-sensitization workshops for children.
+
+            </p>
+        </div>
+      </div>
+
+      <div className="row tip-home-section">
+        <div className="small-12 large-12 columns tip-home-subsection">
+          <div className="tip-home-subsection-heading">
+            What exactly is the problem?
+          </div>
           <p>
             Stereotypical beliefs about gender, which rigidly characterize differences
               between sexes and appropriate gender roles, are pervasive in most societies.
@@ -36,7 +52,7 @@ export const Home = () => <div>
         <div className="small-12 large-6 columns tip-home-subsection">
           <div className="tip-home-subsection-heading">
             Why is this a real problem?
-            </div>
+          </div>
           <p>
             Through the inter-generational transmission of preferences and beliefs, families
               have the earliest, most direct impact on the development of children’s cognitive
@@ -52,10 +68,6 @@ export const Home = () => <div>
         </div>
         <div className="small-12 large-6 columns tip-home-subsection">
           <img
-            style={{
-              width: "100%",
-              height: "auto"
-            }}
             src="http://bloximages.chicago2.vip.townnews.com/dailyuw.com/content/tncms/assets/v3/editorial/d/06/d06b2394-839b-11e6-9543-1f393d66c391/57e89a6749ea5.image.jpg?resize=1200%2C944" />
         </div>
       </div>
@@ -63,10 +75,6 @@ export const Home = () => <div>
       <div className="row tip-home-section">
         <div className="small-12 large-6 columns tip-home-subsection">
           <img
-            style={{
-              width: "100%",
-              height: "auto"
-            }}
             src="http://1.darkroom.stylist.co.uk/980/0631dc4d2a1386d0514f81b330ec61de:e44d18f472fcbb44095d9e17ce1a1ffd/simpsons-sex-ed.png" />
         </div>
         <div className="small-12 large-6 columns tip-home-subsection">
@@ -74,16 +82,30 @@ export const Home = () => <div>
             How are we solving it?
             </div>
           <p>
-            Use stories to retell the narrative. Stories are illustrated and set in the
+            We use stories to retell the narrative. Stories are illustrated and set in the
               Indian setting ( so you won’t find a robert or a nora in the stories). Stories
               have characters who are brown skinned, hairy, wear gender neutral clothing, make
               choices, learn about consent etc. Illustrations were damn important for our work
               - without it the story would fail Gender workshops - this is what we piloted
-              with in a school in Delhi. We created like this very simple workbook where 2
-              characters take the child through a journey of understanding gender and in the
-              same vein, developing their emotional literacy. We cover topics like
+              with in a school in Delhi. We cover topics like
               commonalities, uniqueness, acceptance, emotional literacy.
             </p>
+        </div>
+      </div>
+
+      <div className="row tip-home-section row-wrap-reverse">
+        <div className="small-12 large-6 columns tip-home-subsection">
+          <p>
+            We are nothing without our writers and illustrators.
+            <br />
+            Contribute by applying <TipLink label="here" link="#" />.
+          </p>
+        </div>
+
+        <div className="small-12 large-6 columns tip-home-subsection">
+          <div className="tip-home-massive-heading">
+            Together we can. Together we must.
+            </div>
         </div>
       </div>
     </div>

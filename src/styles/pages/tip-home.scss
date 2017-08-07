@@ -28,17 +28,17 @@ $subsection-heading-margin-bottom: 0.5rem;
             color: $primary-color;
             font-weight: $normal-font-weight;
         }
-        p {
-            @extend %text-large;
-            font-family: $primary-text-font;
-            color: #8b8b8b;
-            font-weight: $light-font-weight;
-        }
         .tip-home-massive-heading {
             @extend %heading-x-large;
             font-family: $primary-heading-font;
             color: $primary-color;
             font-weight: $heavy-font-weight;
+        }
+        p {
+            @extend %text-large;
+            font-family: $primary-text-font;
+            color: #8b8b8b;
+            font-weight: $light-font-weight;
         }
     }
 }
