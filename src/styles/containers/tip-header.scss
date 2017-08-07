@@ -27,7 +27,7 @@ $nav-link-color-hover: $primary-color;
             color: $nav-link-color-hover;
             a:not(.tip-nav-link-active) {
                 // apply bottom border if not active
-                border-bottom: 1px solid $nav-link-color-hover;
+                border-bottom: 2px solid $nav-link-color-hover;
             }
         }
         .tip-nav-link-active {
