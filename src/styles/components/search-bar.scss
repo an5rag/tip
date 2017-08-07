@@ -1,0 +1,22 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$search-bar-margin-top-bottom: 1rem;
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
+.tip-search-bar {
+  /* top | right | bottom | left */
+  margin: $search-bar-margin-top-bottom $side-padding $search-bar-margin-top-bottom $side-padding;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .tip-search-bar-item {
+    @extend %text-small;
+    color: $secondary-color;
+    font-family: $primary-text-font;
+  }
+}

@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Story, IStoryProps } from './components/story-box';
+import { SearchBar, ISearchBarProps } from './components/search-bar';
+
 export const Stories = () => {
   // document.body.style.backgroundColor = "green";
   const mockStories: IStoryProps[] = [
@@ -19,10 +21,7 @@ export const Stories = () => {
   return (
     <div className="row row-center">
       <div className="small-12 columns tip-stories">
-        <div className="row row-center tip-section">
-          <div className="small-12 columns tip-subsection shrink">
-          </div>
-        </div>
+        <SearchBar/>
         <div className="tip-story-grid">
           {storyGrid}
         </div>

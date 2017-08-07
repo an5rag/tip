@@ -4,13 +4,13 @@ import { Title } from './components/title';
 
 
 const NavElement = (props: any) => (
-     <div className="shrink columns tip-nav-link">
-                <NavLink 
-                    to={props.link}
-                    activeClassName="tip-nav-link-active"
-                >
-                    {props.name}
-                </NavLink>
+    <div className="shrink columns tip-nav-link">
+        <NavLink
+            to={props.link}
+            activeClassName="tip-nav-link-active"
+        >
+            {props.name}
+        </NavLink>
     </div>
 )
 
@@ -18,13 +18,13 @@ export const Header = () => (
     <div className="tip-header">
         <div className="row row-center">
             <Link to="/">
-                <Title/>
+                <Title />
             </Link>
         </div>
         <div className="row row-center">
-            <NavElement link="/stories" name="Stories"/>
-            <NavElement link="/talk" name="Talk"/>
-            <NavElement link="/blog" name="Blog"/>              
+            <NavElement link="/stories" name="Stories" />
+            <NavElement link="/talk" name="Talk" />
+            <NavElement link="/blog" name="Blog" />
         </div>
     </div>
 );

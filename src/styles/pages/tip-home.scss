@@ -20,7 +20,7 @@ $subsection-heading-margin-bottom: 0.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 20px 0 20px;
+        padding: 0 $side-padding 0 $side-padding;
         .tip-home-subsection-heading {
             @extend %heading-regular;
             margin-bottom: $subsection-heading-margin-bottom;
@@ -31,7 +31,8 @@ $subsection-heading-margin-bottom: 0.5rem;
         p {
             @extend %text-large;
             font-family: $primary-text-font;
-            color: #373737;
+            color: #8b8b8b;
+            font-weight: $light-font-weight;
         }
         .tip-home-massive-heading {
             @extend %heading-x-large;

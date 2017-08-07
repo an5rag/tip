@@ -8,25 +8,27 @@ $heading-margin-bottom: 2rem;
    SELECTORS
    ========================================================================== */
 
-.tip-blog-heading {
-    margin-bottom: $heading-margin-bottom;
-    .tip-blog-heading-text {
-        @extend %heading-large;
-        font-family: $secondary-heading-font;
+.tip-blog {
+    padding: 0 $side-padding 0 $side-padding;
+    .tip-blog-heading {
+        margin-bottom: $heading-margin-bottom;
+        .tip-blog-heading-text {
+            @extend %heading-large;
+            font-family: $secondary-heading-font;
+        }
+        .tip-blog-subheading {
+            @extend %heading-x-small;
+            font-family: $secondary-heading-font;
+            color: $secondary-color;
+            letter-spacing: $wide-letter-spacing;
+        }
     }
-    .tip-blog-subheading {
-        @extend %heading-x-small;
-        font-family: $secondary-heading-font;
-        color: $secondary-color;
-        letter-spacing: $wide-letter-spacing;
-    }
-}
-
-.tip-blog-text {
-    @extend .tip-text-block;
-    p {
-        @extend %text-regular;
-        font-family: $primary-text-font;
-        color: #373737;
+    .tip-blog-text {
+        @extend .tip-text-block;
+        p {
+            @extend %text-regular;
+            font-family: $primary-text-font;
+            color: #373737;
+        }
     }
 }
