@@ -40,8 +40,8 @@ $stories-padding: ($side-padding - $story-box-margin);
                 height: 100%;
                 object-fit: cover;
                 object-position: 50% 50%;
-                transition: all 0.3s;
-                filter: blur(0) sepia(0);
+                transition: filter 0.3s, object-position 0.3s;
+                filter: brightness(100%) sepia(0);
             }
             &:hover {
                 .tip-story-box-caption {
@@ -49,7 +49,7 @@ $stories-padding: ($side-padding - $story-box-margin);
                 }
                 img {
                     object-position: 0 0;
-                    filter: blur(2.5px) sepia(30%);
+                    filter: brightness(80%) sepia(60%);
                 }
             }
             .tip-story-box-caption {

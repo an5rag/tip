@@ -28,7 +28,7 @@ $heading-margin-bottom: 2rem;
         p {
             @extend %text-regular;
             font-family: $primary-text-font;
-            color: #373737;
+            color: $secondary-text-color;
         }
     }
 }
