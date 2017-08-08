@@ -45,11 +45,11 @@ $subsection-heading-margin-bottom: 1rem;
             }
         }
     }
-    $duration: 30s;
-    $mobile-duration: 15s;
+    $duration: 25s;
+    $mobile-duration: 20s;
     @keyframes ticker {
         0% {
-            transform: translate3d(100%, 0, 0);
+            transform: translate3d(100vw, 0, 0);
             visibility: visible;
             color: #f53a3a;
         }
@@ -57,12 +57,14 @@ $subsection-heading-margin-bottom: 1rem;
             color: #bef53a;
         }
         100% {
-            transform: translate3d(-300%, 0, 0);
-            color: #3ab9f5;
+            transform: translate3d(-100%, 0, 0);
+            color: #3aafff;
         }
     }
     .tip-home-ticker-container {
-        margin-bottom: $section-margin-bottom*1.75;
+        display:inline-block;
+        white-space: nowrap;
+        margin-bottom: $section-margin-bottom*1.6;
         width: auto;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
@@ -72,10 +74,11 @@ $subsection-heading-margin-bottom: 1rem;
             animation-duration: $mobile-duration;
         }
         .tip-home-ticker {
-            white-space: nowrap;
+            
+            display: inline-block;
             font-family: $primary-heading-font;
             font-weight: $heavy-font-weight;
-            font-size: 8em;
+            font-size: 8.5em;
             line-height: 1.1em;
         }
     }

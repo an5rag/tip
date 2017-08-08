@@ -34,11 +34,17 @@ export const Home = () =>
     </div>
     <div className="tip-home-ticker-container">
       <div className="tip-home-ticker">
-        We are everyday people perturbed, angry, dismayed at the current trend of affairs.
+        Everyday people perturbed, angry, dismayed at the current trend of affairs.
       </div>
     </div>
     <div className="row row-center">
       <div className="small-12 medium-10 columns">
+        <div className="row tip-home-section">
+          <div className="small-12 columns tip-home-subsection">
+            <img
+              src="http://sbrownehr.com/wp-content/uploads/2016/01/cropped-Peace-Signs.jpg" />
+          </div>
+        </div>
         <div className="row tip-home-section">
           <div className="small-12 large-12 columns tip-home-subsection">
             <div className="tip-home-subsection-heading">
@@ -75,7 +81,7 @@ export const Home = () =>
           </div>
           <div className="small-12 large-6 columns tip-home-subsection">
             <img
-              src="https://feministphilosophers.files.wordpress.com/2012/03/line2-29-10-620x418.jpg" />
+              src="https://www.jaydinitto.com/wp-content/uploads/2013/06/bunch-of-books.jpg" />
           </div>
         </div>
 
@@ -112,7 +118,7 @@ export const Home = () =>
 
           <div className="small-12 large-6 columns tip-home-subsection">
             <div className="tip-home-massive-heading">
-              Together we can. Together we must.
+              Talk to us; we don't bite.
             </div>
           </div>
         </div>
