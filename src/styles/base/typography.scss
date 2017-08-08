@@ -30,10 +30,12 @@ $wide-letter-spacing: 0.5;
 
 /* Text
    ========================================================================== */
+
 %text-x-small {
     font-size: 0.625em;
     line-height: 1.5em;
 }
+
 %text-small {
     font-size: 0.875em;
     line-height: 1.5em;
@@ -90,8 +92,7 @@ $wide-letter-spacing: 0.5;
    ========================================================================== */
 
 .tip-text-block {
-    p {
-    padding-bottom: 1em;
-        
+    p:not(:last-child) {
+        padding-bottom: 1rem;
     }
 }

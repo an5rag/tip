@@ -4,41 +4,79 @@
 
 $section-min-height: 25rem;
 $section-margin-bottom: 3rem;
-$subsection-heading-margin-bottom: 0.5rem;
+$subsection-heading-margin-bottom: 1rem;
 
 /* ==========================================================================
    SELECTORS
    ========================================================================== */
 
-.tip-home-section {
-    img {
-        width: 100%;
-        height: auto;
+.tip-home {
+    overflow-x: hidden;
+    .tip-home-section {
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .tip-home-subsection {
+            margin-bottom: $section-margin-bottom;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 $side-padding 0 $side-padding;
+            .tip-home-subsection-heading {
+                @extend %heading-regular;
+                margin-bottom: $subsection-heading-margin-bottom;
+                font-family: $primary-heading-font;
+                color: $primary-color;
+                font-weight: $normal-font-weight;
+            }
+            .tip-home-massive-heading {
+                @extend %heading-x-large;
+                font-family: $primary-heading-font;
+                color: $primary-color;
+                font-weight: $heavy-font-weight;
+            }
+            @extend .tip-text-block;
+            p {
+                @extend %text-large;
+                font-family: $primary-text-font;
+                color: $primary-color;
+                font-weight: $light-font-weight;
+            }
+        }
     }
-    .tip-home-subsection {
-        margin-bottom: $section-margin-bottom;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 $side-padding 0 $side-padding;
-        .tip-home-subsection-heading {
-            @extend %heading-regular;
-            margin-bottom: $subsection-heading-margin-bottom;
-            font-family: $primary-heading-font;
-            color: $primary-color;
-            font-weight: $normal-font-weight;
+    $duration: 30s;
+    $mobile-duration: 15s;
+    @keyframes ticker {
+        0% {
+            transform: translate3d(100%, 0, 0);
+            visibility: visible;
+            color: #f53a3a;
         }
-        .tip-home-massive-heading {
-            @extend %heading-x-large;
+        50% {
+            color: #bef53a;
+        }
+        100% {
+            transform: translate3d(-300%, 0, 0);
+            color: #3ab9f5;
+        }
+    }
+    .tip-home-ticker-container {
+        margin-bottom: $section-margin-bottom*1.75;
+        width: auto;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-name: ticker;
+        animation-duration: $duration;
+        @media only screen and (max-width: 480px) {
+            animation-duration: $mobile-duration;
+        }
+        .tip-home-ticker {
+            white-space: nowrap;
             font-family: $primary-heading-font;
-            color: $primary-color;
             font-weight: $heavy-font-weight;
-        }
-        p {
-            @extend %text-large;
-            font-family: $primary-text-font;
-            color: #8b8b8b;
-            font-weight: $light-font-weight;
+            font-size: 8em;
+            line-height: 1.1em;
         }
     }
 }
