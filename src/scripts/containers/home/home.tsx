@@ -81,7 +81,7 @@ export const Home = () =>
           </div>
           <div className="small-12 large-6 columns tip-home-subsection">
             <img
-              src="https://www.jaydinitto.com/wp-content/uploads/2013/06/bunch-of-books.jpg" />
+              src="https://feministphilosophers.files.wordpress.com/2012/03/line2-29-10-620x418.jpg" />
           </div>
         </div>
 
