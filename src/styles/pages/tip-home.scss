@@ -45,8 +45,8 @@ $subsection-heading-margin-bottom: 1rem;
             }
         }
     }
-    $duration: 25s;
-    $mobile-duration: 20s;
+    $duration: 30s;
+    $mobile-duration: 25s;
     @keyframes ticker {
         0% {
             transform: translate3d(100vw, 0, 0);

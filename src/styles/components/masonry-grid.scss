@@ -1,0 +1,49 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$tip-grid-element-margin: 5px;
+$tip-masongry-grid-vertical-margin: 3em;
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
+.tip-masonry-grid {
+    margin: 0 auto $tip-masongry-grid-vertical-margin auto;
+    .grid-element {
+        margin: $tip-grid-element-margin;
+        display: relative;
+        .grid-element-image {
+            opacity: 1;
+            transition: opacity 0.3s;
+            width: 200px;
+            filter: grayscale(80%);
+            @media only screen and (max-width: 720px) {
+                width: 150px;
+            }
+            @media only screen and (max-width: 480px) {
+                width: 120px;
+            }
+        }
+        .grid-element-caption {
+            opacity: 0;
+            @extend %heading-x-small;
+            font-family: $secondary-heading-font;
+            color: $primary-color;
+            letter-spacing: $wide-letter-spacing;
+            position: absolute;
+            top: 42%;
+            width: 100%;
+            text-align: center;
+        }
+        &:hover {
+            .grid-element-image {
+                opacity: 0;
+            }
+            .grid-element-caption {
+                opacity: 1;
+            }
+        }
+    }
+}
