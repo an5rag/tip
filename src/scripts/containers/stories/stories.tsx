@@ -33,7 +33,6 @@ export const Stories = (props: { match: IMatch }) => {
   return (
     <div className="row row-center">
       <div className="small-12 columns tip-stories">
-        <SearchBar />
         <Route path={`${props.match.url}/:storyId`} component={StoryContainer} />
         <Route exact path={props.match.url} render={() => (
           <div>
