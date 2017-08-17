@@ -1,0 +1,54 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
+.tip-story {
+    padding: 0 $side-padding 0 $side-padding;
+    .cover-image {
+        width: 100%;
+        height: auto;
+    }
+    .title {
+        @extend %heading-x-large;
+        font-weight: $heavy-font-weight;
+        font-family: $primary-heading-font;
+        margin-bottom: 1rem;
+    }
+    .synopsis {
+        margin-bottom: 1rem;
+        @extend %text-large;
+        font-family: $primary-text-font;
+        color: $primary-text-color;
+    }
+    .info {
+        margin-bottom: 1rem;
+        .info-key {
+            @extend %text-large;
+            font-family: $primary-heading-font;
+            color: $secondary-contrast-color;
+            margin-right: 1rem;
+        }
+        .info-value {
+            @extend %text-large;
+            font-family: $primary-heading-font;
+            color: $primary-text-color;
+        }
+    }
+    .heading {
+        @extend %heading-large;
+        font-family: $primary-heading-font;
+    }
+    .text {
+        @extend .tip-text-block;
+        p {
+            @extend %text-regular;
+            font-family: $primary-text-font;
+            color: $secondary-text-color;
+        }
+    }
+}

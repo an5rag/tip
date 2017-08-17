@@ -1,8 +1,18 @@
 import * as React from "react";
 
 export const StoryContainer = (props: { match: { params: { storyId: string } } }) => {
+  const title = "Big Book of Why";
+  const synopsis = "Against the background of an evolving middle class family living in Delhi, the protagonist, Anvesha, a 7 year old girl living in Delhi, learns the art of asking questions."
+  const illustrator = { name: "Roopsha Mandal" };
+  const author = { name: "Ashwini Ashokkumar" };
   return (
-    <Story id={props.match.params.storyId} />
+    <Story
+      id={props.match.params.storyId}
+      title={title}
+      synopsis={synopsis}
+      illustrator={illustrator}
+      author={author}
+    />
   )
 }
 
@@ -16,12 +26,13 @@ export interface IStoryProps {
   synopsis?: string;
   author?: {
     name: string;
-    id: string;
+    id?: string;
   };
   illustrator?: {
     name: string;
-    id: string;
+    id?: string;
   };
+  details?: string;
   note?: {
     author: string;
     illustrator: string;
@@ -74,10 +85,30 @@ export class Story extends React.Component<IStoryProps, IState> {
   render() {
     return (
       <div className="tip-story" >
-        <div>
-          STORY!
-          <h3>{this.props.id}</h3>
+        <div className="row row-center">
+          <div className="small-12 medium-10 columns">
+            <h1 className="title">{this.props.title}</h1>
+            <div className="row row-center row-wrap-reverse">
+              <div className="small-12 medium-6 columns synopsis">
+                <p>
+                  {this.props.synopsis}
+                </p>
+              </div>
+              <div className="small-12 medium-6 columns info">
+                <div>
+                  <span className="info-key">Author </span>
+                  <span className="info-value">{this.props.author.name}</span>
+                </div>
+                <div>
+                  <span className="info-key">Illustrator </span>
+                  <span className="info-value">{this.props.illustrator.name}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+
       </div>
     );
   }
