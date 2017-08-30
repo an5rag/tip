@@ -1,37 +1,7 @@
 import * as React from "react";
 import { BbAnimatedText } from "../../building-blocks/bb-animated-text";
 import { TipLink } from "../../building-blocks/tip-link";
-import Masonry from 'react-masonry-component';
-
-const masonryOptions = {
-  // horizontalOrder: true,
-  fitWidth: true
-};
-
-class MasonryGrid extends React.Component<any, any> {
-  render() {
-    var childElements = this.props.elements.map(function (element) {
-      const imageFilter = `grayscale(100%) sepia(100%) hue-rotate(${Math.ceil(Math.random()*360)}deg) saturate(150%)`;
-      return (
-        <div className="grid-element">
-          <img className="grid-element-image hide-on-hover" src={element.src} style={{filter:imageFilter}}/>
-          <div className="grid-element-caption show-on-hover">Anurag Choudhary</div>
-        </div>
-      );
-    });
-
-    return (
-      <Masonry
-        className={'tip-masonry-grid'} // default ''
-        options={masonryOptions} // default {}
-        disableImagesLoaded={false} // default false
-        updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-      >
-        {childElements}
-      </Masonry>
-    );
-  }
-};
+import { MasonryGrid } from "../../building-blocks/masonry-grid";
 
 
 export const Home = () => {
@@ -51,7 +21,7 @@ export const Home = () => {
   ];
 
   const homeGallery = <MasonryGrid elements={galleryImages} />;
-  
+
   return (
     <div className="tip-home">
 

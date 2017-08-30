@@ -95,8 +95,6 @@ export class Story extends React.Component<IStoryProps, IState> {
             </div>
           </div>
         </div>
-
-
       </div>
     );
   }

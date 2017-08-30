@@ -1,29 +1,26 @@
 import * as React from 'react';
 import { BrowserRouter, Switch, Route, Link, NavLink } from "react-router-dom";
-import { connect } from 'react-redux'
+import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import { match } from 'react-router-dom';
 
-import { StoryContainer } from '../story/story';
+import { StoryContainer } from '../story/story-container';
 import { StoryBox, IStoryBoxProps } from './components/story-box';
-import { SearchBar, ISearchBarProps } from './components/search-bar';
+// import { SearchBar, ISearchBarProps } from './components/search-bar';
 import { actionCreators } from './../../services/stories/actions';
 import { IStory, IStoriesLoadStatus } from './../../services/stories/interfaces';
 
-interface IMatch {
-  url: string;
-  params: any[];
-}
 
-interface IStoriesProps {
+interface IStoryGridProps {
   stories: IStory[];
   loadStatus: IStoriesLoadStatus;
-  match: IMatch;
+  match: match<any>;
   loadStories: () => null;
 }
-export class Stories extends React.Component<IStoriesProps, any> {
+export class StoryGrid extends React.Component<IStoryGridProps, any> {
   componentWillMount() {
     this.props.loadStories();
   }
-  
+
   render() {
     const storyGrid = this.props.stories.map((story, index) => {
       return (
@@ -50,7 +47,7 @@ export class Stories extends React.Component<IStoriesProps, any> {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps: MapStateToProps<any, any> = (state, ownProps) => {
   return {
     stories: state.stories.stories,
     loadStatus: state.stories.loadStatus,
@@ -58,7 +55,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps: MapDispatchToProps<any, any> = dispatch => {
   return {
     loadStories: () => {
       dispatch(actionCreators.loadStories());
@@ -69,5 +66,5 @@ const mapDispatchToProps = dispatch => {
 export const StoriesContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Stories);
+)(StoryGrid);
 
