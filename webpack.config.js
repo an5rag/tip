@@ -15,6 +15,7 @@ var appEntry = [
   // js files
 ];
 
+// enable hot loading only in development
 if (isDevelopmentMode) {
   appEntry.unshift(
      "react-hot-loader/patch",
@@ -144,7 +145,7 @@ var config = {
   },
 
   resolve: {
-    extensions: [".js", ".json", ".jsx", ".tsx"],
+    extensions: [".js", ".json", ".jsx", ".ts",".tsx"],
     alias: {
       styles: path.resolve(APP_DIR, "styles"),
       bb: path.resolve(APP_DIR, "scripts/building-blocks"),

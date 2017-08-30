@@ -7,7 +7,7 @@ export interface IStoryBoxProps {
   synopsis?: string;
   author?: {
     name: string;
-    id: string;
+    id?: string;
   }
   illustrator?: {
     name: string;
