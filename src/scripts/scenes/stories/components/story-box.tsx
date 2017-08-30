@@ -21,7 +21,7 @@ export class StoryBox extends React.Component<IStoryBoxProps, any> {
   public static defaultProps: IStoryBoxProps = {
     title: "Story Title",
     id: "",
-    image: "https://cdn.pixabay.com/photo/2016/12/09/08/09/texture-1893788_960_720.jpg",
+    image: "https://img03.deviantart.net/7874/i/2008/122/4/5/crack_texture_by_struckdumb.jpg",
     synopsis: "Story synopsis",
     author: {
       name: "Author Name",
