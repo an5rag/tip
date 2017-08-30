@@ -22,6 +22,7 @@ export interface IStory {
     illustrator: string;
   };
   shoppingLink?: string;
+  tags?: Array<string>;
 }
 
 export enum IStoriesLoadStatus {

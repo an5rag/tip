@@ -1,101 +1,60 @@
 import * as React from "react";
+import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import { match } from 'react-router-dom';
 
-export interface IStoryProps {
-  title?: string;
-  id?: string;
-  images?: {
-    cover: string;
-    series: Array<string>;
-  };
-  synopsis?: string;
-  author?: {
-    name: string;
-    id?: string;
-  };
-  illustrator?: {
-    name: string;
-    id?: string;
-  };
-  details?: string;
-  note?: {
-    author: string;
-    illustrator: string;
-  };
-  shoppingLink?: string;
+import { Story } from "./components/story";
+import { actionCreators } from './../../services/stories/actions';
+import { IStory, IStoriesLoadStatus } from './../../services/stories/interfaces';
+interface IStoryContainerProps {
+  stories?: IStory[];
+  loadStatus?: IStoriesLoadStatus;
+  match: match<{storyId: string}>;
+  loadStory?: (storyId: string) => null;
 }
+export class StoryWrapper extends React.Component<IStoryContainerProps, any> {
+  componentWillMount() {
+    this.props.loadStory(this.props.match.params.storyId);
+  }
 
-export const StoryContainer = (props: { match: { params: { storyId: string } } }) => {
-  const title = "Big Book of Why";
-  const synopsis = "Against the background of an evolving middle class family living in Delhi, the protagonist, Anvesha, a 7 year old girl living in Delhi, learns the art of asking questions."
-  const illustrator = { name: "Roopsha Mandal" };
-  const author = { name: "Ashwini Ashokkumar" };
-  return (
-    <Story
-      id={props.match.params.storyId}
-      title={title}
-      synopsis={synopsis}
-      illustrator={illustrator}
-      author={author}
-    />
-  )
-}
-
-interface IState {
-
-}
-
-export class Story extends React.Component<IStoryProps, IState> {
-  public static defaultProps: IStoryProps = {
-    title: "Story Title",
-    id: "",
-    images: {
-      cover: "http://rishikajain.com/wp-content/uploads/2016/10/Lessons-from-this-picture.jpg",
-      series: []
-    },
-    synopsis: "Story synopsis",
-    author: {
-      name: "Author Name",
-      id: ""
-    },
-    illustrator: {
-      name: "Illustrator Name",
-      id: ""
-    }
-  };
-
-  constructor(props: IStoryProps) {
-    super(props);
-    this.state = {
-      
-    };
+  getStory(storyId: string) {
+    return this.props.stories.find((story) => { return story.id === storyId })
   }
 
   render() {
+    const story = this.getStory(this.props.match.params.storyId);
     return (
-      <div className="tip-story" >
-        <div className="row row-center">
-          <div className="small-12 medium-10 columns">
-            <h1 className="title">{this.props.title}</h1>
-            <div className="row row-center row-wrap-reverse">
-              <div className="small-12 medium-6 columns synopsis">
-                <p>
-                  {this.props.synopsis}
-                </p>
-              </div>
-              <div className="small-12 medium-6 columns info">
-                <div>
-                  <span className="info-key">Author </span>
-                  <span className="info-value">{this.props.author.name}</span>
-                </div>
-                <div>
-                  <span className="info-key">Illustrator </span>
-                  <span className="info-value">{this.props.illustrator.name}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Story
+        id={this.props.match.params.storyId}
+        title={story && story.title}
+        synopsis={story && story.synopsis}
+        illustrator={story && story.illustrator}
+        author={story && story.author}
+      />
     );
   }
 }
+
+
+const mapStateToProps: MapStateToProps<any, any> = (state, ownProps) => {
+  return {
+    stories: state.stories.stories,
+    loadStatus: state.stories.loadStatus,
+    match: ownProps.match
+  }
+}
+
+const mapDispatchToProps: MapDispatchToProps<any, any> = dispatch => {
+  return {
+    loadStory: (storyId: string) => {
+      dispatch(actionCreators.loadStory(storyId));
+    },
+    setCurrentStory: (storyId: string) => {
+      dispatch(actionCreators.setCurrentStory(storyId));
+    }
+  }
+}
+
+export const StoryContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(StoryWrapper);

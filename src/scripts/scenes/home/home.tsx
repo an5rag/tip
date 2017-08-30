@@ -54,7 +54,7 @@ export const Home = () => {
 
       <div className="tip-home-ticker-container">
         <div className="tip-home-ticker">
-          Everyday people, adamantly working towards reducing gender stereotypes for little children.
+        We are everyday people, committed to a nonviolent, constructive protest against gender stereotypes. 
       </div>
       </div>
 
@@ -72,19 +72,11 @@ export const Home = () => {
                 Who are we?
           </div>
               <p>
-                We are the everyday feminists - camouflaged benevolently in the everyday happenings of the Indian society - furiously determined to change the patriarchal narrative woven blatantly.
-              To be specific, we have an unwavering resolve to change this narrative especially for little humans.
-          </p>
+                We are everyday feminists, deeply determined to create a kinder, inclusive world for little children to grow up in.
+              </p>
               <p>
-                This project is the outcome of the collective human spirit. See the faces on the top?
-              We are them. We are the everyday people perturbed, angry, and dismayed at the current trend of affairs.
-              We are designers, engineers, students, and entrepreneurs. We are tired of venting, facebook sharing, and posting. We want to do more.
-              We want the next generation of children to be fierce to who they are, irrespective, and irrelevant of their gender.
-          </p>
-              <p>
-                This is us, for them.
-          </p>
-
+                We are engineers, designers, students, illustrators, entrepreneurs, psychologists, journalists - a collective excited by the thought of unpacking, unraveling and then, metamorphosing the dominant patriarchal narrative into a thoughtful, humane one. Individually and together, we have ventured to see a world shredded of its limitations, of its boundaries. We have worked voluntarily, and urgently to nurture this little world of ours. We wanted to share this world, invite you to be a part of it from the moment we started working on it, and here we are. Welcome. What you see here  is the fruition of the collective’s unwavering efforts to create a world where the next generation of children can be fierce to who they are - irrespective, irrelevant of their gender.
+              </p>
             </div>
           </div>
           <div className="row tip-home-section row-wrap-reverse">

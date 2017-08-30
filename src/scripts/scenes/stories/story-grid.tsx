@@ -25,7 +25,7 @@ export class StoryGrid extends React.Component<IStoryGridProps, any> {
     const storyGrid = this.props.stories.map((story, index) => {
       return (
         <Link to={`${this.props.match.url}/${story.id}`} key={index}>
-          <StoryBox key={index} title={story.title} author={story.author} />
+          <StoryBox key={index} title={story.title} author={story.author} tags={story.tags} />
         </Link>
       )
     });
