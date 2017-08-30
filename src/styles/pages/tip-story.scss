@@ -21,20 +21,20 @@
     }
     .synopsis {
         margin-bottom: 1rem;
-        @extend %text-large;
+        @extend %text-regular;
         font-family: $primary-text-font;
         color: $primary-text-color;
     }
     .info {
         margin-bottom: 1rem;
         .info-key {
-            @extend %text-large;
+            @extend %text-regular;
             font-family: $primary-heading-font;
             color: $secondary-contrast-color;
             margin-right: 1rem;
         }
         .info-value {
-            @extend %text-large;
+            @extend %text-regular;
             font-family: $primary-heading-font;
             color: $primary-text-color;
         }

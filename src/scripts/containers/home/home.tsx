@@ -8,14 +8,14 @@ const masonryOptions = {
   fitWidth: true
 };
 
-class Gallery extends React.Component<any, any> {
+class MasonryGrid extends React.Component<any, any> {
   render() {
     var childElements = this.props.elements.map(function (element) {
       const imageFilter = `grayscale(100%) sepia(100%) hue-rotate(${Math.ceil(Math.random()*360)}deg) saturate(150%)`;
       return (
         <div className="grid-element">
-          <img className="grid-element-image" src={element.src} style={{filter:imageFilter}}/>
-          <div className="grid-element-caption">Anurag Choudhary</div>
+          <img className="grid-element-image hide-on-hover" src={element.src} style={{filter:imageFilter}}/>
+          <div className="grid-element-caption show-on-hover">Anurag Choudhary</div>
         </div>
       );
     });
@@ -50,7 +50,8 @@ export const Home = () => {
     { src: "https://www.expressandstar.com/resizer/RaQGKN1G85bc75Y5D8jykZRN7wA=/248x186/filters:quality(100)/arc-anglerfish-arc2-prod-expressandstar-mna.s3.amazonaws.com/public/CRYG4XHLERBCRJV2CY2NG2SXVA.jpg" }
   ];
 
-  const homeGallery = <Gallery elements={galleryImages} />;
+  const homeGallery = <MasonryGrid elements={galleryImages} />;
+  
   return (
     <div className="tip-home">
 

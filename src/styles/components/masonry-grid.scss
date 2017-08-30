@@ -3,19 +3,18 @@
    ========================================================================== */
 
 $tip-grid-element-margin: 5px;
-$tip-masongry-grid-vertical-margin: 3em;
+$tip-masonry-grid-vertical-margin: 3em;
 
 /* ==========================================================================
    SELECTORS
    ========================================================================== */
 
 .tip-masonry-grid {
-    margin: 0 auto $tip-masongry-grid-vertical-margin auto;
+    margin: 0 auto $tip-masonry-grid-vertical-margin auto;
     .grid-element {
         margin: $tip-grid-element-margin;
         display: relative;
-        .grid-element-image {
-            opacity: 1;
+        .grid-element-image {   
             transition: opacity 0.3s;
             width: 200px;
             filter: grayscale(80%);
@@ -27,7 +26,7 @@ $tip-masongry-grid-vertical-margin: 3em;
             }
         }
         .grid-element-caption {
-            opacity: 0;
+            transition: opacity 0.3s;
             @extend %heading-x-small;
             font-family: $secondary-heading-font;
             color: $primary-color;
@@ -37,12 +36,20 @@ $tip-masongry-grid-vertical-margin: 3em;
             width: 100%;
             text-align: center;
         }
+        .show-on-hover {
+            opacity: 0;
+        }
+
+        .hide-on-hover {
+            opacity: 1;
+        }
+
         &:hover {
-            .grid-element-image {
-                opacity: 0;
-            }
-            .grid-element-caption {
+            .show-on-hover {
                 opacity: 1;
+            }
+            .hide-on-hover {
+                opacity: 0;
             }
         }
     }
