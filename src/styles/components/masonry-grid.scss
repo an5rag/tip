@@ -11,6 +11,8 @@ $tip-masonry-grid-vertical-margin: 3em;
 
 .tip-masonry-grid {
     margin: 0 auto $tip-masonry-grid-vertical-margin auto;
+    min-height: 500px;
+    transition: height 0.5s;
     .grid-element {
         margin: $tip-grid-element-margin;
         display: relative;
@@ -28,13 +30,14 @@ $tip-masonry-grid-vertical-margin: 3em;
         .grid-element-caption {
             transition: opacity 0.3s;
             @extend %heading-x-small;
-            font-family: $secondary-heading-font;
+            font-family: $primary-text-font;
             color: $primary-color;
             letter-spacing: $wide-letter-spacing;
             position: absolute;
-            top: 42%;
+            top: 35%;
             width: 100%;
             text-align: center;
+
         }
         .show-on-hover {
             opacity: 0;
@@ -50,6 +53,17 @@ $tip-masonry-grid-vertical-margin: 3em;
             }
             .hide-on-hover {
                 opacity: 0;
+            }
+        }
+        a {
+            span {
+                border-bottom: 1px solid transparent;
+            }
+            &:hover {
+                span {
+                    border-bottom: 1px solid $regular-link-color-hover;
+                }
+                
             }
         }
     }
