@@ -31,11 +31,22 @@ if (isDevelopmentMode) {
   );
 }
 
+// allows splitting vendor modules
+function isExternal(module) {
+  var context = module.context;
+
+  if (typeof context !== 'string') {
+    return false;
+  }
+
+  // returns true if module's context includes node_modules
+  return context.indexOf('node_modules') !== -1;
+}
+
 
 var config = {
   entry: {
-    app: appEntry,
-    vendor: ["react", "react-dom", "react-hot-loader"]
+    app: appEntry
   },
 
   output: {
@@ -97,6 +108,15 @@ var config = {
           fallback: "style-loader" // Adds CSS to the DOM by injecting a <style> tag
           // use style-loader when not extracting (for eg: in development)
         })
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}  
+          }
+        ]
       }
     ]
   },
@@ -116,7 +136,10 @@ var config = {
 
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
-      filename: "vendor.bundle.js"
+      filename: "vendor.bundle.js",
+      minChunks: function(module) {
+        return isExternal(module);
+      }
     }),
     // code splitting for vendor
 
@@ -149,7 +172,8 @@ var config = {
     alias: {
       styles: path.resolve(APP_DIR, "styles"),
       bb: path.resolve(APP_DIR, "scripts/building-blocks"),
-      containers: path.resolve(APP_DIR, "scripts/containers")
+      containers: path.resolve(APP_DIR, "scripts/containers"),
+      resources: path.resolve(APP_DIR, "resources")
     }
   }
 };

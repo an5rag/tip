@@ -133,7 +133,9 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
   }
 
   componentDidMount() {
-    this.characterTimer = setInterval(() => {
+    // using window.setInterval to make sure the Nodejs setTimer typing is not used
+    // https://github.com/TypeStrong/atom-typescript/issues/1053
+    this.characterTimer = window.setInterval(() => {
       if (this.stringTimer) {
         return;
       }
@@ -187,7 +189,8 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
       if (characterIndex >= props.strings[stringIndex].length) {
         // reached last character
         currentCharacter = "";
-        this.stringTimer = setTimeout(() => {
+        // using window.setInterval to make sure the Nodejs setTimer typing is not used 
+        this.stringTimer = window.setTimeout(() => {
           clearTimeout(this.stringTimer);
           this.stringTimer = undefined;
           this.setState(this.setNextString);
