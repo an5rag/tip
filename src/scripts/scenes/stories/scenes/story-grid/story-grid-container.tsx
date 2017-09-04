@@ -6,8 +6,8 @@ import { match } from 'react-router-dom';
 import { StoryContainer } from '../story/story-container';
 import { StoryBox, IStoryBoxProps } from './components/story-box';
 // import { SearchBar, ISearchBarProps } from './components/search-bar';
-import { actionCreators } from './../../services/stories/actions';
-import { IStory, IStoriesLoadStatus } from './../../services/stories/interfaces';
+import { actionCreators } from './../../../../services/stories/actions';
+import { IStory, IStoriesLoadStatus } from './../../../../services/stories/interfaces';
 
 
 interface IStoryGridProps {
@@ -31,17 +31,8 @@ export class StoryGrid extends React.Component<IStoryGridProps, any> {
     });
 
     return (
-      <div className="row row-center">
-        <div className="small-12 columns tip-stories">
-          <Route path={`${this.props.match.url}/:storyId`} component={StoryContainer} />
-          <Route exact path={this.props.match.url} render={() => (
-            <div>
-              <div className="tip-story-grid">
-                {storyGrid}
-              </div>
-            </div>
-          )} />
-        </div>
+      <div className="tip-story-grid">
+        {storyGrid}
       </div>
     );
   }

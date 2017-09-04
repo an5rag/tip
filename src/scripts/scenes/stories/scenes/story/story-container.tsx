@@ -4,8 +4,8 @@ import { match } from 'react-router-dom';
 import * as _ from "lodash";
 
 import { Story } from "./components/story";
-import { actionCreators } from './../../services/stories/actions';
-import { IStory, IStoriesLoadStatus } from './../../services/stories/interfaces';
+import { actionCreators } from './../../../../services/stories/actions';
+import { IStory, IStoriesLoadStatus } from './../../../../services/stories/interfaces';
 interface IStoryContainerProps {
   stories?: IStory[];
   loadStatus?: IStoriesLoadStatus;

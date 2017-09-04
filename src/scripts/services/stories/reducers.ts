@@ -37,9 +37,20 @@ export const stories = (state: IStoriesState = initialState, action: IAction): I
       }
 
     case actionTypes.UPDATE_STORY:
-      const stories = state.stories.map(story =>
-        (story.id === action.payload.id) ? action.payload : story
-      )
+      let storyFound = false;
+      let stories = state.stories.map(story => {
+        if (story.id === action.payload.id) {
+          storyFound = true;
+          return action.payload;
+        } else {
+          return story;
+        }
+      });
+
+      if (!storyFound) {
+        stories.push(action.payload);
+      }
+      
       return {
         ...state,
         loadStatus: IStoriesLoadStatus.COMPLETE,
