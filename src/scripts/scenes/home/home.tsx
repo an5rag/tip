@@ -77,7 +77,7 @@ export const Home = () => {
                 Stories. Fiction. Weaving, creating, coloring, showcasing, and exposing the possibility of the alternate narrative. An inclusive narrative.
             </p>
               <p>
-                A kind, empathetic, understanding, power - an aversive narrative. We create little superstars (just like we removed the non inclusive word here - superhero)
+                A kind, empathetic, understanding, power - an aversive narrative. We create little superstars (just like our removing the non inclusive word here - superhero)
             for children to idolize and fall in love with. Superstars who are Indian, inquisitive and problem solvers. Superstars challenging the status quo.
             Superstars we can guarantee you will fall in love with.
           </p>
