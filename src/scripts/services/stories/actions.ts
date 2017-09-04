@@ -1,6 +1,7 @@
 import { getAllStories, getStory } from "./mocks";
 import { IStory, IStoriesState } from "./interfaces";
 import { IActionCreator } from "./../root-action";
+import { Promise } from "es6-promise";
 
 export const actionTypes = {
   FETCH_STORIES_START: "FETCH_STORIES",
