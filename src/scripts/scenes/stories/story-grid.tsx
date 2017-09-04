@@ -63,7 +63,7 @@ const mapDispatchToProps: MapDispatchToProps<any, any> = dispatch => {
   }
 }
 
-export const StoriesContainer = connect(
+export const StoryGridContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(StoryGrid);

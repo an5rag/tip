@@ -1,6 +1,7 @@
 import * as React from "react";
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { match } from 'react-router-dom';
+import * as _ from "lodash";
 
 import { Story } from "./components/story";
 import { actionCreators } from './../../services/stories/actions';
@@ -8,16 +9,18 @@ import { IStory, IStoriesLoadStatus } from './../../services/stories/interfaces'
 interface IStoryContainerProps {
   stories?: IStory[];
   loadStatus?: IStoriesLoadStatus;
-  match: match<{storyId: string}>;
+  match: match<{ storyId: string }>;
   loadStory?: (storyId: string) => null;
+  setCurrentStory?: ({ id: string }) => null;
 }
 export class StoryWrapper extends React.Component<IStoryContainerProps, any> {
   componentWillMount() {
     this.props.loadStory(this.props.match.params.storyId);
+    this.props.setCurrentStory({ id: this.props.match.params.storyId })
   }
 
   getStory(storyId: string) {
-    return this.props.stories.find((story) => { return story.id === storyId })
+    return _.find(this.props.stories,(story) => { return story.id === storyId });
   }
 
   render() {

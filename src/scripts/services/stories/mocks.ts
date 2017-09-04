@@ -1,4 +1,5 @@
 import { IStory, IStoriesState } from "./interfaces";
+import * as _ from "lodash";
 
 const mockStories: Array<IStory> = [
   {
@@ -90,5 +91,5 @@ const mockStories: Array<IStory> = [
 export const getAllStories = () => mockStories;
 
 export const getStory = (storyId: string) => {
-  return mockStories.find((story) => { return story.id === storyId })
+  return _.find(mockStories,(story) => { return story.id === storyId });
 }
