@@ -11,6 +11,7 @@ const render = (Component) =>
     </AppContainer>,
     rootElement
   );
+  
 render(App);
 
 // check if HMR is enabled

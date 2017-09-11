@@ -4,39 +4,8 @@ import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { match } from 'react-router-dom';
 
 import { StoryContainer } from '../story/story-container';
-import { StoryBox, IStoryBoxProps } from './components/story-box';
-// import { SearchBar, ISearchBarProps } from './components/search-bar';
-import { actionCreators } from './../../../../services/stories/actions';
-import { IStory, IStoriesLoadStatus } from './../../../../services/stories/interfaces';
-
-
-interface IStoryGridProps {
-  stories: IStory[];
-  loadStatus: IStoriesLoadStatus;
-  match: match<any>;
-  loadStories: () => null;
-}
-export class StoryGrid extends React.Component<IStoryGridProps, any> {
-  componentWillMount() {
-    this.props.loadStories();
-  }
-
-  render() {
-    const storyGrid = this.props.stories.map((story, index) => {
-      return (
-        <Link to={`${this.props.match.url}/${story.id}`} key={index}>
-          <StoryBox key={index} title={story.title} author={story.author} tags={story.tags} />
-        </Link>
-      )
-    });
-
-    return (
-      <div className="tip-story-grid">
-        {storyGrid}
-      </div>
-    );
-  }
-}
+import { actionCreators } from './../../../../services/redux/stories/actions';
+import { StoryGrid } from "./components/story-grid";
 
 const mapStateToProps: MapStateToProps<any, any> = (state, ownProps) => {
   return {

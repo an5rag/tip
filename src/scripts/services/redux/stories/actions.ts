@@ -1,6 +1,6 @@
 import { getAllStories, getStory } from "./mocks";
 import { IStory, IStoriesState } from "./interfaces";
-import { IActionCreator } from "./../root-action";
+import { IActionCreator } from "./../common-interfaces";
 import { Promise } from "es6-promise";
 
 export const actionTypes = {
@@ -10,6 +10,7 @@ export const actionTypes = {
   UPDATE_STORY: "UPDATE_STORY",
   SET_CURRENT_STORY: "SET_CURRENT_STORY"
 }
+
 
 export const actionCreators = {
   fetchStoriesStart: () => {
@@ -41,7 +42,8 @@ export const actionCreators = {
   loadStories: () => {
     return (dispatch) => {
       dispatch(actionCreators.fetchStoriesStart());
-      return Promise.resolve(getAllStories()).then((stories) => {
+      return getAllStories()
+      .then((stories) => {
         dispatch(actionCreators.fetchStoriesEnd());
         dispatch(actionCreators.updateStories(stories));
       });
@@ -51,10 +53,11 @@ export const actionCreators = {
   loadStory: (storyId: string) => {
     return (dispatch) => {
       dispatch(actionCreators.fetchStoriesStart());
-      return Promise.resolve(getStory(storyId)).then((story) => {
-        dispatch(actionCreators.fetchStoriesEnd());
-        dispatch(actionCreators.updateStory(story));
-      });
+      return getStory(storyId)
+        .then((story) => {
+          dispatch(actionCreators.fetchStoriesEnd());
+          dispatch(actionCreators.updateStory(story));
+        });
     }
   },
 

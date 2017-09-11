@@ -11,7 +11,7 @@ export interface IStoryBoxProps {
   }
   illustrator?: {
     name: string;
-    id: string;
+    id?: string;
   }
   tags?: Array<string>;
 }
@@ -49,6 +49,9 @@ export class StoryBox extends React.Component<IStoryBoxProps, any> {
           </div>
           <div className="story-subtitle">
             {this.props.author.name}
+          </div>
+          <div className="story-subtitle">
+            {this.props.illustrator.name}
           </div>
           <div className="story-tags">
             {storyTags}

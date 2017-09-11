@@ -25,7 +25,7 @@ export interface IStory {
   tags?: Array<string>;
 }
 
-export enum IStoriesLoadStatus {
+export enum StoriesLoadStatusEnum {
   INITIAL,
   FETCHING,
   UPDATING,
@@ -33,7 +33,7 @@ export enum IStoriesLoadStatus {
 }
 
 export interface IStoriesState {
-  readonly loadStatus: IStoriesLoadStatus;
+  readonly loadStatus: StoriesLoadStatusEnum;
   readonly currentStory?: {
     id: string;
   };

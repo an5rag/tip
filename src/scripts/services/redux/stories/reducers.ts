@@ -1,9 +1,9 @@
-import { IStoriesState, IStory, IStoriesLoadStatus } from "./interfaces";
+import { IStoriesState, IStory, StoriesLoadStatusEnum } from "./interfaces";
 import { actionTypes } from "./actions";
-import { IAction } from "./../root-action";
+import { IAction } from "./../common-interfaces";
 
 const initialState: IStoriesState = {
-  loadStatus: IStoriesLoadStatus.INITIAL,
+  loadStatus: StoriesLoadStatusEnum.INITIAL,
   stories: []
 }
 
@@ -12,19 +12,19 @@ export const stories = (state: IStoriesState = initialState, action: IAction): I
     case actionTypes.FETCH_STORIES_START:
       return {
         ...state,
-        loadStatus: IStoriesLoadStatus.FETCHING
+        loadStatus: StoriesLoadStatusEnum.FETCHING
       }
 
     case actionTypes.FETCH_STORIES_END:
       return {
         ...state,
-        loadStatus: IStoriesLoadStatus.UPDATING
+        loadStatus: StoriesLoadStatusEnum.UPDATING
       }
 
     case actionTypes.UPDATE_STORIES:
       return {
         ...state,
-        loadStatus: IStoriesLoadStatus.COMPLETE,
+        loadStatus: StoriesLoadStatusEnum.COMPLETE,
         stories: action.payload
       }
 
@@ -53,7 +53,7 @@ export const stories = (state: IStoriesState = initialState, action: IAction): I
       
       return {
         ...state,
-        loadStatus: IStoriesLoadStatus.COMPLETE,
+        loadStatus: StoriesLoadStatusEnum.COMPLETE,
         stories
       }
 

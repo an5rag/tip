@@ -4,45 +4,16 @@ import { match } from 'react-router-dom';
 import * as _ from "lodash";
 
 import { Story } from "./components/story";
-import { actionCreators } from './../../../../services/stories/actions';
-import { IStory, IStoriesLoadStatus } from './../../../../services/stories/interfaces';
-interface IStoryContainerProps {
-  stories?: IStory[];
-  loadStatus?: IStoriesLoadStatus;
-  match: match<{ storyId: string }>;
-  loadStory?: (storyId: string) => null;
-  setCurrentStory?: ({ id: string }) => null;
-}
-export class StoryWrapper extends React.Component<IStoryContainerProps, any> {
-  componentWillMount() {
-    this.props.loadStory(this.props.match.params.storyId);
-    this.props.setCurrentStory({ id: this.props.match.params.storyId })
-  }
+import { actionCreators } from './../../../../services/redux/stories/actions';
+import { IRootState } from "./../../../../services/redux/root-reducer";
 
-  getStory(storyId: string) {
-    return _.find(this.props.stories,(story) => { return story.id === storyId });
-  }
-
-  render() {
-    const story = this.getStory(this.props.match.params.storyId);
-    return (
-      <Story
-        id={this.props.match.params.storyId}
-        title={story && story.title}
-        synopsis={story && story.synopsis}
-        illustrator={story && story.illustrator}
-        author={story && story.author}
-      />
-    );
-  }
-}
-
-
-const mapStateToProps: MapStateToProps<any, any> = (state, ownProps) => {
+const mapStateToProps: MapStateToProps<any, any> = (state:IRootState, ownProps) => {
   return {
     stories: state.stories.stories,
+    story: _.find(state.stories.stories, (story) => { return story.id === ownProps.match.params.storyId }),
     loadStatus: state.stories.loadStatus,
-    match: ownProps.match
+    match: ownProps.match,
+    storyId: ownProps.match.params.storyId
   }
 }
 
@@ -60,4 +31,4 @@ const mapDispatchToProps: MapDispatchToProps<any, any> = dispatch => {
 export const StoryContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(StoryWrapper);
+)(Story);
