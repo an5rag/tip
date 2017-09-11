@@ -54,13 +54,13 @@ export class TeamGrid extends React.Component<ITeamGridProps, ITeamGridState> {
     }
   }
 
-  public handleImagesLoaded = () => {
+  handleImagesLoaded = () => {
     this.setState({ imagesLoaded: true });
   }
 
-  public render() {
+  render() {
     const childElements = this.props.members.map(function (element, index) {
-      const imageFilter = `sepia(70%) hue-rotate(${_.random(0, 8) * 45}deg)`;
+      const imageFilter = ` sepia(60%) hue-rotate(${_.random(0, 8) * 45}deg)`;
 
       const captionContent = [
         (<span key={0}>{element.name}</span>), (<br key={1} />), (<span key={2}>{element.role}</span>)
