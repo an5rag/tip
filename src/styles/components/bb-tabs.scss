@@ -1,0 +1,31 @@
+.bb-tab {
+    margin: 0 20px 0 20px;
+    a {
+        color: grey;
+        font-weight: $normal-font-weight;
+        font-family: $secondary-heading-font;
+        position: relative;
+        &::before {
+            border-radius: 1em;
+            content: " ";
+            display: block;
+            height: 0.8em;
+            left: -1.35em;
+            position: absolute;
+            top: 0.27em;
+            width: 0em;
+            background: transparent;
+            transition: width 0.2s, background 0.6s;
+        }
+        &:hover {
+            color: $regular-link-color-hover; // border-bottom: 2px solid $regular-link-color-hover;
+        }
+    }
+    .bb-tab-active {
+        color: $regular-link-color-hover;
+        &::before {
+            background: $regular-link-color;
+            width: 0.8em;
+        }
+    }
+}
