@@ -18,8 +18,7 @@ $tip-masonry-grid-vertical-margin: 3em;
         display: relative;
         .grid-element-image {   
             transition: opacity 0.3s;
-            width: 200px;
-            filter: grayscale(80%);
+            width: 180px;
             @media only screen and (max-width: 720px) {
                 width: 150px;
             }

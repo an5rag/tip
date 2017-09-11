@@ -38,7 +38,7 @@ $subsection-heading-margin-bottom: 1rem;
             }
             @extend .tip-text-block;
             p {
-                @extend %text-large;
+                @extend %text-regular;
                 font-family: $primary-text-font;
                 color: $primary-color;
                 font-weight: $light-font-weight;
