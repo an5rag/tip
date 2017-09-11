@@ -45,6 +45,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "es6-promise": "^4.1.1",
     "firebase": "^4.3.0",
     "foundation-sites": "^6.3.1",
