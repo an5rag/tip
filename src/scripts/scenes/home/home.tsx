@@ -3,6 +3,9 @@ import { BbAnimatedText } from "../../building-blocks/bb-animated-text";
 import { TipLink } from "../../building-blocks/tip-link";
 import { TeamGrid, ITeamGridProps } from "./components/team-grid";
 import { teamMembers } from "./team-members";
+const img = {
+  books: require("./static/books.jpg"),
+};
 
 const homePageGirl = require("./static/home-page-girl.jpg");
 
@@ -52,7 +55,7 @@ export const Home = () => {
           <div className="row tip-home-section">
             <div className="small-12 columns tip-home-subsection">
               <img
-                src="http://www.kenaston.org/images-referee/Books-Wide.png" />
+                src={img.books} />
             </div>
           </div>
           <div className="row tip-home-section">
