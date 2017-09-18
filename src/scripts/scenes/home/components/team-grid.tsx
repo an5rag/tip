@@ -6,7 +6,8 @@ import * as _ from "lodash";
 const masonryOptions = {
   // horizontalOrder: true,
   fitWidth: true,
-  transitionDuration: "0"
+  transitionDuration: "0.3s",
+  // stagger: 30
 };
 
 export interface ITeamGridProps {
@@ -60,7 +61,7 @@ export class TeamGrid extends React.Component<ITeamGridProps, ITeamGridState> {
 
   render() {
     const childElements = this.props.members.map(function (element, index) {
-      const imageFilter = ` sepia(60%) hue-rotate(${_.random(0, 8) * 45}deg)`;
+      const imageFilter = ` sepia(90%) hue-rotate(${_.random(0, 8) * 45}deg)`;
 
       const captionContent = [
         (<span key={0}>{element.name}</span>), (<br key={1} />), (<span key={2}>{element.role}</span>)
@@ -85,16 +86,18 @@ export class TeamGrid extends React.Component<ITeamGridProps, ITeamGridState> {
         </div>
       );
     });
+
     const loadingGif = (<h1>Loading</h1>);
+
     return (
-      <Masonry
-        className={'tip-masonry-grid'} // default ''
-        options={masonryOptions} // default {}
-        /* onImagesLoaded={this.handleImagesLoaded} */
-      >
-        {/* {this.state.imagesLoaded ? childElements : loadingGif} */}
-        {childElements}
-      </Masonry>
+      <div>
+        <Masonry
+          className={'tip-masonry-grid'} // default ''
+          options={masonryOptions} // default {}
+        >
+          {childElements}
+        </Masonry>
+      </div>
     );
   }
 };

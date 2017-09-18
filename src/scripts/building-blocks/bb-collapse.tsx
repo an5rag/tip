@@ -12,7 +12,7 @@ export class BbCollapse extends React.Component<IProps, any> {
     transitionDuration: 200
   };
 
-  private element = null;
+  private element = undefined;
 
   constructor(props: IProps) {
     super(props);
