@@ -1,4 +1,4 @@
-import { IStory, IStoriesState } from "./interfaces";
+import { IStory } from "./interfaces";
 import * as _ from "lodash";
 
 const mockStories: Array<IStory> = [

@@ -7,10 +7,10 @@ import { IStory, StoriesLoadStatusEnum } from './../../../../../services/redux/s
 import { StoryBox, IStoryBoxProps } from './story-box';
 
 interface IStoryGridProps {
-  stories: IStory[];
+  stories: { [storyId: string]: IStory };
   loadStatus: StoriesLoadStatusEnum;
   match: match<any>;
-  loadStories: () => null;
+  loadStories: () => void;
 }
 export class StoryGrid extends React.Component<IStoryGridProps, any> {
   componentWillMount() {
@@ -18,13 +18,16 @@ export class StoryGrid extends React.Component<IStoryGridProps, any> {
   }
 
   render() {
-    const storyGrid = this.props.stories.map((story, index) => {
-      return (
-        <Link to={`${this.props.match.url}/${story.id}`} key={index}>
-          <StoryBox key={index} title={story.title} author={story.author} tags={story.tags}  illustrator={story.illustrator}/>
+    const storyGrid = [];
+
+    for (let storyId in this.props.stories) {
+      const story = this.props.stories[storyId];
+      storyGrid.push(
+        <Link to={`${this.props.match.url}/${storyId}`} key={storyId}>
+          <StoryBox  title={story.title} author={story.author} tags={story.tags} illustrator={story.illustrator} image={story.images? story.images.grid : undefined}/>
         </Link>
       )
-    });
+    }
 
     return (
       <div className="tip-story-grid">

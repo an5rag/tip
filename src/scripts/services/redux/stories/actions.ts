@@ -1,7 +1,10 @@
-import { getAllStories, getStory } from "./mocks";
-import { IStory, IStoriesState } from "./interfaces";
-import { IActionCreator } from "./../common-interfaces";
 import { Promise } from "es6-promise";
+
+import { IStory, IStoriesState } from "./interfaces";
+import { firebase } from "../../firebase/firebase";
+
+// creating story firebase ref
+const storiesRef = firebase.database().ref("stories/");
 
 export const actionTypes = {
   FETCH_STORIES_START: "FETCH_STORIES",
@@ -25,38 +28,52 @@ export const actionCreators = {
     }
   },
 
-  updateStories: (stories: IStory[]) => {
+  updateStories: (stories: { [storyId: string]: IStory }) => {
     return {
       type: actionTypes.UPDATE_STORIES,
       payload: stories
     }
   },
 
-  updateStory: (story: IStory) => {
+  updateStory: (id: string, story: IStory) => {
     return {
       type: actionTypes.UPDATE_STORY,
-      payload: story
+      payload: { id, story }
     }
   },
+  
 
   loadStories: () => {
     return (dispatch) => {
       dispatch(actionCreators.fetchStoriesStart());
-      return getAllStories()
-      .then((stories) => {
-        dispatch(actionCreators.fetchStoriesEnd());
-        dispatch(actionCreators.updateStories(stories));
-      });
+
+      return storiesRef.once('value')
+        .then((snapshot) => {
+          const stories: { [storyId: string]: IStory } = snapshot.val();
+          dispatch(actionCreators.fetchStoriesEnd());
+          dispatch(actionCreators.updateStories(stories));
+        }, (error) => {
+          dispatch(actionCreators.fetchStoriesEnd());
+          console.error("Server error: ", error.message);
+        });
     }
   },
 
   loadStory: (storyId: string) => {
     return (dispatch) => {
       dispatch(actionCreators.fetchStoriesStart());
-      return getStory(storyId)
-        .then((story) => {
+      const storyRef = storiesRef.child(storyId);
+      return storyRef.once('value')
+        .then((snapshot) => {
+          const story: IStory = snapshot.val();
           dispatch(actionCreators.fetchStoriesEnd());
-          dispatch(actionCreators.updateStory(story));
+          // only update if story is not null
+          if (story !== null) {
+            dispatch(actionCreators.updateStory(storyId, story));
+          }
+        }, (error) => {
+          dispatch(actionCreators.fetchStoriesEnd());
+          console.error("Server error: ", error.message);
         });
     }
   },

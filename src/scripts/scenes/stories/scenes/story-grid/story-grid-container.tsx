@@ -6,8 +6,9 @@ import { match } from 'react-router-dom';
 import { StoryContainer } from '../story/story-container';
 import { actionCreators } from './../../../../services/redux/stories/actions';
 import { StoryGrid } from "./components/story-grid";
+import { IRootState } from './../../../../services/redux/root-state';
 
-const mapStateToProps: MapStateToProps<any, any> = (state, ownProps) => {
+const mapStateToProps: MapStateToProps<any, any> = (state: IRootState, ownProps) => {
   return {
     stories: state.stories.stories,
     loadStatus: state.stories.loadStatus,

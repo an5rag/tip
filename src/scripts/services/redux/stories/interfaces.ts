@@ -3,7 +3,7 @@ export interface IStory {
   title?: string;
   id?: string;
   images?: {
-    thumbnail?: string;
+    grid?: string;
     cover?: string;
     series?: Array<string>;
   };
@@ -37,5 +37,5 @@ export interface IStoriesState {
   readonly currentStory?: {
     id: string;
   };
-  readonly stories: Array<IStory>;
+  readonly stories: {[storyId: string]: IStory};
 }

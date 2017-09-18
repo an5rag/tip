@@ -2,13 +2,12 @@ import * as React from "react";
 import { IStory, StoriesLoadStatusEnum } from './../../../../../services/redux/stories/interfaces';
 import { match } from 'react-router-dom';
 export interface IStoryProps {
-  stories?: IStory[];
   story: IStory;
   loadStatus?: StoriesLoadStatusEnum;
   match?: match<{ storyId: string }>;
   storyId?: string;
-  loadStory?: (storyId: string) => null;
-  setCurrentStory?: ({ id: string }) => null;
+  loadStory?: (storyId: string) => void;
+  setCurrentStory?: ({ id: string }) => void;
 }
 export class Story extends React.Component<IStoryProps, any> {
   public static defaultProps: IStoryProps = {
@@ -47,6 +46,10 @@ export class Story extends React.Component<IStoryProps, any> {
   }
 
   render() {
+    if (this.props.story === null) {
+      return (<div>story not found!</div>);
+    }
+
     return (
       <div className="tip-story" >
         <div className="row row-center">
@@ -61,11 +64,11 @@ export class Story extends React.Component<IStoryProps, any> {
               <div className="small-12 medium-6 columns info">
                 <div>
                   <span className="info-key">Author </span>
-                  <span className="info-value">{this.props.story.author.name}</span>
+                  <span className="info-value">{this.props.story.author? this.props.story.author.name: "Unknown"}</span>
                 </div>
                 <div>
                   <span className="info-key">Illustrator </span>
-                  <span className="info-value">{this.props.story.illustrator.name}</span>
+                  <span className="info-value">{this.props.story.illustrator? this.props.story.illustrator.name: "Unknown"}</span>
                 </div>
               </div>
             </div>

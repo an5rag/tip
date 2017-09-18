@@ -5,12 +5,11 @@ import * as _ from "lodash";
 
 import { Story } from "./components/story";
 import { actionCreators } from './../../../../services/redux/stories/actions';
-import { IRootState } from "./../../../../services/redux/root-reducer";
+import { IRootState } from "./../../../../services/redux/root-state";
 
 const mapStateToProps: MapStateToProps<any, any> = (state:IRootState, ownProps) => {
   return {
-    stories: state.stories.stories,
-    story: _.find(state.stories.stories, (story) => { return story.id === ownProps.match.params.storyId }),
+    story: state.stories.stories[ownProps.match.params.storyId],
     loadStatus: state.stories.loadStatus,
     match: ownProps.match,
     storyId: ownProps.match.params.storyId

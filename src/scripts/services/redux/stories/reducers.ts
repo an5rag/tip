@@ -4,7 +4,7 @@ import { IAction } from "./../common-interfaces";
 
 const initialState: IStoriesState = {
   loadStatus: StoriesLoadStatusEnum.INITIAL,
-  stories: []
+  stories: {}
 }
 
 export const stories = (state: IStoriesState = initialState, action: IAction): IStoriesState => {
@@ -37,19 +37,8 @@ export const stories = (state: IStoriesState = initialState, action: IAction): I
       }
 
     case actionTypes.UPDATE_STORY:
-      let storyFound = false;
-      let stories = state.stories.map(story => {
-        if (story.id === action.payload.id) {
-          storyFound = true;
-          return action.payload;
-        } else {
-          return story;
-        }
-      });
-
-      if (!storyFound) {
-        stories.push(action.payload);
-      }
+      let stories = state.stories;
+      stories[action.payload.id] = action.payload.story;
       
       return {
         ...state,
