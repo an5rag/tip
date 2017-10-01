@@ -121,10 +121,10 @@ export const Home = () => {
               </h1>
               <p>
                 We are a growing group of people and in a constant search for more illustrators, authors, publishers and just anyone who
-                believes in what we believe in.
+              believes in what we believe in.
               </p>
               <p>
-                Let us know you're interested by writing to us <TipLink label="here" link="#" />.
+                Let us know you're interested by writing to us <TipLink label="here" link="mailto:theirrelevantproject@gmail.com?Subject=Hello%20Irrelevants"/>.
               </p>
             </div>
 
