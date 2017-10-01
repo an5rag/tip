@@ -61,6 +61,10 @@ $stories-padding: ($side-padding - $story-box-margin);
                 color: $story-box-caption-color;
                 transform: translate(0, 30px);
                 transition: transform 0.3s;
+                @media only screen and (max-width: 480px) {
+                    // increase the font size for mobile devices
+                    font-size: 17px;
+                }
                 .story-title {
                     @extend %text-x-large;
                     font-weight: $normal-font-weight;
