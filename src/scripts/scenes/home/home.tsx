@@ -2,6 +2,7 @@ import * as React from "react";
 import { BbAnimatedText } from "../../building-blocks/bb-animated-text";
 import { TipLink } from "../../building-blocks/tip-link";
 import { TeamGrid, ITeamGridProps } from "./components/team-grid";
+import { FrictionBoxes } from "./components/friction-boxes";
 import { teamMembers } from "./team-members";
 const img = {
   booksLarge: require("./static/books.jpg"),
@@ -23,7 +24,7 @@ export const Home = () => {
           {homeGallery}
         </div>
       </div>
-
+      {/* <FrictionBoxes /> */}
       <div className="row row-center">
         <div className="small-12 medium-10 columns">
           <div className="row tip-home-section">
@@ -47,7 +48,7 @@ export const Home = () => {
 
       <div className="tip-home-ticker-container">
         <div className="tip-home-ticker">
-          We are everyday people, committed to a nonviolent, constructive protest against gender stereotypes.
+          We are everyday people committed to constructing a world without gender stereotypes.
       </div>
       </div>
 
@@ -57,36 +58,34 @@ export const Home = () => {
             <div className="small-12 columns tip-home-subsection">
               <picture>
                 <source media="(min-width: 650px)" srcSet={img.booksLarge} />
-                <source media="(min-width: 400px)" srcSet={img.booksMedium}/>
-                <img alt="Irrelevant Project books strung on a rope."/>
+                <source media="(max-width: 649px)" srcSet={img.booksMedium} />
+                <img alt="Irrelevant Project books strung on a rope." />
               </picture>
             </div>
           </div>
           <div className="row tip-home-section">
             <div className="small-12 large-12 columns tip-home-subsection">
-              <div className="tip-home-subsection-heading">
+              <h1 className="tip-home-subsection-heading">
                 Who are we?
-          </div>
+          </h1>
               <p>
-                We are everyday feminists, deeply determined to create a kinder, inclusive world for little children to grow up in.
+                We are <b>everyday feminists</b>, deeply determined to create a <b>kind and inclusive world</b> for little children to grow up in.
               </p>
               <p>
-                We are engineers, designers, students, illustrators, entrepreneurs, psychologists, journalists - a collective excited by the thought of unpacking, unraveling and then, metamorphosing the dominant patriarchal narrative into a thoughtful, humane one. Individually and together, we have ventured to see a world shredded of its limitations, of its boundaries. We have worked voluntarily, and urgently to nurture this little world of ours. We wanted to share this world, invite you to be a part of it from the moment we started working on it, and here we are. Welcome. What you see here  is the fruition of the collective’s unwavering efforts to create a world where the next generation of children can be fierce to who they are - irrespective, irrelevant of their gender.
+                We are engineers, designers, students, illustrators, entrepreneurs, psychologists, journalists who are  excited by the possibility of  replacing the patriarchal and prejudiced worldview dominant in our society with a humane and empathetic worldview. We  aspire to develop a world that’s devoid of biases that have oppressed people and lives . We have worked on this project voluntarily, and with a sense of urgency. We invite you to be a part of this initiative aiming to create a world which allows the next generation of children to be who they are. A world in which their gender, caste, and other identities are irrelevant.
               </p>
             </div>
           </div>
           <div className="row tip-home-section row-wrap-reverse">
             <div className="small-12 large-6 columns tip-home-subsection">
-              <div className="tip-home-subsection-heading">
+              <h1 className="tip-home-subsection-heading">
                 How are we doing this?
-          </div>
+          </h1>
               <p>
-                Stories. Fiction. Weaving, creating, coloring, showcasing, and exposing the possibility of the alternate narrative. An inclusive narrative.
-            </p>
+                Fiction. Stories. We are weaving stories and characters, coloring them, to create in children’s minds an imagination of a better world. An inclusive world. A kind and empathetic world.
+              </p>
               <p>
-                A kind, empathetic, understanding, power - an aversive narrative. We create little superstars (just like our removing the non inclusive word here - superhero)
-            for children to idolize and fall in love with. Superstars who are Indian, inquisitive and problem solvers. Superstars challenging the status quo.
-            Superstars we can guarantee you will fall in love with.
+                We hope that these stories will create little superstars for children to fall in love with and mimic. In the process, we’ll create inquisitive little Indian superstars who are eager to ask difficult questions, willing to challenge the status quo, and able to solve problems.
           </p>
             </div>
             <div className="small-12 large-6 columns tip-home-subsection">
@@ -100,9 +99,9 @@ export const Home = () => {
               <img src={homePageGirl} />
             </div>
             <div className="small-12 large-6 columns tip-home-subsection">
-              <div className="tip-home-subsection-heading">
+              <h1 className="tip-home-subsection-heading">
                 The Storybooks.
-            </div>
+            </h1>
               <p>
                 If you buy one of our books, you’ll get a beautiful, fully illustrated picture book taking you through an exciting journey along with the protagonist.
               We’ve woven stories around characters who are from different parts of India and the imagery reflects this - in the choice of clothing, in the language used, and even the food mentioned!
@@ -117,15 +116,16 @@ export const Home = () => {
 
           <div className="row tip-home-section row-wrap-reverse">
             <div className="small-12 large-6 columns tip-home-subsection">
-              <div className="tip-home-subsection-heading">
+              <h1 className="tip-home-subsection-heading">
                 Reach out.
-            </div>
+              </h1>
               <p>
                 We are a growing group of people and in a constant search for more illustrators, authors, publishers and just anyone who
-              believes in what we believe in.
-            </p><p>
+                believes in what we believe in.
+              </p>
+              <p>
                 Let us know you're interested by writing to us <TipLink label="here" link="#" />.
-          </p>
+              </p>
             </div>
 
             <div className="small-12 large-6 columns tip-home-subsection">

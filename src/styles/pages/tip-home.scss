@@ -5,6 +5,8 @@
 $section-min-height: 25rem;
 $section-margin-bottom: 3rem;
 $subsection-heading-margin-bottom: 1rem;
+$ticker-duration: 20s;
+$ticker-mobile-duration: 25s;
 
 /* ==========================================================================
    SELECTORS
@@ -27,7 +29,7 @@ $subsection-heading-margin-bottom: 1rem;
                 @extend %heading-regular;
                 margin-bottom: $subsection-heading-margin-bottom;
                 font-family: $primary-heading-font;
-                color: $primary-color;
+                color: $tertiary-color;
                 font-weight: $normal-font-weight;
             }
             .tip-home-massive-heading {
@@ -41,12 +43,14 @@ $subsection-heading-margin-bottom: 1rem;
                 @extend %text-regular;
                 font-family: $primary-text-font;
                 color: $primary-color;
-                font-weight: $light-font-weight;
+                font-weight: $normal-font-weight;
+                @media only screen and (max-width: 480px) {
+                    font-weight: $normal-font-weight;
+                }
             }
         }
     }
-    $duration: 30s;
-    $mobile-duration: 25s;
+
     @keyframes ticker {
         0% {
             transform: translate3d(100vw, 0, 0);
@@ -69,9 +73,9 @@ $subsection-heading-margin-bottom: 1rem;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         animation-name: ticker;
-        animation-duration: $duration;
+        animation-duration: $ticker-duration;
         @media only screen and (max-width: 480px) {
-            animation-duration: $mobile-duration;
+            animation-duration: $ticker-mobile-duration;
         }
         .tip-home-ticker {
             
