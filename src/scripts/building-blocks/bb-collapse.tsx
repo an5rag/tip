@@ -26,8 +26,7 @@ export class BbCollapse extends React.Component<IProps, any> {
   render() {
     const classes = `bb-collapse ${this.props.isOpen ? "is-open" : "is-closed"}`;
     const style = {
-      height: this.props.isOpen ? this.getHeight() : 0,
-      transition: `height ${this.props.transitionDuration}ms`
+      // transition: `max-height ${this.props.transitionDuration}ms`
     }
     return (
       <div 
