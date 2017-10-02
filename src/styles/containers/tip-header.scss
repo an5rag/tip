@@ -21,18 +21,53 @@ $nav-link-color-hover: $primary-color;
         font-family: $primary-heading-font;
         color: $nav-link-color;
         a {
-            padding: 3 8 3 8;
+            padding: 3 5 3 5;
+            .label {
+                padding: 3 0 3 0;
+            }
+            &.tip-nav-link-active {
+                background-color: $secondary-background-color;
+                color: $primary-contrast-color;
+            }
         }
         &:hover {
             color: $nav-link-color-hover;
             a:not(.tip-nav-link-active) {
                 // apply bottom border if not active
-                border-bottom: 2px solid $nav-link-color-hover;
+                .label {
+                    border-bottom: 2px solid $nav-link-color-hover;
+                    white-space: nowrap;                  
+                }
             }
         }
-        .tip-nav-link-active {
-            background-color: $secondary-background-color;
-            color: $primary-contrast-color;
+        
+    }
+    .tip-nav-group {
+        .tip-nav-group-child{
+            background-color: #f6f6f6;
+            padding: 0.5rem 0.5rem 0 0.5rem;
+            .tip-nav-link {
+                @extend %text-regular;
+                padding-bottom: 0.5rem;
+                a {
+                    padding-left: 5;
+                    padding-right: 5;
+                }
+                
+            }
+        }
+        .tip-nav-group-parent {
+            cursor: pointer;
+            .dropdown-arrow {
+                margin-left: 8;
+                transition: transform 0.3s;
+                transform: rotate(0deg);
+            }
+        }
+        &.visible{
+            .dropdown-arrow {
+                transform: rotate(180deg);
+            }
         }
     }
 }

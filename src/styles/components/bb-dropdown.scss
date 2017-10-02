@@ -1,0 +1,49 @@
+.bb-dropdown {
+    position: relative;
+    &.not-visible:not(.animate) {
+        .child {
+            display: none;
+        }
+    }
+    .parent {
+      position: relative;
+    }
+    .child {
+        position: absolute;
+        display: initial;
+        z-index: 100;
+        &.top-left {
+            top: 0%;
+            left: 0%;
+        }
+        &.top-right {
+            top: 0%;
+            left: 100%;
+        }
+        &.bottom-left {
+            top: 100%;
+            left: 0%;
+        }
+        &.bottom-right {
+            top: 100%;
+            left: 100%;
+        }
+    }
+    &.animate {
+        .child {
+          transition: all 0.3s;
+        }
+        &.fade {
+          .child {
+            opacity: 100;
+            visibility: visible;
+          }
+            &.not-visible {
+                .child {
+                   opacity:0;
+                   visibility: hidden;
+                }
+            }
+        }
+    }
+}
