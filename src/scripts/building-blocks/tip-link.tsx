@@ -1,11 +1,16 @@
 import * as React from "react";
 
-export const TipLink = (props: { label: string; link: string; external?: boolean }) => {
+import { Link } from 'react-router-dom';
+
+export const TipLink = (props: { link: string; external?: boolean; children?:any }) => {
+  const linkElement = props.external ?
+    (<a href={props.link}>
+      {props.children}
+    </a>) :
+    (<Link to={props.link}>{props.children}</Link>);
   return (
     <span className="tip-link">
-      <a href={props.link}>
-        {props.label}
-      </a>
+      {linkElement}
     </span>
   )
 }
