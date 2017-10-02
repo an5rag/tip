@@ -57,24 +57,31 @@ export class Home extends React.Component<any, any> {
         <div className="row row-center">
           <div className="small-12 medium-10 columns">
 
-            <div className="row tip-home-section row-wrap-reverse">
-              <div className="small-12 large-6 columns tip-home-subsection">
+            <div className="row tip-home-section">
+              <div className="small-12 medium-6 columns tip-home-subsection">
                 <h1 className="tip-home-subsection-heading">
-                  Reach out.
-              </h1>
+                  Story Books
+            </h1>
                 <p>
-                  We are a growing group of people and in a constant search for more illustrators, authors, publishers and just anyone who
-              believes in what we believe in.
-              </p>
+                  Browse through our current collection of story books.
+            </p>
                 <p>
-                  Let us know you're interested by writing to us <TipLink label="here" link="mailto:theirrelevantproject@gmail.com?Subject=Hello%20Irrelevants" />.
-              </p>
+                  <TipLink link="/stories">Stories  <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+                  
+                </p>
               </div>
 
-              <div className="small-12 large-6 columns tip-home-subsection">
-                <div className="tip-home-massive-heading">
-                  We don't <br /> bite.
-            </div>
+              <div className="small-12 medium-6 columns tip-home-subsection">
+                <h1 className="tip-home-subsection-heading">
+                  Learn More
+                </h1>
+                <p>
+                  Meet the Irrelevants and read about our journey.
+                </p>
+                <p>
+                  <TipLink link="/faq">Frequently Asked Questions <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+                  <TipLink link="/faq">Our Story <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink>
+                </p>
               </div>
             </div>
           </div>

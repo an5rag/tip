@@ -26,15 +26,15 @@ $ticker-mobile-duration: 25s;
             justify-content: center;
             padding: 0 $side-padding 0 $side-padding;
             .tip-home-subsection-heading {
-                @extend %heading-regular;
+                @extend %heading-large;
                 margin-bottom: $subsection-heading-margin-bottom;
                 font-family: $primary-heading-font;
-                color: $tertiary-color;
-                font-weight: $normal-font-weight;
+                color: $primary-color;
+                font-weight: $heavy-font-weight;
             }
             .tip-home-massive-heading {
                 @extend %heading-x-large;
-                font-family: $primary-heading-font;
+                font-family: $secondary-heading-font;
                 color: $primary-color;
                 font-weight: $heavy-font-weight;
  

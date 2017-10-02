@@ -24,6 +24,7 @@ $nav-link-color-hover: $primary-color;
             padding: 3 5 3 5;
             .label {
                 padding: 3 0 3 0;
+                white-space: nowrap;  
             }
             &.tip-nav-link-active {
                 background-color: $secondary-background-color;
@@ -35,8 +36,7 @@ $nav-link-color-hover: $primary-color;
             a:not(.tip-nav-link-active) {
                 // apply bottom border if not active
                 .label {
-                    border-bottom: 2px solid $nav-link-color-hover;
-                    white-space: nowrap;                  
+                    border-bottom: 2px solid $nav-link-color-hover;                
                 }
             }
         }
@@ -45,15 +45,10 @@ $nav-link-color-hover: $primary-color;
     .tip-nav-group {
         .tip-nav-group-child{
             background-color: #f6f6f6;
-            padding: 0.5rem 0.5rem 0 0.5rem;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
             .tip-nav-link {
                 @extend %text-regular;
-                padding-bottom: 0.5rem;
-                a {
-                    padding-left: 5;
-                    padding-right: 5;
-                }
-                
+                padding-bottom: 0.5rem;                
             }
         }
         .tip-nav-group-parent {
