@@ -14,9 +14,9 @@ const store = createStore(
 
 const App = () => (
   <Provider store={store}>
-    <HashRouter>
+    <BrowserRouter>
       <Main />
-    </HashRouter>
+    </BrowserRouter>
   </Provider>
 );
 
