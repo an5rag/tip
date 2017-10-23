@@ -19,14 +19,14 @@ export class Home extends React.Component<any, any> {
 
         <div className="row row-center">
           <div className="small-11 medium-10 columns">
-            <BbNotice type="secondary" title="Welcome to the project, irrelevant" content="Thanks for visiting our website. We are still in the alpha phase and working hard to finish what we set out for. Till then, you might encounter broken links and placeholder texts." />
+            <BbNotice type="secondary" title="Hi there!" content="Thanks for visiting our website. We are still actively developing this and working hard to finish what we set out for. Till then, you might encounter broken links and placeholder texts." />
           </div>
         </div>
-        {/* <div className="row row-center">
+        <div className="row row-center">
           <div className="small-12 medium-10 columns">
             {homeGallery}
           </div>
-        </div> */}
+        </div>
         {/* <FrictionBoxes /> */}
         <div className="row row-center">
           <div className="small-12 medium-10 columns">
