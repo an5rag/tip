@@ -5,6 +5,7 @@ interface BbNoticeProps {
   type?: "primary" | "secondary" | "danger";
   title?: string;
   content?: string;
+  dismissable?: boolean;
 }
 
 interface BbNoticeState {
@@ -14,7 +15,8 @@ interface BbNoticeState {
 
 export class BbNotice extends React.Component<BbNoticeProps, BbNoticeState> {
   public static defaultProps: BbNoticeProps = {
-    type: "primary"
+    type: "primary",
+    dismissable: false
   };
   constructor(props) {
     super(props);
@@ -30,11 +32,11 @@ export class BbNotice extends React.Component<BbNoticeProps, BbNoticeState> {
 
   render() {
     const classes = `bb-notice ${this.props.type}`;
-
+    const dismissButton = (<i className="fa fa-times-circle close-button" onClick={() => this.handleCloseClicked()}></i>)
     return (
       <BbCollapse isOpen={this.state.open}>
         <div className={classes}>
-          <i className="fa fa-minus-square-o close-button" onClick={() => this.handleCloseClicked()}></i>
+          {this.props.dismissable ? dismissButton : null}
           <h1 className="title">{this.props.title}</h1>
           <p className="content">{this.props.content}</p>
         </div>
