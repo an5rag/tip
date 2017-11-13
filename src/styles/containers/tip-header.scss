@@ -13,8 +13,20 @@ $nav-link-color-hover: $primary-color;
     margin-top: $header-margin;
     margin-bottom: $header-margin;
     .tip-title {
-        @extend %heading-regular;
-        font-family: $primary-heading-font;
+        display: flex;
+        align-content: center;
+        .logo-image {
+            height: 100px;
+            width: auto;
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            justify-content: center;
+            @extend %heading-regular;
+            font-family: $primary-heading-font;
+        }
     }
     .tip-nav-link {
         @extend %text-large;
@@ -24,11 +36,11 @@ $nav-link-color-hover: $primary-color;
             padding: 3 5 3 5;
             .label {
                 padding: 3 0 3 0;
-                white-space: nowrap;  
+                white-space: nowrap;
             }
             &.tip-nav-link-active {
                 background-color: $secondary-background-color;
-                color: $primary-contrast-color;
+                color: $primary-contrast-text-color;
             }
         }
         &:hover {
@@ -36,19 +48,20 @@ $nav-link-color-hover: $primary-color;
             a:not(.tip-nav-link-active) {
                 // apply bottom border if not active
                 .label {
-                    border-bottom: 2px solid $nav-link-color-hover;                
+                    border-bottom: 2px solid $nav-link-color-hover;
                 }
             }
         }
-        
     }
     .tip-nav-group {
-        .tip-nav-group-child{
+        .tip-nav-group-child {
+            box-shadow: 1px 3px 0.4em #949191;
+            border: 1px solid $primary-color;            
             background-color: #f6f6f6;
             padding: 0.5rem 0.5rem 0.5rem 0.5rem;
             .tip-nav-link {
                 @extend %text-regular;
-                padding-bottom: 0.5rem;                
+                padding-bottom: 0.5rem;
             }
         }
         .tip-nav-group-parent {
@@ -59,7 +72,7 @@ $nav-link-color-hover: $primary-color;
                 transform: rotate(0deg);
             }
         }
-        &.visible{
+        &.visible {
             .dropdown-arrow {
                 transform: rotate(180deg);
             }
