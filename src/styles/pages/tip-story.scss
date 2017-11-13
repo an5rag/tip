@@ -29,7 +29,7 @@
         .info-key {
             @extend %text-regular;
             font-family: $primary-heading-font;
-            color: $secondary-contrast-color;
+            color: $tertiary-text-color;
             margin-right: 1rem;
         }
         .info-value {

@@ -4,8 +4,8 @@
 
 @import 'node_modules/normalize.css/normalize';
 @import 'node_modules/foundation-sites/scss/foundation';
+@import "node_modules/draft-js/dist/Draft";
 @include foundation-flex-grid;
-
 /* ==========================================================================
    BASE - Base Variable file along with starting point Mixins and Placeholders.
    ========================================================================== */
@@ -28,6 +28,7 @@
 @import 'components/friction-boxes.scss';
 @import 'components/bb-notice.scss';
 @import 'components/bb-dropdown.scss';
+@import 'components/bb-image-grid.scss';
 
 
 /* ==========================================================================
@@ -45,6 +46,8 @@
 @import 'pages/tip-stories.scss';
 @import 'pages/tip-home.scss';
 @import 'pages/tip-blog.scss';
+@import 'pages/tip-blog-write.scss';
+@import 'pages/tip-blog-post.scss';
 @import 'pages/tip-story.scss';
 
 

@@ -18,6 +18,7 @@ $heavy-font-weight: 700;
 // Font sizes
 $base-font-size: 16px;
 $mobile-base-font-size: 14px;
+$small-mobile-base-font-size: 13px;
 // letter spacing
 $normal-letter-spacing: 0.3;
 $narrow-letter-spacing: 0.1;
@@ -31,13 +32,18 @@ $wide-letter-spacing: 0.5;
 /* Text
    ========================================================================== */
 
-%text-x-small {
+%text-xx-small {
     font-size: 0.625em;
     line-height: 1.5em;
 }
 
+%text-x-small {
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
 %text-small {
-    font-size: 0.875em;
+    font-size: 1em;
     line-height: 1.5em;
 }
 
@@ -94,5 +100,10 @@ $wide-letter-spacing: 0.5;
 .tip-text-block {
     p:not(:last-child) {
         padding-bottom: 1rem;
+    }
+    p {
+        &.no-padding {
+            padding-bottom: 0px;
+        }
     }
 }

@@ -1,50 +1,48 @@
 .bb-notice {
-  margin: 20px 0 20px 0;
-  padding: 1rem;
-  padding-right: 2rem;
-  position: relative;
-  .title {
+    margin: 20px 0 20px 0;
+    padding: 1rem;
+    padding-right: 2rem;
+    position: relative;
+    border: 1.2px solid black; // box-shadow: 0px 1px 0.3em grey;
     @extend %text-small;
-    // font-weight: $light-font-weight;
-    font-family: $primary-heading-font;
-  }
-  .content {
-    @extend %text-small;
-    // font-weight: $light-font-weight;
-    font-family: $primary-text-font;
-  }
-  .close-button {
-    @extend %text-small;
-
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    cursor: pointer;
-  }
-  &.primary {
-    background-color: $secondary-background-color;
     .title {
-      font-weight: $light-font-weight;
-      color: whitesmoke;
+        @extend %text-x-small; // font-weight: $light-font-weight;
+        font-family: $primary-heading-font;
     }
     .content {
-      font-weight: $light-font-weight;
-      color: $primary-contrast-color;
+        @extend %text-x-small; // font-weight: $light-font-weight;
+        font-family: $primary-text-font;
     }
     .close-button {
-      color: whitesmoke;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
     }
-  }
-  &.secondary {
-    background-color: $tertiary-background-color;
-    .title {
-      color:$primary-text-color;
+    &.primary {
+        background-color: $secondary-background-color;
+        .title {
+            font-weight: $light-font-weight;
+            color: whitesmoke;
+        }
+        .content {
+            font-weight: $light-font-weight;
+            color: $primary-contrast-text-color;
+        }
+        .close-button {
+            color: whitesmoke;
+        }
     }
-    .content {
-      color:$primary-text-color;
+    &.secondary {
+        background-color: #f0f3bd;
+        .title {
+            color: $primary-text-color;
+        }
+        .content {
+            color: $primary-text-color;
+        }
+        .close-button {
+            color: $primary-text-color;
+        }
     }
-    .close-button {
-      color:$primary-text-color;
-    }
-  }
 }

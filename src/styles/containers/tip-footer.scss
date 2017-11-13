@@ -29,13 +29,13 @@ $footer-min-height: 30vh;
             font-weight: $light-font-weight;
             letter-spacing: $wide-letter-spacing;
             font-family: $primary-heading-font;
-            color: $secondary-contrast-color;
+            color: $secondary-contrast-text-color;
         }
         .tip-footer-section-subtitle {
             @extend %heading-x-small;
             font-weight: $light-font-weight;
             font-family: $primary-text-font;
-            color: $primary-contrast-color;
+            color: $primary-contrast-text-color;
         }
     }
     .tip-title {
@@ -45,7 +45,7 @@ $footer-min-height: 30vh;
             font-weight: $light-font-weight;
             letter-spacing: $wide-letter-spacing;
             font-family: $primary-heading-font;
-            color: $secondary-contrast-color;
+            color: $secondary-contrast-text-color;
             text-align: center;
         }
         .tip-title-banner {

@@ -8,6 +8,12 @@ html {
     }
 }
 
+@media only screen and (max-width: 360px) {
+    html {
+        font-size: $small-mobile-base-font-size;
+    }
+}
+
 body {
     background-color: $primary-background-color;
 }

@@ -1,31 +1,34 @@
-.bb-tab {
-    margin: 0 20px 0 20px;
-    a {
+
+    .bb-tab {
+        margin: 0 0px 20px 16px;
+        padding: 0.5em 1.25em 0.5em 1.25em;
+        border-bottom: 1.5px solid transparent;
+        @extend %text-regular;
         color: grey;
         font-weight: $normal-font-weight;
         font-family: $secondary-heading-font;
         position: relative;
-        &::before {
-            border-radius: 1em;
-            content: " ";
-            display: block;
-            height: 0.8em;
-            left: -1.35em;
+        &::after {
+            z-index: -1;
+            height: 0px;
+            width: 100%;
+            background-color: transparent;
             position: absolute;
-            top: 0.27em;
-            width: 0em;
-            background: transparent;
-            transition: width 0.2s, background 0.6s;
+            bottom: 0;
+            content: "";
+            left: 0;
+            transition: height 0.3s;
         }
         &:hover {
-            color: $regular-link-color-hover; // border-bottom: 2px solid $regular-link-color-hover;
+            color: $regular-link-color-hover;
+            border-bottom: 1.5px solid teal; // border-bottom: 2px solid $regular-link-color-hover;
+        }
+        &.bb-tab-active {
+            color: black;
+            border-bottom: 1.5px solid teal;
+            &::after {
+                height: 100%;
+                background: rgb(244, 244, 244); // width: 0.8em;
+            }
         }
     }
-    .bb-tab-active {
-        color: $regular-link-color-hover;
-        &::before {
-            background: $regular-link-color;
-            width: 0.8em;
-        }
-    }
-}
