@@ -88,7 +88,7 @@ var config = {
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           use: [
             {
