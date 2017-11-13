@@ -26,7 +26,7 @@ export interface INavGroupProps {
 
 const NavGroup = (props: INavGroupProps) => {
     const parent = (
-        <div className="shrink columns tip-nav-link">
+        <div className="tip-nav-link">
             {props.displayName}
             <i className="fa fa-angle-down dropdown-arrow"></i>
         </div>
@@ -47,7 +47,7 @@ const NavGroup = (props: INavGroupProps) => {
     )
 
     return (
-        <BbDropDown parentElement={parent} childElement={child} containerClasses="tip-nav-group" parentClasses="tip-nav-group-parent" childClasses="tip-nav-group-child" />
+        <BbDropDown parentElement={parent} childElement={child} containerClasses="shrink columns tip-nav-group" parentClasses="tip-nav-group-parent" childClasses="tip-nav-group-child" />
     )
 }
 
@@ -83,7 +83,11 @@ export const Header = () => (
                     {
                         displayName: "Contact",
                         link: "/contact"
-                    }
+                    },
+                    {
+                        displayName: "Privacy Policy",
+                        link: "/privacy-policy"
+                    },
                 ]}
             />
         </div>

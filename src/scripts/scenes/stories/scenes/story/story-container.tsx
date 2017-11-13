@@ -1,7 +1,6 @@
 import * as React from "react";
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { match } from 'react-router-dom';
-import * as _ from "lodash";
 
 import { Story } from "./components/story";
 import { actionCreators } from './../../../../services/redux/stories/actions';

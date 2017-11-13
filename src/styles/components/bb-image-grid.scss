@@ -1,0 +1,82 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$bb-grid-element-margin: 10px;
+$bb-grid-container-margin: 3rem;
+$bb-grid-element-height: 200px;
+$bb-grid-element-width: 200px;
+$bb-grid-element-tablet-height: 150px;
+$bb-grid-element-tablet-width: 150px;
+$bb-grid-element-mobile-height: 120px;
+$bb-grid-element-mobile-width: 120px;
+
+/* ==========================================================================
+      SELECTORS
+      ========================================================================== */
+
+.bb-image-grid {
+    margin-top: 1rem;
+    margin-bottom: $bb-grid-container-margin;
+    transition: height 0.5s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .grid-element {
+        // margin: $bb-grid-element-margin;
+        display: relative;
+        height: $bb-grid-element-height;
+        max-width: $bb-grid-element-width;
+        @media only screen and (max-width: 720px) {
+            height:$bb-grid-element-tablet-height;
+            max-width: $bb-grid-element-tablet-width;
+        }
+        @media only screen and (max-width: 480px) {
+            height: $bb-grid-element-mobile-height;
+            max-width: $bb-grid-element-mobile-width;
+        }
+        img {
+            transition: opacity 0.3s;
+            width: 180px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+        .grid-element-caption {
+            transition: opacity 0.3s;
+            @extend %heading-x-small;
+            font-family: $primary-text-font;
+            color: $primary-color;
+            letter-spacing: $wide-letter-spacing;
+            position: absolute;
+            top: 35%;
+            width: 100%;
+            text-align: center;
+        }
+        .show-on-hover {
+            opacity: 0;
+        }
+        .hide-on-hover {
+            opacity: 1;
+        }
+        &:hover {
+            .show-on-hover {
+                opacity: 1;
+            }
+            .hide-on-hover {
+                opacity: 0;
+            }
+        }
+        a {
+            span {
+                border-bottom: 1px solid transparent;
+            }
+            &:hover {
+                span {
+                    border-bottom: 1px solid $regular-link-color-hover;
+                }
+            }
+        }
+    }
+}
