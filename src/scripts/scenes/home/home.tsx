@@ -3,47 +3,42 @@ import { BbAnimatedText } from "../../building-blocks/bb-animated-text";
 import { BbImageGrid, IImage } from "../../building-blocks/bb-image-grid";
 import { BbNotice } from "../../building-blocks/bb-notice";
 import { TipLink } from "../../building-blocks/tip-link";
-import { TeamGrid, ITeamGridProps } from "./components/team-grid";
 import { FrictionBoxes } from "./components/friction-boxes";
+import { ITeamGridProps, TeamGrid } from "./components/team-grid";
 import { teamMembers } from "./team-members";
-const img = {
-  booksLarge: require("./static/books.jpg"),
-  booksMedium: require("./static/books-medium.jpg"),
-  homePageGirl: require("./static/home-page-girl.jpg")
-};
 
 const images: IImage[] = [
   {
-    src: require("./static/annie-arjun.png")
+    src: require("./static/annie-arjun.png"),
   },
   {
-    src: require("./static/annie.png")
+    src: require("./static/annie.png"),
   },
   {
-    src: require("./static/bibloo-angry.png")
+    src: require("./static/bibloo-angry.png"),
   },
   {
-    src: require("./static/bibloo-shocked.png")
+    src: require("./static/bibloo-shocked.png"),
   },
   {
-    src: require("./static/jar.png")
+    src: require("./static/jar.png"),
   },
   {
-    src: require("./static/annie.png")
+    src: require("./static/annie.png"),
   },
   {
-    src: require("./static/bibloo-angry.png")
+    src: require("./static/bibloo-angry.png"),
   },
   {
-    src: require("./static/bibloo-shocked.png")
+    src: require("./static/bibloo-shocked.png"),
   },
-    {
-    src: require("./static/bibloo-shocked.png")
-  }
-]
+  {
+    src: require("./static/bibloo-shocked.png"),
+  },
+];
 
 export class Home extends React.Component<any, any> {
-  render() {
+  public render() {
     const homeGallery = <TeamGrid members={teamMembers.members} />;
     return (
       <div className="tip-home">
@@ -70,10 +65,13 @@ export class Home extends React.Component<any, any> {
               </div>
               <div className="small-12 large-6 columns tip-home-subsection">
                 <p>
-                  The Irrelevant Project began with the simple, yet challenging vision of reducing negative stereotypes in the everyday classroom.
+                  The Irrelevant Project began with the simple,
+                  yet challenging vision of reducing negative stereotypes in the everyday classroom.
                 </p>
                 <p>
-                  Its aim is to enable children to resist the script of biases by developing awareness and critical thinking in them, through the medium of fiction.
+                  Its aim is to enable children to resist the script of biases by
+                  developing awareness and critical thinking in them,
+                  through the medium of fiction.
                 </p>
               </div>
             </div>
@@ -125,6 +123,6 @@ export class Home extends React.Component<any, any> {
           </div>
         </div>
       </div >
-    )
+    );
   }
-};
+}
