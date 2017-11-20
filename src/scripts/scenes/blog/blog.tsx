@@ -1,17 +1,19 @@
 import * as React from 'react';
 import { Switch, Route, Link, NavLink, Redirect } from 'react-router-dom';
+import { BlogHome } from "./scenes/home/blog-home";
+import { BlogPost } from "./scenes/post/post"
 
 import { ArchiveContainer } from "./scenes/archive/archive-container";
 
 const Tab = (props: any) => (
-  <div className="shrink columns bb-tab">
-    <NavLink
-      to={props.link}
-      activeClassName="bb-tab-active"
-    >
-      {props.name}
-    </NavLink>
-  </div>
+  <NavLink
+    to={props.link}
+    className="bb-tab shrink columns"
+    activeClassName="bb-tab-active"
+  >
+
+    {props.name}
+  </NavLink>
 )
 
 export const BbTabs = () => (
@@ -30,16 +32,13 @@ export class Blog extends React.Component<any, any> {
             <BbTabs />
           </div>
         </div>
-        <div className="row row-center">
-          <div className="small-12 medium-7 columns ">
-            <Switch>
-              <Redirect from="/blog" exact to="/blog/home" />
-              <Route path={`${this.props.match.url}/home`} render={(props) => (<div>blog home</div>)} />
-              <Route path={`${this.props.match.url}/archive`} component={ArchiveContainer} />
-              <Route path={`${this.props.match.url}/post/:blogId`} render={() => (<div>some blog</div>)} />
-            </Switch>
-          </div>
-        </div>
+        <Switch>
+          <Redirect from="/blog" exact to="/blog/home" />
+          <Route path={`${this.props.match.url}/write`} render={(props) => (<div>sdfhsdf</div>)} />
+          <Route path={`${this.props.match.url}/home`} render={(props) => (<BlogHome />)} />
+          <Route path={`${this.props.match.url}/archive`} component={ArchiveContainer} />
+          <Route path={`${this.props.match.url}/post/:blogId`} render={() => (<BlogPost/>)} />
+        </Switch>
       </div>
     );
   }
