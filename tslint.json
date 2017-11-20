@@ -1,0 +1,21 @@
+{
+  "extends": "tslint:recommended",
+  "defaultSeverity": "warning",
+  "rules": {
+    "max-line-length": {
+      "options": [
+        140
+      ]
+    },
+    "only-arrow-functions": false,
+    "no-empty-interface": false,
+    "max-classes-per-file": false,
+    "member-ordering": false,
+    "no-empty": false,
+    "trailing-comma": false,
+    "no-console": false,
+    "member-access": false
+  },
+  "alwaysShowRuleFailuresAsWarnings": true,
+  "autoFixOnSave": true
+}
