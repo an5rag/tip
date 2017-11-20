@@ -3,6 +3,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var path = require("path");
 var webpack = require("webpack");
+var Uglify = require("uglifyjs-webpack-plugin");
 
 var isDevelopmentMode = process.env.NODE_ENV === "development";
 var BUILD_DIR = path.resolve(__dirname, "build/");
@@ -122,8 +123,9 @@ var config = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(['build/bundle.css', 'build/bundle.css.map'], { verbose: true }),
-    // clean build css only
+    new Uglify(),
+    new CleanWebpackPlugin(['build'], { verbose: true }),
+    // clean build directory
 
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
