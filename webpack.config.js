@@ -122,8 +122,8 @@ var config = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(['build'], { verbose: true }),
-    // clean build directory
+    new CleanWebpackPlugin(['build/bundle.css', 'build/bundle.css.map'], { verbose: true }),
+    // clean build css only
 
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
