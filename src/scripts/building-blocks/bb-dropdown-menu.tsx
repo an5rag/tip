@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 export enum BbDropdownPositions {
   "TOP_LEFT" = "top-left",
@@ -8,7 +8,7 @@ export enum BbDropdownPositions {
   "RIGHT_CENTER" = "right-center",
   "BOTTOM_LEFT" = "bottom-left",
   "BOTTOM_CENTER" = "bottom-center",
-  "BOTTOM_RIGHT" = "bottom-right"
+  "BOTTOM_RIGHT" = "bottom-right",
 }
 
 export interface IBbDropdownProps {
@@ -30,7 +30,6 @@ export interface IBbDropDownState {
   open: boolean;
 }
 
-
 export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownState> {
   public static defaultProps: IBbDropdownProps = {
     position: BbDropdownPositions.BOTTOM_LEFT,
@@ -39,13 +38,11 @@ export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownSta
     toggleOnParentClick: true,
     closeOnChildClick: true,
   };
-
-  public boundClickHandler;
   public wrapperRef;
   /**
-   * To prevent parent-click closing a just opened dropdown, 
+   * To prevent parent-click closing a just opened dropdown,
    * wait for some time before allowing parent click to close it
-   * 
+   *
    * @private
    * @memberof BbDropDown
    */
@@ -54,28 +51,27 @@ export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownSta
   private blockDropdownFromClosingByParentClick() {
     this.dropDownWasJustOpened = setTimeout(() => {
       this.dropDownWasJustOpened = undefined;
-    }, 500)
+    }, 500);
   }
 
   constructor(props: IBbDropdownProps) {
     super(props);
     this.state = {
-      open: false
-    }
-    this.boundClickHandler = this.handleWindowClick.bind(this);
+      open: false,
+    };
   }
 
-  handleWindowClick = (event) => {
+  public handleWindowClick(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.handleClickOutside();
     }
   }
 
-  handleClickOutside = () => {
+  public handleClickOutside() {
     this.setState({ open: false });
   }
 
-  handleParentClick = () => {
+  public handleParentClick() {
     if (this.props.toggleOnParentClick) {
       if (this.state.open) {
         // only close if it's been enough time since it's been open
@@ -90,49 +86,53 @@ export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownSta
 
   }
 
-  handleChildClick = () => {
+  public handleChildClick() {
     if (this.props.closeOnChildClick) {
       this.setState({ open: false });
     }
   }
 
-  handleMouseEnter = () => {
+  public handleMouseEnter() {
     if (this.props.openOnMouseEnter) {
       this.setState({ open: true });
       this.blockDropdownFromClosingByParentClick();
     }
   }
 
-  handleMouseLeave = () => {
+  public handleMouseLeave() {
     if (this.props.closeOnMouseLeave) {
       this.setState({ open: false });
     }
   }
 
-  componentDidMount() {
-    document.addEventListener('mousedown', this.boundClickHandler);
+  public componentDidMount() {
+    document.addEventListener("mousedown", this.handleWindowClick);
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.boundClickHandler);
+  public componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleWindowClick);
   }
 
-
-  render() {
+  public render() {
+    const classes = `bb-dropdown animate fade
+      ${this.state.open ? `visible ${this.props.visibleClasses}` : "not-visible"}
+      ${this.props.containerClasses}`;
     return (
       <div
         ref={(node) => { this.wrapperRef = node; }}
-        className={`bb-dropdown animate fade ${this.state.open ? `visible ${this.props.visibleClasses}` : "not-visible"} ${this.props.containerClasses}`}
-
-        onMouseLeave={this.handleMouseLeave}
+        className={classes}
+        onMouseLeave={this.handleMouseLeave.bind(this)}
       >
-        <div className={`parent ${this.props.parentClasses}`} onClick={this.handleParentClick} onMouseEnter={this.handleMouseEnter}>
+        <div className={`parent ${this.props.parentClasses}`}
+          onClick={this.handleParentClick.bind(this)}
+          onMouseEnter={this.handleMouseEnter.bind(this)}>
           {this.props.parentElement}
         </div>
-        <div className={`child ${this.props.position} ${this.props.childClasses}`} onClick={this.handleChildClick}>
+        <div className={`child ${this.props.position} ${this.props.childClasses}`} 
+        onClick={this.handleChildClick.bind(this)}>
           {this.props.childElement}
         </div>
       </div>
-    )
+    );
   }
 }
