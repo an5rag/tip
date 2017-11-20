@@ -1,18 +1,17 @@
 import * as React from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from "react-transition-group"
 
 export interface IImage {
-  src: string
+  src: string;
 }
 
-export interface BbImageGridProps {
-  images: IImage[]
+export interface IBbImageGridProps {
+  images: IImage[];
 }
 
-interface BBImageGridState {
+interface IBBImageGridState {
 
 }
-
 
 const Fade = ({ children, ...props }) => (
   <CSSTransition
@@ -24,14 +23,13 @@ const Fade = ({ children, ...props }) => (
   </CSSTransition>
 );
 
-
-export class BbImageGrid extends React.Component<BbImageGridProps, BBImageGridState> {
+export class BbImageGrid extends React.Component<IBbImageGridProps, IBBImageGridState> {
 
   constructor(props) {
     super(props);
   }
 
-  getGridElements() {
+  public getGridElements() {
     return this.props.images.map((image, index) => {
       return (
         <Fade key={index}>
@@ -39,20 +37,21 @@ export class BbImageGrid extends React.Component<BbImageGridProps, BBImageGridSt
             <img src={image.src} />
           </div>
         </Fade>
-      )
-    })
+      );
+    });
   }
 
-
-  render() {
+  public render() {
     const classes = `bb-image-grid`;
 
     return (
-      <TransitionGroup>
-        <div className={classes}>
+      <div className={classes}>
+        <TransitionGroup>
+
           {this.getGridElements()}
-        </div>
-      </TransitionGroup>
-    )
+
+        </TransitionGroup>
+      </div>
+    );
   }
 }
