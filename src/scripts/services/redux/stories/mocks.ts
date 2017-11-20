@@ -1,7 +1,7 @@
-import { IStory } from "./interfaces";
 import * as _ from "lodash";
+import { IStory } from "./interfaces";
 
-const mockStories: Array<IStory> = [
+const mockStories: IStory[] = [
   {
     id: "big-book-of-why",
     title: "Big Book of Why",
@@ -17,7 +17,7 @@ const mockStories: Array<IStory> = [
       details: "",
       illustrator: ""
     },
-    tags:["inclusive", "children", "curiosity", "questions", "social issues", "gender"]
+    tags: ["inclusive", "children", "curiosity", "questions", "social issues", "gender"]
   },
   {
     id: "dont-pull-my-cheeks",
@@ -34,7 +34,7 @@ const mockStories: Array<IStory> = [
       details: "",
       illustrator: ""
     },
-    tags:["Consent", "touch", "Problem solving", "choice", "no"]
+    tags: ["Consent", "touch", "Problem solving", "choice", "no"]
   },
   {
     id: "the-curious-case-of-mohit-and-rumi-the-rabbit",
@@ -86,17 +86,17 @@ const mockStories: Array<IStory> = [
       illustrator: ""
     }
   }
-]
+];
 export const delayPromise = (delay: number) => {
   return new Promise<void>((resolve, reject) => {
     setTimeout(resolve, delay);
-  })
-}
+  });
+};
 
 export const getAllStories = (delay?: number) => delayPromise(delay)
-  .then(() => { return mockStories; })
+  .then(() => mockStories);
 
 export const getStory = (storyId: string, delay?: number) => {
   return delayPromise(delay)
-    .then(() => { return _.find(mockStories, (story) => { return story.id === storyId }); })
-}
+    .then(() => _.find(mockStories, (story) => story.id === storyId));
+};
