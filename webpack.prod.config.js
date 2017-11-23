@@ -3,26 +3,16 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var path = require("path");
 var webpack = require("webpack");
+var Uglify = require("uglifyjs-webpack-plugin");
 
-var isDevelopmentMode = process.env.NODE_ENV === "development";
 var BUILD_DIR = path.resolve(__dirname, "build/");
 var APP_DIR = path.resolve(__dirname, "src/");
 
 var appEntry = [
   APP_DIR + "/styles/global.scss",
   // scss files
-  APP_DIR + "/scripts/index.jsx",
+  APP_DIR + "/scripts/index.jsx"
   // js files
-  "react-hot-loader/patch",
-  // activate HMR for React
-
-  "webpack-dev-server/client?http://localhost:3000",
-  // bundle the client for webpack-dev-server
-  // and connect to the provided endpoint
-
-  "webpack/hot/only-dev-server"
-  // bundle the client for hot reloading
-  // only- means to only hot reload for successful updates
 ];
 
 // allows splitting vendor modules
@@ -50,14 +40,14 @@ var config = {
     // necessary for HMR to know where to load the hot update chunks
   },
 
-  devtool: "inline-source-map",
+  devtool: "nosources-source-map",
   // enable source maps
 
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: ['react-hot-loader/webpack', "awesome-typescript-loader"],
+        loader: "awesome-typescript-loader",
         include: APP_DIR,
         exclude: /node_modules/
       },
@@ -75,8 +65,7 @@ var config = {
                 // https://webpack.js.org/guides/hmr-react/#babel-config
                 "stage-2",
                 "react"
-              ],
-              plugins: ["react-hot-loader/babel"]
+              ]
             }
           }
         ]
@@ -116,17 +105,9 @@ var config = {
   },
 
   plugins: [
+    new Uglify(),
     new CleanWebpackPlugin(['build'], { verbose: true }),
     // clean build directory
-
-    new webpack.HotModuleReplacementPlugin(),
-    // enable HMR globally
-
-    new webpack.NamedModulesPlugin(),
-    // prints more readable module names in the browser console on HMR updates
-
-    new webpack.NoEmitOnErrorsPlugin(),
-    // do not emit compiled assets that include errors
 
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
@@ -138,28 +119,16 @@ var config = {
     // code splitting for vendor
 
     new ExtractTextPlugin({
-      filename: "bundle.css",
-      disable: true
+      filename: "bundle.css"
     }),
 
     new webpack.DefinePlugin({
       "process.env": {
-        NODE_ENV: JSON.stringify("development")
+        NODE_ENV: JSON.stringify("production")
       }
     })
     // This will produce output bundles that has all instances of process.env.NODE_ENV replaced with the conditional string literal
   ],
-
-  devServer: {
-    host: "localhost",
-    port: 3000,
-
-    historyApiFallback: true,
-    // respond to 404s with index.html
-
-    hot: true
-    // enable HMR on the server
-  },
 
   resolve: {
     extensions: [".js", ".json", ".jsx", ".ts",".tsx"],
