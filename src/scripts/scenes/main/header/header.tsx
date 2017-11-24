@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { Switch, Route, Link, NavLink } from 'react-router-dom';
-import { Title } from './components/title';
+import * as React from "react";
+import { Link, NavLink, Route, Switch } from "react-router-dom";
 import { BbDropDown, BbDropdownPositions } from "../../../building-blocks/bb-dropdown-menu";
-
+import { Title } from "./components/title";
 
 const NavElement = (props: INavElementProps) => (
     <div className="shrink columns tip-nav-link">
@@ -13,24 +12,36 @@ const NavElement = (props: INavElementProps) => (
             <span className="label">{props.displayName}</span>
         </NavLink>
     </div>
-)
+);
 export interface INavElementProps {
-    link: string,
-    displayName: string
+    link: string;
+    displayName: string;
 }
 export interface INavGroupProps {
-    link?: string,
-    displayName: string
-    elements?: INavElementProps[]
+    displayName: string;
+    link?: string;
+    elements?: INavElementProps[];
 }
 
 const NavGroup = (props: INavGroupProps) => {
+    let parentElement;
+    if (props.link) {
+        parentElement = (
+            <NavLink
+                to={props.link}
+            >
+                {props.displayName}
+            </NavLink>
+        );
+    } else {
+        parentElement = props.displayName;
+    }
     const parent = (
         <div className="tip-nav-link">
-            {props.displayName}
+            {parentElement}
             <i className="fa fa-angle-down dropdown-arrow"></i>
         </div>
-    )
+    );
 
     const elements = props.elements.map((navElement, i) => {
         return (
@@ -38,33 +49,35 @@ const NavGroup = (props: INavGroupProps) => {
                 <NavElement link={navElement.link} displayName={navElement.displayName} />
             </div>
         );
-    })
+    });
 
     const child = (
         <div>
             {elements}
         </div>
-    )
+    );
 
     return (
-        <BbDropDown parentElement={parent} childElement={child} containerClasses="shrink columns tip-nav-group" parentClasses="tip-nav-group-parent" childClasses="tip-nav-group-child" />
-    )
+        <BbDropDown
+            parentElement={parent}
+            childElement={child}
+            containerClasses="shrink columns tip-nav-group"
+            parentClasses="tip-nav-group-parent" childClasses="tip-nav-group-child" />
+    );
+};
+export interface IHeaderProps {
+    showNavBar: boolean;
 }
 
-
-export const Header = () => (
-    <div className="tip-header">
-        <div className="row row-center">
-            <Link to="/">
-                <Title />
-            </Link>
-        </div>
+export const Header = (props: IHeaderProps) => {
+    const navBar = (
         <div className="row row-center">
             <NavGroup displayName="About"
+                link="/about"
                 elements={[
                     {
-                        displayName: "Our Story",
-                        link: "/our-story"
+                        displayName: "About",
+                        link: "/about"
                     },
                     {
                         displayName: "FAQ",
@@ -78,7 +91,7 @@ export const Header = () => (
             />
             <NavElement link="/stories" displayName="Stories" />
             <NavElement link="/blog" displayName="Blog" />
-            <NavGroup link="/more" displayName="More"
+            <NavGroup displayName="More"
                 elements={[
                     {
                         displayName: "Contact",
@@ -91,5 +104,15 @@ export const Header = () => (
                 ]}
             />
         </div>
-    </div>
-);
+    );
+    return (
+        <div className="tip-header">
+            <div className="row row-center">
+                <Link to="/">
+                    <Title />
+                </Link>
+            </div>
+            {props.showNavBar ? navBar : null}
+        </div>
+    );
+};

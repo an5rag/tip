@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { BrowserRouter, Switch, Route, Link, NavLink } from "react-router-dom";
-import { Home } from '../../home/home';
-import { Stories } from '../../stories/stories';
-import { Talk } from '../../talk/talk';
-import { Blog } from '../../blog/blog'
+import * as React from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import { Blog } from "../../blog/blog";
+import { Home } from "../../home/home";
+import { Stories } from "../../stories/stories";
+import { Talk } from "../../talk/talk";
 
 export const Body = () =>
   <div className="tip-body">
@@ -14,11 +14,8 @@ export const Body = () =>
       <Route path="/blog" component={Blog} />
       <Route render={() => {
         return (
-          <div>
-            404: Page Not found.
-          </div>
-        )
+          <Redirect to="/404" />
+        );
       }} />
     </Switch>
   </div>;
-
