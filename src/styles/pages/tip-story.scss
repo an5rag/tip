@@ -16,6 +16,7 @@
     .title {
         @extend %heading-x-large;
         font-weight: $heavy-font-weight;
+        font-family: $primary-text-font;
         margin-bottom: 1rem;
     }
     .synopsis {
