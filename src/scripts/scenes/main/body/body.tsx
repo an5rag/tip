@@ -4,6 +4,7 @@ import { Blog } from "../../blog/blog";
 import { Home } from "../../home/home";
 import { Stories } from "../../stories/stories";
 import { Talk } from "../../talk/talk";
+import { NotFoundPage } from "../404/404";
 
 export const Body = () =>
   <div className="tip-body">
@@ -12,10 +13,6 @@ export const Body = () =>
       <Route path="/stories" component={Stories} />
       <Route path="/talk" component={Talk} />
       <Route path="/blog" component={Blog} />
-      <Route render={() => {
-        return (
-          <Redirect to="/404" />
-        );
-      }} />
+      <Route component={NotFoundPage} />
     </Switch>
   </div>;
