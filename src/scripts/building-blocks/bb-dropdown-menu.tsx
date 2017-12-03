@@ -118,6 +118,7 @@ export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownSta
       ${this.state.open ? `visible ${this.props.visibleClasses}` : "not-visible"}
       ${this.props.containerClasses}`;
     return (
+      
       <div
         ref={(node) => { this.wrapperRef = node; }}
         className={classes}
@@ -127,10 +128,10 @@ export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownSta
           onClick={this.handleParentClick.bind(this)}
           onMouseEnter={this.handleMouseEnter.bind(this)}>
           {this.props.parentElement}
-        </div>
-        <div className={`child ${this.props.position} ${this.props.childClasses}`} 
-        onClick={this.handleChildClick.bind(this)}>
-          {this.props.childElement}
+          <div className={`child ${this.props.position} ${this.props.childClasses}`}
+            onClick={this.handleChildClick.bind(this)}>
+            {this.props.childElement}
+          </div>
         </div>
       </div>
     );
