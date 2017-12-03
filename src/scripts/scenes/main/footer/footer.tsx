@@ -1,5 +1,6 @@
-import * as React from 'react';
-import { Switch, Route, Link, NavLink } from 'react-router-dom';
+import * as React from "react";
+import { Link, NavLink, Route, Switch } from "react-router-dom";
+import { BbAnimatedColorText } from "./../../../building-blocks/bb-animated-color-text";
 
 export const Footer = () => (
     <div className="tip-footer">
@@ -63,36 +64,8 @@ export const Footer = () => (
         <div className="row">
             <div className="tip-title">
                 <div className="tip-title-copyright">© The Irrelevant Project 2017</div>
-                <div className="tip-title-banner anim-text-flow">
-                    <span>t</span>
-                    <span>h</span>
-                    <span>e</span>
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                    <span>i</span>
-                    <span>r</span>
-                    <span>r</span>
-                    <span>e</span>
-                    <span>l</span>
-                    <span>e</span>
-                    <span>v</span>
-                    <span>a</span>
-                    <span>n</span>
-                    <span>t</span>
-                    <span />
-                    <span />
-                    <span />
-                    <span />
-                    <span>p</span>
-                    <span>r</span>
-                    <span>o</span>
-                    <span>j</span>
-                    <span>e</span>
-                    <span>c</span>
-                    <span>t</span>
-
+                <div className="tip-title-banner">
+                    <BbAnimatedColorText text="the irrelevant project" />
                 </div>
             </div>
         </div>
