@@ -1,5 +1,5 @@
-import { IStoriesState } from './stories/interfaces';
+import { IStoriesState } from "./stories/interfaces";
 
 export interface IRootState {
-  stories: IStoriesState
-} 
+  stories: IStoriesState;
+}
