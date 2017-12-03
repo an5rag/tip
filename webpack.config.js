@@ -9,9 +9,6 @@ var BUILD_DIR = path.resolve(__dirname, "build/");
 var APP_DIR = path.resolve(__dirname, "src/");
 
 var appEntry = [
-  APP_DIR + "/styles/global.scss",
-  // scss files
-  APP_DIR + "/scripts/index.jsx",
   // js files
   "react-hot-loader/patch",
   // activate HMR for React
@@ -20,9 +17,13 @@ var appEntry = [
   // bundle the client for webpack-dev-server
   // and connect to the provided endpoint
 
-  "webpack/hot/only-dev-server"
+  "webpack/hot/only-dev-server",
   // bundle the client for hot reloading
   // only- means to only hot reload for successful updates
+
+  APP_DIR + "/styles/global.scss",
+  // scss files
+  APP_DIR + "/scripts/index.jsx",
 ];
 
 // allows splitting vendor modules
