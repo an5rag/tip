@@ -1,5 +1,6 @@
 .tip-link {
     a {
+        cursor: pointer;
         color: $regular-link-color;
         font-weight: $normal-font-weight;
         &:hover {

@@ -50,10 +50,10 @@ export class Home extends React.Component<any, any> {
               <BbNotice dismissable={true} type="secondary" title="Hi there!" content="Thanks for visiting our website. We are still actively developing this and working hard to finish what we set out for. Till then, you might encounter broken links and placeholder texts." />
             </div>
           </div>
-          <div className="row row-center">
+          {/* <div className="row row-center">
             <div className="small-12 medium-10 columns">
               <BbImageGrid images={images} /></div>
-          </div>
+          </div> */}
 
           <div className="row row-center">
             <div className="small-12 medium-10 columns">
@@ -97,7 +97,7 @@ export class Home extends React.Component<any, any> {
                     Browse through our current collection of story books.
               </p>
                   <p className="no-padding">
-                    <TipLink link="/stories">Stories  <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+                    <TipLink to="/stories">Stories  <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
                   </p>
                 </div>
 
@@ -109,8 +109,8 @@ export class Home extends React.Component<any, any> {
                     Meet the Irrelevants and read about why they are doing what they are doing.
                 </p>
                   <p className="no-padding">
-                    <TipLink link="/faq">About <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-                    <TipLink link="/faq">Frequently Asked Questions <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink>
+                    <TipLink to="/faq">About <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+                    <TipLink to="/faq">Frequently Asked Questions <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink>
                   </p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export class Home extends React.Component<any, any> {
                 <div className="small-10 medium-9 columns tip-home-subsection">
                   <p className="light center small" >
                     If you want to talk to us and collaborate with us, please do not hesitate to reach out to us at
-                    <TipLink external={true} link="mailto:theirrelevantproject@gmail.com?Subject=Hello%20Irrelevants"> theirrelevantproject@gmail.com</TipLink>
+                    <TipLink external={true} to="mailto:theirrelevantproject@gmail.com?Subject=Hello%20Irrelevants"> theirrelevantproject@gmail.com</TipLink>
                   </p>
                 </div>
               </div>

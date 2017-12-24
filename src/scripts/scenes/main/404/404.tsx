@@ -15,31 +15,28 @@ export const NotFoundPage = (props: INotFoundProps) => {
   return (
     <DocumentTitle title={`Can't find ${type} - The Irrelevant Project`}>
       <div>
-        {/* <Header showNavBar={false} /> */}
         <div className="row row-center tip-404 row-wrap-reverse">
-
-          <div className="columns small-12 medium-5 columns">
-
+          <div className="columns small-12 medium-8 large-5 columns text-container">
             <h1>
               Yikes.
-          </h1>
+            </h1>
             <h2>
               We can't seem to find the {type} you're looking for.
-          </h2>
+            </h2>
             <p>
               Here are some helpful links instead:<br />
-              <TipLink link="/home">Home <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink link="/stories">Stories <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink link="/blog">Blog <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink link="/about">About <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink link="/faq">Frequently Asked Questions <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink>
+              <TipLink to="/home">Home <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink to="/stories">Stories <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink to="/blog">Blog <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink to="/about">About <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink to="/faq">Frequently Asked Questions <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink>
             </p>
           </div>
-          <div className="columns small-12 medium-5 hero-image-container">
+
+          <div className="columns small-12 large-5 hero-image-container">
             <img className="hero-image" src={image} />
           </div>
         </div>
-        {/* <Footer /> */}
       </div>
     </DocumentTitle>
   );
