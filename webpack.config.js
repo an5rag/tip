@@ -58,7 +58,7 @@ var config = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: ['react-hot-loader/webpack', "awesome-typescript-loader"],
+        loader: [ "awesome-typescript-loader"],
         include: APP_DIR,
         exclude: /node_modules/
       },
