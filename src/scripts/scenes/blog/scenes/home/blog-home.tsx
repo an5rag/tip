@@ -32,9 +32,6 @@ export class BlogHome extends React.Component<any, any> {
     return (
       <div className="row row-center">
         <div className="small-12 medium-12 columns tip-blog-write tip-blog-post">
-          <div >
-            <MyEditor />
-          </div>
         </div>
       </div>
     );

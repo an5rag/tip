@@ -17,11 +17,12 @@ $light-font-weight: 300;
 $heavy-font-weight: 700;
 // Font sizes
 $base-font-size: 16px;
-$mobile-base-font-size: 14px;
-$small-mobile-base-font-size: 13px;
+$mobile-base-font-size: 15px;
+$small-mobile-base-font-size: 14px;
 // letter spacing
 $normal-letter-spacing: 0.3;
-$narrow-letter-spacing: 0.1;
+$narrow-letter-spacing: -0.7;
+$x-narrow-letter-spacing: -0.7;
 $wide-letter-spacing: 0.5;
 
 /* ==========================================================================
@@ -62,6 +63,11 @@ $wide-letter-spacing: 0.5;
     line-height: 1.6em;
 }
 
+%text-x-x-large {
+    font-size: 2.0em;
+    line-height: 1.6em;
+}
+
 
 /* Heading
    ========================================================================== */
@@ -72,18 +78,17 @@ $wide-letter-spacing: 0.5;
 }
 
 %heading-small {
-    // not used yet
     font-size: 1.2em;
     line-height: 1.6em;
 }
 
 %heading-regular {
-    font-size: 1.75em;
-    line-height: 1.6em;
+    font-size: 2.25em;
+    line-height: 1.3em;
 }
 
 %heading-large {
-    font-size: 2.25em;
+    font-size: 3em;
     line-height: 1.3em;
 }
 
@@ -91,6 +96,7 @@ $wide-letter-spacing: 0.5;
     font-size: 4em;
     line-height: 1.1em;
 }
+
 %heading-x-x-large {
     font-size: 6em;
     line-height: 1.1em;
@@ -102,12 +108,12 @@ $wide-letter-spacing: 0.5;
    ========================================================================== */
 
 .tip-text-block {
-    p:not(:last-child) {
-        padding-bottom: 1rem;
+    p:not(:last-of-type) {
+        margin-bottom: 1rem;
     }
     p {
         &.no-padding {
-            padding-bottom: 0px;
+            margin-bottom: 0px;
         }
     }
 }

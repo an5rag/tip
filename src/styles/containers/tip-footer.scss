@@ -49,7 +49,8 @@ $footer-min-height: 30vh;
             text-align: center;
         }
         .tip-title-banner {
-            @extend %heading-small;
+            font-size: 1.2em;
+            line-height: 1.6em;
             font-family: $secondary-heading-font;
             font-weight: $light-font-weight;
             span {

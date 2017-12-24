@@ -10,5 +10,108 @@ $heading-margin-bottom: 2rem;
 
 .tip-blog {
     padding: 0 $side-padding 0 $side-padding;
+}
 
+.tip-blog-title {
+    @extend %heading-large;
+    font-family: $primary-heading-font;
+    letter-spacing: $narrow-letter-spacing;
+    font-weight: $heavy-font-weight;
+    margin-bottom: 1rem;
+}
+
+.tip-blog-subtitle {
+    color: grey;
+    margin-top: 0.5rem;
+    font-size: 1.55rem;
+    font-weight: $normal-font-weight;
+    letter-spacing: $x-narrow-letter-spacing;
+}
+
+.tip-blog-meta {
+    font-family: $secondary-heading-font;
+    font-weight: $light-font-weight;
+    letter-spacing: $wide-letter-spacing;
+    @extend %heading-x-small;
+    margin-bottom: 1rem;
+}
+
+.tip-blog-text {
+    @extend .tip-text-block;
+    @extend %text-regular;
+    font-family: $primary-text-font;
+    color: $secondary-text-color;
+    p {}
+    ol,
+    ul {
+        margin: 0 0 1rem 0;
+        padding: 0 0 0 1rem;
+        list-style-position: outside;
+        li {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    h1,
+    h2 {
+        margin-top: 3rem;
+    }
+    h3,
+    h4,
+    h5 {
+        margin-top: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin-bottom: 1rem;
+        font-weight: $heavy-font-weight;
+        font-family: $primary-heading-font;
+    }
+    h1 {
+        @extend %heading-large;
+    }
+    h2 {
+        @extend %heading-regular;
+        letter-spacing: $x-narrow-letter-spacing;
+    }
+    h3,
+    h4 {
+        @extend %heading-small;
+    }
+    h4 {
+        color: $tertiary-text-color;
+    }
+    h5 {
+        @extend %heading-x-small;
+        margin-bottom: 1rem;
+    }
+    figure {
+        font-family: $primary-text-font;
+        img {
+            display: block;
+            width: 90%;
+            @media only screen and (max-width: 480px) {
+                width: 100%;
+            }
+            margin: auto;
+        }
+        margin: 2rem 0;
+        figcaption {
+            @extend %heading-x-small;
+            margin-top: 0.5rem;
+            text-align: center;
+            color: $tertiary-text-color;
+        }
+        height: auto;
+    }
+    blockquote {
+        @extend %text-x-x-large;
+        font-family: $primary-heading-font;
+        color: rgb(102, 59, 255);
+        padding-left: 1rem;
+        border-left: 5px solid rgba(102, 59, 255, 0.5);
+        margin: 2rem 0;
+    }
 }

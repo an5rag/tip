@@ -30,7 +30,7 @@ $ticker-mobile-duration: 25s;
             }
            
             .tip-home-subsection-heading {
-                @extend %heading-large;
+                @extend %heading-regular;
                 margin-bottom: $subsection-heading-margin-bottom;
                 font-family: $primary-heading-font;
                 color: $primary-color;

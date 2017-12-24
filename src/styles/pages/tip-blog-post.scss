@@ -9,27 +9,25 @@ $heading-margin-bottom: 2rem;
    ========================================================================== */
 
 .tip-blog-post {
-  margin-top: $heading-margin-bottom;
-    .tip-blog-heading {
-        margin-bottom: $heading-margin-bottom;
-        .tip-blog-heading-text {
-            @extend %heading-x-large;
-            font-family: $secondary-heading-font;
-            margin-bottom: 1rem;
-        }
-        .tip-blog-subheading {
-            @extend %heading-x-small;
-            font-family: $secondary-heading-font;
-            color: $secondary-color;
-            letter-spacing: $wide-letter-spacing;
-        }
+    margin-bottom: $heading-margin-bottom;
+    margin-top: 3rem;
+
+    .content {
+        margin-top: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid $secondary-color;
     }
-    .tip-blog-text {
-        @extend .tip-text-block;
-        p {
-            @extend %text-regular;
-            font-family: $secondary-text-font;
-            color: $secondary-text-color;
+    .share-icons {
+        margin-top: 3rem;
+        text-align: center;
+        @extend %text-x-large;
+        i {
+            margin-right: 2rem;
+            cursor: pointer;
+            color: $regular-link-color;
+            &:hover {
+                color: $regular-link-color-hover;
+            }
         }
     }
 }

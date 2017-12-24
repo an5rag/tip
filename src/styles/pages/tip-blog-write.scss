@@ -7,32 +7,24 @@
       SELECTORS
       ========================================================================== */
 
-.tip-blog-write {
-    .editor {
-        font-family: $primary-text-font;
-        color: $primary-text-color;
-        @extend %text-regular;
-        font-size: 1em;
-        box-sizing: border-box;
-        border: 1px solid #ddd;
-        cursor: text;
-        padding: 16px;
-        border-radius: 2px;
-        margin-bottom: 2em;
-        box-shadow: inset 0px 1px 8px -3px #ABABAB;
-        background: #fefefe;
+.editor {
+    box-sizing: border-box;
+    &:hover {
+        border: 1px solid #eee;
+    }
+    border: 1px solid transparent;
+    cursor: text;
+    padding: 1rem; // border-radius: 2px;
+    margin-bottom: 2em; // box-shadow: inset 0px 1px 8px -3px #ABABAB;
+    background: #fefefe;
+    width: 100%;
+    &.readonly {
+        border: none;
+        padding: 0;
+        cursor: auto;
     }
 }
 
 .editor :global(.public-DraftEditor-content) {
     min-height: 140px;
-}
-
-.tip-blog-post {
-    @extend .tip-text-block;
-    p {
-        @extend %text-regular;
-        font-family: $primary-text-font;
-        color: $secondary-text-color;
-    }
 }
