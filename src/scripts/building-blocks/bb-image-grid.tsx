@@ -46,11 +46,9 @@ export class BbImageGrid extends React.Component<IBbImageGridProps, IBBImageGrid
 
     return (
       <div className={classes}>
-        <TransitionGroup>
-
+        {/* <TransitionGroup> */}
           {this.getGridElements()}
-
-        </TransitionGroup>
+        {/* </TransitionGroup> */}
       </div>
     );
   }

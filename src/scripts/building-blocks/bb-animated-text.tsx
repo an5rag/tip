@@ -2,56 +2,56 @@ import * as React from "react";
 
 interface IProps {
   /**
-   * 
+   *
    * array of strings to animate
-   * 
+   *
    * @type {string[]}@memberof IProps
    */
   strings: string[];
 
   /**
-   * 
+   *
    * Initial position of string to start animating from
-   * 
+   *
    * @type {number}@memberof IProps
    */
   offset?: number;
 
   /**
-   * 
+   *
    * Number of random characters to show per character
-   * 
+   *
    * @type {number}@memberof IProps
    */
   iterations?: number;
 
   /**
-   * 
+   *
    * Timeout between each random character
-   * 
+   *
    * @type {number}@memberof IProps
    */
   characterTimeout?: number;
 
   /**
-   * 
+   *
    * Timeout between each string
-   * 
+   *
    * @type {number}@memberof IProps
    */
   stringTimeout?: number;
 
   /**
    * Random characters to pick from
-   * 
+   *
    * @type {string[]}@memberof IProps
    */
   characters?: string[];
 
   /**
-   * 
+   *
    * Infinitely go through the string array (Default: false)
-   * 
+   *
    * @type {boolean}@memberof IProps
    */
   infinite?: boolean;
@@ -162,7 +162,7 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
         // if infinite animation loop reset it back to 0
         stringIndex = 0;
       } else {
-        // (animation is over) reset indices and and clear timer
+        // (animation is over) reset indices and clear timer
         stringIndex = prevState.currentStringIndex;
         characterIndex = prevState.currentCharacterIndex;
         this.clearTimers();
@@ -176,8 +176,8 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
   }
 
   setNextCharacter(prevState: IState, props: IProps) {
+    const stringIndex = prevState.currentStringIndex;
     let characterIndex = prevState.currentCharacterIndex,
-      stringIndex = prevState.currentStringIndex,
       iterationIndex = prevState.currentIterationIndex + 1,
       currentCharacter = this.getRandomCharacter();
 
@@ -189,7 +189,7 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
       if (characterIndex >= props.strings[stringIndex].length) {
         // reached last character
         currentCharacter = "";
-        // using window.setInterval to make sure the Nodejs setTimer typing is not used 
+        // using window.setInterval to make sure the Nodejs setTimer typing is not used
         this.stringTimer = window.setTimeout(() => {
           clearTimeout(this.stringTimer);
           this.stringTimer = undefined;
@@ -210,7 +210,8 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
   }
 
   render() {
-    let partialString = this.props.strings[this.state.currentStringIndex].substring(0, this.state.currentCharacterIndex) + this.state.currentRandomCharacter;
+    let partialString = this.props.strings[this.state.currentStringIndex].substring(0, this.state.currentCharacterIndex)
+      + this.state.currentRandomCharacter;
     partialString = this.props.uppercase ? partialString.toUpperCase() : partialString;
     return (
       <span>

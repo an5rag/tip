@@ -61,17 +61,17 @@ export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownSta
     };
   }
 
-  public handleWindowClick(event) {
+  public handleWindowClick = (event) => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.handleClickOutside();
     }
   }
 
-  public handleClickOutside() {
+  public handleClickOutside = () => {
     this.setState({ open: false });
   }
 
-  public handleParentClick() {
+  public handleParentClick = () => {
     if (this.props.toggleOnParentClick) {
       if (this.state.open) {
         // only close if it's been enough time since it's been open
@@ -86,20 +86,20 @@ export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownSta
 
   }
 
-  public handleChildClick() {
+  public handleChildClick = () => {
     if (this.props.closeOnChildClick) {
       this.setState({ open: false });
     }
   }
 
-  public handleMouseEnter() {
+  public handleMouseEnter = () => {
     if (this.props.openOnMouseEnter) {
       this.setState({ open: true });
       this.blockDropdownFromClosingByParentClick();
     }
   }
 
-  public handleMouseLeave() {
+  public handleMouseLeave = () => {
     if (this.props.closeOnMouseLeave) {
       this.setState({ open: false });
     }
@@ -118,18 +118,17 @@ export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownSta
       ${this.state.open ? `visible ${this.props.visibleClasses}` : "not-visible"}
       ${this.props.containerClasses}`;
     return (
-      
       <div
         ref={(node) => { this.wrapperRef = node; }}
         className={classes}
-        onMouseLeave={this.handleMouseLeave.bind(this)}
+        onMouseLeave={this.handleMouseLeave}
       >
         <div className={`parent ${this.props.parentClasses}`}
-          onClick={this.handleParentClick.bind(this)}
-          onMouseEnter={this.handleMouseEnter.bind(this)}>
+          onClick={this.handleParentClick}
+          onMouseEnter={this.handleMouseEnter}>
           {this.props.parentElement}
           <div className={`child ${this.props.position} ${this.props.childClasses}`}
-            onClick={this.handleChildClick.bind(this)}>
+            onClick={this.handleChildClick}>
             {this.props.childElement}
           </div>
         </div>
