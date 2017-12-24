@@ -24,7 +24,8 @@ $nav-link-color-hover: $primary-color;
             flex-direction: column;
             margin-right: 20px;
             justify-content: center;
-            @extend %heading-regular;
+            font-size: 1.75em;
+            line-height: 1.6em;
             font-family: $primary-heading-font;
         }
     }

@@ -40,7 +40,7 @@
         }
     }
     .heading {
-        @extend %heading-large;
+        @extend %heading-regular;
         font-family: $primary-heading-font;
     }
     .text {
