@@ -42,20 +42,23 @@ a {
     box-sizing: border-box;
 }
 
-.fade-enter {
-    opacity: 0.01;
+$mobile-max-width: 480px;
+$tablet-min-width: 768px;
+$desktop-min-width: 1024px;
+@mixin mobile {
+    @media (max-width: #{$mobile-max-width}) {
+        @content;
+    }
 }
 
-.fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 1000ms ease-in;
+@mixin tablet {
+    @media (min-width: #{$tablet-min-width}) and (max-width: #{$desktop-min-width - 1px}) {
+        @content;
+    }
 }
 
-.fade-exit {
-    opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-    opacity: 0.01;
-    transition: opacity 800ms ease-in;
+@mixin desktop {
+    @media (min-width: #{$desktop-min-width}) {
+        @content;
+    }
 }
