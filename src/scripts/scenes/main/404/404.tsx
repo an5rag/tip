@@ -25,11 +25,11 @@ export const NotFoundPage = (props: INotFoundProps) => {
             </h2>
             <p>
               Here are some helpful links instead:<br />
-              <TipLink to="/home">Home <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink to="/stories">Stories <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink to="/blog">Blog <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink to="/about">About <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink to="/faq">Frequently Asked Questions <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink>
+              <TipLink external={false} to="/home">Home <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink external={false} to="/stories">Stories <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink external={false} to="/blog">Blog <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink external={false} to="/about">About <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink external={false} to="/faq">Frequently Asked Questions <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink>
             </p>
           </div>
 
