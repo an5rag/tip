@@ -2,9 +2,9 @@
 import * as React from "react";
 
 interface IFrictionBoxState {
-  velocity: number,
-  previousScrollTop: number,
-  displacement: number
+  velocity: number;
+  previousScrollTop: number;
+  displacement: number;
 }
 
 interface IFrictionBoxProps {
@@ -34,7 +34,7 @@ class FrictionBox extends React.Component<any, IFrictionBoxState>  {
     });
     if (!this.animationFrameHandler) {
       console.log("Starting interval");
-      this.animationFrameHandler = setInterval(this.boundHandlers.boundFrictionMove, 1000/60);
+      this.animationFrameHandler = setInterval(this.boundHandlers.boundFrictionMove, 1000 / 60);
     }
   }
 
@@ -63,11 +63,11 @@ class FrictionBox extends React.Component<any, IFrictionBoxState>  {
 
   render() {
     const styles = {
-      transform: `translate3d(0px, ${(this.state.displacement/10).toFixed(2)}px, 0px) rotate(${(this.state.displacement/100)}deg)`
-    }
+      transform: `translate3d(0px, ${(this.state.displacement / 10).toFixed(2)}px, 0px) rotate(${(this.state.displacement / 100)}deg)`
+    };
     return (
       <div className="friction-box" style={styles}></div>
-    )
+    );
   }
 }
 
@@ -81,5 +81,4 @@ export class FrictionBoxes extends React.Component<any, any> {
       </div>
     );
   }
-};
-
+}
