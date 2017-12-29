@@ -11,9 +11,9 @@ import {
   RichUtils
 } from "draft-js";
 import createInlineToolbarPlugin from "draft-js-inline-toolbar-plugin";
-import "draft-js-inline-toolbar-plugin/lib/plugin.css";
+// import "draft-js-inline-toolbar-plugin/lib/plugin.css";
 import Editor, { createEditorStateWithText } from "draft-js-plugins-editor";
-import "draft-js/dist/Draft.css";
+// import "draft-js/dist/Draft.css";
 import { Map } from "immutable";
 import * as React from "react";
 import { SyntheticEvent } from "react";

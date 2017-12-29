@@ -33,8 +33,8 @@ export class Blog extends React.Component<any, any> {
         <div className="tip-blog">
           <Switch>
             <Redirect from="/blog" exact to="/blog/home" />
-            <Route path={`${this.props.match.url}/write`} render={(props) => (<BlogWrite/>)} />
-            <Route path={`${this.props.match.url}/home`} render={(props) => (<BlogWrite />)} />
+            <Route path={`${this.props.match.url}/write`} render={(props) => (<BlogWrite />)} />
+            <Route path={`${this.props.match.url}/home`} render={(props) => (<BlogPost />)} />
             <Route path={`${this.props.match.url}/archive`} component={ArchiveContainer} />
             <Route exact path={`${this.props.match.url}/post`} component={ArchiveContainer} />
             <Route path={`${this.props.match.url}/post/:blogId`} render={() => (<BlogPost />)} />

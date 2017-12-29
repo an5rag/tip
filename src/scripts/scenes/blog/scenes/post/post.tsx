@@ -12,7 +12,7 @@ export const BlogPost = () => (
       </h1>
 
       <h5 className="tip-blog-meta">
-        Anurag Choudhary | <BbAnimatedText strings={["TECHNOLOGY", "MARCH 29 2017"]} />
+        Anurag Choudhary | MARCH 29 2017 | TECHNOLOGY
       </h5>
 
       <div className="content tip-blog-text">

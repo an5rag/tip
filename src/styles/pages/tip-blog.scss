@@ -40,7 +40,7 @@ $heading-margin-bottom: 2rem;
     @extend .tip-text-block;
     @extend %text-regular;
     font-family: $primary-text-font;
-    color: $secondary-text-color;
+    color: $primary-text-color;
     p {}
     ol,
     ul {
