@@ -12,24 +12,26 @@ export interface INotFoundProps {
 }
 export const NotFoundPage = (props: INotFoundProps) => {
   const type = props.type ? props.type : "page";
+  const titleArray = ["Yikes!", "Rats!", "Awks.", "Shoot!"];
+  const title = titleArray[Math.floor(Math.random() * titleArray.length)];
   return (
     <DocumentTitle title={`Can't find ${type} - The Irrelevant Project`}>
       <div>
         <div className="row row-center tip-404 row-wrap-reverse">
           <div className="columns small-12 medium-8 large-5 columns text-container">
             <h1>
-              Yikes.
+              {title}
             </h1>
             <h2>
               We can't seem to find the {type} you're looking for.
             </h2>
             <p>
               Here are some helpful links instead:<br />
-              <TipLink external={false} to="/home">Home <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink external={false} to="/stories">Stories <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink external={false} to="/blog">Blog <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink external={false} to="/about">About <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
-              <TipLink external={false} to="/faq">Frequently Asked Questions <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink>
+              <TipLink to="/home">Home <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink to="/stories">Stories <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink to="/blog">Blog <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink to="/about">About <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink><br />
+              <TipLink to="/faq">Frequently Asked Questions <i className="fa fa-angle-right link-icon" aria-hidden="true"></i></TipLink>
             </p>
           </div>
 
