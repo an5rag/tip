@@ -1,14 +1,16 @@
 /* ==========================================================================
-   FRAMEWORK - Structure and layout files.
+   FRAMEWORK - Structure, layout and font files.
    ========================================================================== */
 
 @import 'node_modules/normalize.css/normalize';
 @import 'node_modules/foundation-sites/scss/foundation';
 @include foundation-flex-grid;
+
 /* ==========================================================================
    BASE - Base Variable file along with starting point Mixins and Placeholders.
    ========================================================================== */
 
+@import 'base/mixins.scss';
 @import 'base/colors.scss';
 @import 'base/typography.scss';
 @import 'base/gutters.scss';
@@ -29,7 +31,6 @@
 @import 'components/bb-dropdown.scss';
 @import 'components/bb-image-grid.scss';
 
-
 /* ==========================================================================
    CONTAINERS - Components built using modules
    ========================================================================== */
@@ -49,10 +50,3 @@
 @import 'pages/tip-blog-post.scss';
 @import 'pages/tip-story.scss';
 @import 'pages/tip-404.scss';
-
-
-/* ==========================================================================
-   FONTS
-   ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css?family=Karla|Source+Sans+Pro:300,400,600|PT+Mono');

@@ -1,21 +1,76 @@
 // /* COLORS
 // ========================================================================== */
-
 $primary-color: #000000;
-$primary-text-color: #000000;
 $primary-contrast-text-color: #dddddd;
-$primary-background-color: #fefefe;
-
+$primary-background-color: #ffffff;
 $secondary-color: #888888;
-$secondary-text-color: #373737;
 $secondary-contrast-text-color: #757575;
 $secondary-background-color: #1b1b1b;
-
 $tertiary-color: indianred;
 $tertiary-text-color: #757575;
 $tertiary-background-color: #dedede;
-
 $danger-background-color: indianred;
-
 $regular-link-color: #00a896;
-$regular-link-color-hover: $primary-color;  
+$regular-link-color-hover: $primary-color;
+// GREYS AND BLACKS
+// ============================================================================
+//
+$white: #eeeeee;
+$dark-white: whitesmoke;
+$light-grey: lightgrey;
+$grey: grey;
+$dark-grey: rgb(131, 131, 131);
+$dark-black: #262626;
+$black: #111111;
+//
+//
+// TEXT COLORS
+// ============================================================================
+//
+//
+$primary-text-color: $dark-black;
+$secondary-text-color: $dark-grey;
+//
+//
+// SITE-WIDE COLORS
+// ============================================================================
+//
+//
+$brand-color: #27ada0;
+$brand-negative-color: rgb(209, 85, 85);
+$background-shade: #ffffff;
+$light-shade: #f3f3f3;
+$light-shade-text-color: #332f37;
+$light-accent: #76ccc3;
+$light-accent-text-color: #332f37;
+$dark-accent: rgb(42, 59, 59);
+$dark-accent-text-color: whitesmoke;
+$dark-shade: #332f37;
+$dark-shade-text-color: rgb(209, 85, 85);
+%theme-background-shade {
+    background-color: $background-shade;
+    color: $brand-color;
+}
+
+%theme-light-shade {
+    background-color: $light-shade;
+    color: $light-shade-text-color;
+    svg {
+        fill: $light-shade-text-color;
+    }
+}
+
+%theme-light-accent {
+    background-color: $light-accent;
+    color: $light-accent-text-color;
+}
+
+%theme-dark-shade {
+    background-color: $dark-shade;
+    color: $dark-shade-text-color;
+}
+
+%theme-dark-accent {
+    background-color: $dark-accent;
+    color: $dark-accent-text-color;
+}
