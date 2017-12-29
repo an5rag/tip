@@ -22,7 +22,7 @@ $footer-min-height: 30vh;
     .tip-footer-section {
         display: flex;
         flex-direction: column;
-        margin: 15px 0 15px 0;
+        padding: 15px;
         .tip-footer-section-title {
             @extend %heading-x-small;
             font-weight: $light-font-weight;

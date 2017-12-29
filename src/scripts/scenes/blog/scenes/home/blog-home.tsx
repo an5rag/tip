@@ -1,4 +1,4 @@
-import {Editor, EditorState, getDefaultKeyBinding, KeyBindingUtil} from "draft-js";
+import { Editor, EditorState, getDefaultKeyBinding, KeyBindingUtil } from "draft-js";
 import * as React from "react";
 
 class MyEditor extends React.Component<any, any> {
@@ -30,7 +30,7 @@ class MyEditor extends React.Component<any, any> {
 export class BlogHome extends React.Component<any, any> {
   render() {
     return (
-      <div className="row row-center">
+      <div className="row">
         <div className="small-12 medium-12 columns tip-blog-write tip-blog-post">
         </div>
       </div>

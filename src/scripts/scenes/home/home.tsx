@@ -1,5 +1,5 @@
 import * as Instafeed from "instafeed.js";
-import * as Particles from "particles.js";
+require("particles.js");
 import * as React from "react";
 import { ReactElement } from "react";
 import * as DocumentTitle from "react-document-title";
@@ -18,7 +18,6 @@ export class Home extends React.Component<any, any> {
       success: this.setInstagramPhotos
     });
     feed.run();
-    console.log(Particles);
     // if ((window as any).particlesJS) {
     //   (window as any).particlesJS("particles-js", {
     //     particles: {
@@ -201,7 +200,7 @@ export class Home extends React.Component<any, any> {
       <DocumentTitle title="Home - The Irrelevant Project">
         <div className="tip-home" >
           <div id="particles-js" style={{ position: "absolute", height: "100%", width: "100%", top: "0", left: "0", zIndex: -1 }} />
-          <div className="row row-center section">
+          <div className="row align-center section">
             <div className="small-12 medium-6 columns hero-text ">
               <p className="center-align"><span id="first">Interrupting</span></p>
               <p><span className="running-text" id="second">
@@ -215,7 +214,7 @@ export class Home extends React.Component<any, any> {
               <p className="center-align"><span id="fourth">everyday learning.</span></p>
             </div>
           </div>
-          <div className="row row-center section">
+          <div className="row align-center section">
             <p className="small-10 medium-9 columns intro-text">
               The Irrelevant Project began with the simple,
                yet challenging vision of reducing negative stereotypes in the everyday classroom.
@@ -223,10 +222,12 @@ export class Home extends React.Component<any, any> {
                by developing awareness and critical thinking in them, through the medium of fiction.
             </p>
           </div>
-          <div className="row row-center section">
-            {homeBoxGrid}
+          <div className="row section">
+            <div className="small-12 columns align-center ">
+              {homeBoxGrid}
+            </div>
           </div>
-          {/* <div className="row row-center section">
+          {/* <div className="row align-center section">
             <div className="small-12 medium-9 columns" />
           </div> */}
         </div>

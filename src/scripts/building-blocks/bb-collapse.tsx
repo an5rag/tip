@@ -5,7 +5,6 @@ interface IProps {
   transitionDuration?: number;
 }
 
-
 export class BbCollapse extends React.Component<IProps, any> {
   public static defaultProps: IProps = {
     isOpen: false,
@@ -18,7 +17,6 @@ export class BbCollapse extends React.Component<IProps, any> {
     super(props);
   }
 
-
   getHeight() {
     return this.element && this.element.scrollHeight;
   }
@@ -27,15 +25,15 @@ export class BbCollapse extends React.Component<IProps, any> {
     const classes = `bb-collapse ${this.props.isOpen ? "is-open" : "is-closed"}`;
     const style = {
       // transition: `max-height ${this.props.transitionDuration}ms`
-    }
+    };
     return (
-      <div 
-      ref={(element) => {this.element = element;}} 
-      className={classes}
-      style={style}
+      <div
+        ref={(element) => { this.element = element; }}
+        className={classes}
+        style={style}
       >
         {this.props.children}
       </div>
-    )
+    );
   }
 }

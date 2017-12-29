@@ -17,7 +17,7 @@ export const NotFoundPage = (props: INotFoundProps) => {
   return (
     <DocumentTitle title={`Can't find ${type} - The Irrelevant Project`}>
       <div>
-        <div className="row row-center tip-404 row-wrap-reverse">
+        <div className="row align-center tip-404 row-wrap-reverse">
           <div className="columns small-12 medium-8 large-5 columns text-container">
             <h1>
               {title}

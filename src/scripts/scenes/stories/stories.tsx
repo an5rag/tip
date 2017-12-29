@@ -8,7 +8,7 @@ export class Stories extends React.Component<any, any> {
   render() {
     return (
       <DocumentTitle title="Stories - The Irrelevant Project">
-        <div className="row row-center">
+        <div className="row align-center">
           <div className="small-12 columns tip-stories">
             <Route exact path={this.props.match.url} component={StoryGridContainer} />
             <Route path={`${this.props.match.url}/:storyId`} component={StoryContainer} />

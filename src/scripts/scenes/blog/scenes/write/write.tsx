@@ -30,7 +30,7 @@ export class BlogWrite extends React.Component<any, any> {
   render() {
 
     return (
-      <div className="row row-center">
+      <div className="row align-center">
         <div className="small-12 medium-8 columns tip-blog-write">
           <TextInput placeholder="Title" focus={this.state.focus} />
           <button onClick={this.onButtonClick} >Preview </button>

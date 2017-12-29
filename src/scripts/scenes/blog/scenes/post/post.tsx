@@ -1,10 +1,9 @@
 import * as React from "react";
 import { BbAnimatedText } from "../../../../building-blocks/bb-animated-text";
-import { BbCollapse } from "../../../../building-blocks/bb-collapse";
 import { BbTree } from "../../../../building-blocks/bb-tree";
 
 export const BlogPost = () => (
-  <div className="row row-center">
+  <div className="row align-center">
     <div className="small-12 medium-8 columns tip-blog-post">
 
       <h1 className="tip-blog-title">

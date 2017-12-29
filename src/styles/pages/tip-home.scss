@@ -23,6 +23,7 @@ $home-box-mobile-width: 32vw;
     }
     .hero-text {
         @extend %heading-x-large;
+        padding: 0 $side-padding;
         color: $primary-text-color;
         font-family: $primary-text-font;
         .light {
