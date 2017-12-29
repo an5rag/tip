@@ -73,7 +73,6 @@ export const Header = (props: IHeaderProps) => {
     const navBar = (
         <div className="row row-center">
             <NavGroup displayName="About"
-                link="/about"
                 elements={[
                     {
                         displayName: "About",
@@ -98,7 +97,7 @@ export const Header = (props: IHeaderProps) => {
                         link: "/contact"
                     },
                     {
-                        displayName: "Privacy Policy",
+                        displayName: "Privacy",
                         link: "/privacy-policy"
                     },
                 ]}
@@ -112,7 +111,9 @@ export const Header = (props: IHeaderProps) => {
                     <Title />
                 </Link>
             </div>
-            {props.showNavBar ? navBar : null}
+            <div className="tip-nav">
+                {props.showNavBar ? navBar : null}
+            </div>
         </div>
     );
 };
