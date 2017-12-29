@@ -2,65 +2,247 @@
    VARIABLES
    ========================================================================== */
 
-$section-min-height: 25rem;
-$section-margin-bottom: 3rem;
-$subsection-heading-margin-bottom: 1rem;
-$ticker-duration: 20s;
-$ticker-mobile-duration: 25s;
+$home-box-height: 190px;
+$home-box-width: 190px;
+$home-box-padding: 10px;
+$home-box-margin: 7px;
+$home-box-mobile-margin: 1vw;
+$home-box-border: 2px;
+$home-box-mobile-height: 32vw;
+$home-box-mobile-width: 32vw;
 
 /* ==========================================================================
    SELECTORS
    ========================================================================== */
 
 .tip-home {
-    overflow-x: hidden;
-    padding: 0 $side-padding 0 $side-padding;
-    .tip-home-section {
-        img {
+    width: 100%;
+    position: relative;
+    .section:not(.no-bottom-padding) {
+        padding-bottom: 3rem;
+    }
+    .hero-text {
+        @extend %heading-x-large;
+        color: $primary-text-color;
+        font-family: $primary-text-font;
+        .light {
+            font-weight: $light-font-weight;
+        }
+        span {
+            position: relative;
+        }
+        p {
+            min-height: 1.5em;
+        }
+        #first {
+            left: 5px;
+        }
+        .running-text {
+            background-color: $black;
+            color: $white;
+            padding: 0 5px;
+            white-space: nowrap;
+            .random-character {
+                color: $grey;
+            }
+            .bb-animated-string {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 0%;
+                    height: 3px;
+                    margin-top: -0.7em;
+                    margin-left: 5px;
+                    background: $white;
+                }
+                &.eof-string {
+                    animation: 1.5s cubic-bezier(.55, 0, .1, 1) 0.5s redden;
+                    &:after {
+                        animation: 1.5s cubic-bezier(.55, 0, .1, 1) 0.5s strikethrough;
+                    }
+                }
+            }
+        }
+        #second {
+            left: 5px;
+        }
+        #third {
+            right: -90px;
+            @include mobile {
+                right: -35px;
+            }
+        }
+        #fourth {
+            left: -23px;
+        }
+        .center-align {
+            text-align: center;
+        }
+    }
+    .intro-text {
+        font-family: $primary-text-font;
+        text-align: center;
+        @extend %text-large;
+        color: $primary-text-color;
+        font-weight: $light-font-weight;
+    }
+}
+
+.home-box-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; // background-color: whitesmoke;
+    margin: $home-box-margin 0 0 $home-box-margin;
+    @include desktop {
+        max-width: #{($home-box-width + $home-box-margin) * 5};
+    }
+    @include tablet {
+        max-width: #{($home-box-width + $home-box-margin) * 3};
+    }
+    @include mobile {
+        max-width: #{($home-box-mobile-width + $home-box-mobile-margin) * 3};
+        margin: $home-box-mobile-margin 0 0 $home-box-mobile-margin;
+    }
+    .home-box {
+        height: $home-box-height;
+        width: $home-box-width;
+        margin: 0 $home-box-margin $home-box-margin 0;
+        padding: $home-box-padding;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        @include mobile {
+            height: $home-box-mobile-height;
+            width: $home-box-mobile-width;
+            margin: 0 $home-box-mobile-margin $home-box-mobile-margin 0;
+        }
+        .title {
+            @extend %heading-small;
+            font-weight: $heavy-font-weight;
+            font-family: $primary-text-font;
+            position: relative;
+            &.hide-when-not-hover {
+                opacity: 0;
+            }
+        }
+        .nav-arrow {
+            @extend %heading-small;
+            position: absolute;
+            right: #{$home-box-padding + 10px};
+            bottom: $home-box-padding;
+            transition: right 0.1s;
+            opacity: 0;
+        }
+        svg {
+            z-index: 100;
+            position: relative;
+        }
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-        }
-        .tip-home-subsection {
-            margin-bottom: $section-margin-bottom;
+            height: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            &.no-vertical-center {
-                justify-content: flex-start;
+            align-items: center;
+            opacity: 0.4;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+                filter: grayscale(100%);
             }
-           
-            .tip-home-subsection-heading {
+        }
+        &:hover {
+            .title {
                 @extend %heading-regular;
-                margin-bottom: $subsection-heading-margin-bottom;
-                font-family: $primary-heading-font;
-                color: $primary-color;
-                font-weight: $heavy-font-weight;
+                &.hide-when-not-hover {
+                    opacity: 1;
+                }
+                word-break: break-all;
             }
-            .tip-home-massive-heading {
-                @extend %heading-x-large;
-                font-family: $secondary-heading-font;
-                color: $primary-color;
-                font-weight: $heavy-font-weight;
+            .nav-arrow {
+                right: $home-box-padding;
+                opacity: 1;
             }
-            @extend .tip-text-block;
-            p {
-                @extend %text-regular;
-                font-family: $primary-text-font;
-                color: $primary-color;
-                font-weight: $normal-font-weight;
-                @media only screen and (max-width: 480px) {
-                    font-weight: $normal-font-weight;
-                }
-                &.light {
-                    font-weight: $light-font-weight;
-                }
-                &.center {
-                    text-align: center;
-                }
-                &.small {
-                    @extend %text-small;
+            .content {
+                opacity: 0.2;
+            }
+        }
+        &.light {
+            @extend %theme-light-shade;
+            &:hover {
+                border: 2px dashed; // @extend %theme-background-shade;
+                // background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+            }
+        }
+        &.dark {
+            @extend %theme-dark-accent;
+            &:hover {
+                border: 2px dashed;
+                @extend %theme-light-shade;
+            }
+        }
+        &.facebook {
+            @extend %theme-light-shade;
+            &:hover {
+                background-color: #3b5998;
+                svg {
+                    fill: whitesmoke;
                 }
             }
         }
+        &.instagram {
+            // animation: instagram-loading 2s infinite;
+            @extend %theme-light-shade;
+            &:hover {
+                background-color: #262626;
+                svg {
+                    fill: $white;
+                }
+            }
+        }
+        &.twitter {
+            @extend %theme-light-shade;
+            &:hover {
+                background-color: #1DA1F2;
+                svg {
+                    fill: whitesmoke;
+                }
+            }
+        }
+    }
+}
+
+@keyframes instagram-loading {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: #b1e9e3;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+@keyframes strikethrough {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes redden {
+    from {
+        color: inherit;
+    }
+    to {
+        color: $brand-negative-color;
     }
 }
