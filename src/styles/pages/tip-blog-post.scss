@@ -10,8 +10,12 @@ $heading-margin-bottom: 2rem;
 
 .tip-blog-post {
     margin-bottom: $heading-margin-bottom;
+    .title {
+        padding: 0 $side-padding 0 $side-padding;
+    }
     .content {
-        margin-top: 3rem;
+        padding: 0 $side-padding 0 $side-padding;
+        margin-top: 4rem;
         padding-bottom: 3rem;
         border-bottom: 1px solid $secondary-color;
     }

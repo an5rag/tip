@@ -8,32 +8,53 @@ $heading-margin-bottom: 2rem;
    SELECTORS
    ========================================================================== */
 
-.tip-blog {
-    padding: 0 $side-padding 0 $side-padding;
+.tip-blog {}
+
+.tip-blog-hero-image {
+    figure {
+        font-family: $primary-text-font;
+        img {
+            display: block;
+            width: 100%;
+            margin: auto;
+        }
+        margin: 2rem 0;
+        figcaption {
+            @extend %heading-x-small;
+            margin-top: 0.5rem;
+            text-align: center;
+            color: $tertiary-text-color;
+        }
+        height: auto;
+    }
 }
 
 .tip-blog-title {
     @extend %heading-large;
     font-family: $primary-heading-font;
-    letter-spacing: $narrow-letter-spacing;
+    letter-spacing: $x-narrow-letter-spacing;
+    margin-bottom: 0.5rem;
     font-weight: $heavy-font-weight;
-    margin-bottom: 1rem;
 }
 
 .tip-blog-subtitle {
-    color: grey;
+    @extend %heading-small;
+    color: $primary-text-color;
+    font-family: $primary-heading-font;
+    letter-spacing: $narrow-letter-spacing;
     margin-top: 0.5rem;
-    font-size: 1.55rem;
+    margin-bottom: 0.5em;
     font-weight: $normal-font-weight;
-    letter-spacing: $x-narrow-letter-spacing;
 }
 
 .tip-blog-meta {
-    font-family: $secondary-heading-font;
+    font-family: $primary-heading-font;
     font-weight: $light-font-weight;
     letter-spacing: $wide-letter-spacing;
     @extend %heading-x-small;
+    margin-top: 1rem;
     margin-bottom: 1rem;
+    color: $dark-grey;
 }
 
 .tip-blog-text {
@@ -67,14 +88,13 @@ $heading-margin-bottom: 2rem;
     h4 {
         margin-bottom: 1rem;
         font-weight: $heavy-font-weight;
-        font-family: $primary-heading-font;
+        font-family: $secondary-heading-font;
     }
     h1 {
         @extend %heading-large;
     }
     h2 {
         @extend %heading-regular;
-        letter-spacing: $x-narrow-letter-spacing;
     }
     h3,
     h4 {
@@ -91,9 +111,12 @@ $heading-margin-bottom: 2rem;
         font-family: $primary-text-font;
         img {
             display: block;
-            width: 90%;
-            @media only screen and (max-width: 480px) {
+            width: 60%;
+            @include mobile {
                 width: 100%;
+            }
+            @include tablet {
+                width: 90%;
             }
             margin: auto;
         }
@@ -107,11 +130,11 @@ $heading-margin-bottom: 2rem;
         height: auto;
     }
     blockquote {
-        @extend %text-x-x-large;
-        font-family: $primary-heading-font;
-        color: rgb(102, 59, 255);
+        @extend %text-x-large;
+        font-family: $secondary-text-font;
+        color: $grey;
         padding-left: 1rem;
-        border-left: 5px solid rgba(102, 59, 255, 0.5);
-        margin: 2rem 0;
+        border-left: 5px solid $grey;
+        margin: 2rem 0 2rem 1rem;
     }
 }

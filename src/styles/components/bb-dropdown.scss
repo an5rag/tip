@@ -6,7 +6,7 @@
         }
     }
     .parent {
-      position: relative;
+        position: relative;
     }
     .child {
         position: absolute;
@@ -31,17 +31,28 @@
     }
     &.animate {
         .child {
-          transition: all 0.3s;
+            transition: all 0.3s;
         }
-        &.fade {
-          .child {
-            opacity: 100;
-            visibility: visible;
-          }
+        &.pull-down {
+            .child {
+                transform-origin: top;
+                transform: scale(1, 1);
+            }
             &.not-visible {
                 .child {
-                   opacity:0;
-                   visibility: hidden;
+                    transform: scale(1, 0);
+                }
+            }
+        }
+        &.fade {
+            .child {
+                opacity: 100;
+                visibility: visible;
+            }
+            &.not-visible {
+                .child {
+                    opacity: 0;
+                    visibility: hidden;
                 }
             }
         }

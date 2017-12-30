@@ -74,7 +74,7 @@ export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownSta
   }
 
   public handleParentClick = (e: React.SyntheticEvent<HTMLDivElement>) => {
-    if (this.props.toggleOnParentClick && e.target === this.parentRef) {
+    if (this.props.toggleOnParentClick && e.currentTarget === this.parentRef) {
       if (this.state.open) {
         // only close if it's been enough time since it's been open
         if (!this.dropDownWasJustOpened) {

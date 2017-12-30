@@ -18,11 +18,27 @@ $home-box-mobile-width: 32vw;
 .tip-home {
     width: 100%;
     position: relative;
-    .section:not(.no-bottom-padding) {
-        padding-bottom: 3rem;
+    .section:not(.no-bottom-margin) {
+        margin-bottom: 3rem;
     }
     .hero-text {
-        @extend %heading-x-large;
+        @keyframes strikethrough {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        @keyframes redden {
+            from {
+                color: inherit;
+            }
+            to {
+                color: $grey;
+            }
+        }
+        @extend %heading-large;
         padding: 0 $side-padding;
         color: $primary-text-color;
         font-family: $primary-text-font;
@@ -44,7 +60,7 @@ $home-box-mobile-width: 32vw;
             padding: 0 5px;
             white-space: nowrap;
             .random-character {
-                color: $grey;
+                color: $brand-negative-color;
             }
             .bb-animated-string {
                 &:after {
@@ -53,7 +69,7 @@ $home-box-mobile-width: 32vw;
                     display: block;
                     width: 0%;
                     height: 3px;
-                    margin-top: -0.7em;
+                    margin-top: -0.6em;
                     margin-left: 5px;
                     background: $white;
                 }
@@ -227,23 +243,5 @@ $home-box-mobile-width: 32vw;
     }
     100% {
         background-color: white;
-    }
-}
-
-@keyframes strikethrough {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes redden {
-    from {
-        color: inherit;
-    }
-    to {
-        color: $brand-negative-color;
     }
 }

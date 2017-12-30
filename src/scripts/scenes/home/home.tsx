@@ -215,11 +215,11 @@ export class Home extends React.Component<any, any> {
             </div>
           </div>
           <div className="row align-center section">
-            <p className="small-10 medium-9 columns intro-text">
+            <p className="small-10 medium-8 columns intro-text">
               The Irrelevant Project began with the simple,
-               yet challenging vision of reducing negative stereotypes in the everyday classroom.
-              Its aim is to enable children to resist the script of biases
-               by developing awareness and critical thinking in them, through the medium of fiction.
+             yet challenging vision of <strong>reducing negative stereotypes</strong> in multiple learning realms.
+              Its aim is to enable <strong>children</strong> to resist the script of biases
+               by developing awareness and critical thinking in them, through the <strong>medium of fiction</strong>.
             </p>
           </div>
           <div className="row section">
