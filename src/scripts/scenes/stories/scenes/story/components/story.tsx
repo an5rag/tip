@@ -53,23 +53,23 @@ export class Story extends React.Component<IStoryProps, any> {
     return (
       <div className="tip-story" >
         <div className="row align-center">
-          <div className="small-12 medium-10 columns">
-            <h1 className="title">{this.props.story.title}</h1>
-            <div className="row align-center row-wrap-reverse">
-              <div className="small-12 medium-6 columns synopsis">
-                <p>
-                  {this.props.story.synopsis}
-                </p>
+          <div className="small-12 medium-10 columns title">
+            <h1>{this.props.story.title}</h1>
+          </div>
+          <div className="row align-center row-wrap-reverse">
+            <div className="small-12 medium-5 columns synopsis">
+              <p>
+                {this.props.story.synopsis}
+              </p>
+            </div>
+            <div className="small-12 medium-5 columns info">
+              <div>
+                <span className="info-key">Author </span>
+                <span className="info-value">{this.props.story.author ? this.props.story.author.name : "Unknown"}</span>
               </div>
-              <div className="small-12 medium-6 columns info">
-                <div>
-                  <span className="info-key">Author </span>
-                  <span className="info-value">{this.props.story.author ? this.props.story.author.name : "Unknown"}</span>
-                </div>
-                <div>
-                  <span className="info-key">Illustrator </span>
-                  <span className="info-value">{this.props.story.illustrator ? this.props.story.illustrator.name : "Unknown"}</span>
-                </div>
+              <div>
+                <span className="info-key">Illustrator </span>
+                <span className="info-value">{this.props.story.illustrator ? this.props.story.illustrator.name : "Unknown"}</span>
               </div>
             </div>
           </div>

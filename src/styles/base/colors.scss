@@ -1,25 +1,23 @@
 // /* COLORS
 // ========================================================================== */
-$primary-color: #000000;
-$primary-contrast-text-color: #dddddd;
-$primary-background-color: #ffffff;
-$secondary-color: #888888;
-$secondary-contrast-text-color: #757575;
-$secondary-background-color: #1b1b1b;
-$tertiary-color: indianred;
-$tertiary-text-color: #757575;
-$tertiary-background-color: #dedede;
-$danger-background-color: indianred;
-$regular-link-color: #00a896;
-$regular-link-color-hover: $primary-color;
+// $primary-color: #000000;
+// $primary-contrast-text-color: #dddddd;
+// $primary-background-color: #ffffff;
+// $secondary-color: #888888;
+// $secondary-contrast-text-color: #757575;
+// $secondary-background-color: #1b1b1b;
+// $tertiary-color: indianred;
+// $tertiary-text-color: #757575;
+// $tertiary-background-color: #dedede;
+// $danger-background-color: indianred;
 // GREYS AND BLACKS
 // ============================================================================
 //
-$white: #eeeeee;
-$dark-white: whitesmoke;
-$light-grey: lightgrey;
+$white: whitesmoke;
+$dark-white: #e6e6e6;
+$light-grey: #f2f4f5;
 $grey: grey;
-$dark-grey: rgb(131, 131, 131);
+$dark-grey: #757575;
 $dark-black: rgba(0, 0, 0, 0.84);
 $black: #111111;
 //
@@ -36,17 +34,24 @@ $secondary-text-color: $dark-grey;
 // ============================================================================
 //
 //
-$brand-color: #27ada0;
+$brand-color: #25968a;
+$brand-dark-color: #1d756d;
 $brand-negative-color: rgb(209, 85, 85);
 $background-shade: #fff;
-$light-shade: #f3f3f3;
-$light-shade-text-color: #332f37;
+//
+//
+$light-shade: #f2f4f5;
+$light-shade-text-color: $primary-text-color;
+//
 $light-accent: #76ccc3;
 $light-accent-text-color: #332f37;
-$dark-accent: rgb(42, 59, 59);
-$dark-accent-text-color: whitesmoke;
-$dark-shade: #332f37;
-$dark-shade-text-color: rgb(209, 85, 85);
+//
+$dark-accent: #595050;
+$dark-accent-text-color: #ded7d2;
+//
+$dark-shade: #1b1b1b;
+$dark-shade-text-color: $dark-white;
+//
 %theme-background-shade {
     background-color: $background-shade;
     color: $brand-color;

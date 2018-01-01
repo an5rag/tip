@@ -1,15 +1,5 @@
 .bb-collapse {
-  overflow: hidden;
-  max-height: 0px;
-  transition: max-height 0.4s;
-  opacity: 0;
-  &.is-open {
-    max-height: 1000px;
-    opacity: 1;
-  }
-  &.is-closed {
-    max-height: 0px;
-    transition: max-height 0.4s;
-    opacity: 0;
-  }
+    overflow: hidden;
+    &.is-open {}
+    &.is-closed {}
 }

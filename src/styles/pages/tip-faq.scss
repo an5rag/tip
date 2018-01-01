@@ -1,0 +1,52 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$heading-margin-bottom: 2rem;
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
+.tip-faq {
+    .section-header {
+        padding-bottom: 2px;
+        border-bottom: 1.5px solid $primary-text-color;
+    }
+    .question {
+        margin-top: 1rem;
+        cursor: pointer;
+        margin-left: 1.1rem;
+        color: $brand-color;
+        &:hover {
+            color: $brand-dark-color;
+        }
+        position: relative;
+        &:before {
+            height: 1.5px;
+            width: 8px;
+            background-color: $brand-color;
+            position: absolute;
+            top: 50%;
+            left: -1rem;
+            transform: rotate(90deg);
+            transition: transform 0.4s ease;
+            content: " ";
+        }
+        &:after {
+            height: 1.5px;
+            width: 8px;
+            background-color: $brand-color;
+            position: absolute;
+            top: 50%;
+            left: -1rem;
+            transition: transform 0.4s ease;
+            content: " ";
+        }
+        &.open {
+            &:before {
+                transform: rotate(0deg);
+            }
+        }
+    }
+}

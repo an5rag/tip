@@ -58,7 +58,7 @@ var config = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: [ "awesome-typescript-loader"],
+        loader: ["awesome-typescript-loader"],
         include: APP_DIR,
         exclude: /node_modules/
       },
@@ -76,8 +76,7 @@ var config = {
                 // https://webpack.js.org/guides/hmr-react/#babel-config
                 "stage-2",
                 "react"
-              ],
-              plugins: ["react-hot-loader/babel"]
+              ]
             }
           }
         ]
@@ -109,7 +108,7 @@ var config = {
         use: [
           {
             loader: 'file-loader',
-            options: {}  
+            options: {}
           }
         ]
       }
@@ -132,7 +131,7 @@ var config = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       filename: "vendor.bundle.js",
-      minChunks: function(module) {
+      minChunks: function (module) {
         return isExternal(module);
       }
     }),
@@ -163,7 +162,7 @@ var config = {
   },
 
   resolve: {
-    extensions: [".js", ".json", ".jsx", ".ts",".tsx"],
+    extensions: [".js", ".json", ".jsx", ".ts", ".tsx"],
     alias: {
       styles: path.resolve(APP_DIR, "styles"),
       bb: path.resolve(APP_DIR, "scripts/building-blocks"),

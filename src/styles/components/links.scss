@@ -1,11 +1,13 @@
 .tip-link {
     a {
         cursor: pointer;
-        color: $regular-link-color;
+        padding-bottom: 1.5px;
+        color: $brand-color;
+        border-bottom: 2px solid transparent;
         font-weight: $normal-font-weight;
         &:hover {
-            color: $regular-link-color-hover;
-            border-bottom: 2px solid $regular-link-color-hover;
+            color: $primary-text-color;
+            border-bottom: 2px solid $primary-text-color;
         }
     }
 }

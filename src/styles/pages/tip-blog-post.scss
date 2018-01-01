@@ -26,9 +26,9 @@ $heading-margin-bottom: 2rem;
         i {
             margin-right: 2rem;
             cursor: pointer;
-            color: $regular-link-color;
+            color: $brand-color;
             &:hover {
-                color: $regular-link-color-hover;
+                color: $primary-text-color;
             }
         }
     }

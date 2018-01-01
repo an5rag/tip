@@ -3,15 +3,18 @@
     padding: 1rem;
     padding-right: 2rem;
     position: relative;
-    border: 1.2px solid black; // box-shadow: 0px 1px 0.3em grey;
+    border: 1.2px solid transparent; // box-shadow: 0px 1px 0.3em grey;
     @extend %text-small;
     .title {
         @extend %text-x-small; // font-weight: $light-font-weight;
         font-family: $primary-heading-font;
+        font-weight: $heavy-font-weight;
     }
     .content {
+        margin-top: 0.5rem;
         @extend %text-x-small; // font-weight: $light-font-weight;
         font-family: $primary-text-font;
+        font-weight: $normal-font-weight;
     }
     .close-button {
         position: absolute;
@@ -19,30 +22,34 @@
         right: 1rem;
         cursor: pointer;
     }
-    &.primary {
-        background-color: $secondary-background-color;
-        .title {
-            font-weight: $light-font-weight;
-            color: whitesmoke;
-        }
-        .content {
-            font-weight: $light-font-weight;
-            color: $primary-contrast-text-color;
-        }
-        .close-button {
-            color: whitesmoke;
+    .link {
+        border-bottom: 1px solid transparent;
+    }
+    &.light {
+        @extend %theme-light-shade;
+        border-color: $black;
+        .title {}
+        .content {}
+        .close-button {}
+        .link {
+            border-color: $light-shade-text-color;
+            &:hover {
+                color: $secondary-text-color;
+                border-color: $secondary-text-color;
+            }
         }
     }
-    &.secondary {
-        background-color: #f0f3bd;
-        .title {
-            color: $primary-text-color;
-        }
-        .content {
-            color: $primary-text-color;
-        }
-        .close-button {
-            color: $primary-text-color;
+    &.dark {
+        @extend %theme-dark-accent;
+        .title {}
+        .content {}
+        .close-button {}
+        .link {
+            border-color: $dark-shade-text-color;
+            &:hover {
+                color: $secondary-text-color;
+                border-color: $secondary-text-color;
+            }
         }
     }
 }

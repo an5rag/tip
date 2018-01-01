@@ -4,7 +4,7 @@ import { BbAnimatedColorText } from "./../../../building-blocks/bb-animated-colo
 
 export const Footer = () => (
     <div className="tip-footer">
-        <div className="row">
+        {/* <div className="row">
             <div className="tip-footer-section small-6 large-3 columns">
                 <h3 className="tip-footer-section-title">STORIES</h3>
                 <h4 className="tip-footer-section-subtitle">
@@ -60,10 +60,10 @@ export const Footer = () => (
                     Contact us
                 </h4>
             </div>
-        </div>
+        </div> */}
         <div className="row">
             <div className="tip-title">
-                <div className="tip-title-copyright">© The Irrelevant Project 2017</div>
+                <div className="tip-title-copyright">© The Irrelevant Project 2017-2018</div>
                 <div className="tip-title-banner">
                     <BbAnimatedColorText text="the irrelevant project" />
                 </div>

@@ -14,23 +14,27 @@
         height: auto;
     }
     .title {
-        @extend %heading-x-large;
-        font-weight: $heavy-font-weight;
-        font-family: $primary-text-font;
+        h1 {
+            @extend %heading-x-large;
+            font-weight: $heavy-font-weight;
+            font-family: $primary-text-font;
+        }
         margin-bottom: 1rem;
     }
     .synopsis {
-        margin-bottom: 1rem;
+        margin: 1rem 0;
+        padding: 0 1rem;
         @extend %text-regular;
         font-family: $primary-text-font;
         color: $primary-text-color;
     }
     .info {
-        margin-bottom: 1rem;
+        margin: 1rem 0;
+        padding: 0 1rem;
         .info-key {
             @extend %text-regular;
             font-family: $primary-heading-font;
-            color: $tertiary-text-color;
+            color: $secondary-text-color;
             margin-right: 1rem;
         }
         .info-value {

@@ -9,14 +9,17 @@ $footer-min-height: 30vh;
    ========================================================================== */
 
 .tip-footer {
+    @extend %theme-dark-shade;
     min-height: $footer-min-height;
-    background-color: $secondary-background-color;
     padding: 60px 0 60px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media only screen and (max-width: 480px) {
+    @include mobile {
+        text-align: center;
+    }
+    @include tablet {
         text-align: center;
     }
     .tip-footer-section {
@@ -28,23 +31,23 @@ $footer-min-height: 30vh;
             font-weight: $light-font-weight;
             letter-spacing: $wide-letter-spacing;
             font-family: $primary-heading-font;
-            color: $secondary-contrast-text-color;
+            color: $secondary-text-color;
         }
         .tip-footer-section-subtitle {
             @extend %heading-x-small;
             font-weight: $light-font-weight;
             font-family: $primary-text-font;
-            color: $primary-contrast-text-color;
         }
     }
     .tip-title {
         margin-top: 30px;
+        text-align: center;
         .tip-title-copyright {
             @extend %heading-x-small;
             font-weight: $light-font-weight;
             letter-spacing: $wide-letter-spacing;
             font-family: $primary-heading-font;
-            color: $secondary-contrast-text-color;
+            color: $secondary-text-color;
             text-align: center;
         }
         .tip-title-banner {

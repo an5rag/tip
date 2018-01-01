@@ -1,34 +1,33 @@
-
-    .bb-tab {
-        margin: 0 0px 20px 16px;
-        padding: 0.5em 1.25em 0.5em 1.25em;
-        border-bottom: 1.5px solid transparent;
-        @extend %text-regular;
-        color: grey;
-        font-weight: $normal-font-weight;
-        font-family: $secondary-heading-font;
-        position: relative;
+.bb-tab {
+    margin: 0 0px 20px 16px;
+    padding: 0.5em 1.25em 0.5em 1.25em;
+    border-bottom: 1.5px solid transparent;
+    @extend %text-regular;
+    color: grey;
+    font-weight: $normal-font-weight;
+    font-family: $secondary-heading-font;
+    position: relative;
+    &::after {
+        z-index: -1;
+        height: 0px;
+        width: 100%;
+        background-color: transparent;
+        position: absolute;
+        bottom: 0;
+        content: "";
+        left: 0;
+        transition: height 0.3s;
+    }
+    &:hover {
+        color: $brand-color;
+        border-bottom: 1.5px solid teal; // border-bottom: 2px solid $primary-text-color;
+    }
+    &.bb-tab-active {
+        color: black;
+        border-bottom: 1.5px solid teal;
         &::after {
-            z-index: -1;
-            height: 0px;
-            width: 100%;
-            background-color: transparent;
-            position: absolute;
-            bottom: 0;
-            content: "";
-            left: 0;
-            transition: height 0.3s;
-        }
-        &:hover {
-            color: $regular-link-color-hover;
-            border-bottom: 1.5px solid teal; // border-bottom: 2px solid $regular-link-color-hover;
-        }
-        &.bb-tab-active {
-            color: black;
-            border-bottom: 1.5px solid teal;
-            &::after {
-                height: 100%;
-                background: rgb(244, 244, 244); // width: 0.8em;
-            }
+            height: 100%;
+            background: rgb(244, 244, 244); // width: 0.8em;
         }
     }
+}

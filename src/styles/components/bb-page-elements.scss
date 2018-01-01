@@ -1,0 +1,46 @@
+.bb-page {
+    padding: 0 $side-padding;
+}
+
+.bb-content {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.bb-title {
+    @extend %heading-large;
+    font-family: $primary-heading-font;
+    letter-spacing: $narrow-letter-spacing;
+    font-weight: $heavy-font-weight;
+    color: $primary-text-color;
+}
+
+.bb-heading-two {
+    @extend %heading-small;
+    font-weight: $heavy-font-weight;
+    font-family: $secondary-heading-font;
+    color: $primary-text-color;
+}
+
+.bb-section:not(.no-bottom-margin) {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.bb-heading-three {
+    @extend %text-large;
+    font-family: $primary-text-font;
+}
+
+.bb-text {
+    @extend .tip-text-block;
+    p,
+    ol,
+    ul {
+        @extend %text-regular;
+        font-family: $primary-text-font;
+        color: $primary-text-color;
+    }
+}
+
+.bb-paragraph {}

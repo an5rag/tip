@@ -16,7 +16,7 @@ $tip-masonry-grid-vertical-margin: 3em;
     .grid-element {
         margin: $tip-grid-element-margin;
         display: relative;
-        .grid-element-image {   
+        .grid-element-image {
             transition: opacity 0.3s;
             width: 180px;
             @media only screen and (max-width: 720px) {
@@ -30,22 +30,19 @@ $tip-masonry-grid-vertical-margin: 3em;
             transition: opacity 0.3s;
             @extend %heading-x-small;
             font-family: $primary-text-font;
-            color: $primary-color;
+            color: $primary-text-color;
             letter-spacing: $wide-letter-spacing;
             position: absolute;
             top: 35%;
             width: 100%;
             text-align: center;
-
         }
         .show-on-hover {
             opacity: 0;
         }
-
         .hide-on-hover {
             opacity: 1;
         }
-
         &:hover {
             .show-on-hover {
                 opacity: 1;
@@ -60,9 +57,8 @@ $tip-masonry-grid-vertical-margin: 3em;
             }
             &:hover {
                 span {
-                    border-bottom: 1px solid $regular-link-color-hover;
+                    border-bottom: 1px solid $primary-text-color;
                 }
-                
             }
         }
     }

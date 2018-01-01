@@ -20,6 +20,7 @@ $home-box-mobile-width: 32vw;
     position: relative;
     .section:not(.no-bottom-margin) {
         margin-bottom: 3rem;
+        margin-top: 3rem;
     }
     .hero-text {
         @keyframes strikethrough {

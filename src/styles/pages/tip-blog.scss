@@ -11,22 +11,7 @@ $heading-margin-bottom: 2rem;
 .tip-blog {}
 
 .tip-blog-hero-image {
-    figure {
-        font-family: $primary-text-font;
-        img {
-            display: block;
-            width: 100%;
-            margin: auto;
-        }
-        margin: 2rem 0;
-        figcaption {
-            @extend %heading-x-small;
-            margin-top: 0.5rem;
-            text-align: center;
-            color: $tertiary-text-color;
-        }
-        height: auto;
-    }
+    @extend .bb-image-large;
 }
 
 .tip-blog-title {
@@ -59,6 +44,7 @@ $heading-margin-bottom: 2rem;
 
 .tip-blog-text {
     @extend .tip-text-block;
+    @extend .bb-image-medium;
     @extend %text-regular;
     font-family: $primary-text-font;
     color: $primary-text-color;
@@ -101,33 +87,11 @@ $heading-margin-bottom: 2rem;
         @extend %heading-small;
     }
     h4 {
-        color: $tertiary-text-color;
+        color: $secondary-text-color;
     }
     h5 {
         @extend %heading-x-small;
         margin-bottom: 1rem;
-    }
-    figure {
-        font-family: $primary-text-font;
-        img {
-            display: block;
-            width: 60%;
-            @include mobile {
-                width: 100%;
-            }
-            @include tablet {
-                width: 90%;
-            }
-            margin: auto;
-        }
-        margin: 2rem 0;
-        figcaption {
-            @extend %heading-x-small;
-            margin-top: 0.5rem;
-            text-align: center;
-            color: $tertiary-text-color;
-        }
-        height: auto;
     }
     blockquote {
         @extend %text-x-large;

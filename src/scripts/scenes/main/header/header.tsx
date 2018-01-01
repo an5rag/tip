@@ -1,4 +1,5 @@
 import * as React from "react";
+const FaAngleDown = require("react-icons/lib/fa/angle-down");
 import { Link, NavLink, Route, Switch } from "react-router-dom";
 import { BbDropDown, BbDropdownPositions } from "../../../building-blocks/bb-dropdown-menu";
 import { Title } from "./components/title";
@@ -45,7 +46,9 @@ const NavGroupElement = (props: INavElementProps) => {
     const parent = (
         <div className="tip-nav-link">
             {parentElement}
-            <i className="fa fa-angle-down dropdown-arrow"></i>
+            <span className="dropdown-arrow">
+                <FaAngleDown />
+            </span>
         </div>
     );
 

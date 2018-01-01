@@ -1,20 +1,20 @@
 import * as React from "react";
 import { BbCollapse } from "./bb-collapse";
 
-interface BbNoticeProps {
-  type?: "primary" | "secondary" | "danger";
+interface IBbNoticeProps {
+  type?: "light" | "dark" | "danger";
   title?: string;
-  content?: string;
+  content?: string | React.ReactElement<any>;
   dismissable?: boolean;
 }
 
-interface BbNoticeState {
+interface IBbNoticeState {
   open: boolean;
 }
 
-export class BbNotice extends React.Component<BbNoticeProps, BbNoticeState> {
-  public static defaultProps: BbNoticeProps = {
-    type: "primary",
+export class BbNotice extends React.Component<IBbNoticeProps, IBbNoticeState> {
+  public static defaultProps: IBbNoticeProps = {
+    type: "light",
     dismissable: false
   };
   constructor(props) {
@@ -36,8 +36,8 @@ export class BbNotice extends React.Component<BbNoticeProps, BbNoticeState> {
       <BbCollapse isOpen={this.state.open}>
         <div className={classes}>
           {this.props.dismissable ? dismissButton : null}
-          <h1 className="title">{this.props.title}</h1>
-          <p className="content">{this.props.content}</p>
+          <h3 className="title">{this.props.title}</h3>
+          <div className="content">{this.props.content}</div>
         </div>
       </BbCollapse>
     );
