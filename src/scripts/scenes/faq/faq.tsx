@@ -37,7 +37,7 @@ export class Faq extends React.Component<any, IFaqState> {
     return (
       <BbPage documentTitle="FAQ - The Irrelevant Project" classes="tip-faq">
         <BbTitle>
-          faq
+          Q & A
         </BbTitle>
         <BbContent>
           {faq}

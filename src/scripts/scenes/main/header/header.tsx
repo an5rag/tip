@@ -83,7 +83,7 @@ export interface IHeaderProps {
 
 export const Header = (props: IHeaderProps) => {
     const navBar = (
-        <div className="row align-center">
+        <div className="tip-nav">
             <NavElement displayName="About"
                 elements={[
                     {
@@ -117,13 +117,11 @@ export const Header = (props: IHeaderProps) => {
         </div>
     );
     return (
-        <div className="tip-header">
-            <div className="row align-center">
+        <div className="row align-center">
+            <div className="small-12 medium-10 large-9 columns tip-header ">
                 <Link to="/">
                     <Title />
                 </Link>
-            </div>
-            <div className="tip-nav">
                 {props.showNavBar ? navBar : null}
             </div>
         </div>

@@ -7,7 +7,6 @@ export const Title = () => {
 
   return (
     <div className="tip-title">
-
       <img className="logo-image" src={logo} />
       <div className="logo-text">
         the irrelevant project

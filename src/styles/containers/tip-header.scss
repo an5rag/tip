@@ -1,93 +1,110 @@
-/* ==========================================================================
+    /* ==========================================================================
    VARIABLES
    ========================================================================== */
-
-
-/* ==========================================================================
+    /* ==========================================================================
    SELECTORS
    ========================================================================== */
 
-.tip-header {
-    margin-top: $header-margin;
-    margin-bottom: $header-margin;
-    .tip-title {
+    .tip-header {
         display: flex;
-        align-content: center;
-        .logo-image {
-            height: 48px;
-            width: auto;
-            margin-right: 7px;
-        }
-        .logo-text {
-            display: flex;
-            flex-direction: column; // margin-right: 20px;
+        justify-content: space-between;
+        margin-top: $header-margin;
+        @include mobile {
+            flex-direction: column;
             justify-content: center;
-            font-size: 1.7em;
-            line-height: 1.6em;
-            font-family: $primary-heading-font;
+            align-items: center;
         }
-    }
-    .tip-nav {
-        margin-top: 0.4rem;
-        .tip-nav-element {
-            padding: 0 0.75rem;
-            .tip-nav-link {
-                @extend %heading-small;
+        .tip-title {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 1rem;
+            .logo-image {
+                height: 48px;
+                @include mobile {
+                    height: 40px;
+                }
+                width: auto;
+                margin-right: 10px;
+            }
+            .logo-text {
+                display: flex;
+                flex-direction: column; // margin-right: 20px;
+                justify-content: center;
+                font-size: 1.7em;
+                @include mobile {
+                    font-size: 1.5em;
+                }
+                line-height: 1.6em;
                 font-family: $primary-heading-font;
-                color: $secondary-text-color;
-                a {
-                    padding: 3px 5px 3px 5px;
-                    .label {
-                        padding: 3px 0px 3px 0px;
-                        white-space: nowrap;
-                    }
-                    &.tip-nav-link-active {
-                        margin-left: 3px;
-                        @extend %theme-dark-shade;
-                    }
-                }
-                &:hover {
-                    color: $primary-text-color;
-                    a:not(.tip-nav-link-active) {
-                        // apply bottom border if not active
-                        .label {
-                            border-bottom: 2px solid $primary-text-color;
-                        }
-                    }
-                }
             }
-            .tip-nav-group {
-                .tip-nav-group-parent {
-                    cursor: pointer;
-                    .dropdown-arrow {
-                        margin-left: 8;
-                        svg {
-                            margin-bottom: 3px;
-                            transition: transform 0.3s;
-                            transform: rotate(0deg);
+        }
+        .tip-nav {
+            @include mobile {
+                margin-top: 0.75rem;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .tip-nav-element {
+                padding: 0 0.75rem;
+                .tip-nav-link {
+                    @extend %heading-small;
+                    font-family: $primary-heading-font;
+                    color: $secondary-text-color;
+                    a {
+                        padding: 3px 5px 3px 5px;
+                        .label {
+                            padding: 3px 0px 3px 0px;
+                            white-space: nowrap;
+                        }
+                        &.tip-nav-link-active {
+                            margin-left: 5px;
+                            @extend %theme-dark-shade;
                         }
                     }
-                    .tip-nav-group-child {
-                        // box-shadow: 1px 3px 0.4em #949191;
-                        cursor: default;
-                        border: 1px solid $light-shade-text-color;
-                        background-color: $light-shade;
-                        padding: 0.5rem 0.3rem;
-                        min-width: 100%;
-                        .tip-nav-link {
-                            @extend %text-regular;
-                            padding-bottom: 0.3rem;
+                    &:hover {
+                        color: $primary-text-color;
+                        a:not(.tip-nav-link-active) {
+                            // apply bottom border if not active
+                            .label {
+                                border-bottom: 2px solid $primary-text-color;
+                            }
                         }
                     }
                 }
-                &.visible {
-                    .dropdown-arrow {
-                        svg {
-                            transform: rotate(180deg);
+                .tip-nav-group {
+                    .tip-nav-group-parent {
+                        cursor: pointer;
+                        .dropdown-arrow {
+                            margin-left: 8;
+                            svg {
+                                margin-bottom: 3px;
+                                transition: transform 0.3s;
+                                transform: rotate(0deg);
+                            }
+                        }
+                        .tip-nav-group-child {
+                            // box-shadow: 1px 3px 0.4em #949191;
+                            cursor: default;
+                            border: 1px solid $light-shade-text-color;
+                            background-color: $light-shade;
+                            padding: 0.5rem 0.3rem;
+                            min-width: 100%;
+                            .tip-nav-link {
+                                @extend %text-regular;
+                                padding-bottom: 0.3rem;
+                            }
+                        }
+                    }
+                    &.visible {
+                        .dropdown-arrow {
+                            svg {
+                                transform: rotate(180deg);
+                            }
                         }
                     }
                 }
             }
         }
     }
-}

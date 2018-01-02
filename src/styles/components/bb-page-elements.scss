@@ -1,10 +1,11 @@
 .bb-page {
     padding: 0 $side-padding;
+    margin-top: $header-margin;
+    margin-bottom: 5rem;
 }
 
 .bb-content {
     margin-top: 3rem;
-    margin-bottom: 5rem;
 }
 
 .bb-title {
@@ -40,6 +41,11 @@
         @extend %text-regular;
         font-family: $primary-text-font;
         color: $primary-text-color;
+    }
+    ol,
+    ul {
+        margin-top: 0rem;
+        margin-bottom: 1rem;
     }
 }
 

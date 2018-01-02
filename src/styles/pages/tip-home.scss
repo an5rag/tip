@@ -22,6 +22,10 @@ $home-box-mobile-width: 32vw;
         margin-bottom: 3rem;
         margin-top: 3rem;
     }
+    .hero-text-container {
+        display: flex;
+        justify-content: center;
+    }
     .hero-text {
         @keyframes strikethrough {
             from {
@@ -181,6 +185,8 @@ $home-box-mobile-width: 32vw;
                     opacity: 1;
                 }
                 word-break: break-all;
+                padding-bottom: 2px;
+                border-bottom: 3px solid;
             }
             .nav-arrow {
                 right: $home-box-padding;
@@ -193,8 +199,8 @@ $home-box-mobile-width: 32vw;
         &.light {
             @extend %theme-light-shade;
             &:hover {
-                border: 2px dashed; // @extend %theme-background-shade;
-                // background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+                // border: 2px dashed;
+                @extend %theme-light-accent; // background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
             }
         }
         &.dark {
@@ -211,6 +217,7 @@ $home-box-mobile-width: 32vw;
                 svg {
                     fill: whitesmoke;
                 }
+                border-color: transparent;
             }
         }
         &.instagram {
@@ -221,6 +228,7 @@ $home-box-mobile-width: 32vw;
                 svg {
                     fill: $white;
                 }
+                border-color: transparent;
             }
         }
         &.twitter {

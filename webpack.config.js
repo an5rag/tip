@@ -164,9 +164,6 @@ var config = {
   resolve: {
     extensions: [".js", ".json", ".jsx", ".ts", ".tsx"],
     alias: {
-      styles: path.resolve(APP_DIR, "styles"),
-      bb: path.resolve(APP_DIR, "scripts/building-blocks"),
-      containers: path.resolve(APP_DIR, "scripts/containers"),
       resources: path.resolve(APP_DIR, "resources")
     }
   }

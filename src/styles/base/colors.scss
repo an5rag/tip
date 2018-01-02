@@ -44,7 +44,7 @@ $light-shade: #f2f4f5;
 $light-shade-text-color: $primary-text-color;
 //
 $light-accent: #76ccc3;
-$light-accent-text-color: #332f37;
+$light-accent-text-color: $white;
 //
 $dark-accent: #595050;
 $dark-accent-text-color: #ded7d2;
@@ -60,6 +60,7 @@ $dark-shade-text-color: $dark-white;
 %theme-light-shade {
     background-color: $light-shade;
     color: $light-shade-text-color;
+    border-color: $light-shade-text-color;
     svg {
         fill: $light-shade-text-color;
     }
@@ -68,14 +69,17 @@ $dark-shade-text-color: $dark-white;
 %theme-light-accent {
     background-color: $light-accent;
     color: $light-accent-text-color;
+    border-color: $light-accent-text-color;
 }
 
 %theme-dark-shade {
     background-color: $dark-shade;
     color: $dark-shade-text-color;
+    border-color: $dark-shade-text-color;
 }
 
 %theme-dark-accent {
     background-color: $dark-accent;
     color: $dark-accent-text-color;
+    border-color: $dark-accent-text-color;
 }

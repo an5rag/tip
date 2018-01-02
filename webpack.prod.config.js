@@ -97,7 +97,7 @@ var config = {
         use: [
           {
             loader: 'file-loader',
-            options: {}  
+            options: {}
           }
         ]
       }
@@ -112,7 +112,7 @@ var config = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       filename: "vendor.bundle.js",
-      minChunks: function(module) {
+      minChunks: function (module) {
         return isExternal(module);
       }
     }),
@@ -131,11 +131,8 @@ var config = {
   ],
 
   resolve: {
-    extensions: [".js", ".json", ".jsx", ".ts",".tsx"],
+    extensions: [".js", ".json", ".jsx", ".ts", ".tsx"],
     alias: {
-      styles: path.resolve(APP_DIR, "styles"),
-      bb: path.resolve(APP_DIR, "scripts/building-blocks"),
-      containers: path.resolve(APP_DIR, "scripts/containers"),
       resources: path.resolve(APP_DIR, "resources")
     }
   }
