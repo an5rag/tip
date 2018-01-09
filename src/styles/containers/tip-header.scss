@@ -8,7 +8,7 @@
     .tip-header {
         display: flex;
         justify-content: space-between;
-        margin-top: $header-margin;
+        margin-top: $header-top-margin;
         @include mobile {
             flex-direction: column;
             justify-content: center;

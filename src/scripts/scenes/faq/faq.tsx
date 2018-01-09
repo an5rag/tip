@@ -1,4 +1,3 @@
-import { World } from "matter-js";
 import * as React from "react";
 import {
   BbContent,
@@ -28,16 +27,15 @@ export class Faq extends React.Component<any, IFaqState> {
     });
   }
   render() {
-    console.log(World);
     const faq = faqArray.map((faqElement: IFaqSectionProps, index) => {
       return (
         <FaqSection {...faqElement} key={index} />
       );
     });
     return (
-      <BbPage documentTitle="FAQ - The Irrelevant Project" classes="tip-faq">
+      <BbPage documentTitle="FAQ" classes="tip-faq">
         <BbTitle>
-          Q & A
+          frequently asked questions.
         </BbTitle>
         <BbContent>
           {faq}

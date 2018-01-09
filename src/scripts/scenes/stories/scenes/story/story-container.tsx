@@ -4,24 +4,33 @@ import { match } from "react-router-dom";
 
 import { IRootState } from "./../../../../services/redux/root-state";
 import { actionCreators } from "./../../../../services/redux/stories/actions";
+import { IStory, StoriesLoadStatusEnum } from "./../../../../services/redux/stories/interfaces";
 import { Story } from "./components/story";
+interface IStoryContainerProps {
+  match: match<{ storyId: string }>;
+}
+export interface IStoryProps {
+  story?: IStory;
+  loadStatus?: StoriesLoadStatusEnum;
+  match: match<{ storyId: string }>;
+  storyId?: string;
+  loadStory?: (storyId: string) => void;
+}
 
-const mapStateToProps: MapStateToProps<any, any, any> = (state: IRootState, ownProps) => {
-  return {
-    story: state.stories.stories[ownProps.match.params.storyId],
-    loadStatus: state.stories.loadStatus,
-    match: ownProps.match,
-    storyId: ownProps.match.params.storyId
+const mapStateToProps: MapStateToProps<IStoryProps, IStoryContainerProps, IRootState> =
+  (state, ownProps) => {
+    return {
+      story: state.stories.currentStory,
+      loadStatus: state.stories.loadStatus,
+      match: ownProps.match,
+      storyId: ownProps.match.params.storyId
+    };
   };
-};
 
 const mapDispatchToProps: MapDispatchToProps<any, any> = (dispatch) => {
   return {
     loadStory: (storyId: string) => {
       dispatch(actionCreators.loadStory(storyId));
-    },
-    setCurrentStory: (storyId: string) => {
-      dispatch(actionCreators.setCurrentStory(storyId));
     }
   };
 };

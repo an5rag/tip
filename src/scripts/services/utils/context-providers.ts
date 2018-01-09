@@ -7,19 +7,19 @@ export const isMobile = () => {
   return window.screen.width <= 640;
 };
 
-export enum deviceType {
+export enum DeviceType {
   mobile,
   tablet,
   desktop
 }
 
-export const getDeviceType = (): deviceType => {
+export const getDeviceType = (): DeviceType => {
   const windowWidth = window.screen.width;
   if (windowWidth <= 640) {
-    return deviceType.mobile;
+    return DeviceType.mobile;
   } else if (windowWidth <= 720) {
-    return deviceType.tablet;
+    return DeviceType.tablet;
   } else {
-    return deviceType.desktop;
+    return DeviceType.desktop;
   }
 };

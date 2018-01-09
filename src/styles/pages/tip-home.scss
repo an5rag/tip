@@ -27,6 +27,7 @@ $home-box-mobile-width: 32vw;
         justify-content: center;
     }
     .hero-text {
+        display: inline-block;
         @keyframes strikethrough {
             from {
                 width: 0%;
@@ -37,9 +38,11 @@ $home-box-mobile-width: 32vw;
         }
         @keyframes redden {
             from {
+                transform: scale(1);
                 color: inherit;
             }
             to {
+                transform: scale(0.99);
                 color: $grey;
             }
         }
@@ -149,17 +152,16 @@ $home-box-mobile-width: 32vw;
             }
         }
         .nav-arrow {
-            @extend %heading-small;
+            @extend %heading-regular;
             position: absolute;
             right: #{$home-box-padding + 10px};
             bottom: $home-box-padding;
-            transition: right 0.1s;
+            transition: right 0.3s;
             opacity: 0;
-        }
-        svg {
-            z-index: 100;
-            position: relative;
-        }
+        } // svg {
+        //     z-index: 100;
+        //     position: relative;
+        // }
         .content {
             position: absolute;
             top: 0;
@@ -198,9 +200,16 @@ $home-box-mobile-width: 32vw;
         }
         &.light {
             @extend %theme-light-shade;
+            left: 0;
+            top: 0;
+            transition: left 0.1s, top 0.1s, box-shadow 0.1s;
+            box-shadow: none;
             &:hover {
                 // border: 2px dashed;
-                @extend %theme-light-accent; // background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+                // box-shadow: #262626 5px 5px;
+                // left: -3px;
+                // top: -3px;
+                @extend %theme-dark-accent; // background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
             }
         }
         &.dark {

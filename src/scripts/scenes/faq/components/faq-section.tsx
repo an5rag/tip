@@ -1,6 +1,6 @@
 import * as React from "react";
 import {
-  BbHeadingTwo,
+  BbHeadingThree,
   BbSection,
 } from "../../../building-blocks/bb-page-elements";
 import { FaqElement, IFaqElementProps } from "./faq-element";
@@ -19,11 +19,11 @@ export class FaqSection extends React.Component<IFaqSectionProps, any> {
     });
     return (
       <BbSection>
-        <BbHeadingTwo>
+        <BbHeadingThree>
           <span className="section-header">
             {this.props.title}
           </span>
-        </BbHeadingTwo>
+        </BbHeadingThree>
         {faqElements}
       </BbSection>
     );

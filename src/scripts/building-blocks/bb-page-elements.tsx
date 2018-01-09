@@ -1,21 +1,39 @@
 import * as React from "react";
 import * as DocumentTitle from "react-document-title";
+import { Helmet } from "react-helmet";
 
 interface IBbPageProps {
   documentTitle: string;
   classes: string;
+  columns?: {
+    small: number;
+    medium?: number;
+    large?: number;
+  };
 }
 
 export class BbPage extends React.Component<IBbPageProps, any> {
+  private static defaultProps: Partial<IBbPageProps> = {
+    columns: {
+      small: 12,
+      medium: 10,
+      large: 9
+    }
+  };
+
   render() {
+    const columns = `small-${this.props.columns.small}
+    medium-${this.props.columns.medium || this.props.columns.small}
+    large-${this.props.columns.large || this.props.columns.medium || this.props.columns.small} columns`;
     return (
-      <DocumentTitle title="FAQ. - The Irrelevant Project">
-        <div className={`row align-center bb-page ${this.props.classes}`}>
-          <div className="small-12 medium-10 large-9 columns">
-            {this.props.children}
-          </div>
+      <div className={`row align-center bb-page ${this.props.classes || ""}`}>
+        <Helmet>
+          <title>{this.props.documentTitle || "Loading"} - The Irrelevant Project</title>
+        </Helmet>
+        <div className={columns}>
+          {this.props.children}
         </div>
-      </DocumentTitle>
+      </div>
     );
   }
 }
@@ -24,7 +42,7 @@ export class BbTitle extends React.Component<any, any> {
 
   render() {
     return (
-      <h1 className="bb-title">
+      <h1 className={`bb-title ${this.props.classes || ""}`}>
         {this.props.children}
       </h1>
     );
@@ -34,9 +52,9 @@ export class BbHeadingTwo extends React.Component<any, any> {
 
   render() {
     return (
-      <h3 className="bb-heading-two">
+      <h2 className={`bb-heading-two ${this.props.classes || ""}`}>
         {this.props.children}
-      </h3>
+      </h2>
     );
   }
 }
@@ -45,9 +63,31 @@ export class BbHeadingThree extends React.Component<any, any> {
 
   render() {
     return (
-      <h3 className="bb-heading-three">
+      <h3 className={`bb-heading-three ${this.props.classes || ""}`}>
         {this.props.children}
       </h3>
+    );
+  }
+}
+
+export class BbHeadingFour extends React.Component<any, any> {
+
+  render() {
+    return (
+      <h4 className={`bb-heading-four ${this.props.classes || ""}`}>
+        {this.props.children}
+      </h4>
+    );
+  }
+}
+
+export class BbBigText extends React.Component<any, any> {
+
+  render() {
+    return (
+      <div className={`bb-big-text ${this.props.classes || ""}`}>
+        {this.props.children}
+      </div>
     );
   }
 }
@@ -56,7 +96,7 @@ export class BbParagraph extends React.Component<any, any> {
 
   render() {
     return (
-      <p className="bb-paragraph">
+      <p className={`bb-paragraph ${this.props.classes || ""}`}>
         {this.props.children}
       </p>
     );
@@ -67,7 +107,7 @@ export class BbContent extends React.Component<any, any> {
 
   render() {
     return (
-      <div className="bb-content">
+      <div className={`bb-content ${this.props.classes || ""}`}>
         {this.props.children}
       </div>
     );
@@ -75,10 +115,19 @@ export class BbContent extends React.Component<any, any> {
 }
 
 export class BbSection extends React.Component<any, any> {
-
   render() {
     return (
-      <div className="bb-section">
+      <div className={`bb-section ${this.props.className || ""}`}>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
+export class BbSubSection extends React.Component<any, any> {
+  render() {
+    return (
+      <div className={`bb-sub-section ${this.props.className || ""}`}>
         {this.props.children}
       </div>
     );
@@ -89,8 +138,19 @@ export class BbText extends React.Component<any, any> {
 
   render() {
     return (
-      <div className="bb-text">
+      <div className={`bb-text ${this.props.classes || ""}`}>
         {this.props.children}
+      </div>
+    );
+  }
+}
+
+export class BbDivider extends React.Component<any, any> {
+
+  render() {
+    return (
+      <div className={`bb-divider-container`} >
+        <div className={`bb-divider ${this.props.classes || ""}`} />
       </div>
     );
   }

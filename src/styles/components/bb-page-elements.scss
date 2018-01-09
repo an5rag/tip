@@ -1,7 +1,11 @@
 .bb-page {
     padding: 0 $side-padding;
-    margin-top: $header-margin;
-    margin-bottom: 5rem;
+    margin-top: $header-bottom-margin;
+    @include mobile {
+        margin-top: $header-bottom-mobile-margin;
+    }
+    margin-bottom: $footer-margin;
+    min-height: 47.8vh;
 }
 
 .bb-content {
@@ -10,43 +14,97 @@
 
 .bb-title {
     @extend %heading-large;
-    font-family: $primary-heading-font;
-    letter-spacing: $narrow-letter-spacing;
-    font-weight: $heavy-font-weight;
+    font-family: $secondary-heading-font;
+    letter-spacing: $wide-letter-spacing;
+    font-weight: $light-font-weight;
     color: $primary-text-color;
+    &.center {
+        text-align: center;
+    } // color: $light-accent;
+    // -webkit-text-fill-color: $light-accent;
+    // /* Will override color (regardless of order) */
+    // -webkit-text-stroke-width: 2px;
+    // -webkit-text-stroke-color: $black;
+    // text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    // &:hover {
+    //     // -webkit-text-fill-color: $brand-negative-color;
+    // }
 }
 
 .bb-heading-two {
+    @extend %heading-regular;
+    font-weight: $heavy-font-weight;
+    font-family: $secondary-heading-font;
+    color: $primary-text-color;
+}
+
+.bb-heading-three {
     @extend %heading-small;
     font-weight: $heavy-font-weight;
     font-family: $secondary-heading-font;
     color: $primary-text-color;
 }
 
-.bb-section:not(.no-bottom-margin) {
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+.bb-heading-four {
+    @extend %heading-x-small;
+    font-family: $secondary-heading-font;
+    color: $secondary-text-color;
+    letter-spacing: $wide-letter-spacing;
 }
 
-.bb-heading-three {
-    @extend %text-large;
-    font-family: $primary-text-font;
+.bb-section {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    &:not(:last-of-type) {
+        margin-bottom: 3rem;
+    }
+    &:not(:first-of-type) {
+        margin-top: 3rem;
+    }
+    &.wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+    .bb-sub-section {
+        &:not(:last-of-type) {
+            margin-bottom: 2rem;
+        }
+        &:not(:first-of-type) {
+            margin-top: 2rem;
+        }
+    }
+    .section-content {
+        &:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+    }
 }
 
 .bb-text {
-    @extend .tip-text-block;
-    p,
-    ol,
-    ul {
-        @extend %text-regular;
-        font-family: $primary-text-font;
-        color: $primary-text-color;
+    &:not(.no-margin) {
+        @extend .tip-text-block;
     }
+    @extend %text-regular;
+    font-family: $primary-text-font;
+    color: $primary-text-color;
     ol,
     ul {
-        margin-top: 0rem;
         margin-bottom: 1rem;
     }
 }
 
+.bb-big-text {
+    @extend .bb-text;
+    @extend %text-large;
+}
+
 .bb-paragraph {}
+
+.bb-divider-container {
+    width: 100%;
+    .bb-divider {
+        width: 100%;
+        border-bottom: 1px solid $light-grey;
+    }
+    display: flex;
+    justify-content: center;
+}

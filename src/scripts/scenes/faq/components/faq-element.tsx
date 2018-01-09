@@ -2,7 +2,7 @@ import * as React from "react";
 import { BbCollapse } from "../../../building-blocks/bb-collapse";
 import { BbImage } from "../../../building-blocks/bb-image";
 import {
-  BbHeadingThree,
+  BbBigText,
   BbText,
 } from "../../../building-blocks/bb-page-elements";
 
@@ -29,24 +29,19 @@ export class FaqElement extends React.Component<IFaqElementProps, IFaqElementSta
   }
   render() {
     const question = (
-      <div onClick={this.handleClick} className={`question ${this.state.open ? "open" : ""}`}>
-        <BbHeadingThree >
+      <BbBigText >
+        <div onClick={this.handleClick} className={`question ${this.state.open ? "open" : ""}`}>
           {this.props.question}
-        </BbHeadingThree>
-      </div>
+        </div>
+      </BbBigText>
     );
-    const answer = this.props.answer.map((answerElement, index) => {
-      return (
-        <BbText key={index}>
-          {answerElement}
-        </BbText>
-      );
-    });
     return (
       <div>
         {question}
         <BbCollapse isOpen={this.state.open} classes="answer">
-          {answer}
+          <BbText classes="no-margin">
+            {this.props.answer}
+          </BbText>
         </BbCollapse>
       </div>
     );

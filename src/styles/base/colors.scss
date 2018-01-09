@@ -13,9 +13,10 @@
 // GREYS AND BLACKS
 // ============================================================================
 //
+$bright-white: white;
 $white: whitesmoke;
 $dark-white: #e6e6e6;
-$light-grey: #f2f4f5;
+$light-grey: #dbdbdb;
 $grey: grey;
 $dark-grey: #757575;
 $dark-black: rgba(0, 0, 0, 0.84);
@@ -34,20 +35,20 @@ $secondary-text-color: $dark-grey;
 // ============================================================================
 //
 //
-$brand-color: #25968a;
-$brand-dark-color: #1d756d;
-$brand-negative-color: rgb(209, 85, 85);
+$brand-color: teal;
+$brand-dark-color: #154b46;
+$brand-negative-color: #f44336;
 $background-shade: #fff;
 //
 //
 $light-shade: #f2f4f5;
 $light-shade-text-color: $primary-text-color;
 //
-$light-accent: #76ccc3;
-$light-accent-text-color: $white;
+$light-accent: rgb(0, 168, 168);
+$light-accent-text-color: $bright-white;
 //
-$dark-accent: #595050;
-$dark-accent-text-color: #ded7d2;
+$dark-accent: #4e4646;
+$dark-accent-text-color: #e9e1dc;
 //
 $dark-shade: #1b1b1b;
 $dark-shade-text-color: $dark-white;
@@ -69,17 +70,26 @@ $dark-shade-text-color: $dark-white;
 %theme-light-accent {
     background-color: $light-accent;
     color: $light-accent-text-color;
-    border-color: $light-accent-text-color;
+    border-color: $dark-black;
+    svg {
+        fill: $light-accent-text-color;
+    }
 }
 
 %theme-dark-shade {
     background-color: $dark-shade;
     color: $dark-shade-text-color;
-    border-color: $dark-shade-text-color;
+    border-color: transparent;
+    svg {
+        fill: $dark-shade-text-color;
+    }
 }
 
 %theme-dark-accent {
     background-color: $dark-accent;
     color: $dark-accent-text-color;
-    border-color: $dark-accent-text-color;
+    border-color: $dark-accent;
+    svg {
+        fill: $dark-accent-text-color;
+    }
 }

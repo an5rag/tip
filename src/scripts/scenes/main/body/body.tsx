@@ -11,9 +11,10 @@ export const Body = () =>
   <div className="tip-body">
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route path="/home" component={Home} />
       <Route path="/stories" component={Stories} />
-      <Route path="/talk" component={Talk} />
-      <Route path="/blog" component={Blog} />
+      {/* <Route path="/talk" component={Talk} />
+      <Route path="/blog" component={Blog} /> */}
       <Route path="/faq" component={Faq} />
       <Route component={NotFoundPage} />
     </Switch>

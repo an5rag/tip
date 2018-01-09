@@ -7,7 +7,7 @@
     @extend %text-small;
     .title {
         @extend %text-x-small; // font-weight: $light-font-weight;
-        font-family: $primary-heading-font;
+        font-family: $secondary-heading-font;
         font-weight: $heavy-font-weight;
     }
     .content {

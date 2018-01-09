@@ -95,7 +95,7 @@ export const faqArray: IFaqSectionProps[] = [
         question: "Where can I buy your books from?",
         answer: [
           <BbParagraph>
-            <TipLink to="http://instamojo.com/@readmore" external={true}>Visit our store.</TipLink>
+            <TipLink to="https://www.instamojo.com/readmore/" external={true}>Visit our store.</TipLink>
           </BbParagraph>
         ]
       },

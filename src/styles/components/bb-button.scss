@@ -1,0 +1,66 @@
+.bb-button-container {
+    position: relative;
+    @include mobile {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    @include tablet {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    .bb-button {
+        width: 100%;
+        @extend %text-small;
+        border: 1.5px solid transparent;
+        font-family: $primary-heading-font;
+        padding: 15px;
+        font-weight: $heavy-font-weight;
+        outline: none;
+        &.dark {
+            @extend %theme-dark-shade;
+            transition: all 0.2s;
+            &:hover:not(:disabled):not(.active) {
+                box-shadow: $light-grey 0px 10px 15px 0px;
+                transform: translateY(-1px);
+            }
+        }
+        &.light {
+            @extend %theme-light-accent;
+            box-shadow: #262626 4px 4px; // transition: all 0.05s;
+            &:hover:not(:disabled):not(.active) {
+                box-shadow: #262626 6px 6px;
+                transform: translateX(-1px) translateY(-1px);
+                filter: brightness(115%);
+            }
+            &.active {
+                box-shadow: #262626 2px 2px;
+            }
+        }
+        &.active {
+            filter: brightness(80%);
+        }
+        &:not(:disabled) {
+            cursor: pointer;
+        }
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+    .subtitle {
+        position: absolute;
+        top: 115%;
+        left: 0;
+        width: 100%;
+        font-family: $secondary-text-font;
+        color: $primary-text-color;
+        @extend %text-xx-small;
+        font-weight: $light-font-weight;
+        text-align: center;
+        @include mobile {
+            display: none;
+        }
+        @include tablet {
+            display: none;
+        }
+    }
+}

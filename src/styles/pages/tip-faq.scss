@@ -11,7 +11,7 @@ $heading-margin-bottom: 2rem;
 .tip-faq {
     .section-header {
         padding-bottom: 2px;
-        border-bottom: 1px solid $grey;
+        border-bottom: 1.5px solid $grey;
     }
     .question {
         margin-top: 1rem;
@@ -19,7 +19,11 @@ $heading-margin-bottom: 2rem;
         margin-left: 1.1rem;
         color: $brand-color;
         &:hover {
-            color: $brand-dark-color;
+            color: $primary-text-color;
+            &:after,
+            &:before {
+                background-color: $primary-text-color;
+            }
         }
         position: relative;
         &:before {
