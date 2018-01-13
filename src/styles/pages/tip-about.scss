@@ -1,0 +1,28 @@
+.tip-about {
+    .row {
+        margin: 0;
+    }
+    .button {
+        margin-top: 2rem;
+    }
+    .heading-column {
+        @include desktop {
+            padding-right: 3rem;
+        }
+    }
+    h2 {
+        margin-bottom: 2rem;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            &:not(:first-of-type) {
+                padding-top: 1rem;
+            }
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $light-grey;
+        }
+    }
+}

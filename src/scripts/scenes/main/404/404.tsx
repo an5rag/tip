@@ -19,7 +19,13 @@ export const NotFoundPage = (props: INotFoundProps) => {
   const titleArray = ["Yikes!", "Rats!", "Awks.", "Shoot!"];
   const randomTitle = titleArray[Math.floor(Math.random() * titleArray.length)];
   return (
-    <BbPage documentTitle={`Can't find ${type} - The Irrelevant Project`} classes="tip-404">
+    <BbPage documentTitle={`Can't find ${type} - The Irrelevant Project`} classes="tip-404"
+      meta={
+        {
+          description: "404: Not Found",
+          url: `404`
+        }
+      }>
 
       <div className="row align-center align-middle row-wrap-reverse">
         <div className="columns small-12 medium-8 large-5 columns text-container">

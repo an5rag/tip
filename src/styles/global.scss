@@ -36,6 +36,7 @@
 @import 'components/bb-page-elements.scss';
 @import 'components/bb-button.scss';
 @import 'components/bb-prev-next-bar.scss';
+@import 'components/bb-ticker.scss';
 
 /* ==========================================================================
    CONTAINERS - Components built using modules
@@ -49,7 +50,7 @@
    PAGES - Scenes built using containers
    ========================================================================== */
 
-@import 'pages/tip-story-grid.scss';
+@import 'pages/tip-stories.scss';
 @import 'pages/tip-home.scss';
 @import 'pages/tip-blog.scss';
 @import 'pages/tip-blog-write.scss';
@@ -58,3 +59,5 @@
 @import 'pages/tip-404.scss';
 @import 'pages/tip-faq.scss';
 @import 'pages/tip-loading.scss';
+@import 'pages/tip-team.scss';
+@import 'pages/tip-about.scss';

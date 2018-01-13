@@ -11,7 +11,9 @@ export const actionTypes = {
   FETCH_STORIES_END: "FETCH_STORIES_COMPLETE",
   FETCH_STORIES_ERROR: "FETCH_STORIES_ERROR",
   UPDATE_STORY: "UPDATE_STORY",
-  SET_CURRENT_STORY: "SET_CURRENT_STORY"
+  SET_CURRENT_STORY: "SET_CURRENT_STORY",
+  SET_PREV_STORY: "SET_PREV_STORY",
+  SET_NEXT_STORY: "SET_NEXT_STORY"
 };
 
 export const actionCreators = {
@@ -52,7 +54,7 @@ export const actionCreators = {
     return (dispatch) => {
       dispatch(actionCreators.fetchStoriesStart());
 
-      return storiesRef.once("value")
+      return storiesRef.orderByChild("index").once("value")
         .then((snapshot) => {
           const stories: { [storyId: string]: IStory } = snapshot.val();
           dispatch(actionCreators.updateStories(stories));
@@ -71,10 +73,20 @@ export const actionCreators = {
       return storyRef.once("value")
         .then((snapshot) => {
           const story: IStory = snapshot.val();
+          let prevStory: IStory;
+          let nextStory: IStory;
           if (story !== null) {
-            dispatch(actionCreators.updateStory(storyId, story));
-            dispatch(actionCreators.setCurrentStory(story));
-            dispatch(actionCreators.fetchStoriesEnd());
+            // dispatch(actionCreators.updateStory(storyId, story));
+            actionCreators.loadStoryByIndex((story.index + 1))
+              .then((s) => {
+                nextStory = s;
+                return actionCreators.loadStoryByIndex(story.index - 1);
+              })
+              .then((s) => {
+                prevStory = s;
+                dispatch(actionCreators.setCurrentStory(story, prevStory, nextStory));
+                dispatch(actionCreators.fetchStoriesEnd());
+              });
           } else {
             dispatch(actionCreators.fetchStoriesError(FetchError.NOT_FOUND_ERROR));
           }
@@ -85,10 +97,25 @@ export const actionCreators = {
     };
   },
 
-  setCurrentStory: (story: IStory) => {
+  loadStoryByIndex: (index: number) => {
+    return storiesRef.orderByChild("index").equalTo(index).limitToFirst(1).once("value")
+      .then((snapshot) => {
+        const value = snapshot.val();
+        let story: IStory;
+        for (const key in value) {
+          if (value.hasOwnProperty(key) && value) {
+            story = value[key];
+            story.id = key;
+          }
+        }
+        return story;
+      });
+  },
+
+  setCurrentStory: (story: IStory, prevStory?: IStory, nextStory?: IStory) => {
     return {
       type: actionTypes.SET_CURRENT_STORY,
-      payload: { story }
+      payload: { story, prevStory, nextStory }
     };
   }
 };

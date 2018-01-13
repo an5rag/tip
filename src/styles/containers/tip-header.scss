@@ -9,6 +9,11 @@
         display: flex;
         justify-content: space-between;
         margin-top: $header-top-margin;
+        @include tablet {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         @include mobile {
             flex-direction: column;
             justify-content: center;
@@ -41,6 +46,9 @@
         }
         .tip-nav {
             @include mobile {
+                margin-top: 0.75rem;
+            }
+            @include tablet {
                 margin-top: 0.75rem;
             }
             display: flex;

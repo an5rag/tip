@@ -15,7 +15,7 @@ export enum DeviceType {
 
 export const getDeviceType = (): DeviceType => {
   const windowWidth = window.screen.width;
-  if (windowWidth <= 640) {
+  if (windowWidth <= 480) {
     return DeviceType.mobile;
   } else if (windowWidth <= 720) {
     return DeviceType.tablet;

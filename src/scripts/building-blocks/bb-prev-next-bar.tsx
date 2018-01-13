@@ -2,6 +2,8 @@ import * as React from "react";
 import { TipLink } from "./tip-link";
 const LeftArrow = require("react-icons/lib/md/arrow-back");
 const RightArrow = require("react-icons/lib/md/arrow-forward");
+import { DeviceType, getDeviceType } from "./../services/utils/context-providers";
+
 
 interface IPrevNextBarProps {
   prevLink?: {
@@ -16,20 +18,28 @@ interface IPrevNextBarProps {
 
 export class BBPrevNextBar extends React.Component<IPrevNextBarProps, any> {
 
+  truncateIfLong = (label: string): string => {
+    if (getDeviceType() === DeviceType.mobile || getDeviceType() === DeviceType.tablet) {
+      return label.length > 21 ? label.slice(0, 21) + "..." : label;
+    } else {
+      return label;
+    }
+  }
+
   render() {
     const prevElement = this.props.prevLink ?
-      <TipLink classes="element" to={this.props.prevLink.to}>
+      <TipLink classes="element back" to={this.props.prevLink.to}>
         <LeftArrow />
-        <span className="back-label">
+        <div className="back-label">
           {this.props.prevLink.label}
-        </span>
+        </div>
       </TipLink> : null;
 
     const nextElement = this.props.nextLink ?
-      <TipLink classes="element" to={this.props.nextLink.to}>
-        <span className="next-label">
-          {this.props.nextLink.label}
-        </span>
+      <TipLink classes="element next" to={this.props.nextLink.to}>
+        <div className="next-label">
+          {this.truncateIfLong(this.props.nextLink.label)}
+        </div>
         <RightArrow />
       </TipLink> : null;
 

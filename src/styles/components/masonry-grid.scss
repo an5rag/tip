@@ -26,16 +26,22 @@ $tip-masonry-grid-vertical-margin: 3em;
                 width: 120px;
             }
         }
-        .grid-element-caption {
+        .grid-element-caption-container {
             transition: opacity 0.3s;
-            @extend %heading-x-small;
+            @extend %text-x-small;
             font-family: $primary-text-font;
             color: $primary-text-color;
             letter-spacing: $wide-letter-spacing;
             position: absolute;
-            top: 35%;
+            top: 0;
+            left: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
             text-align: center;
+            .grid-element-caption {}
         }
         .show-on-hover {
             opacity: 0;

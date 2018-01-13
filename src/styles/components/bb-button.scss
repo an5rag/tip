@@ -1,5 +1,9 @@
 .bb-button-container {
     position: relative;
+    display: inline-block;
+    &.wide {
+        width: 100%;
+    }
     @include mobile {
         width: 100%;
         margin: 0.5rem 0;
@@ -17,11 +21,15 @@
         font-weight: $heavy-font-weight;
         outline: none;
         &.dark {
-            @extend %theme-dark-shade;
+            @extend %theme-dark-accent;
             transition: all 0.2s;
             &:hover:not(:disabled):not(.active) {
+                @extend %theme-dark-shade;
                 box-shadow: $light-grey 0px 10px 15px 0px;
-                transform: translateY(-1px);
+                transform: translateY(-2.5px);
+            }
+            &.active {
+                @extend %theme-dark-shade;
             }
         }
         &.light {

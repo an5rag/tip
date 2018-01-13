@@ -34,11 +34,12 @@ export const stories = (state: IStoriesState = initialState, action: IAction): I
         ...state,
         stories: action.payload
       };
-
     case actionTypes.SET_CURRENT_STORY:
       return {
         ...state,
-        currentStory: action.payload.story
+        currentStory: action.payload.story,
+        nextStory: action.payload.nextStory,
+        prevStory: action.payload.prevStory
       };
 
     case actionTypes.UPDATE_STORY:

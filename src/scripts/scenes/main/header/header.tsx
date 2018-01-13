@@ -95,21 +95,21 @@ export const Header = (props: IHeaderProps) => {
                         link: "/faq"
                     },
                     {
-                        displayName: "The Team",
+                        displayName: "Team",
                         link: "/team"
-                    },
-                    {
-                        displayName: "Press",
-                        link: "/press"
                     }
                 ]}
             />
-            <NavElement link="/stories" displayName="Stories" />
+            <NavElement link="/stories" displayName="Books" />
             <NavElement displayName="More"
                 elements={[
                     {
                         displayName: "Contact",
                         link: "/contact"
+                    },
+                    {
+                        displayName: "Press",
+                        link: "/press"
                     },
                     {
                         displayName: "Privacy",

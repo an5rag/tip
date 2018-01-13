@@ -17,7 +17,7 @@ $bright-white: white;
 $white: whitesmoke;
 $dark-white: #e6e6e6;
 $light-grey: #dbdbdb;
-$grey: grey;
+$grey: #808080;
 $dark-grey: #757575;
 $dark-black: rgba(0, 0, 0, 0.84);
 $black: #111111;
@@ -35,9 +35,9 @@ $secondary-text-color: $dark-grey;
 // ============================================================================
 //
 //
-$brand-color: teal;
+$brand-color: #008080;
 $brand-dark-color: #154b46;
-$brand-negative-color: #f44336;
+$brand-negative-color: #ca4b42;
 $background-shade: #fff;
 //
 //
@@ -48,6 +48,7 @@ $light-accent: rgb(0, 168, 168);
 $light-accent-text-color: $bright-white;
 //
 $dark-accent: #4e4646;
+$dark-dark-accent:#3f3838;
 $dark-accent-text-color: #e9e1dc;
 //
 $dark-shade: #1b1b1b;
@@ -86,7 +87,7 @@ $dark-shade-text-color: $dark-white;
 }
 
 %theme-dark-accent {
-    background-color: $dark-accent;
+    background-color: $dark-dark-accent;
     color: $dark-accent-text-color;
     border-color: $dark-accent;
     svg {

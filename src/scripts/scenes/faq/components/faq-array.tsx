@@ -6,8 +6,6 @@ import {
 import { TipLink } from "../../../building-blocks/tip-link";
 import { IFaqSectionProps } from "./faq-section";
 
-const meghnaShadow = require("../../../../resources/images/meghna-shadow.jpg");
-const alishya = require("../../../../resources/images/alishya.jpg");
 const logo = require("../../../../resources/images/logo.png");
 
 export const faqArray: IFaqSectionProps[] = [

@@ -33,7 +33,13 @@ export class Faq extends React.Component<any, IFaqState> {
       );
     });
     return (
-      <BbPage documentTitle="FAQ" classes="tip-faq">
+      <BbPage documentTitle="FAQ" classes="tip-faq"
+        meta={
+          {
+            description: "Frequently Asked Questions",
+            url: `${this.props.match.url}`
+          }
+        }>
         <BbTitle>
           frequently asked questions.
         </BbTitle>

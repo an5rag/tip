@@ -4,6 +4,7 @@ interface IBbImageProps {
   src: string;
   size: "large" | "medium" | "small";
   caption?: string;
+  altText?: string;
 }
 
 export class BbImage extends React.Component<IBbImageProps, any> {
@@ -13,7 +14,7 @@ export class BbImage extends React.Component<IBbImageProps, any> {
     return (
       <span className={classes}>
         <figure>
-          <img src={this.props.src} />
+          <img src={this.props.src} alt={this.props.altText || this.props.caption || "The Irrelevant Project"} title={this.props.caption} />
           {caption}
         </figure>
       </span>

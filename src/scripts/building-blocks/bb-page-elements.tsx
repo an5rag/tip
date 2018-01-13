@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as DocumentTitle from "react-document-title";
 import { Helmet } from "react-helmet";
+const booksImageUrl = require("./../../resources/images/books.jpg");
+
 
 interface IBbPageProps {
   documentTitle: string;
@@ -9,6 +11,12 @@ interface IBbPageProps {
     small: number;
     medium?: number;
     large?: number;
+  };
+  meta: {
+    url: string;
+    type?: "product" | "website" | "article";
+    description: string;
+    imageUrl?: string;
   };
 }
 
@@ -29,6 +37,11 @@ export class BbPage extends React.Component<IBbPageProps, any> {
       <div className={`row align-center bb-page ${this.props.classes || ""}`}>
         <Helmet>
           <title>{this.props.documentTitle || "Loading"} - The Irrelevant Project</title>
+          <meta property="og:url" content={`https://theirrelevantproject.com${this.props.meta && this.props.meta.url}`} />
+          <meta property="og:type" content={this.props.meta && this.props.meta.url || "website"} />
+          <meta property="og:title" content={this.props.documentTitle} />
+          <meta property="og:description" content={this.props.meta && this.props.meta.description} />
+          <meta property="og:image" content={this.props.meta && this.props.meta.imageUrl || booksImageUrl} />
         </Helmet>
         <div className={columns}>
           {this.props.children}
@@ -135,7 +148,6 @@ export class BbSubSection extends React.Component<any, any> {
 }
 
 export class BbText extends React.Component<any, any> {
-
   render() {
     return (
       <div className={`bb-text ${this.props.classes || ""}`}>
@@ -155,3 +167,5 @@ export class BbDivider extends React.Component<any, any> {
     );
   }
 }
+
+

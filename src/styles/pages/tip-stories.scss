@@ -37,8 +37,7 @@
             }
         }
         &:hover {
-            @extend %theme-dark-accent;
-            transform: scale(1.02);
+            @extend %theme-dark-accent; // transform: scale(1.02);
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             img {
                 filter: sepia(40%) contrast(105%) brightness(95%);

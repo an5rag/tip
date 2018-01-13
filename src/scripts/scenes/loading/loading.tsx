@@ -8,7 +8,13 @@ import {
 export class Loading extends React.Component<any, any> {
   render() {
     return (
-      <BbPage documentTitle="Loading" classes="tip-loading">
+      <BbPage documentTitle="Loading" classes="tip-loading"
+        meta={
+          {
+            description: "Loading...",
+            url: `/`
+          }
+        }>
         <div className="loading-element">
           <img src={logo} />
         </div>

@@ -10,6 +10,8 @@ export interface IStory {
       caption: string
     }>;
   };
+  activityUrl?: string;
+  sampleUrl?: string;
   synopsis?: string;
   author?: {
     name: string;

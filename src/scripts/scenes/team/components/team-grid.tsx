@@ -1,7 +1,7 @@
 
-import * as React from "react";
-import Masonry from 'react-masonry-component';
 import * as _ from "lodash";
+import * as React from "react";
+import Masonry from "react-masonry-component";
 
 const masonryOptions = {
   // horizontalOrder: true,
@@ -10,36 +10,38 @@ const masonryOptions = {
   // stagger: 30
 };
 
+export interface ITeamMember {
+  /**
+   * image source
+   * 
+   * @type {string}
+   */
+  src: string;
+  /**
+   * Team member name
+   *
+   * @type {string}
+   * @memberof ITeamGridProps
+   */
+  name?: string;
+  /**
+   * Team member role
+   *
+   * @type {string}
+   * @memberof ITeamGridProps
+   */
+  role?: string;
+  /**
+   * Link to personal website/blog
+   *
+   * @type {string}
+   * @memberof ITeamGridProps
+   */
+  link?: string;
+}
+
 export interface ITeamGridProps {
-  members: [{/**
-    * image source
-    * 
-    * @type {string}
-    * @memberof ITeamGridProps
-    */
-    src: string;
-    /**
-     * Team member name
-     * 
-     * @type {string}
-     * @memberof ITeamGridProps
-     */
-    name?: string;
-    /**
-     * Team member role
-     * 
-     * @type {string}
-     * @memberof ITeamGridProps
-     */
-    role?: string;
-    /**
-     * Link to personal website/blog
-     * 
-     * @type {string}
-     * @memberof ITeamGridProps
-     */
-    link?: string;
-  }]
+  members: ITeamMember[];
 
 }
 
@@ -52,7 +54,7 @@ export class TeamGrid extends React.Component<ITeamGridProps, ITeamGridState> {
     super(props);
     this.state = {
       imagesLoaded: false
-    }
+    };
   }
 
   handleImagesLoaded = () => {
@@ -61,7 +63,7 @@ export class TeamGrid extends React.Component<ITeamGridProps, ITeamGridState> {
 
   render() {
     const childElements = this.props.members.map(function (element, index) {
-      const imageFilter = ` sepia(90%) hue-rotate(${_.random(0, 8) * 45}deg)`;
+      const imageFilter = ` sepia(70%) hue-rotate(${_.random(0, 8) * 45}deg)`;
 
       const captionContent = [
         (<span key={0}>{element.name}</span>), (<br key={1} />), (<span key={2}>{element.role}</span>)
@@ -80,8 +82,10 @@ export class TeamGrid extends React.Component<ITeamGridProps, ITeamGridState> {
       return (
         <div className="grid-element" key={index}>
           <img className="grid-element-image hide-on-hover" src={element.src} style={{ filter: imageFilter }} />
-          <div className="grid-element-caption show-on-hover">
-            {caption}
+          <div className="grid-element-caption-container show-on-hover">
+            <div className="grid-element-caption ">
+              {caption}
+            </div>
           </div>
         </div>
       );
@@ -92,7 +96,7 @@ export class TeamGrid extends React.Component<ITeamGridProps, ITeamGridState> {
     return (
       <div>
         <Masonry
-          className={'tip-masonry-grid'} // default ''
+          className={"tip-masonry-grid"} // default ''
           options={masonryOptions} // default {}
         >
           {childElements}
@@ -100,4 +104,4 @@ export class TeamGrid extends React.Component<ITeamGridProps, ITeamGridState> {
       </div>
     );
   }
-};
+}

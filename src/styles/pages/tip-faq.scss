@@ -10,14 +10,13 @@ $heading-margin-bottom: 2rem;
 
 .tip-faq {
     .section-header {
-        padding-bottom: 2px;
-        border-bottom: 1.5px solid $grey;
+        padding-bottom: 2px; // border-bottom: 1.5px solid;
     }
     .question {
         margin-top: 1rem;
         cursor: pointer;
         margin-left: 1.1rem;
-        color: $brand-color;
+        color: $brand-color; // font-weight: $heavy-font-weight;
         &:hover {
             color: $primary-text-color;
             &:after,
@@ -31,7 +30,7 @@ $heading-margin-bottom: 2rem;
             width: 8px;
             background-color: $brand-color;
             position: absolute;
-            top: 50%;
+            top: 16.5px;
             left: -1rem;
             transform: rotate(90deg);
             transition: transform 0.4s ease;
@@ -42,14 +41,17 @@ $heading-margin-bottom: 2rem;
             width: 8px;
             background-color: $brand-color;
             position: absolute;
-            top: 50%;
+            top: 16.5px;
             left: -1rem;
-            transition: transform 0.4s ease;
+            transition: opacity 0.3s ease;
             content: " ";
         }
         &.open {
             &:before {
                 transform: rotate(0deg);
+            }
+            &:after {
+                opacity: 0;
             }
         }
     }

@@ -1,0 +1,14 @@
+.tip-team {
+    .title {}
+    .intro-text {
+        text-align: justify;
+        @include mobile {
+            text-align: center;
+        }
+    }
+    .emphasis {
+        // @extend %text-x-large; 
+        // font-weight: $light-font-weight;
+        // padding: 0 3px;
+    }
+}

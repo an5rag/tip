@@ -47,8 +47,7 @@
         }
         .title {
             font-weight: $heavy-font-weight; // font-family: $secondary-heading-font;
-            // color: $brand-negative-color;
-            // -webkit-text-fill-color: $brand-negative-color;
+            color: $primary-text-color; // -webkit-text-fill-color: $brand-negative-color;
         }
         .author {
             div {

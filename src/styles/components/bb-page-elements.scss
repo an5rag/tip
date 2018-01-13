@@ -17,7 +17,11 @@
     font-family: $secondary-heading-font;
     letter-spacing: $wide-letter-spacing;
     font-weight: $light-font-weight;
-    color: $primary-text-color;
+    $gradient: 45deg, $brand-negative-color, $light-accent;
+    background: linear-gradient($gradient);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     &.center {
         text-align: center;
     } // color: $light-accent;
@@ -32,10 +36,10 @@
 }
 
 .bb-heading-two {
-    @extend %heading-regular;
-    font-weight: $heavy-font-weight;
-    font-family: $secondary-heading-font;
+    @extend %heading-regular; // font-weight: $heavy-font-weight;
+    font-family: $primary-heading-font;
     color: $primary-text-color;
+    letter-spacing: $narrow-letter-spacing;
 }
 
 .bb-heading-three {
@@ -90,6 +94,7 @@
     ul {
         margin-bottom: 1rem;
     }
+    text-rendering: optimizeLegibility;
 }
 
 .bb-big-text {

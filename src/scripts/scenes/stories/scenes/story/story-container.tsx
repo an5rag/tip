@@ -11,6 +11,7 @@ interface IStoryContainerProps {
 }
 export interface IStoryProps {
   story?: IStory;
+  nextStory?: IStory;
   loadStatus?: StoriesLoadStatusEnum;
   match: match<{ storyId: string }>;
   storyId?: string;
@@ -21,6 +22,7 @@ const mapStateToProps: MapStateToProps<IStoryProps, IStoryContainerProps, IRootS
   (state, ownProps) => {
     return {
       story: state.stories.currentStory,
+      nextStory: state.stories.nextStory,
       loadStatus: state.stories.loadStatus,
       match: ownProps.match,
       storyId: ownProps.match.params.storyId

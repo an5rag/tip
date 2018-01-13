@@ -120,7 +120,7 @@ $home-box-mobile-width: 32vw;
     justify-content: flex-start; // background-color: whitesmoke;
     margin: $home-box-margin 0 0 $home-box-margin;
     @include desktop {
-        max-width: #{($home-box-width + $home-box-margin) * 5};
+        max-width: #{($home-box-width + $home-box-margin) * 4};
     }
     @include tablet {
         max-width: #{($home-box-width + $home-box-margin) * 3};
@@ -141,6 +141,15 @@ $home-box-mobile-width: 32vw;
             height: $home-box-mobile-height;
             width: $home-box-mobile-width;
             margin: 0 $home-box-mobile-margin $home-box-mobile-margin 0;
+        }
+        &.large {
+            width: #{$home-box-width*4 + $home-box-margin*3};
+            @include tablet {
+                width: #{$home-box-width*3 + $home-box-margin*2};
+            }
+            @include mobile {
+                width: #{$home-box-mobile-width*3 + $home-box-mobile-margin*2};
+            }
         }
         .title {
             @extend %heading-small;
@@ -172,12 +181,15 @@ $home-box-mobile-width: 32vw;
             justify-content: center;
             align-items: center;
             opacity: 0.4;
+            font-size: 3rem;
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 object-position: 50% 50%;
-                filter: grayscale(100%);
+                filter: grayscale(20%);
+                transform: scale(1);
+                transition: transform 2s ease-out;
             }
         }
         &:hover {
@@ -195,7 +207,10 @@ $home-box-mobile-width: 32vw;
                 opacity: 1;
             }
             .content {
-                opacity: 0.2;
+                img {
+                    transform: scale(1.3); // object-position: left top;
+                    opacity: 0.2;
+                }
             }
         }
         &.light {

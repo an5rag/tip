@@ -56,6 +56,9 @@ export class Story extends React.Component<IStoryProps, any> {
 
   deserializeSections(sections: ISection[]) {
     return sections.map((section, index) => {
+      if (!section) {
+        return null;
+      }
       const headingElement =
         <BbHeadingTwo>
           {section.heading}
@@ -83,7 +86,9 @@ export class Story extends React.Component<IStoryProps, any> {
     const images = this.props.story ? this.props.story.images.series.map((image, index) => {
       return {
         original: image.url,
-        thumbnail: image.url
+        thumbnail: image.url,
+        originalAlt: image.caption,
+        originalTitle: image.caption
       };
     }) : [];
     const sectionsArray: ISection[] = [
@@ -99,15 +104,20 @@ export class Story extends React.Component<IStoryProps, any> {
               </BbParagraph>
           </BbText>
       },
-      {
+      this.props.story && this.props.story.about ? {
         heading: "About",
         content:
           <BbText>
             {this.props.story && this.props.story.about && this.deserializeContent(this.props.story && this.props.story.about.details)}
+            <BbParagraph>
+              <strong>Tags: </strong>{this.props.story.tags.reduce((accumulator, tag) => {
+                return accumulator ? accumulator + ", " + tag : tag;
+              }, "")}
+            </BbParagraph>
           </BbText>
-      },
-      {
-        heading: "Activity Sheets",
+      } : null,
+      this.props.story && this.props.story.activityUrl ? {
+        heading: "Activity",
         content:
           <BbText>
             <BbParagraph>
@@ -115,20 +125,34 @@ export class Story extends React.Component<IStoryProps, any> {
                 designed and curated a special set of activity sessions which you can download here.
               </BbParagraph>
             <div className="action-container title-box-section">
-              <TipLink classes="bb-big-link action-item" external={true} to=""><DownloadIcon />ACTIVITY SHEETS</TipLink>
+              <TipLink classes="bb-big-link action-item" external={true} to={this.props.story.activityUrl}><DownloadIcon />DOWNLOAD ACTIVITY</TipLink>
             </div>
           </BbText>
-      },
+      } : null,
       {
         content:
           <div className="action-container">
-            {actions({ showSample: false, price: this.props.story && this.props.story.price })}
+            {actions({
+              showSample: false,
+              price: this.props.story && this.props.story.price,
+              shoppingLink: this.props.story && this.props.story.shoppingLink
+            })}
           </div>
       }
     ];
+    const metaDescriptionArray = this.props.story && this.props.story.synopsis.match(/(^.*?[a-z]{2,}[.!?])\s/);
+    const metaDescription = metaDescriptionArray && metaDescriptionArray.length && metaDescriptionArray[0] || (this.props.story && this.props.story.synopsis);
     const mainContent =
-      <BbPage documentTitle={this.props.story && this.props.story.title} classes="tip-story" columns={{ small: 12, medium: 10, large: 10 }}>
-        <BBPrevNextBar prevLink={{ to: "/stories", label: "All Stories" }} />
+      <BbPage documentTitle={this.props.story && this.props.story.title} classes="tip-story" columns={{ small: 12, medium: 10, large: 10 }}
+        meta={
+          {
+            description: metaDescription,
+            url: `${this.props.match.url}`,
+            imageUrl: this.props.story && this.props.story.images.series && this.props.story.images.series[0].url
+          }
+        }
+      >
+        <BBPrevNextBar prevLink={{ to: "/stories", label: "All Stories" }} nextLink={this.props.nextStory && { to: `/stories/${this.props.nextStory.id}`, label: this.props.nextStory.title }} />
         <BbSection className="row align-middle">
           <div className="small-12 large-6 columns image-box">
             <ImageGallery
@@ -140,7 +164,7 @@ export class Story extends React.Component<IStoryProps, any> {
               // onImageLoad={(what) => console.log("images loaded", what)}
               lazyLoad={true}
               thumbnailPosition={getDeviceType() === DeviceType.mobile ? "bottom" : "bottom"}
-              slideOnThumbnailHover={true}
+            // slideOnThumbnailHover={true}
             />
           </div>
           <div className="small-12 large-6 columns title-box">
@@ -168,7 +192,12 @@ export class Story extends React.Component<IStoryProps, any> {
             </BbSubSection>
 
             <BbSubSection>
-              {actions({ showSample: true, price: this.props.story && this.props.story.price })}
+              {actions({
+                showSample: this.props.story && this.props.story.sampleUrl ? true : false,
+                sampleLink: this.props.story && this.props.story.sampleUrl,
+                price: this.props.story && this.props.story.price,
+                shoppingLink: this.props.story && this.props.story.shoppingLink
+              })}
             </BbSubSection>
           </div>
         </BbSection>
@@ -196,7 +225,7 @@ interface ISection {
 interface IActionProps {
   showSocial?: boolean;
   showSample?: boolean;
-  shoppingLink?: string;
+  shoppingLink: string;
   sampleLink?: string;
   price?: number;
 }
@@ -209,7 +238,8 @@ const actions = (props: IActionProps) => {
         className="action-item"
         label={`BUY NOW FOR ₹ ${props.price}`}
         subtitle="Secure payments powered by Instamojo"
-        onClick={console.log}
+        linkTo={props.shoppingLink}
+        linkExternal={true}
       />
       {props.showSample ? sampleElement : null}
     </div>

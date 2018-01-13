@@ -1,5 +1,6 @@
 import * as React from "react";
 import { BbCollapse } from "./bb-collapse";
+const CloseIcon = require("react-icons/lib/md/close");
 
 interface IBbNoticeProps {
   type?: "light" | "dark" | "danger";
@@ -15,7 +16,7 @@ interface IBbNoticeState {
 export class BbNotice extends React.Component<IBbNoticeProps, IBbNoticeState> {
   public static defaultProps: IBbNoticeProps = {
     type: "light",
-    dismissable: false
+    dismissable: true
   };
   constructor(props) {
     super(props);
@@ -31,7 +32,7 @@ export class BbNotice extends React.Component<IBbNoticeProps, IBbNoticeState> {
 
   render() {
     const classes = `bb-notice ${this.props.type}`;
-    const dismissButton = (<i className="fa fa-times-circle close-button" onClick={this.handleCloseClicked.bind(this)}></i>);
+    const dismissButton = (<span className="close-button" onClick={this.handleCloseClicked.bind(this)}><CloseIcon /></span>);
     return (
       <BbCollapse isOpen={this.state.open}>
         <div className={classes}>

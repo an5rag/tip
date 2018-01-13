@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
+import { About } from "../../about/about";
 import { Blog } from "../../blog/blog";
 import { Faq } from "../../faq/faq";
 import { Home } from "../../home/home";
 import { Stories } from "../../stories/stories";
-import { Talk } from "../../talk/talk";
+import { Team } from "../../team/team";
+
 import { NotFoundPage } from "../404/404";
 
 export const Body = () =>
@@ -15,6 +17,9 @@ export const Body = () =>
       <Route path="/stories" component={Stories} />
       {/* <Route path="/talk" component={Talk} />
       <Route path="/blog" component={Blog} /> */}
+      <Route path="/team" component={Team} />
+      <Route path="/about" component={About} />
+
       <Route path="/faq" component={Faq} />
       <Route component={NotFoundPage} />
     </Switch>

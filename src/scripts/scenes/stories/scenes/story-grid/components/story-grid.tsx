@@ -2,6 +2,7 @@ import * as React from "react";
 import { connect, MapDispatchToProps, MapStateToProps } from "react-redux";
 import { match } from "react-router-dom";
 import { BrowserRouter, Link, NavLink, Route, Switch } from "react-router-dom";
+import { BbButton } from "../../../../../building-blocks/bb-button";
 import {
   BbBigText,
   BbContent,
@@ -61,11 +62,9 @@ export class StoryGrid extends React.Component<IStoryGridProps, any> {
     });
 
     let mainContent =
-      <BbContent>
-        <div className="tip-story-grid row align-center">
-          {storyGrid}
-        </div>
-      </BbContent>;
+      <div className="tip-story-grid row align-center">
+        {storyGrid}
+      </div>;
 
     switch (this.props.loadStatus) {
       case StoriesLoadStatusEnum.FETCHING: mainContent = <Loading />; break;
@@ -74,11 +73,34 @@ export class StoryGrid extends React.Component<IStoryGridProps, any> {
     }
 
     return (
-      <BbPage documentTitle={"Story Books"} classes="tip-stories">
+      <BbPage documentTitle={"Story Books"} classes="tip-stories"
+        meta={
+          {
+            description: "Fully illustrated stories for children",
+            url: `${this.props.match.url}`
+          }
+        }>
         <BbTitle classes="center">
           story books.
         </BbTitle>
-        {mainContent}
+        <BbContent>
+          <BbSection>
+            {mainContent}
+          </BbSection>
+          <BbSection>
+            <div className="row align-center">
+              <div className="columns small-10 medium-11">
+                <BbButton
+                  label={`GO TO STORE`}
+                  theme="dark"
+                  linkTo="https://www.instamojo.com/readmore/"
+                  linkExternal={true}
+                  className="wide"
+                />
+              </div>
+            </div>
+          </BbSection>
+        </BbContent>
       </BbPage >
     );
   }
