@@ -1,56 +1,51 @@
 .bb-image {
-    figure {
-        img {
-            display: block;
-            margin: auto;
-        }
-        margin: 2rem 0;
-        figcaption {
-            font-family: $primary-text-font;
-            @extend %heading-x-small;
-            margin-top: 0.5rem;
-            text-align: center;
-            color: $secondary-text-color;
-        }
-        height: auto;
+    img {
+        display: block;
+        margin: auto;
     }
+    margin: 2rem 0;
+    &.no-margin {
+        margin: 0;
+    }
+    figcaption {
+        font-family: $primary-text-font;
+        @extend %heading-x-small;
+        margin-top: 0.5rem;
+        text-align: center;
+        color: $secondary-text-color;
+    }
+    height: auto;
 }
 
 .bb-image-large {
     @extend .bb-image;
-    figure {
-        img {
-            width: 100%;
-        }
+    img {
+        width: 100%;
     }
 }
 
 .bb-image-medium {
     @extend .bb-image;
-    figure {
-        img {
-            width: 60%;
-            @include mobile {
-                width: 100%;
-            }
-            @include tablet {
-                width: 90%;
-            }
+    img {
+        width: 60%;
+        @include mobile {
+            width: 100%;
+        }
+        @include tablet {
+            width: 90%;
         }
     }
 }
 
 .bb-image-small {
     @extend .bb-image;
-    figure {
-        img {
-            width: 35%;
-            @include mobile {
-                width: 55%;
-            }
-            @include tablet {
-                width: 45%;
-            }
+    img {
+        width: 35%;
+        @include mobile {
+            width: 55%;
+        }
+        @include tablet {
+            width: 45%;
         }
     }
 }

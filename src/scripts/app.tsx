@@ -9,7 +9,7 @@ import { rootReducer } from "./services/redux/root-reducer";
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk, logger)
+  applyMiddleware(thunk)
 );
 
 const App = () => (

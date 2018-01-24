@@ -8,7 +8,8 @@ import {
 export class Loading extends React.Component<any, any> {
   render() {
     return (
-      <BbPage documentTitle="Loading" classes="tip-loading"
+      <BbPage classes="tip-loading"
+        documentTitle={this.props.documentTitle}
         meta={
           {
             description: "Loading...",

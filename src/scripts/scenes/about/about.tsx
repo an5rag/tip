@@ -24,11 +24,11 @@ export class About extends React.Component<any, any> {
             url: `${this.props.match.url}`
           }
         }>
-        <BbTitle classes="title center">
-          about.
+        <BbTitle>
+          about the project.
         </BbTitle>
         <BbContent>
-          <BbSection>
+          <BbSection className="big-margin">
             <BbText>
               <BbParagraph>
                 The Irrelevant Project was founded in 2016 by Meghna Chaudhury and Alishya Almeida. What started as an urge to bring about inclusivity in children soon turned into a full fledged project
@@ -39,7 +39,7 @@ export class About extends React.Component<any, any> {
               </BbParagraph>
             </BbText>
           </BbSection>
-          <BbSection>
+          <BbSection className="big-margin">
             <div className="row align-center">
               <div className="columns heading-column small-12 medium-6">
                 <BbHeadingTwo>
@@ -68,7 +68,7 @@ export class About extends React.Component<any, any> {
               </div>
             </div>
           </BbSection>
-          <BbSection>
+          <BbSection className="big-margin">
             <div className="row align-center">
               <div className="columns heading-column small-12 medium-6">
                 <BbHeadingTwo>
@@ -92,7 +92,7 @@ export class About extends React.Component<any, any> {
               </div>
             </div>
           </BbSection>
-          <BbSection>
+          <BbSection className="big-margin">
             <div className="row align-center">
               <div className="columns heading-column small-12 medium-6">
                 <BbHeadingTwo>
@@ -112,11 +112,11 @@ export class About extends React.Component<any, any> {
                     </li>
                   </ul>
                 </BbText>
-                <BbButton label="SEE BOOKS" className="wide button" />
+                <BbButton label="SEE BOOKS" className="wide button" linkTo="stories" />
               </div>
             </div>
           </BbSection>
-          <BbSection>
+          <BbSection className="big-margin">
             <div className="row align-center">
               <div className="columns heading-column small-12 medium-6">
                 <BbHeadingTwo>

@@ -24,6 +24,9 @@ import { Loading } from "./../../../../loading/loading";
 import { NotFoundPage } from "./../../../../main/404/404";
 import { IStoryProps } from "./../story-container";
 const DownloadIcon = require("react-icons/lib/md/file-download");
+const LeftChevron = require("react-icons/lib/md/chevron-left");
+const RightChevron = require("react-icons/lib/md/chevron-right");
+
 
 export class Story extends React.Component<IStoryProps, any> {
   public static defaultProps: Partial<IStoryProps> = {
@@ -160,10 +163,25 @@ export class Story extends React.Component<IStoryProps, any> {
               useBrowserFullscreen={false}
               showFullscreenButton={false}
               showPlayButton={false}
-              showNav={false}
               // onImageLoad={(what) => console.log("images loaded", what)}
               lazyLoad={true}
               thumbnailPosition={getDeviceType() === DeviceType.mobile ? "bottom" : "bottom"}
+              renderLeftNav={(onClick, disabled) =>
+                (
+                  <span
+                    className="picture-nav left"
+                    onClick={onClick}
+                  ><LeftChevron /></span>
+                )
+              }
+              renderRightNav={(onClick, disabled) =>
+                (
+                  <span
+                    className="picture-nav right"
+                    onClick={onClick}
+                  ><RightChevron /></span>
+                )
+              }
             // slideOnThumbnailHover={true}
             />
           </div>
@@ -207,7 +225,7 @@ export class Story extends React.Component<IStoryProps, any> {
 
     let toRender;
     switch (this.props.loadStatus) {
-      case StoriesLoadStatusEnum.FETCHING: toRender = <Loading />; break;
+      case StoriesLoadStatusEnum.FETCHING: toRender = <Loading documentTitle="Loading" />; break;
       case StoriesLoadStatusEnum.COMPLETE: toRender = mainContent; break;
       case StoriesLoadStatusEnum.ERROR: toRender = <NotFoundPage type="story" />; break;
       default: toRender = <Loading />; break;

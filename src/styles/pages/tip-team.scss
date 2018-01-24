@@ -2,9 +2,6 @@
     .title {}
     .intro-text {
         text-align: justify;
-        @include mobile {
-            text-align: center;
-        }
     }
     .emphasis {
         // @extend %text-x-large; 

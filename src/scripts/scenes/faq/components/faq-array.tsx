@@ -25,7 +25,7 @@ export const faqArray: IFaqSectionProps[] = [
         answer: [
 
           <BbParagraph>
-            Visit them <TipLink to="/team">here</TipLink>, and drop them a message and a clap!
+            Visit them <TipLink to="/team">here</TipLink>!
             </BbParagraph>,
           <BbParagraph>
             Each one of them have volunteered their service to us and we could not have been more proud or thankful at this display of human goodwill.
@@ -34,7 +34,7 @@ export const faqArray: IFaqSectionProps[] = [
         ]
       },
       {
-        question: "What’s with this 3-like logo?",
+        question: "Why does the logo look like a 3?",
         answer: [
 
           <BbImage size="small" src={logo} caption="Three goes far to state an amalgamation/summation in the way we work in this project." />,
@@ -49,9 +49,9 @@ export const faqArray: IFaqSectionProps[] = [
           </ol>,
 
           <BbParagraph>
-            It is also the reverse of a summation sign, for while we are a collection of our experiences,
-               at TIP we want to think seriously about going beyond one’s experiences, to be ‘outside’ oneself in order to understand culture and identity.
-            </BbParagraph>
+            It is also the reverse of the summation sign (Σ), for while we are a collection of our experiences,
+            at TIP we want to think seriously about going beyond one’s experiences, to be ‘outside’ oneself in order to understand culture and identity.
+          </BbParagraph>
 
         ]
       },
@@ -59,7 +59,7 @@ export const faqArray: IFaqSectionProps[] = [
         question: "How many books are there in the first round?",
         answer: [
           <BbParagraph>
-            We have <strong>5</strong> fully illustrated picture books for 6, 7 and 8 year olds in the first round. You can check them out <TipLink to="/stories">here</TipLink>.
+            We have <strong>five</strong> fully illustrated picture books for 6, 7 and 8 year olds in the first round. You can check them out <TipLink to="/stories">here</TipLink>.
           </BbParagraph>
         ]
       },
@@ -101,7 +101,7 @@ export const faqArray: IFaqSectionProps[] = [
         question: "Can I purchase your books in bulk?",
         answer: [
           <BbParagraph>
-            OMG, Please do.
+            Oh yes, please do! We also offer <TipLink to="stories/box-set-vol-1">box sets</TipLink>.
           </BbParagraph>
         ]
       },
@@ -119,10 +119,18 @@ export const faqArray: IFaqSectionProps[] = [
         ]
       },
       {
-        question: " Can I get a refund on my books?",
+        question: "Can I return my books for a refund?",
         answer: [
           <BbParagraph>
             We are so sorry, but that is not possible at the moment. However, we would love some <TipLink to="/contact">constructive feedback</TipLink>. Tell us why you didn’t like the books and we will take your opinion seriously.
+          </BbParagraph>
+        ]
+      },
+      {
+        question: "Can I get my books replaced?",
+        answer: [
+          <BbParagraph>
+            Yes. If there is any damage to the physical quality of the book, which includes - empty pages, torn pages, blurry print, we are more than happy to replace the set for you.
           </BbParagraph>
         ]
       }

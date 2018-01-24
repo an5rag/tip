@@ -3,9 +3,8 @@ import * as DocumentTitle from "react-document-title";
 import { Helmet } from "react-helmet";
 const booksImageUrl = require("./../../resources/images/books.jpg");
 
-
 interface IBbPageProps {
-  documentTitle: string;
+  documentTitle?: string;
   classes: string;
   columns?: {
     small: number;
@@ -29,14 +28,23 @@ export class BbPage extends React.Component<IBbPageProps, any> {
     }
   };
 
+  componentDidMount() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+
   render() {
     const columns = `small-${this.props.columns.small}
     medium-${this.props.columns.medium || this.props.columns.small}
     large-${this.props.columns.large || this.props.columns.medium || this.props.columns.small} columns`;
+    const title = <title>{this.props.documentTitle} - The Irrelevant Project</title>;
     return (
       <div className={`row align-center bb-page ${this.props.classes || ""}`}>
         <Helmet>
-          <title>{this.props.documentTitle || "Loading"} - The Irrelevant Project</title>
+          {this.props.documentTitle ? title : null}
           <meta property="og:url" content={`https://theirrelevantproject.com${this.props.meta && this.props.meta.url}`} />
           <meta property="og:type" content={this.props.meta && this.props.meta.url || "website"} />
           <meta property="og:title" content={this.props.documentTitle} />
@@ -167,5 +175,3 @@ export class BbDivider extends React.Component<any, any> {
     );
   }
 }
-
-

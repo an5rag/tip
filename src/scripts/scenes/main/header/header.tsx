@@ -110,11 +110,7 @@ export const Header = (props: IHeaderProps) => {
                     {
                         displayName: "Press",
                         link: "/press"
-                    },
-                    {
-                        displayName: "Privacy",
-                        link: "/privacy-policy"
-                    },
+                    }
                 ]}
             />
         </div>

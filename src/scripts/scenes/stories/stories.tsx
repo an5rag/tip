@@ -9,9 +9,6 @@ export class Stories extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <Helmet>
-          <title>Stories - The Irrelevant Project</title>
-        </Helmet>
         <Route exact path={this.props.match.url} component={StoryGridContainer} />
         <Route path={`${this.props.match.url}/:storyId`} component={StoryContainer} />
       </div>

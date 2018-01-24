@@ -3,7 +3,7 @@
         cursor: pointer;
         padding-bottom: 1.5px;
         color: $brand-color;
-        border-bottom: 2px solid transparent;
+        border-bottom: 2px solid $brand-color;
         &:hover {
             color: $primary-text-color;
             border-bottom: 2px solid $primary-text-color;

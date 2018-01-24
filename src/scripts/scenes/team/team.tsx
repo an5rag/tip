@@ -13,22 +13,11 @@ import { TeamGrid } from "./components/team-grid";
 import { teamMembers } from "./team-members";
 
 interface ITeamState {
-  openElementIndex: number;
+
 }
 
 export class Team extends React.Component<any, ITeamState> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      openElementIndex: 0
-    };
-  }
 
-  handleElementClicked = (index: number) => {
-    this.setState({
-      openElementIndex: index
-    });
-  }
   render() {
     return (
       <BbPage documentTitle="Team" classes="tip-team" columns={{ small: 12, medium: 10, large: 10 }}
@@ -47,18 +36,16 @@ export class Team extends React.Component<any, ITeamState> {
           <BbSection>
             <BbText classes="intro-text">
               <BbParagraph>
-                Hi. We are <span className="emphasis">everyday feminists,</span> deeply
-                 determined to create a kind and inclusive world for little children to grow up in.
-              We are engineers, designers, students, illustrators, entrepreneurs, psychologists, journalists who are excited
-              by the possibility of <span className="emphasis">replacing the dominant patriarchal and prejudiced worldview
-              with a kind and empathetic one</span>.
+                Hello. We are everyday feminists, deeply determined to create an inclusive world for little children to grow up in.
+                We are educators, engineers, designers, students, illustrators, entrepreneurs, psychologists and journalists
+                who are excited by the possibility of replacing the dominant patriarchal and prejudiced narratives with
+                empathetic ones, led by the tools of thinking and imagination.
               </BbParagraph>
 
               <BbParagraph>
-                We have worked on this project <span className="emphasis">voluntarily,</span> and
-                with <span className="emphasis">a sense of urgency,</span> and invite you to be a part of this
-              initiative aiming to create a world which allows the next generation of children to be who they are -
-                a world in which their gender, caste, and other identities are <span className="emphasis">irrelevant.</span>
+                We work on this project every day with a sense of urgency, and invite you to be a part of this initiative to facilitate
+               spaces which allow the next generation of children to be who they are – the possibility of living lives in which our gender, caste,
+               and other identities are irrelevant in determining the futures we want for ourselves.
               </BbParagraph>
             </BbText>
           </BbSection>

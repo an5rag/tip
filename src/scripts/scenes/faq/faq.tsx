@@ -45,9 +45,9 @@ export class Faq extends React.Component<any, IFaqState> {
         </BbTitle>
         <BbContent>
           {faq}
-          <BbNotice type="light" title="Have more questions?" content={(
+          <BbNotice className="no-side-margin" type="light" title="Have more questions?" content={(
             <div>
-              Please <TipLink to="/contact" classes="link">write to us</TipLink> and we'll get back to you within 24 hours.
+              Please <TipLink to="/contact" classes="link">write to us</TipLink> and we'll get back to you as soon as possible.
             </div>
           )} />
         </BbContent>

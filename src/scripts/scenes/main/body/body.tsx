@@ -2,8 +2,11 @@ import * as React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { About } from "../../about/about";
 import { Blog } from "../../blog/blog";
+import { Contact } from "../../contact/contact";
 import { Faq } from "../../faq/faq";
 import { Home } from "../../home/home";
+import { Press } from "../../press/press";
+import { Privacy } from "../../privacy/privacy";
 import { Stories } from "../../stories/stories";
 import { Team } from "../../team/team";
 
@@ -14,13 +17,22 @@ export const Body = () =>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/home" component={Home} />
+      <Route path="//" component={Home} />
       <Route path="/stories" component={Stories} />
+      <Route path="/story" component={Stories} />
+      <Route path="/storybooks" component={Stories} />
       {/* <Route path="/talk" component={Talk} />
       <Route path="/blog" component={Blog} /> */}
       <Route path="/team" component={Team} />
-      <Route path="/about" component={About} />
+      <Route path="/press" component={Press} />
 
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
       <Route path="/faq" component={Faq} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/privacy-policy" component={Privacy} />
+
+
       <Route component={NotFoundPage} />
     </Switch>
   </div>;

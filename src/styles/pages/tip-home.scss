@@ -6,10 +6,10 @@ $home-box-height: 190px;
 $home-box-width: 190px;
 $home-box-padding: 10px;
 $home-box-margin: 7px;
-$home-box-mobile-margin: 1vw;
-$home-box-border: 2px;
-$home-box-mobile-height: 32vw;
-$home-box-mobile-width: 32vw;
+$home-box-mobile-margin: 1.5vw;
+$home-box-border: 3px;
+$home-box-mobile-height: 31vw;
+$home-box-mobile-width: 31vw;
 
 /* ==========================================================================
    SELECTORS
@@ -23,10 +23,12 @@ $home-box-mobile-width: 32vw;
         margin-top: 3rem;
     }
     .hero-text-container {
+        padding: 1rem 0;
         display: flex;
         justify-content: center;
     }
     .hero-text {
+        z-index: 2;
         display: inline-block;
         @keyframes strikethrough {
             from {
@@ -46,7 +48,7 @@ $home-box-mobile-width: 32vw;
                 color: $grey;
             }
         }
-        @extend %heading-large;
+        @extend %heading-x-large;
         padding: 0 $side-padding;
         color: $primary-text-color;
         font-family: $primary-text-font;
@@ -111,6 +113,21 @@ $home-box-mobile-width: 32vw;
         @extend %text-large;
         color: $primary-text-color;
         font-weight: $light-font-weight;
+    }
+    .notice-container {
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        .notice-image {
+            z-index: 10;
+            width: 200;
+            @include desktop {
+                width: 100px;
+            }
+            padding: 10px;
+            margin-right: 10px;
+        }
+        .notice-content {}
     }
 }
 
@@ -189,7 +206,7 @@ $home-box-mobile-width: 32vw;
                 object-position: 50% 50%;
                 filter: grayscale(20%);
                 transform: scale(1);
-                transition: transform 2s ease-out;
+                transition: transform 2s ease-in-out;
             }
         }
         &:hover {

@@ -3,6 +3,7 @@
    ========================================================================== */
 
 $tip-grid-element-margin: 5px;
+$tip-grid-element-mobile-margin: 2px;
 $tip-masonry-grid-vertical-margin: 3em;
 
 /* ==========================================================================
@@ -15,15 +16,18 @@ $tip-masonry-grid-vertical-margin: 3em;
     transition: height 0.5s;
     .grid-element {
         margin: $tip-grid-element-margin;
+        @include mobile {
+            margin: $tip-grid-element-mobile-margin;
+        }
         display: relative;
         .grid-element-image {
             transition: opacity 0.3s;
             width: 180px;
-            @media only screen and (max-width: 720px) {
+            @include tablet {
                 width: 150px;
             }
-            @media only screen and (max-width: 480px) {
-                width: 120px;
+            @include mobile {
+                width: 105px;
             }
         }
         .grid-element-caption-container {

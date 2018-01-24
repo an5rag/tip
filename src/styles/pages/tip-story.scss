@@ -48,6 +48,7 @@
         .title {
             font-weight: $heavy-font-weight; // font-family: $secondary-heading-font;
             color: $primary-text-color; // -webkit-text-fill-color: $brand-negative-color;
+            @extend %heading-x-large;
         }
         .author {
             div {
@@ -76,6 +77,32 @@
             &:only-child {
                 width: 100%;
             }
+        }
+    }
+}
+
+.picture-nav {
+    vertical-align: middle;
+    position: absolute;
+    top: 45%;
+    &.left {
+        left: 0;
+    }
+    &.right {
+        right: 0;
+    }
+    z-index: 100;
+    svg {
+        height: 40px;
+        width: 40px;
+        fill: $white;
+        cursor: pointer;
+        transition: fill 0.2s;
+        stroke: $black;
+    }
+    &:hover {
+        svg {
+            fill: $brand-color;
         }
     }
 }
