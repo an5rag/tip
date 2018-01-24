@@ -1,0 +1,30 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+
+/* ==========================================================================
+      SELECTORS
+      ========================================================================== */
+
+.editor {
+    box-sizing: border-box;
+    &:hover {
+        border: 1px solid #eee;
+    }
+    border: 1px solid transparent;
+    cursor: text;
+    padding: 1rem; // border-radius: 2px;
+    margin-bottom: 2em; // box-shadow: inset 0px 1px 8px -3px #ABABAB;
+    background: #fefefe;
+    width: 100%;
+    &.readonly {
+        border: none;
+        padding: 0;
+        cursor: auto;
+    }
+}
+
+.editor :global(.public-DraftEditor-content) {
+    min-height: 140px;
+}

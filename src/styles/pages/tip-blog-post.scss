@@ -1,0 +1,35 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$heading-margin-bottom: 2rem;
+
+/* ==========================================================================
+      SELECTORS
+   ========================================================================== */
+
+.tip-blog-post {
+    margin-bottom: $heading-margin-bottom;
+    .title {
+        padding: 0 $side-padding 0 $side-padding;
+    }
+    .content {
+        padding: 0 $side-padding 0 $side-padding;
+        margin-top: 4rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid $secondary-color;
+    }
+    .share-icons {
+        margin-top: 3rem;
+        text-align: center;
+        @extend %text-x-large;
+        i {
+            margin-right: 2rem;
+            cursor: pointer;
+            color: $brand-color;
+            &:hover {
+                color: $primary-text-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$bb-grid-element-margin: 10px;
+$bb-grid-container-margin: 3rem;
+$bb-grid-element-height: 200px;
+$bb-grid-element-width: 200px;
+$bb-grid-element-tablet-height: 150px;
+$bb-grid-element-tablet-width: 150px;
+$bb-grid-element-mobile-height: 120px;
+$bb-grid-element-mobile-width: 120px;
+
+/* ==========================================================================
+      SELECTORS
+      ========================================================================== */
+
+.bb-image-grid {
+    margin-top: 1rem;
+    margin-bottom: $bb-grid-container-margin;
+    transition: height 0.5s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .grid-element {
+        height: $bb-grid-element-height;
+        max-width: $bb-grid-element-width;
+        @media only screen and (max-width: 720px) {
+            height:$bb-grid-element-tablet-height;
+            width: $bb-grid-element-tablet-width;
+        }
+        @media only screen and (max-width: 480px) {
+            height: $bb-grid-element-mobile-height;
+            width: $bb-grid-element-mobile-width;
+        }
+        img {
+            transition: all 0.3s;
+            width: 180px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+    }
+}

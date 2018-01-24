@@ -1,20 +1,96 @@
 // /* COLORS
 // ========================================================================== */
+// $primary-color: #000000;
+// $primary-contrast-text-color: #dddddd;
+// $primary-background-color: #ffffff;
+// $secondary-color: #888888;
+// $secondary-contrast-text-color: #757575;
+// $secondary-background-color: #1b1b1b;
+// $tertiary-color: indianred;
+// $tertiary-text-color: #757575;
+// $tertiary-background-color: #dedede;
+// $danger-background-color: indianred;
+// GREYS AND BLACKS
+// ============================================================================
+//
+$bright-white: white;
+$white: whitesmoke;
+$dark-white: #cfcfcf;
+$light-grey: #dbdbdb;
+$grey: #808080;
+$dark-grey: #757575;
+$dark-black: rgba(0, 0, 0, 0.84);
+$black: #111111;
+//
+//
+// TEXT COLORS
+// ============================================================================
+//
+//
+$primary-text-color: $dark-black;
+$secondary-text-color: $dark-grey;
+//
+//
+// SITE-WIDE COLORS
+// ============================================================================
+//
+//
+$brand-color: #008080;
+$brand-dark-color: #154b46;
+$brand-negative-color: #ca4b42;
+$background-shade: #fff;
+//
+//
+$light-shade: #f2f4f5;
+$light-shade-text-color: $primary-text-color;
+//
+$light-accent: rgb(241, 252, 252);
+$light-accent-text-color: $black;
+//
+$dark-accent: #4e4646;
+$dark-dark-accent:#3f3838;
+$dark-accent-text-color: #e9e1dc;
+//
+$dark-shade: #1b1b1b;
+$dark-shade-text-color: $dark-white;
+//
+%theme-background-shade {
+    background-color: $background-shade;
+    color: $brand-color;
+}
 
-$primary-color: #000000;
-$primary-text-color: #000000;
-$primary-contrast-color: #dddddd;
-$primary-background-color: #fefefe;
+%theme-light-shade {
+    background-color: $light-shade;
+    color: $light-shade-text-color;
+    border-color: $light-shade-text-color;
+    svg {
+        fill: $light-shade-text-color;
+    }
+}
 
-$secondary-color: #888888;
-$secondary-text-color: #373737;
-$secondary-contrast-color: #757575;
-$secondary-background-color: #1b1b1b;
+%theme-light-accent {
+    background-color: $light-accent;
+    color: $light-accent-text-color;
+    border-color: $dark-black;
+    svg {
+        fill: $light-accent-text-color;
+    }
+}
 
-$tertiary-color: indianred;
-$tertiary-background-color: #dedede;
+%theme-dark-shade {
+    background-color: $dark-shade;
+    color: $dark-shade-text-color;
+    border-color: transparent;
+    svg {
+        fill: $dark-shade-text-color;
+    }
+}
 
-$danger-background-color: indianred;
-
-$regular-link-color: #00d000;
-$regular-link-color-hover: $primary-color;  
+%theme-dark-accent {
+    background-color: $dark-dark-accent;
+    color: $dark-accent-text-color;
+    border-color: $dark-accent;
+    svg {
+        fill: $dark-accent-text-color;
+    }
+}

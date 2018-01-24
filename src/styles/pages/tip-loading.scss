@@ -1,0 +1,27 @@
+.tip-loading {
+    height: 50vh;
+    .loading-element {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        img {
+            animation: cycle 0.5s infinite;
+            height: 50px;
+            width: auto;
+        }
+    }
+}
+
+@keyframes cycle {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        opacity: 0.6;
+        filter: grayscale(100%);
+        transform: rotate(180deg);
+    }
+}

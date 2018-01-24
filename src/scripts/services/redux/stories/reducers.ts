@@ -1,11 +1,11 @@
-import { IStoriesState, IStory, StoriesLoadStatusEnum } from "./interfaces";
-import { actionTypes } from "./actions";
 import { IAction } from "./../common-interfaces";
+import { actionTypes } from "./actions";
+import { IStoriesState, IStory, StoriesLoadStatusEnum } from "./interfaces";
 
 const initialState: IStoriesState = {
   loadStatus: StoriesLoadStatusEnum.INITIAL,
   stories: {}
-}
+};
 
 export const stories = (state: IStoriesState = initialState, action: IAction): IStoriesState => {
   switch (action.type) {
@@ -13,40 +13,46 @@ export const stories = (state: IStoriesState = initialState, action: IAction): I
       return {
         ...state,
         loadStatus: StoriesLoadStatusEnum.FETCHING
-      }
+      };
 
     case actionTypes.FETCH_STORIES_END:
       return {
         ...state,
-        loadStatus: StoriesLoadStatusEnum.UPDATING
-      }
+        loadStatus: StoriesLoadStatusEnum.COMPLETE
+      };
+
+    case actionTypes.FETCH_STORIES_ERROR:
+      return {
+        ...state,
+        loadStatus: StoriesLoadStatusEnum.ERROR,
+        fetchError: action.payload.error,
+        currentStory: null
+      };
 
     case actionTypes.UPDATE_STORIES:
       return {
         ...state,
-        loadStatus: StoriesLoadStatusEnum.COMPLETE,
         stories: action.payload
-      }
-
+      };
     case actionTypes.SET_CURRENT_STORY:
       return {
         ...state,
-        currentStory: {
-          id: action.payload.id
-        }
-      }
+        currentStory: action.payload.story,
+        nextStory: action.payload.nextStory,
+        prevStory: action.payload.prevStory
+      };
 
     case actionTypes.UPDATE_STORY:
-      let stories = state.stories;
-      stories[action.payload.id] = action.payload.story;
-      
+      const updatedStories = state.stories;
+      updatedStories[action.payload.id] = action.payload.story;
+
       return {
         ...state,
         loadStatus: StoriesLoadStatusEnum.COMPLETE,
-        stories
-      }
+        stories: updatedStories
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};

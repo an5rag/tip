@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 export enum BbDropdownPositions {
   "TOP_LEFT" = "top-left",
@@ -8,7 +8,7 @@ export enum BbDropdownPositions {
   "RIGHT_CENTER" = "right-center",
   "BOTTOM_LEFT" = "bottom-left",
   "BOTTOM_CENTER" = "bottom-center",
-  "BOTTOM_RIGHT" = "bottom-right"
+  "BOTTOM_RIGHT" = "bottom-right",
 }
 
 export interface IBbDropdownProps {
@@ -17,9 +17,9 @@ export interface IBbDropdownProps {
   position?: BbDropdownPositions;
   openOnMouseEnter?: boolean;
   closeOnMouseLeave?: boolean;
-  openOnParentClick?: boolean;
-  closeOnChildClick?:boolean;
-  containerClasses?:string;
+  toggleOnParentClick?: boolean;
+  closeOnChildClick?: boolean;
+  containerClasses?: string;
   parentClasses?: string;
   childClasses?: string;
   visibleClasses?: string;
@@ -30,85 +30,119 @@ export interface IBbDropDownState {
   open: boolean;
 }
 
-
 export class BbDropDown extends React.Component<IBbDropdownProps, IBbDropDownState> {
   public static defaultProps: IBbDropdownProps = {
     position: BbDropdownPositions.BOTTOM_LEFT,
-    openOnMouseEnter: true,
-    closeOnMouseLeave: true,
-    openOnParentClick: true,
-    closeOnChildClick: true,
+    openOnMouseEnter: false,
+    closeOnMouseLeave: false,
+    toggleOnParentClick: true,
+    closeOnChildClick: false,
   };
-
-  public boundClickHandler;
   public wrapperRef;
+  public childRef;
+  public parentRef;
+  /**
+   * To prevent parent-click closing a just opened dropdown,
+   * wait for some time before allowing parent click to close it
+   *
+   * @private
+   * @memberof BbDropDown
+   */
+  private dropDownWasJustOpened;
+
+  private blockDropdownFromClosingByParentClick() {
+    this.dropDownWasJustOpened = setTimeout(() => {
+      this.dropDownWasJustOpened = undefined;
+    }, 500);
+  }
 
   constructor(props: IBbDropdownProps) {
     super(props);
     this.state = {
-      open: false
-    }
-    this.boundClickHandler = this.handleWindowClick.bind(this);
+      open: false,
+    };
   }
 
-  handleWindowClick(event) {
+  public handleWindowClick = (event: Event) => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.handleClickOutside();
     }
   }
 
-  handleClickOutside() {
+  public handleClickOutside = () => {
     this.setState({ open: false });
   }
 
-  handleParentClick() {
-    if (this.props.openOnParentClick) {
-      this.setState({ open: true });
+  public handleParentClick = (e: React.SyntheticEvent<HTMLDivElement>) => {
+    if (this.props.toggleOnParentClick && e.currentTarget === this.parentRef) {
+      if (this.state.open) {
+        // only close if it's been enough time since it's been open
+        if (!this.dropDownWasJustOpened) {
+          this.setState({ open: false });
+        }
+      } else {
+        // always open if previously closed
+        this.setState({ open: true });
+      }
     }
+
   }
 
-  handleChildClick() {
-    if (this.props.closeOnChildClick) {
+  public handleChildClick = (e: React.SyntheticEvent<HTMLDivElement>) => {
+    if (this.props.closeOnChildClick && this.childRef.contains(e.target)) {
       this.setState({ open: false });
     }
   }
 
-  handleMouseEnter() {
+  public handleMouseEnter = () => {
     if (this.props.openOnMouseEnter) {
       this.setState({ open: true });
+      this.blockDropdownFromClosingByParentClick();
     }
   }
 
-  handleMouseLeave() {
+  public handleMouseLeave = () => {
     if (this.props.closeOnMouseLeave) {
       this.setState({ open: false });
     }
   }
 
-  componentDidMount() {
-    document.addEventListener('mousedown', this.boundClickHandler);
+  public componentDidMount() {
+    document.addEventListener("mousedown", this.handleWindowClick);
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('mousedown', this.boundClickHandler);
+  public componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleWindowClick);
   }
 
-
-  render() {
+  public render() {
+    const classes = `bb-dropdown animate fade
+      ${this.state.open ? `visible ${this.props.visibleClasses}` : "not-visible"}
+      ${this.props.containerClasses}`;
     return (
       <div
         ref={(node) => { this.wrapperRef = node; }}
-        className={`bb-dropdown animate fade ${this.state.open ? `visible ${this.props.visibleClasses}` : "not-visible"} ${this.props.containerClasses}`}
-        
-        onMouseLeave={this.handleMouseLeave.bind(this)}
+        className={classes}
+        onMouseLeave={this.handleMouseLeave}
       >
-        <div className={`parent ${this.props.parentClasses}`} onClick={this.handleParentClick.bind(this)} onMouseEnter={this.handleMouseEnter.bind(this)}>
+        <div
+          className={`parent ${this.props.parentClasses}`}
+          ref={(node) => { this.parentRef = node; }}
+          onClick={this.handleParentClick}
+          onMouseEnter={this.handleMouseEnter}
+        >
           {this.props.parentElement}
-        </div>
-        <div className={`child ${this.props.position} ${this.props.childClasses}`} onClick={this.handleChildClick.bind(this)}>
-          {this.props.childElement}
+
+          <div
+            className={`child ${this.props.position} ${this.props.childClasses}`}
+            onClick={this.handleChildClick}
+            ref={(node) => { this.childRef = node; }}
+
+          >
+            {this.props.childElement}
+          </div>
         </div>
       </div>
-    )
+    );
   }
 }

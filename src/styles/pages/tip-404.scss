@@ -1,0 +1,71 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
+@keyframes pulse {
+    0%,
+    100% {
+        background-color: rgb(241, 184, 117);
+    }
+    20% {
+        background-color: rgb(250, 228, 107);
+    }
+    50% {
+        background-color: rgb(148, 243, 243);
+    }
+    75% {
+        background-color: rgb(149, 247, 125);
+    }
+}
+
+.tip-404 {
+    @media only screen and (max-width: 1024px) {
+        margin-top: 2rem;
+    }
+    .text-container {
+        margin-bottom: 1rem;
+        @media only screen and (max-width: 1024px) {
+            text-align: center
+        }
+        h1 {
+            @extend %heading-x-x-large;
+            font-family: $primary-heading-font;
+            color: $secondary-color;
+            font-weight: $heavy-font-weight;
+        }
+        h2 {
+            @extend %heading-regular;
+            font-family: $primary-heading-font;
+            font-weight: $heavy-font-weight;
+        }
+        p {
+            padding-top: 1rem;
+            @extend %text-regular;
+            font-family: $primary-text-font;
+            color: $secondary-text-color;
+        }
+    }
+    .hero-image-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        .hero-image {
+            height: 300px;
+            width: 300px;
+            @media only screen and (max-width: 480px) {
+                height: 250px;
+                width: 250px;
+            }
+            border-radius: 100%;
+            animation: pulse 6s infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+        }
+    }
+}

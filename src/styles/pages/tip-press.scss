@@ -1,0 +1,15 @@
+.tip-press {
+    text-align: center;
+    @include mobile {
+        text-align: left;
+    }
+    .element {
+        .source {
+            font-weight: $heavy-font-weight;
+        }
+        .date {
+            // @extend %text-small;
+            color: $secondary-text-color;
+        }
+    }
+}

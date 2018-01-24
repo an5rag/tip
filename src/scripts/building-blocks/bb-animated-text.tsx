@@ -2,61 +2,70 @@ import * as React from "react";
 
 interface IProps {
   /**
-   * 
+   *
    * array of strings to animate
-   * 
+   *
    * @type {string[]}@memberof IProps
    */
   strings: string[];
 
   /**
-   * 
+   *
    * Initial position of string to start animating from
-   * 
+   *
    * @type {number}@memberof IProps
    */
   offset?: number;
 
   /**
-   * 
+   *
    * Number of random characters to show per character
-   * 
+   *
    * @type {number}@memberof IProps
    */
   iterations?: number;
 
   /**
-   * 
+   *
    * Timeout between each random character
-   * 
+   *
    * @type {number}@memberof IProps
    */
   characterTimeout?: number;
 
   /**
-   * 
+   *
    * Timeout between each string
-   * 
+   *
    * @type {number}@memberof IProps
    */
   stringTimeout?: number;
 
   /**
    * Random characters to pick from
-   * 
+   *
    * @type {string[]}@memberof IProps
    */
   characters?: string[];
 
   /**
-   * 
+   *
    * Infinitely go through the string array (Default: false)
-   * 
+   *
    * @type {boolean}@memberof IProps
    */
   infinite?: boolean;
 
   uppercase?: boolean;
+  randomCharacterClasses?: string;
+  /**
+   * Class names applied when a string is complete
+   */
+  endOfStringClasses?: string;
+  /**
+   * Class names applied when a string is incomplete
+   */
+  stringClasses?: string;
 }
 
 interface IState {
@@ -64,14 +73,15 @@ interface IState {
   currentCharacterIndex: number;
   currentIterationIndex: number;
   currentRandomCharacter: string;
+  isAtEndOfString: boolean;
 }
 
 export class BbAnimatedText extends React.Component<IProps, IState> {
   public static defaultProps: IProps = {
     strings: [],
     offset: 0,
-    iterations: 10,
-    characterTimeout: 10,
+    iterations: 3,
+    characterTimeout: 50,
     stringTimeout: 1000,
     characters: [
       "a",
@@ -111,7 +121,9 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
       "="
     ],
     infinite: false,
-    uppercase: false
+    uppercase: false,
+    endOfStringClasses: "eof-string",
+    stringClasses: "bb-animated-string"
   };
 
   private characterTimer: number;
@@ -123,7 +135,8 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
       currentStringIndex: 0,
       currentCharacterIndex: this.props.offset,
       currentIterationIndex: 0,
-      currentRandomCharacter: this.getRandomCharacter()
+      currentRandomCharacter: this.getRandomCharacter(),
+      isAtEndOfString: false
     };
   }
 
@@ -152,7 +165,7 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
     clearInterval(this.characterTimer);
   }
 
-  setNextString(prevState: IState, props: IProps) {
+  setNextString(prevState: IState, props: IProps): Partial<IState> {
     let characterIndex = props.offset,
       stringIndex = prevState.currentStringIndex + 1;
 
@@ -162,7 +175,7 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
         // if infinite animation loop reset it back to 0
         stringIndex = 0;
       } else {
-        // (animation is over) reset indices and and clear timer
+        // (animation is over) reset indices and clear timer
         stringIndex = prevState.currentStringIndex;
         characterIndex = prevState.currentCharacterIndex;
         this.clearTimers();
@@ -171,15 +184,17 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
 
     return {
       currentStringIndex: stringIndex,
-      currentCharacterIndex: characterIndex
+      currentCharacterIndex: characterIndex,
+      isAtEndOfString: false
     };
   }
 
-  setNextCharacter(prevState: IState, props: IProps) {
+  setNextCharacter(prevState: IState, props: IProps): Partial<IState> {
+    const stringIndex = prevState.currentStringIndex;
     let characterIndex = prevState.currentCharacterIndex,
-      stringIndex = prevState.currentStringIndex,
       iterationIndex = prevState.currentIterationIndex + 1,
-      currentCharacter = this.getRandomCharacter();
+      currentCharacter = this.getRandomCharacter(),
+      isAtEndOfString = false;
 
     if (iterationIndex >= props.iterations) {
       // reached end of iterations so increase characterIndex
@@ -189,11 +204,12 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
       if (characterIndex >= props.strings[stringIndex].length) {
         // reached last character
         currentCharacter = "";
-        // using window.setInterval to make sure the Nodejs setTimer typing is not used 
+        isAtEndOfString = true;
+        // using window.setInterval to make sure the Nodejs setTimer typing is not used
         this.stringTimer = window.setTimeout(() => {
           clearTimeout(this.stringTimer);
           this.stringTimer = undefined;
-          this.setState(this.setNextString);
+          this.setState(this.setNextString as () => IState);
         }, props.stringTimeout);
       }
     }
@@ -201,20 +217,22 @@ export class BbAnimatedText extends React.Component<IProps, IState> {
     return {
       currentCharacterIndex: characterIndex,
       currentIterationIndex: iterationIndex,
-      currentRandomCharacter: currentCharacter
+      currentRandomCharacter: currentCharacter,
+      isAtEndOfString
     };
   }
 
   animate() {
-    this.setState(this.setNextCharacter);
+    this.setState(this.setNextCharacter as () => IState);
   }
 
   render() {
-    let partialString = this.props.strings[this.state.currentStringIndex].substring(0, this.state.currentCharacterIndex) + this.state.currentRandomCharacter;
+    let partialString = this.props.strings[this.state.currentStringIndex].substring(0, this.state.currentCharacterIndex);
+    const randomCharacter = this.state.currentRandomCharacter;
     partialString = this.props.uppercase ? partialString.toUpperCase() : partialString;
     return (
-      <span>
-        {partialString}
+      <span className={`${this.props.stringClasses} ${this.state.isAtEndOfString ? this.props.endOfStringClasses : ""}`}>
+        {partialString}<span className={this.props.randomCharacterClasses}>{randomCharacter}</span>
       </span>
     );
   }

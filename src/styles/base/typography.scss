@@ -2,6 +2,7 @@
    VARIABLES
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700|Source+Sans+Pro:300,400,600');
 // Font faces
 $primary-heading-font: 'Karla',
 sans-serif;
@@ -9,18 +10,21 @@ $secondary-heading-font: 'Source Sans Pro',
 sans-serif;
 $primary-text-font: 'Source Sans Pro',
 sans-serif;
-$secondary-text-font: 'Source Sans Pro',
+$secondary-text-font: 'Karla',
 sans-serif;
 // Font weights
 $normal-font-weight: 400;
 $light-font-weight: 300;
-$heavy-font-weight: 700;
+$heavy-font-weight: 600;
+$very-heavy-font-weight: 700;
 // Font sizes
 $base-font-size: 16px;
-$mobile-base-font-size: 14px;
+$mobile-base-font-size: 15px;
 // letter spacing
 $normal-letter-spacing: 0.3;
-$narrow-letter-spacing: 0.1;
+$narrow-letter-spacing: -0.7;
+$narrow-letter-spacing: -0.7;
+$x-narrow-letter-spacing: -2.5;
 $wide-letter-spacing: 0.5;
 
 /* ==========================================================================
@@ -31,28 +35,48 @@ $wide-letter-spacing: 0.5;
 /* Text
    ========================================================================== */
 
-%text-x-small {
+html {
+    font-size: $base-font-size;
+}
+
+@include mobile {
+    html {
+        font-size: $mobile-base-font-size;
+    }
+}
+
+%text-xx-small {
     font-size: 0.625em;
     line-height: 1.5em;
 }
 
+%text-x-small {
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
 %text-small {
-    font-size: 0.875em;
+    font-size: 1em;
     line-height: 1.5em;
 }
 
 %text-regular {
-    font-size: 1.1em;
-    line-height: 1.8em;
+    font-size: 1.03em;
+    line-height: 2em;
 }
 
 %text-large {
-    font-size: 1.2em;
-    line-height: 1.6em;
+    font-size: 1.1em;
+    line-height: 2em;
 }
 
 %text-x-large {
-    font-size: 1.4em;
+    font-size: 1.25em;
+    line-height: 1.6em;
+}
+
+%text-x-x-large {
+    font-size: 2.0em;
     line-height: 1.6em;
 }
 
@@ -66,14 +90,13 @@ $wide-letter-spacing: 0.5;
 }
 
 %heading-small {
-    // not used yet
     font-size: 1.2em;
     line-height: 1.6em;
 }
 
 %heading-regular {
-    font-size: 1.75em;
-    line-height: 1.6em;
+    font-size: 1.65em;
+    line-height: 1.3em;
 }
 
 %heading-large {
@@ -82,7 +105,12 @@ $wide-letter-spacing: 0.5;
 }
 
 %heading-x-large {
-    font-size: 4em;
+    font-size: 3em;
+    line-height: 1.3em;
+}
+
+%heading-x-x-large {
+    font-size: 6em;
     line-height: 1.1em;
 }
 
@@ -92,7 +120,12 @@ $wide-letter-spacing: 0.5;
    ========================================================================== */
 
 .tip-text-block {
-    p:not(:last-child) {
-        padding-bottom: 1rem;
+    p:not(:last-of-type) {
+        margin-bottom: 1rem;
+    }
+    p {
+        &.no-padding {
+            margin-bottom: 0px;
+        }
     }
 }

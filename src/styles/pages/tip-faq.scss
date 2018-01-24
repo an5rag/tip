@@ -1,0 +1,58 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+
+$heading-margin-bottom: 2rem;
+
+/* ==========================================================================
+   SELECTORS
+   ========================================================================== */
+
+.tip-faq {
+    .section-header {
+        padding-bottom: 2px; // border-bottom: 1.5px solid;
+    }
+    .question {
+        margin-top: 1rem;
+        cursor: pointer;
+        margin-left: 1.1rem;
+        color: $secondary-text-color; // font-weight: $heavy-font-weight;
+        &:hover {
+            color: $primary-text-color;
+            &:after,
+            &:before {
+                background-color: $primary-text-color;
+            }
+        }
+        position: relative;
+        &:before {
+            height: 1.5px;
+            width: 8px;
+            background-color: $secondary-text-color;
+            position: absolute;
+            top: 16.5px;
+            left: -1rem;
+            transform: rotate(90deg);
+            transition: transform 0.4s ease;
+            content: " ";
+        }
+        &:after {
+            height: 1.5px;
+            width: 8px;
+            background-color: $secondary-text-color;
+            position: absolute;
+            top: 16.5px;
+            left: -1rem;
+            transition: opacity 0.3s ease;
+            content: " ";
+        }
+        &.open {
+            &:before {
+                transform: rotate(0deg);
+            }
+            &:after {
+                opacity: 0;
+            }
+        }
+    }
+}

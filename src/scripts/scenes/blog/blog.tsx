@@ -1,18 +1,23 @@
-import * as React from 'react';
-import { Switch, Route, Link, NavLink, Redirect } from 'react-router-dom';
+import * as React from "react";
+import * as DocumentTitle from "react-document-title";
+import { Link, NavLink, Redirect, Route, Switch } from "react-router-dom";
+import { BlogHome } from "./scenes/home/blog-home";
+import { BlogPost } from "./scenes/post/post";
+import { BlogWrite } from "./scenes/write/write";
+
 
 import { ArchiveContainer } from "./scenes/archive/archive-container";
 
 const Tab = (props: any) => (
-  <div className="shrink columns bb-tab">
-    <NavLink
-      to={props.link}
-      activeClassName="bb-tab-active"
-    >
-      {props.name}
-    </NavLink>
-  </div>
-)
+  <NavLink
+    to={props.link}
+    className="bb-tab shrink columns"
+    activeClassName="bb-tab-active"
+  >
+
+    {props.name}
+  </NavLink>
+);
 
 export const BbTabs = () => (
   <div className="row">
@@ -24,23 +29,18 @@ export const BbTabs = () => (
 export class Blog extends React.Component<any, any> {
   render() {
     return (
-      <div className="tip-blog">
-        <div className="row row-center">
-          <div className="small-12 medium-7 columns ">
-            <BbTabs />
-          </div>
+      <DocumentTitle title="Blog - The Irrelevant Project">
+        <div className="tip-blog">
+          <Switch>
+            <Redirect from="/blog" exact to="/blog/home" />
+            <Route path={`${this.props.match.url}/write`} render={(props) => (<BlogWrite />)} />
+            <Route path={`${this.props.match.url}/home`} render={(props) => (<BlogPost />)} />
+            <Route path={`${this.props.match.url}/archive`} component={ArchiveContainer} />
+            <Route exact path={`${this.props.match.url}/post`} component={ArchiveContainer} />
+            <Route path={`${this.props.match.url}/post/:blogId`} render={() => (<BlogPost />)} />
+          </Switch>
         </div>
-        <div className="row row-center">
-          <div className="small-12 medium-7 columns ">
-            <Switch>
-              <Redirect from="/blog" exact to="/blog/home" />
-              <Route path={`${this.props.match.url}/home`} render={(props) => (<div>blog home</div>)} />
-              <Route path={`${this.props.match.url}/archive`} component={ArchiveContainer} />
-              <Route path={`${this.props.match.url}/post/:blogId`} render={() => (<div>some blog</div>)} />
-            </Switch>
-          </div>
-        </div>
-      </div>
+      </DocumentTitle>
     );
   }
 }

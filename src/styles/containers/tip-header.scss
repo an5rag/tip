@@ -1,68 +1,118 @@
-/* ==========================================================================
+    /* ==========================================================================
    VARIABLES
    ========================================================================== */
-
-$nav-link-color: #808080;
-$nav-link-color-hover: $primary-color;
-
-/* ==========================================================================
+    /* ==========================================================================
    SELECTORS
    ========================================================================== */
 
-.tip-header {
-    margin-top: $header-margin;
-    margin-bottom: $header-margin;
-    .tip-title {
-        @extend %heading-regular;
-        font-family: $primary-heading-font;
-    }
-    .tip-nav-link {
-        @extend %text-large;
-        font-family: $primary-heading-font;
-        color: $nav-link-color;
-        a {
-            padding: 3 5 3 5;
-            .label {
-                padding: 3 0 3 0;
-                white-space: nowrap;  
+    .tip-header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: $header-top-margin;
+        @include tablet {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @include mobile {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .tip-title {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 1rem;
+            .logo-image {
+                height: 48px;
+                @include mobile {
+                    height: 40px;
+                }
+                width: auto;
+                margin-right: 10px;
             }
-            &.tip-nav-link-active {
-                background-color: $secondary-background-color;
-                color: $primary-contrast-color;
+            .logo-text {
+                display: flex;
+                flex-direction: column; // margin-right: 20px;
+                justify-content: center;
+                font-size: 1.7em;
+                @include mobile {
+                    font-size: 1.5em;
+                }
+                line-height: 1.6em;
+                font-family: $primary-heading-font;
             }
         }
-        &:hover {
-            color: $nav-link-color-hover;
-            a:not(.tip-nav-link-active) {
-                // apply bottom border if not active
-                .label {
-                    border-bottom: 2px solid $nav-link-color-hover;                
+        .tip-nav {
+            @include mobile {
+                margin-top: 0.75rem;
+            }
+            @include tablet {
+                margin-top: 0.75rem;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .tip-nav-element {
+                padding: 0 0.75rem;
+                .tip-nav-link {
+                    @extend %heading-small;
+                    font-family: $primary-heading-font;
+                    color: $secondary-text-color;
+                    a {
+                        padding: 3px 5px 3px 5px;
+                        .label {
+                            padding: 3px 0px 3px 0px;
+                            white-space: nowrap;
+                        }
+                        &.tip-nav-link-active {
+                            margin-left: 5px;
+                            @extend %theme-dark-shade;
+                        }
+                    }
+                    &:hover {
+                        color: $primary-text-color;
+                        a:not(.tip-nav-link-active) {
+                            // apply bottom border if not active
+                            .label {
+                                border-bottom: 2px solid $primary-text-color;
+                            }
+                        }
+                    }
+                }
+                .tip-nav-group {
+                    .tip-nav-group-parent {
+                        cursor: pointer;
+                        .dropdown-arrow {
+                            margin-left: 8;
+                            svg {
+                                margin-bottom: 3px;
+                                transition: transform 0.3s;
+                                transform: rotate(0deg);
+                            }
+                        }
+                        .tip-nav-group-child {
+                            // box-shadow: 1px 3px 0.4em #949191;
+                            cursor: default;
+                            border: 1px solid $light-shade-text-color;
+                            background-color: $light-shade;
+                            padding: 0.5rem 0.3rem;
+                            min-width: 100%;
+                            .tip-nav-link {
+                                @extend %text-regular;
+                                padding-bottom: 0.3rem;
+                            }
+                        }
+                    }
+                    &.visible {
+                        .dropdown-arrow {
+                            svg {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
                 }
             }
         }
-        
     }
-    .tip-nav-group {
-        .tip-nav-group-child{
-            background-color: #f6f6f6;
-            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-            .tip-nav-link {
-                @extend %text-regular;
-                padding-bottom: 0.5rem;                
-            }
-        }
-        .tip-nav-group-parent {
-            cursor: pointer;
-            .dropdown-arrow {
-                margin-left: 8;
-                transition: transform 0.3s;
-                transform: rotate(0deg);
-            }
-        }
-        &.visible{
-            .dropdown-arrow {
-                transform: rotate(180deg);
-            }
-        }
-    }
-}

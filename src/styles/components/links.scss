@@ -1,10 +1,29 @@
 .tip-link {
     a {
-        color: $regular-link-color;
-        font-weight: $normal-font-weight;
+        cursor: pointer;
+        padding-bottom: 1.5px;
+        color: $brand-color;
+        border-bottom: 2px solid $brand-color;
         &:hover {
-            color: $regular-link-color-hover;
-            border-bottom: 2px solid $regular-link-color-hover;
+            color: $primary-text-color;
+            border-bottom: 2px solid $primary-text-color;
         }
+        svg,
+        i {
+            margin-right: 3px;
+        }
+    }
+}
+
+.bb-big-link {
+    @extend %text-small;
+    @extend .tip-link;
+    text-align: center;
+    font-family: $primary-heading-font;
+    padding: 15px;
+    font-weight: $heavy-font-weight;
+    a {
+        padding: 2px;
+        border-color: $brand-color;
     }
 }

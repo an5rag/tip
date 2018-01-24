@@ -1,0 +1,23 @@
+.tip-contact {
+    text-align: center;
+    .social {
+        display: flex;
+        justify-content: center;
+        .element {
+            svg {
+                fill: $dark-accent;
+            }
+            &:hover {
+                svg {
+                    fill: $dark-shade;
+                }
+            }
+            margin: 0 1rem;
+            &:first-child {
+                margin-left: 0rem;
+            }
+            height: 40px;
+            width: 40px;
+        }
+    }
+}

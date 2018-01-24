@@ -9,27 +9,22 @@ var BUILD_DIR = path.resolve(__dirname, "build/");
 var APP_DIR = path.resolve(__dirname, "src/");
 
 var appEntry = [
+  // js files
+  "react-hot-loader/patch",
+  // activate HMR for React
+
+  "webpack-dev-server/client?http://localhost:3000",
+  // bundle the client for webpack-dev-server
+  // and connect to the provided endpoint
+
+  "webpack/hot/only-dev-server",
+  // bundle the client for hot reloading
+  // only- means to only hot reload for successful updates
+
   APP_DIR + "/styles/global.scss",
   // scss files
-  APP_DIR + "/scripts/index.jsx"
-  // js files
+  APP_DIR + "/scripts/index.jsx",
 ];
-
-// enable hot loading only in development
-if (isDevelopmentMode) {
-  appEntry.unshift(
-     "react-hot-loader/patch",
-      // activate HMR for React
-
-      "webpack-dev-server/client?http://localhost:3000",
-      // bundle the client for webpack-dev-server
-      // and connect to the provided endpoint
-
-      "webpack/hot/only-dev-server"
-      // bundle the client for hot reloading
-      // only- means to only hot reload for successful updates
-  );
-}
 
 // allows splitting vendor modules
 function isExternal(module) {
@@ -56,14 +51,14 @@ var config = {
     // necessary for HMR to know where to load the hot update chunks
   },
 
-  devtool: isDevelopmentMode ? "inline-source-map" : "nosources-source-map",
+  devtool: "inline-source-map",
   // enable source maps
 
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: ['react-hot-loader/webpack', "awesome-typescript-loader"],
+        loader: ["awesome-typescript-loader"],
         include: APP_DIR,
         exclude: /node_modules/
       },
@@ -81,14 +76,13 @@ var config = {
                 // https://webpack.js.org/guides/hmr-react/#babel-config
                 "stage-2",
                 "react"
-              ],
-              plugins: ["react-hot-loader/babel"]
+              ]
             }
           }
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           use: [
             {
@@ -114,7 +108,7 @@ var config = {
         use: [
           {
             loader: 'file-loader',
-            options: {}  
+            options: {}
           }
         ]
       }
@@ -137,7 +131,7 @@ var config = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       filename: "vendor.bundle.js",
-      minChunks: function(module) {
+      minChunks: function (module) {
         return isExternal(module);
       }
     }),
@@ -145,12 +139,12 @@ var config = {
 
     new ExtractTextPlugin({
       filename: "bundle.css",
-      disable: isDevelopmentMode
+      disable: true
     }),
 
     new webpack.DefinePlugin({
       "process.env": {
-        NODE_ENV: isDevelopmentMode ? JSON.stringify("development") : JSON.stringify("production")
+        NODE_ENV: JSON.stringify("development")
       }
     })
     // This will produce output bundles that has all instances of process.env.NODE_ENV replaced with the conditional string literal
@@ -168,11 +162,8 @@ var config = {
   },
 
   resolve: {
-    extensions: [".js", ".json", ".jsx", ".ts",".tsx"],
+    extensions: [".js", ".json", ".jsx", ".ts", ".tsx"],
     alias: {
-      styles: path.resolve(APP_DIR, "styles"),
-      bb: path.resolve(APP_DIR, "scripts/building-blocks"),
-      containers: path.resolve(APP_DIR, "scripts/containers"),
       resources: path.resolve(APP_DIR, "resources")
     }
   }

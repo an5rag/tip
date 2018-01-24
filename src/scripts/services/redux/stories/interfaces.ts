@@ -3,10 +3,15 @@ export interface IStory {
   title?: string;
   id?: string;
   images?: {
-    grid?: string;
+    thumbnail?: string;
     cover?: string;
-    series?: Array<string>;
+    series?: Array<{
+      url: string,
+      caption: string
+    }>;
   };
+  activityUrl?: string;
+  sampleUrl?: string;
   synopsis?: string;
   author?: {
     name: string;
@@ -16,26 +21,34 @@ export interface IStory {
     name: string;
     id?: string;
   };
-  note?: {
-    author: string;
-    details?: string;
-    illustrator: string;
+  about?: {
+    author?: string[];
+    details?: string[];
+    illustrator?: string[];
   };
   shoppingLink?: string;
-  tags?: Array<string>;
+  price?: number;
+  tags?: string[];
+  index: number;
 }
 
 export enum StoriesLoadStatusEnum {
   INITIAL,
   FETCHING,
-  UPDATING,
-  COMPLETE
+  COMPLETE,
+  ERROR
+}
+
+export enum FetchError {
+  SERVER_ERROR = "Server Error",
+  NOT_FOUND_ERROR = "Not Found Error"
 }
 
 export interface IStoriesState {
-  readonly loadStatus: StoriesLoadStatusEnum;
-  readonly currentStory?: {
-    id: string;
-  };
-  readonly stories: {[storyId: string]: IStory};
+  loadStatus: StoriesLoadStatusEnum;
+  currentStory?: IStory;
+  prevStory?: IStory;
+  nextStory?: IStory;
+  stories: { [storyId: string]: IStory };
+  fetchError?: FetchError;
 }

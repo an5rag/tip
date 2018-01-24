@@ -9,47 +9,50 @@ $footer-min-height: 30vh;
    ========================================================================== */
 
 .tip-footer {
+    @extend %theme-dark-shade;
     min-height: $footer-min-height;
-    background-color: $secondary-background-color;
-    margin-top: $footer-margin;
     padding: 60px 0 60px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media only screen and (max-width: 480px) {
-        text-align: center;
-    }
-    .tip-footer-section {
+    .section {
+        margin: 0.5rem 0;
         display: flex;
-        flex-direction: column;
-        margin: 15px 0 15px 0;
-        .tip-footer-section-title {
-            @extend %heading-x-small;
-            font-weight: $light-font-weight;
-            letter-spacing: $wide-letter-spacing;
-            font-family: $primary-heading-font;
-            color: $secondary-contrast-color;
-        }
-        .tip-footer-section-subtitle {
-            @extend %heading-x-small;
-            font-weight: $light-font-weight;
-            font-family: $primary-text-font;
-            color: $primary-contrast-color;
+        justify-content: center;
+        font-family: $secondary-heading-font;
+        color: $secondary-text-color;
+        @extend %heading-x-small;
+        .element {
+            transition: color 0.2s;
+            svg {
+                transition: fill 0.3s;
+                height: 25px;
+                width: 25px;
+                fill: $secondary-text-color;
+            }
+            &:hover {
+                color: $dark-shade-text-color;
+                svg {
+                    fill: $dark-shade-text-color;
+                }
+            }
+            margin: 0 0.5rem;
         }
     }
     .tip-title {
-        margin-top: 30px;
+        margin-top: 20px;
+        text-align: center;
         .tip-title-copyright {
             @extend %heading-x-small;
             font-weight: $light-font-weight;
             letter-spacing: $wide-letter-spacing;
-            font-family: $primary-heading-font;
-            color: $secondary-contrast-color;
+            font-family: $primary-heading-font; // color: $secondary-text-color;
             text-align: center;
         }
         .tip-title-banner {
-            @extend %heading-small;
+            font-size: 1.2em;
+            line-height: 1.6em;
             font-family: $secondary-heading-font;
             font-weight: $light-font-weight;
             span {

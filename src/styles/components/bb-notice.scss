@@ -1,50 +1,71 @@
 .bb-notice {
-  margin: 20px 0 20px 0;
-  padding: 1rem;
-  padding-right: 2rem;
-  position: relative;
-  .title {
+    // margin: 20px 0 20px 0;
+    margin: 0 10px;
+    &.no-side-margin {
+        margin: 0;
+    }
+    padding: 1rem;
+    position: relative;
+    border: 1px solid transparent; // box-shadow: 0px 1px 0.3em grey;
     @extend %text-small;
-    // font-weight: $light-font-weight;
-    font-family: $primary-heading-font;
-  }
-  .content {
-    @extend %text-small;
-    // font-weight: $light-font-weight;
-    font-family: $primary-text-font;
-  }
-  .close-button {
-    @extend %text-small;
-
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    cursor: pointer;
-  }
-  &.primary {
-    background-color: $secondary-background-color;
     .title {
-      font-weight: $light-font-weight;
-      color: whitesmoke;
+        @extend %text-x-small; // font-weight: $light-font-weight;
+        font-family: $secondary-heading-font;
+        font-weight: $heavy-font-weight;
     }
     .content {
-      font-weight: $light-font-weight;
-      color: $primary-contrast-color;
+        margin-top: 0.5rem;
+        @extend %text-x-small; // font-weight: $light-font-weight;
+        font-family: $primary-text-font;
+        font-weight: $normal-font-weight;
     }
     .close-button {
-      color: whitesmoke;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
     }
-  }
-  &.secondary {
-    background-color: $tertiary-background-color;
-    .title {
-      color:$primary-text-color;
+    .link {
+        border-bottom: 1px solid transparent;
     }
-    .content {
-      color:$primary-text-color;
+    &.light {
+        @extend %theme-light-shade;
+        border-color: $black;
+        .title {}
+        .content {}
+        .close-button {}
+        .link {
+            border-color: $light-shade-text-color;
+            &:hover {
+                color: $secondary-text-color;
+                border-color: $secondary-text-color;
+            }
+        }
     }
-    .close-button {
-      color:$primary-text-color;
+    &.special {
+        @extend %theme-light-accent;
+        border-color: $black;
+        .title {}
+        .content {}
+        .close-button {}
+        .link {
+            border-color: $light-accent-text-color;
+            &:hover {
+                color: $secondary-text-color;
+                border-color: $secondary-text-color;
+            }
+        }
     }
-  }
+    &.dark {
+        @extend %theme-dark-accent;
+        .title {}
+        .content {}
+        .close-button {}
+        .link {
+            &:hover {
+                color: $secondary-text-color;
+                border-color: $secondary-text-color;
+            }
+        }
+    }
 }

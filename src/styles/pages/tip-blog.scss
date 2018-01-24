@@ -8,27 +8,97 @@ $heading-margin-bottom: 2rem;
    SELECTORS
    ========================================================================== */
 
-.tip-blog {
-    padding: 0 $side-padding 0 $side-padding;
-    .tip-blog-heading {
-        margin-bottom: $heading-margin-bottom;
-        .tip-blog-heading-text {
-            @extend %heading-large;
-            font-family: $secondary-heading-font;
-        }
-        .tip-blog-subheading {
-            @extend %heading-x-small;
-            font-family: $secondary-heading-font;
-            color: $secondary-color;
-            letter-spacing: $wide-letter-spacing;
+.tip-blog {}
+
+.tip-blog-hero-image {
+    @extend .bb-image-large;
+}
+
+.tip-blog-title {
+    @extend %heading-large;
+    font-family: $primary-heading-font;
+    letter-spacing: $x-narrow-letter-spacing;
+    margin-bottom: 0.5rem;
+    font-weight: $heavy-font-weight;
+}
+
+.tip-blog-subtitle {
+    @extend %heading-small;
+    color: $primary-text-color;
+    font-family: $primary-heading-font;
+    letter-spacing: $narrow-letter-spacing;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5em;
+    font-weight: $normal-font-weight;
+}
+
+.tip-blog-meta {
+    font-family: $primary-heading-font;
+    font-weight: $light-font-weight;
+    letter-spacing: $wide-letter-spacing;
+    @extend %heading-x-small;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: $dark-grey;
+}
+
+.tip-blog-text {
+    @extend .tip-text-block;
+    @extend .bb-image-medium;
+    @extend %text-regular;
+    font-family: $primary-text-font;
+    color: $primary-text-color;
+    p {}
+    ol,
+    ul {
+        margin: 0 0 1rem 0;
+        padding: 0 0 0 1rem;
+        list-style-position: outside;
+        li {
+            margin: 0;
+            padding: 0;
         }
     }
-    .tip-blog-text {
-        @extend .tip-text-block;
-        p {
-            @extend %text-regular;
-            font-family: $primary-text-font;
-            color: $secondary-text-color;
-        }
+    h1,
+    h2 {
+        margin-top: 3rem;
+    }
+    h3,
+    h4,
+    h5 {
+        margin-top: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin-bottom: 1rem;
+        font-weight: $heavy-font-weight;
+        font-family: $secondary-heading-font;
+    }
+    h1 {
+        @extend %heading-large;
+    }
+    h2 {
+        @extend %heading-regular;
+    }
+    h3,
+    h4 {
+        @extend %heading-small;
+    }
+    h4 {
+        color: $secondary-text-color;
+    }
+    h5 {
+        @extend %heading-x-small;
+        margin-bottom: 1rem;
+    }
+    blockquote {
+        @extend %text-x-large;
+        font-family: $secondary-text-font;
+        color: $grey;
+        padding-left: 1rem;
+        border-left: 5px solid $grey;
+        margin: 2rem 0 2rem 1rem;
     }
 }

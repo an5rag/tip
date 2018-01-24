@@ -1,15 +1,18 @@
 /* ==========================================================================
-   FRAMEWORK - Structure and layout files.
+   FRAMEWORK - Structure, layout and font files.
    ========================================================================== */
 
 @import 'node_modules/normalize.css/normalize';
 @import 'node_modules/foundation-sites/scss/foundation';
 @include foundation-flex-grid;
+@include foundation-flex-classes;
+@import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
 
 /* ==========================================================================
    BASE - Base Variable file along with starting point Mixins and Placeholders.
    ========================================================================== */
 
+@import 'base/mixins.scss';
 @import 'base/colors.scss';
 @import 'base/typography.scss';
 @import 'base/gutters.scss';
@@ -21,6 +24,7 @@
    ========================================================================== */
 
 @import 'components/links.scss';
+@import 'components/bb-image.scss';
 @import 'components/search-bar.scss';
 @import 'components/masonry-grid.scss';
 @import 'components/bb-collapse.scss';
@@ -28,7 +32,11 @@
 @import 'components/friction-boxes.scss';
 @import 'components/bb-notice.scss';
 @import 'components/bb-dropdown.scss';
-
+@import 'components/bb-image-grid.scss';
+@import 'components/bb-page-elements.scss';
+@import 'components/bb-button.scss';
+@import 'components/bb-prev-next-bar.scss';
+@import 'components/bb-ticker.scss';
 
 /* ==========================================================================
    CONTAINERS - Components built using modules
@@ -45,11 +53,13 @@
 @import 'pages/tip-stories.scss';
 @import 'pages/tip-home.scss';
 @import 'pages/tip-blog.scss';
+@import 'pages/tip-blog-write.scss';
+@import 'pages/tip-blog-post.scss';
 @import 'pages/tip-story.scss';
-
-
-/* ==========================================================================
-   FONTS
-   ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css?family=Karla|Source+Sans+Pro:300,400,600|PT+Mono');
+@import 'pages/tip-404.scss';
+@import 'pages/tip-faq.scss';
+@import 'pages/tip-loading.scss';
+@import 'pages/tip-team.scss';
+@import 'pages/tip-about.scss';
+@import 'pages/tip-contact.scss';
+@import 'pages/tip-press.scss';

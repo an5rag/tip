@@ -13,7 +13,7 @@ $heading-margin-bottom: 2rem;
     .tip-blog-heading {
         margin-bottom: $heading-margin-bottom;
         .tip-blog-heading-text {
-            @extend %heading-large;
+            @extend %heading-regular;
             font-family: $secondary-heading-font;
         }
         .tip-blog-subheading {
