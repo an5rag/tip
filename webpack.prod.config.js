@@ -77,7 +77,8 @@ var config = {
             {
               loader: "css-loader", // The css-loader interprets @import and url() like import/require() and will resolve them
               options: {
-                sourceMap: true
+                sourceMap: true,
+                minimize: true
               }
             },
             {

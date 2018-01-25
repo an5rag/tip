@@ -83,7 +83,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.config.js",
-    "build:watch": "cross-env NODE_ENV=development webpack --config webpack.config.js --watch",
+    "publish": "cross-env NODE_ENV=production webpack --config webpack.prod.config.js && firebase deploy --only hosting",
     "tslint": "tslint"
   }
 }
