@@ -77,13 +77,22 @@ var config = {
             {
               loader: "css-loader", // The css-loader interprets @import and url() like import/require() and will resolve them
               options: {
-                sourceMap: true
+                sourceMap: true,
+                minimize: true
               }
             },
             {
               loader: "sass-loader", // Loads a SASS/SCSS file and and compiles it to CSS
               options: {
                 sourceMap: true
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  require('autoprefixer')
+                ]
               }
             }
           ],

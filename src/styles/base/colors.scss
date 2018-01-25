@@ -52,7 +52,7 @@ $dark-dark-accent:#3f3838;
 $dark-accent-text-color: #e9e1dc;
 //
 $dark-shade: #1b1b1b;
-$dark-shade-text-color: $dark-white;
+$dark-shade-text-color: $white;
 //
 %theme-background-shade {
     background-color: $background-shade;
@@ -92,5 +92,13 @@ $dark-shade-text-color: $dark-white;
     border-color: $dark-accent;
     svg {
         fill: $dark-accent-text-color;
+    }
+}
+
+%theme-brand {
+    background-color: $brand-color;
+    color: $white;
+    svg {
+        fill: $white;
     }
 }
