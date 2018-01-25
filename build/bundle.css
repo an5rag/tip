@@ -1347,18 +1347,18 @@ template {
   .bb-notice.special svg, .bb-button-container .bb-button.light svg {
     fill: #111111; }
 
-.bb-button-container .bb-button.dark:hover:not(:disabled):not(.active), .bb-button-container .bb-button.dark.active, .tip-header .tip-nav .tip-nav-element .tip-nav-link a.tip-nav-link-active, .tip-footer {
+.bb-button-container .bb-button.dark, .tip-header .tip-nav .tip-nav-element .tip-nav-link a.tip-nav-link-active, .tip-footer {
   background-color: #1b1b1b;
-  color: #cfcfcf;
+  color: whitesmoke;
   border-color: transparent; }
-  .bb-button-container .bb-button.dark:hover:not(:disabled):not(.active) svg, .bb-button-container .bb-button.dark.active svg, .tip-header .tip-nav .tip-nav-element .tip-nav-link a.tip-nav-link-active svg, .tip-footer svg {
-    fill: #cfcfcf; }
+  .bb-button-container .bb-button.dark svg, .tip-header .tip-nav .tip-nav-element .tip-nav-link a.tip-nav-link-active svg, .tip-footer svg {
+    fill: whitesmoke; }
 
-.bb-notice.dark, .bb-button-container .bb-button.dark, .tip-story-box-container .tip-story-box:hover, .home-box-grid .home-box.light:hover, .home-box-grid .home-box.dark {
+.bb-notice.dark, .bb-button-container .bb-button.dark:hover:not(:disabled):not(.active), .bb-button-container .bb-button.dark.active, .tip-story-box-container .tip-story-box:hover, .home-box-grid .home-box.light:hover, .home-box-grid .home-box.dark {
   background-color: #3f3838;
   color: #e9e1dc;
   border-color: #4e4646; }
-  .bb-notice.dark svg, .bb-button-container .bb-button.dark svg, .tip-story-box-container .tip-story-box:hover svg, .home-box-grid .home-box.light:hover svg, .home-box-grid .home-box.dark svg {
+  .bb-notice.dark svg, .bb-button-container .bb-button.dark:hover:not(:disabled):not(.active) svg, .bb-button-container .bb-button.dark.active svg, .tip-story-box-container .tip-story-box:hover svg, .home-box-grid .home-box.light:hover svg, .home-box-grid .home-box.dark svg {
     fill: #e9e1dc; }
 
 /* ==========================================================================
@@ -2357,7 +2357,7 @@ a {
     margin: 0.5rem 0;
     display: flex;
     justify-content: center;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Karla", sans-serif;
     color: #757575; }
     .tip-footer .section .element {
       transition: color 0.2s;
@@ -2368,16 +2368,16 @@ a {
         width: 25px;
         fill: #757575; }
       .tip-footer .section .element:hover {
-        color: #cfcfcf; }
+        color: whitesmoke; }
         .tip-footer .section .element:hover svg {
-          fill: #cfcfcf; }
+          fill: whitesmoke; }
   .tip-footer .tip-title {
     margin-top: 20px;
     text-align: center; }
     .tip-footer .tip-title .tip-title-copyright {
       font-weight: 300;
       letter-spacing: 0.5;
-      font-family: "Karla", sans-serif;
+      font-family: "Source Sans Pro", sans-serif;
       text-align: center; }
     .tip-footer .tip-title .tip-title-banner {
       font-size: 1.2em;

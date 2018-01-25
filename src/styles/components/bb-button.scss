@@ -21,15 +21,15 @@
         font-weight: $heavy-font-weight;
         outline: none;
         &.dark {
-            @extend %theme-dark-accent;
+            @extend %theme-dark-shade;
             transition: all 0.2s;
             &:hover:not(:disabled):not(.active) {
-                @extend %theme-dark-shade;
+                @extend %theme-dark-accent;
                 box-shadow: $light-grey 0px 10px 15px 0px;
                 transform: translateY(-2.5px);
             }
             &.active {
-                @extend %theme-dark-shade;
+                @extend %theme-dark-accent;
             }
         }
         &.light {

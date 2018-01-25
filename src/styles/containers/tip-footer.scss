@@ -20,7 +20,7 @@ $footer-min-height: 30vh;
         margin: 0.5rem 0;
         display: flex;
         justify-content: center;
-        font-family: $secondary-heading-font;
+        font-family: $primary-heading-font;
         color: $secondary-text-color;
         @extend %heading-x-small;
         .element {
@@ -47,7 +47,7 @@ $footer-min-height: 30vh;
             @extend %heading-x-small;
             font-weight: $light-font-weight;
             letter-spacing: $wide-letter-spacing;
-            font-family: $primary-heading-font; // color: $secondary-text-color;
+            font-family: $secondary-heading-font; // color: $secondary-text-color;
             text-align: center;
         }
         .tip-title-banner {

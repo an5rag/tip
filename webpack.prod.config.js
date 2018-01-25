@@ -85,6 +85,14 @@ var config = {
               options: {
                 sourceMap: true
               }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  require('autoprefixer')
+                ]
+              }
             }
           ],
 
