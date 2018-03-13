@@ -108,12 +108,14 @@ export const faqArray: IFaqSectionProps[] = [
       {
         question: "Why is it taking me so long to receive my order?",
         answer: [
-
           <BbParagraph>
-            We are sorry. We are brand-new at this and are trying to figure things out.
+            We are sorry for the delay.
+           </BbParagraph>,
+          <BbParagraph>
+            We send out orders every Tuesday and Friday and email you the airwaybill (AWB) number within 5 days of ordering through our website.
             </BbParagraph>,
           <BbParagraph>
-            Our estimate for deliveries in India is <strong>10-15 business days</strong>. If it takes longer than that, please <TipLink to="/contact">write to us</TipLink> with the header - “Order:” and we shall try being super-quick and hustle your books right to your doorstep.
+            Our estimate for deliveries in India is <strong>10-15 business days</strong>. If it takes longer than that, please <TipLink to="/contact">write to us</TipLink> with the header - “Order: Order-date: Product:” and we shall try being super-quick and hustle your books right to your doorstep.
           </BbParagraph>
 
         ]

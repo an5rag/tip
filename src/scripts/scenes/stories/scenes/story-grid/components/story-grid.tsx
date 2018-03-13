@@ -92,7 +92,6 @@ export class StoryGrid extends React.Component<IStoryGridProps, any> {
               <div className="columns small-10 medium-11">
                 <BbButton
                   label={`GO TO STORE`}
-                  theme="dark"
                   linkTo="https://www.instamojo.com/readmore/"
                   linkExternal={true}
                   className="wide"

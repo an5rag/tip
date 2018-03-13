@@ -9,7 +9,6 @@ import { BbNotice } from "./../../building-blocks/bb-notice";
 import { faqArray } from "./components/faq-array";
 import { FaqSection, IFaqSectionProps } from "./components/faq-section";
 
-
 interface IFaqState {
   openElementIndex: number;
 }

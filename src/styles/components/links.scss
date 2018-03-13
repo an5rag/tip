@@ -1,12 +1,13 @@
 .tip-link {
     a {
         cursor: pointer;
+        padding: 0 1px;
         padding-bottom: 1.5px;
         color: $brand-color;
-        border-bottom: 2px solid $brand-color;
+        border-bottom: 1.5px solid $brand-color;
         &:hover {
             color: $primary-text-color;
-            border-bottom: 2px solid $primary-text-color;
+            border-bottom: 1.5px solid $primary-text-color;
         }
         svg,
         i {

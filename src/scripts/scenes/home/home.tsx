@@ -12,7 +12,7 @@ import { BbNotice } from "./../../building-blocks/bb-notice";
 const Books = require("./../../../resources/images/books.jpg");
 const RightArrow = require("react-icons/lib/fa/angle-right");
 const Store = require("react-icons/lib/md/local-grocery-store");
-const texture = require("./../../../resources/textures/spaces.jpg");
+const texture = "https://www.transparenttextures.com/patterns/concrete-wall.png";
 
 export class Home extends React.Component<any, any> {
   componentDidMount() {
@@ -25,56 +25,56 @@ export class Home extends React.Component<any, any> {
     //   success: this.setInstagramPhotos
     // });
     // feed.run();
-    if ((window as any).particlesJS) {
-      const loadParticlesJs = () => {
-        (window as any).particlesJS("particles-js", {
-          particles: {
-            number: {
-              value: 60
-            },
-            color: {
-              value: "#27ada0"
-            },
-            shape: {
-              type: "triangle"
-            },
-            opacity: {
-              value: 0.7,
-              random: true,
-              anim: {
-                enable: false,
-                speed: 1,
-                opacity_min: 0.2,
-                sync: false
-              }
-            },
-            size: {
-              value: 8,
-              random: true
-            },
-            line_linked: {
-              enable: false,
-              color: "#27ada0",
-            },
-            move: {
-              enable: true,
-              speed: 4,
-              direction: "bottom",
-              straight: false
-            }
-          },
-          interactivity: {
+    // if ((window as any).particlesJS) {
+    //   const loadParticlesJs = () => {
+    //     (window as any).particlesJS("particles-js", {
+    //       particles: {
+    //         number: {
+    //           value: 60
+    //         },
+    //         color: {
+    //           value: "#27ada0"
+    //         },
+    //         shape: {
+    //           type: "triangle"
+    //         },
+    //         opacity: {
+    //           value: 0.7,
+    //           random: true,
+    //           anim: {
+    //             enable: false,
+    //             speed: 1,
+    //             opacity_min: 0.2,
+    //             sync: false
+    //           }
+    //         },
+    //         size: {
+    //           value: 8,
+    //           random: true
+    //         },
+    //         line_linked: {
+    //           enable: false,
+    //           color: "#27ada0",
+    //         },
+    //         move: {
+    //           enable: true,
+    //           speed: 4,
+    //           direction: "bottom",
+    //           straight: false
+    //         }
+    //       },
+    //       interactivity: {
 
-          }
-        });
-        window.removeEventListener("load", loadParticlesJs);
-      };
-      if (document.readyState === "complete") {
-        loadParticlesJs();
-      } else {
-        window.addEventListener("load", loadParticlesJs);
-      }
-    }
+    //       }
+    //     });
+    //     window.removeEventListener("load", loadParticlesJs);
+    //   };
+    //   if (document.readyState === "complete") {
+    //     loadParticlesJs();
+    //   } else {
+    //     window.addEventListener("load", loadParticlesJs);
+    //   }
+    // }
   }
 
   // setInstagramPhotos = (data) => {
@@ -253,7 +253,7 @@ export class Home extends React.Component<any, any> {
                by developing awareness and critical thinking in them, through the <strong>medium of fiction</strong>.
             </p>
           </div>
-          <div className="row align-center section">
+          {/* <div className="row align-center section">
             <div className="small-12 medium-8 columns">
               <BbNotice type="special" title="High Five, Irrelevants!" content={(
                 <div>
@@ -262,7 +262,7 @@ export class Home extends React.Component<any, any> {
                       <BbImage className="no-margin" size="large" src="https://cdn.shopify.com/s/files/1/1061/1924/products/High_Five_Emoji_large.png?v=1480481045" />
                     </div>
                     <div className="notice-content">
-                      We are privileged to have receive immense love and patience from our fans and friends. For those of you who showed your support, thank you for making this launch possible.
+                      We are privileged to have received immense love and patience from our fans and friends. For those of you who showed your support, thank you for making this launch possible.
                     </div>
                   </div>
                   <div id="particles-js" style={{ position: "absolute", height: "100%", width: "100%", top: "0", left: "0", zIndex: 0 }} />
@@ -270,7 +270,7 @@ export class Home extends React.Component<any, any> {
                 </div>
               )} />
             </div>
-          </div>
+          </div> */}
           <div className="row section">
             <div className="small-12 columns align-center ">
               {homeBoxGrid}

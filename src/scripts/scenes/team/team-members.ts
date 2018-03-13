@@ -27,7 +27,7 @@ export const teamMembers: ITeamMember[] = [
   {
     src: img.aliysha,
     name: "Alishya Almeida",
-    role: "Co-founder, Queer Activist",
+    role: "Co-founder, Writer, Teacher",
     link: "https://medium.com/@alishyaalmeida"
   }, {
     src: img.meghna,
@@ -35,10 +35,10 @@ export const teamMembers: ITeamMember[] = [
     role: "Co-founder, Learning Experience Designer",
     link: "https://medium.com/@meghnachaudhury"
   }, {
-    src: img.sudhamshu,
-    name: "Sudhamshu Mitra",
-    role: "Chief researcher, Blogger, Activist",
-    link: "https://www.youthkiawaaz.com/author/sudhamshu_mitra/"
+    src: img.pallavi,
+    name: "Pallavi Prasad",
+    role: "Journalist, Editor, Personal Cheerleader",
+    link: "https://www.facebook.com/pallaviprsd/"
   }, {
     src: img.anurag,
     name: "Anurag Choudhary",
@@ -54,6 +54,12 @@ export const teamMembers: ITeamMember[] = [
     name: "Ashwini Ashokkumar",
     role: "Author, Social psychologist, Wannabe poet",
     link: "https://ashwiniashokkumar.com/"
+  },
+  {
+    src: img.sudhamshu,
+    name: "Sudhamshu Mitra",
+    role: "Chief researcher, Blogger, Activist",
+    link: "https://www.youthkiawaaz.com/author/sudhamshu_mitra/"
   }, {
     src: img.pranita,
     name: "Pranita Kocharekar",
@@ -79,11 +85,6 @@ export const teamMembers: ITeamMember[] = [
     name: "Sonaksha Iyengar",
     role: "Illustrator, Author, Mental Health and Body-Positive Activist",
     link: "https://www.instagram.com/sonaksha/"
-  }, {
-    src: img.pallavi,
-    name: "Pallavi Prasad",
-    role: "Journalist, Editor, Personal Cheerleader",
-    link: "https://www.facebook.com/pallaviprsd/"
   }, {
     src: img.aakriti,
     name: "Aakriti Pasricha",

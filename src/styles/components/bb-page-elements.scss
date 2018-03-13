@@ -13,30 +13,26 @@
 }
 
 .bb-title {
-    @extend %heading-large;
+    @extend %heading-x-large;
     font-family: $secondary-heading-font;
-    letter-spacing: $wide-letter-spacing; // font-weight: $light-font-weight;
-    // $gradient: 45deg, $brand-negative-color, $light-accent;
-    // background: linear-gradient($gradient);
-    color: $brand-color; // -webkit-background-clip: text;
-    // background-clip: text;
+    letter-spacing: $wide-letter-spacing;
+    color: $primary-text-color;
     &.center {
         text-align: center;
-    } // color: $light-accent;
-    // -webkit-text-fill-color: $light-accent;
-    // /* Will override color (regardless of order) */
-    // -webkit-text-stroke-width: 2px;
-    // -webkit-text-stroke-color: $black;
-    // text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    // &:hover {
-    //     // -webkit-text-fill-color: $brand-negative-color;
+    } // &:hover {
+    //     -webkit-text-fill-color: $brand-negative-color;
+    //     font-weight: $heavy-font-weight;
+    //     /* Will override color (regardless of order) */
+    //     -webkit-text-stroke-width: 2px;
+    //     -webkit-text-stroke-color: $black;
+    //     text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; // -webkit-text-fill-color: $brand-negative-color;
     // }
 }
 
 .bb-heading-two {
     @extend %heading-regular; // font-weight: $heavy-font-weight;
     font-family: $primary-heading-font;
-    color: $primary-text-color;
+    color: $brand-dark-color;
     letter-spacing: $narrow-letter-spacing;
 }
 

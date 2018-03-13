@@ -31,10 +31,7 @@ export class About extends React.Component<any, any> {
           <BbSection className="big-margin">
             <BbText>
               <BbParagraph>
-                The Irrelevant Project was founded in 2016 by Meghna Chaudhury and Alishya Almeida. What started as an urge to bring about inclusivity in children soon turned into a full fledged project
-                spanning several months of researching, drafting, making multiple phone calls, creating timelines, scratching timelines, hoping, praying, believing and creating fully illustrated feminist books for children.
-              </BbParagraph>
-              <BbParagraph>
+                The Irrelevant Project was founded in 2016 by Meghna Chaudhury and Alishya Almeida in an attempt to bring about inclusivity in children.
                 Officially opening the online store to the public in January 2018, the cofounders are confident in and believe that they have at least one possible offering to combat the conflict in the landscape.
               </BbParagraph>
             </BbText>
@@ -45,7 +42,7 @@ export class About extends React.Component<any, any> {
                 <BbHeadingTwo>
                   What are we troubled by?
                 </BbHeadingTwo>
-                <BbImage size="large" src="https://crayonswandsandbuildingblocks.files.wordpress.com/2011/12/dsc02495.jpg" caption="Picture Courtesy: crayons, wands & building blocks" altText="Gender biases in kids: Doctors should be boys" />
+                <BbImage size="large" src="http://i276.photobucket.com/albums/kk34/feministing/boyvgirls.jpg" caption="Picture Courtesy: I’m Glad I’m a Boy! I’m Glad I’m a Girl!" altText="Gender biases in kids: Doctors should be boys" />
               </div>
               <div className="columns small-12 medium-6">
                 <BbText>
@@ -55,13 +52,13 @@ export class About extends React.Component<any, any> {
                   </li>
                     <li>
                       The many ways in which we realize the education we receive does not account for the challenges children face in their everyday cultural contexts, equipping them with neither critical thinking nor emotional reasoning.
-                  </li>
+                      </li>
                     <li>
                       How children learn to discriminate based on identity, and perpetuate teasing, bullying and other forms of aggression towards one another, as early as age four.
-                  </li>
+                    </li>
                     <li>
                       By an environment that limits imagination. Books and media for children repeatedly reinforce certain narratives which constrict children to thinking in boxes and categories.
-                  </li>
+                    </li>
                   </ul>
 
                 </BbText>
@@ -106,13 +103,14 @@ export class About extends React.Component<any, any> {
                   <ul>
                     <li>
                       <strong>Fiction</strong>: Currently, we have 5 books in our repository that are centered around different topics of prejudice for age groups 6 - 8.
+                    <BbButton label="SEE BOOKS" className="wide button" linkTo="stories" />
                     </li>
                     <li>
-                      <strong>Collaterals</strong>: We have provided supporting text/activities for a facilitator/teacher to conduct discussions related to the content covered in the books.
+                      <strong>Collaterals</strong>: We are working on a repository of content/activities for a facilitator/teacher to conduct discussions related to the content covered in the books. The collaterals are available for some of the books including <TipLink to="stories/big-book-of-why">The Big book of Why</TipLink> and <TipLink to="stories/dont-pull-my-cheeks">Don’t pull my cheeks</TipLink>.
                     </li>
                   </ul>
                 </BbText>
-                <BbButton label="SEE BOOKS" className="wide button" linkTo="stories" />
+
               </div>
             </div>
           </BbSection>
