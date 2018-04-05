@@ -1,5 +1,4 @@
 import * as React from "react";
-import { classNames } from "classnames";
 import { BbCollapse } from "./bb-collapse";
 
 type TreeNodeDataType = string | React.ReactElement<any>;
