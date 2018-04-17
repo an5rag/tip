@@ -228,9 +228,7 @@ export class Home extends React.Component<any, any> {
       <DocumentTitle title="Home - The Irrelevant Project">
         <div className="tip-home" >
 
-          <div className="section hero-text-container bg-image-container"
-            style={{ backgroundImage: `url(${texture})` }}
-          >
+          <div className="section hero-text-container bg-image-container">
             {/* <img src="" /> */}
             <div className="hero-text ">
               <p className="center-align"><span id="first">Interrupting</span></p>
