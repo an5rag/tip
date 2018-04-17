@@ -14,11 +14,14 @@ export const faqArray: IFaqSectionProps[] = [
     faqElementsArray: [
       {
         question: "What is the Irrelevant Project?",
-        answer: [(
+        answer: [
           <BbParagraph>
-            Glad you asked! We have an entire <TipLink to="/about">page</TipLink> for it.
+            The irrelevant project began in 2016 by Meghna Chaudhary and Alishya Almeida.
+          </BbParagraph>,
+          <BbParagraph>
+            We have an entire <TipLink to="/about">page</TipLink> for what we do.
           </BbParagraph>
-        )]
+        ]
       },
       {
         question: "Who are the Irrelevants?",
@@ -28,7 +31,7 @@ export const faqArray: IFaqSectionProps[] = [
             Visit them <TipLink to="/team">here</TipLink>!
             </BbParagraph>,
           <BbParagraph>
-            Each one of them have volunteered their service to us and we could not have been more proud or thankful at this display of human goodwill.
+            Each one of them has been instrumental in making tip what it is.
             </BbParagraph>
 
         ]
@@ -49,8 +52,10 @@ export const faqArray: IFaqSectionProps[] = [
           </ol>,
 
           <BbParagraph>
+            Our labour is a patchwork made by the constant dialogue of threes.
             It is also the reverse of the summation sign (Σ), for while we are a collection of our experiences,
-            at TIP we want to think seriously about going beyond one’s experiences, to be ‘outside’ oneself in order to understand culture and identity.
+            at TIP we want to think seriously about going beyond one’s experiences,
+            to be ‘outside’ oneself in order to understand culture and identity.
           </BbParagraph>
 
         ]
@@ -93,7 +98,7 @@ export const faqArray: IFaqSectionProps[] = [
         question: "Where can I buy your books from?",
         answer: [
           <BbParagraph>
-            <TipLink to="https://www.instamojo.com/readmore/" external={true}>Visit our store.</TipLink>
+            <TipLink to="https://www.amazon.in/s/ref=a9_sc_1?rh=i%3Aaps%2Ck%3Athe+irrelevant+project&keywords=the+irrelevant+project&ie=UTF8&qid=1522664477" external={true}>You can find us on Amazon.</TipLink>
           </BbParagraph>
         ]
       },
@@ -145,15 +150,15 @@ export const faqArray: IFaqSectionProps[] = [
         question: "Help! My payment wouldn't go through.",
         answer: [
           <BbParagraph>
-            Our secure payments are powered by Instamojo. Please visit their <TipLink to="https://support.instamojo.com/hc/en-us/articles/208508455-Payment-Failures" external={true}>troubleshooting page for payments.</TipLink>
+            Our secure payments are powered by Amazon. Please visit their <TipLink to="https://www.amazon.in/gp/help/customer/display.html?nodeId=201895620" external={true}>troubleshooting page for payments.</TipLink>
           </BbParagraph>
         ]
       },
       {
-        question: "Instamojo doesn't seem to work on my phone.",
+        question: "What happened to Instamojo?",
         answer: [
           <BbParagraph>
-            We're aware of problems with Instamojo on mobile devices. We're trying to reach out to them to fix the bugs. Meanwhile, please try again using your laptop or desktop computer.
+            We are stopped selling on Instamojo and have moved to the more widely used platform - Amazon.
           </BbParagraph>
         ]
       }

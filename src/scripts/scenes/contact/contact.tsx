@@ -41,7 +41,7 @@ export class Contact extends React.Component<any, IContatcState> {
           <BbSection>
             <BbText>
               <BbParagraph>
-                Reach out to us by writing to <TipLink to="mailto:theirrelevantproject@gmail.com" external={true}> theirrelevantproject@gmail.com</TipLink> and we'll be in touch with lightning speed.
+                Reach out to us by writing to <TipLink to="mailto:contact@theirrelevantproject.com" external={true}>contact@theirrelevantproject.com</TipLink> and we'll be in touch with lightning speed.
             </BbParagraph>
               <BbParagraph>
                 You can also reach us through our social media presence.

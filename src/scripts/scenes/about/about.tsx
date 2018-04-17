@@ -24,18 +24,18 @@ export class About extends React.Component<any, any> {
             url: `${this.props.match.url}`
           }
         }>
-        <BbTitle>
+        <BbTitle classes="center">
           about the project.
         </BbTitle>
         <BbContent>
-          <BbSection className="big-margin">
+          {/* <BbSection className="big-margin">
             <BbText>
               <BbParagraph>
                 The Irrelevant Project was founded in 2016 by Meghna Chaudhury and Alishya Almeida in an attempt to bring about inclusivity in children.
                 Officially opening the online store to the public in January 2018, the cofounders are confident in and believe that they have at least one possible offering to combat the conflict in the landscape.
               </BbParagraph>
             </BbText>
-          </BbSection>
+          </BbSection> */}
           <BbSection className="big-margin">
             <div className="row align-center">
               <div className="columns heading-column small-12 medium-6">

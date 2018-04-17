@@ -27,7 +27,7 @@ export class Team extends React.Component<any, ITeamState> {
             url: `${this.props.match.url}`
           }
         }>
-        <BbTitle classes="title center">
+        <BbTitle classes="center">
           {/* <span className="title"> */}
           meet the irrelevants.
           {/* </span> */}

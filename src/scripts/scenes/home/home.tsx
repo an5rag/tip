@@ -98,7 +98,7 @@ export class Home extends React.Component<any, any> {
       {
         title: "store",
         theme: "light",
-        linkTo: "https://www.instamojo.com/readmore/",
+        linkTo: "https://www.amazon.in/s/ref=a9_sc_1?rh=i%3Aaps%2Ck%3Athe+irrelevant+project&keywords=the+irrelevant+project&ie=UTF8&qid=1522664477",
         content: <Store />,
         linkExternal: true
       },

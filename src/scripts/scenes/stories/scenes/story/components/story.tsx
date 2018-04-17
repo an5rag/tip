@@ -255,7 +255,7 @@ const actions = (props: IActionProps) => {
       <BbButton
         className="action-item"
         label={`BUY NOW FOR ₹ ${props.price}`}
-        subtitle="Secure payments powered by Instamojo"
+        subtitle="Secure payments powered by Amazon"
         linkTo={props.shoppingLink}
         linkExternal={true}
       />
