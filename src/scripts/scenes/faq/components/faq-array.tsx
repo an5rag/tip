@@ -158,7 +158,9 @@ export const faqArray: IFaqSectionProps[] = [
         question: "What happened to Instamojo?",
         answer: [
           <BbParagraph>
-            We are stopped selling on Instamojo and have moved to the more widely used platform - Amazon.
+            We have stopped selling on Instamojo and have moved to the more widely used platform -
+            <TipLink to="https://www.amazon.in/s/ref=a9_sc_1?rh=i%3Aaps%2Ck%3Athe+irrelevant+project&keywords=the+irrelevant+project&ie=UTF8&qid=1522664477" external={true}>Amazon.
+            </TipLink>
           </BbParagraph>
         ]
       }

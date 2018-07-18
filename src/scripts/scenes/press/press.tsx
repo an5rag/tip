@@ -70,6 +70,42 @@ export class PressElement extends React.Component<IPressElementProps, any> {
 
 const pressArray: IPressElementProps[] = [
   {
+    source: "Youth ki Awaaz",
+    url: "https://www.youthkiawaaz.com/2018/05/learn-how-these-two-feminists-are-breaking-gender-prejudices-by-the-irrelevant-project/",
+    title: "Two Feminist Women Are Creating Gender Stereotype-Smashing Stories For Kids",
+    date: "May 10, 2018"
+  },
+  {
+    source: "New Love Times",
+    url: "http://www.newlovetimes.com/nlttalks-with-the-irrelevant-project-theres-a-need-for-more-content-that-speaks-explicitly-of-the-diversity-in-india/",
+    title: "“There’s A Need For More Content That Speaks Explicitly Of The Diversity In India”: #NLTTalks With The Irrelevant Project",
+    date: "May 6, 2018"
+  },
+  {
+    source: "IndianWomenBlog.org",
+    url: "http://www.indianwomenblog.org/meghna-chaudhury-on-making-gender-stereotypes-irrelevant-right-from-childhood/",
+    title: "Meghna Chaudhury On Making Gender Stereotypes Irrelevant Right From Childhood",
+    date: "April 26, 2018"
+  },
+  {
+    source: "The Red Elephant Foundation",
+    url: "http://www.redelephantfoundation.org/2018/02/irrelevant-but-relevant.html",
+    title: "Irrelevant. But Relevant.",
+    date: "April 3, 2018"
+  },
+  {
+    source: "Scroll.in",
+    url: "https://scroll.in/article/869781/dont-pull-my-cheeks-a-new-literary-project-is-trying-to-change-the-narrative-in-childrens-books",
+    title: "‘Don’t pull my cheeks’: A new literary project is trying to change the narrative in children’s books",
+    date: "February 25, 2018 "
+  },
+  {
+    source: "sbcltr",
+    url: "http://sbcltr.in/2018/02/22/how-the-irrelevant-project-is-disrupting-stereotypes/",
+    title: "How the Irrelevant Project is disrupting stereotypes",
+    date: "Februrary 22, 2018"
+  },
+  {
     source: "GirlTalkHQ",
     url: "http://girltalkhq.com/indian-feminist-authors-create-childrens-book-series-challenge-harmful-gender-norms/",
     title: "Indian Feminist Authors Create Children’s Book Series To Challenge Harmful Gender Norms",
