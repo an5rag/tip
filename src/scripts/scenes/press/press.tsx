@@ -51,17 +51,20 @@ export class PressElement extends React.Component<IPressElementProps, any> {
     return (
       <BbSection className="element">
         <BbText>
-          <div className="source">
-            {this.props.source}
+          <div>
+            <span className="source">
+              {this.props.source}
+            </span>
+            <span className="date">
+              | {this.props.date}
+            </span>
           </div>
           <div className="title">
             <TipLink to={this.props.url} external={true}>
               {this.props.title}
             </TipLink>
           </div>
-          <div className="date">
-            {this.props.date}
-          </div>
+
         </BbText>
       </BbSection>
     );
@@ -92,6 +95,12 @@ const pressArray: IPressElementProps[] = [
     url: "http://www.redelephantfoundation.org/2018/02/irrelevant-but-relevant.html",
     title: "Irrelevant. But Relevant.",
     date: "April 3, 2018"
+  },
+  {
+    source: "BW DISRUPT",
+    url: "http://bwdisrupt.businessworld.in/article/Teach-your-Children-the-Concepts-of-Consent-Body-Positivity-and-Feminism-through-The-Irrelevant-Project/27-03-2018-144641/",
+    title: "Teach your Children the Concepts of Consent, Body Positivity and Feminism through The Irrelevant Project",
+    date: "March 27, 2018"
   },
   {
     source: "Scroll.in",
