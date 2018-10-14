@@ -149,13 +149,6 @@ var config = {
       filename: "bundle.css",
       disable: true
     }),
-
-    new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("development")
-      }
-    })
-    // This will produce output bundles that has all instances of process.env.NODE_ENV replaced with the conditional string literal
   ],
 
   devServer: {

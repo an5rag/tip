@@ -20,36 +20,41 @@ const img = {
   purva: require("./../../../resources/images/team/purva.jpg"),
   elyne: require("./../../../resources/images/team/elyne.jpg"),
   shlagha: require("./../../../resources/images/team/shlagha.jpg"),
-  shadow: require("./../../../resources/images/team/shadow.jpg"),
+  shadow: require("./../../../resources/images/team/shadow.jpg")
 };
 
 export const teamMembers: ITeamMember[] = [
+  {
+    src: img.meghna,
+    name: "Meghna Chaudhury",
+    role: "Co-founder, Learning Experience Designer",
+    link: "https://medium.com/@meghnachaudhury"
+  },
   {
     src: img.aliysha,
     name: "Alishya Almeida",
     role: "Co-founder, Writer, Teacher",
     link: "https://medium.com/@alishyaalmeida"
-  }, {
-    src: img.meghna,
-    name: "Meghna Chaudhury",
-    role: "Co-founder, Learning Experience Designer",
-    link: "https://medium.com/@meghnachaudhury"
-  }, {
+  },
+  {
     src: img.pallavi,
     name: "Pallavi Prasad",
     role: "Journalist, Editor, Personal Cheerleader",
     link: "https://www.facebook.com/pallaviprsd/"
-  }, {
+  },
+  {
     src: img.anurag,
     name: "Anurag Choudhary",
     role: "Chief Technologist, Engineer, Teacher",
     link: "http://anuragchoudhary.com"
-  }, {
+  },
+  {
     src: img.varsha,
     name: "Varsha Varghese",
     role: "Author, Founder of Wordsworth project",
     link: "https://www.youtube.com/watch?v=ZnERyntytSc"
-  }, {
+  },
+  {
     src: img.ashwini,
     name: "Ashwini Ashokkumar",
     role: "Author, Social psychologist, Wannabe poet",
@@ -60,68 +65,83 @@ export const teamMembers: ITeamMember[] = [
     name: "Sudhamshu Mitra",
     role: "Chief researcher, Blogger, Activist",
     link: "https://www.youthkiawaaz.com/author/sudhamshu_mitra/"
-  }, {
+  },
+  {
     src: img.pranita,
     name: "Pranita Kocharekar",
     role: "Illustrator, Influencer, Mental Health Activist",
     link: "https://www.instagram.com/pranitart/?hl=en"
-  }, {
+  },
+  {
     src: img.roopsha,
     name: "Roopsha Manda",
     role: "Illustrator, Design Student, Freelancer",
     link: "https://www.behance.net/roopiedoo"
-  }, {
+  },
+  {
     src: img.twisha,
     name: "Twisha Maniar",
     role: "Illustrator, Founder of Carousel",
     link: "https://www.facebook.com/carousel.india"
-  }, {
+  },
+  {
     src: img.anushka,
     name: "Anuskha Jajodia",
     role: "Illustrator, Design Student, Freelancer",
     link: "https://www.behance.net/anushkajajodia"
-  }, {
+  },
+  {
     src: img.sonaksha,
     name: "Sonaksha Iyengar",
     role: "Illustrator, Author, Mental Health and Body-Positive Activist",
     link: "https://www.instagram.com/sonaksha/"
-  }, {
+  },
+  {
     src: img.aakriti,
     name: "Aakriti Pasricha",
     role: "Mental Health Activist, Editor",
-    link: "http://alittleromancewithlife.blogspot.in/2012/04/if-only-my-rational-mind-would-let-me.html"
-  }, {
+    link:
+      "http://alittleromancewithlife.blogspot.in/2012/04/if-only-my-rational-mind-would-let-me.html"
+  },
+  {
     src: img.shadow,
     name: "Shadow",
-    role: "Chief Happiness Officer",
-  }, {
+    role: "Chief Happiness Officer"
+  },
+  {
     src: img.harish,
     name: "Harish Balan",
     role: "Investor, Personal Cheerleader, Brand Strategist"
-  }, {
+  },
+  {
     src: img.varun,
     name: "Varun Mukerji",
     role: "Founder of withinreach.in, Basketball Enthusiast",
     link: "https://www.withinreach.in/"
-  }, {
+  },
+  {
     src: img.neera,
     name: "Neera Majumdar",
-    role: "Intern, Journalist at the Print",
-  }, {
+    role: "Intern, Journalist at the Print"
+  },
+  {
     src: img.nandini,
     name: "Nandini Bhatia",
-    role: "Intern, Associate at Sanmita",
-  }, {
+    role: "Intern, Associate at Sanmita"
+  },
+  {
     src: img.purva,
     name: "Purva Raghunath",
-    role: "Intern, Centre of Entrepreunership Ashoka",
-  }, {
+    role: "Intern, Centre of Entrepreunership Ashoka"
+  },
+  {
     src: img.shlagha,
     name: "Shlagha Chaubey",
-    role: "Illustrator,Animal lover",
-  }, {
+    role: "Illustrator,Animal lover"
+  },
+  {
     src: img.elyne,
     name: "Elyne Etienne",
-    role: "Intern, Political Science at Sciences Po",
+    role: "Intern, Political Science at Sciences Po"
   }
 ];

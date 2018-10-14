@@ -130,13 +130,6 @@ var config = {
     new ExtractTextPlugin({
       filename: "bundle.css"
     }),
-
-    new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("production")
-      }
-    })
-    // This will produce output bundles that has all instances of process.env.NODE_ENV replaced with the conditional string literal
   ],
 
   resolve: {

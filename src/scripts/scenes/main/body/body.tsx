@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { About } from "../../about/about";
-import { Blog } from "../../blog/blog";
 import { Contact } from "../../contact/contact";
 import { Faq } from "../../faq/faq";
 import { Home } from "../../home/home";
@@ -12,7 +11,7 @@ import { Team } from "../../team/team";
 
 import { NotFoundPage } from "../404/404";
 
-export const Body = () =>
+export const Body = () => (
   <div className="tip-body">
     <Switch>
       <Route exact path="/" component={Home} />
@@ -21,8 +20,6 @@ export const Body = () =>
       <Route path="/stories" component={Stories} />
       <Route path="/story" component={Stories} />
       <Route path="/storybooks" component={Stories} />
-      {/* <Route path="/talk" component={Talk} />
-      <Route path="/blog" component={Blog} /> */}
       <Route path="/team" component={Team} />
       <Route path="/press" component={Press} />
 
@@ -32,7 +29,7 @@ export const Body = () =>
       <Route path="/privacy" component={Privacy} />
       <Route path="/privacy-policy" component={Privacy} />
 
-
       <Route component={NotFoundPage} />
     </Switch>
-  </div>;
+  </div>
+);

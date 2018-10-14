@@ -101,7 +101,7 @@ export const actionCreators = {
     return storiesRef.orderByChild("index").equalTo(index).limitToFirst(1).once("value")
       .then((snapshot) => {
         const value = snapshot.val();
-        let story: IStory;
+        let story: IStory | undefined;
         for (const key in value) {
           if (value.hasOwnProperty(key) && value) {
             story = value[key];
