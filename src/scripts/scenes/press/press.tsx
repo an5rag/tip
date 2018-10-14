@@ -62,7 +62,7 @@ const pressArray: IPressElementProps[] = [
   {
     source: "Momspresso",
     url:
-      "https://www.momspresso.com/parenting/m-is-for-mother-tongue/article/all-children-need-strong-female-role-models-in-books",
+      "https://www.momspresso.com/parenting/article/the-irrelevant-project-is-trying-to-teach-kids-about-gender-equality-and-consent",
     title:
       "'The Irrelevant Project' Is Trying To Teach Kids About Gender Equality And Consent",
     date: "June 21, 2018"
