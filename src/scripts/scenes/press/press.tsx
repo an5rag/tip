@@ -117,7 +117,7 @@ const pressArray: IPressElementProps[] = [
   {
     source: "sbcltr",
     url:
-      "http://sbcltr.in/2018/02/22/how-the-irrelevant-project-is-disrupting-stereotypes/",
+      "http://sbcltr.in/how-the-irrelevant-project-is-disrupting-stereotypes/",
     title: "How the Irrelevant Project is disrupting stereotypes",
     date: "Februrary 22, 2018"
   },
