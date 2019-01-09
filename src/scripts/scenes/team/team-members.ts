@@ -33,7 +33,7 @@ export const teamMembers: ITeamMember[] = [
   {
     src: img.aliysha,
     name: "Alishya Almeida",
-    role: "Co-founder, Writer, Teacher",
+    role: "",
     link: "https://medium.com/@alishyaalmeida"
   },
   {
